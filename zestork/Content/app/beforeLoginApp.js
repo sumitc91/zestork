@@ -53,3 +53,15 @@ ZestorkApp.controller('beforeLoginHeaderController', function ($scope) {
         
     };
 });
+
+ZestorkApp.controller('homeTemplate', function ($scope) {
+
+    $scope.sliderImageList = [
+          { ImageAlt: "slider1", ImageUrl: "../../Resource/templates/beforeLogin/web/images/slider1.jpg" },
+          { ImageAlt: "slider2", ImageUrl: "../../Resource/templates/beforeLogin/web/images/slider2.jpg" },
+          { ImageAlt: "slider3", ImageUrl: "../../Resource/templates/beforeLogin/web/images/slider3.jpg" },
+          { ImageAlt: "slider4", ImageUrl: "../../Resource/templates/beforeLogin/web/images/slider4.jpg" },          
+        ];
+
+
+});

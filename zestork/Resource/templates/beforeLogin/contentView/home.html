@@ -13,12 +13,11 @@
 		  </script>
 
 <!--start-image-slider---->
-					<div class="image-slider">
+					<div class="image-slider" ng-controller="homeTemplate">
 					    <ul class="rslides" id="slider1">
-					      <li><img src="../../Resource/templates/beforeLogin/web/images/slider3.jpg" alt=""></li>
-					      <li><img src="../../Resource/templates/beforeLogin/web/images/slider2.jpg" alt=""></li>
-					      <li><img src="../../Resource/templates/beforeLogin/web/images/slider1.jpg" alt=""></li>
-					       <li><img src="../../Resource/templates/beforeLogin/web/images/slider4.jpg" alt=""></li>
+                          <li ng-repeat="ImageList in sliderImageList">
+                                <img src={{ImageList.ImageUrl}} alt={{ImageList.ImageAlt}}>
+                          </li>					      
 					</div>
 			<!--End-image-slider---->
 
