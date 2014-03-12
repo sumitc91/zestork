@@ -4,7 +4,7 @@ var ZestorkApp = angular.module('ZestorkApp', []);
 ZestorkApp.config(function ($routeProvider) {
 
     $routeProvider.when("/", { templateUrl: "../../Resource/templates/beforeLogin/contentView/home.html" }).
-//                   when("/profile", { templateUrl: "partials/profile.html" }).
+                   when("/services", { templateUrl: "../../Resource/templates/beforeLogin/contentView/services.html" }).
 //                   when("/contact", { templateUrl: "partials/contact.html" }).
                    otherwise({ redirectTo: '/' });
 
