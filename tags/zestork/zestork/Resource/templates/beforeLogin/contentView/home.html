@@ -2,10 +2,12 @@
 <script src="../../Resource/templates/beforeLogin/web/js/jquery.min.js"></script>
 <script src="../../Resource/templates/beforeLogin/web/js/responsiveslides.min.js"></script>
 
+
 <script type="text/javascript">
     // You can also use "$(window).load(function() {"
     $(function () {
         // Slideshow 1
+        
         $("#slider1").responsiveSlides({
             maxwidth: 2500,
             speed: 600
@@ -14,20 +16,22 @@
 		  </script>
 
 <!--start-image-slider---->
-					<div class="image-slider" ng-controller="homeTemplate">
+					<div  class="image-slider" ng-controller="homeTemplate" ng-cloak>
 					    <ul class="rslides" id="slider1">
                           
                            <li><img src={{sliderImageList[0].ImageUrl}} alt=""></li>
 					      <li><img src={{sliderImageList[1].ImageUrl}} alt=""></li>
 					      <li><img src={{sliderImageList[2].ImageUrl}} alt=""></li>
-					       <li><img src={{sliderImageList[3].ImageUrl}} alt=""></li>
+					       <li><img src={{sliderImageList[3].ImageUrl}} alt=""></li>                           
 
                         </ul>
-					      
+					      <!--<div class="alignCenter" ng-show=true>
+                            <img width="20px" height="20px" src="../../Resource/templates/afterLogin/css/plugins/dynatree/loading.gif">
+                          </div>-->
 					</div>
 			<!--End-image-slider---->
 
-<div class="main" ng-controller="homeTemplate">
+<div class="main" ng-controller="homeTemplate" ng-cloak>
       	 <div class="icon_grids">
 	 	   <div class="wrap">	 		
 	 		 	<div class="section group">
