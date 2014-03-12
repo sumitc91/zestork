@@ -26,9 +26,9 @@ ZestorkApp.controller('beforeLoginHeaderController', function ($scope) {
     };
 
     $scope.beforeLoginMenuTab = [
-          { tabName: "Home", tabUrl: "../../Resource/templates/beforeLogin/web/index.html" },
+          { tabName: "Home", tabUrl: "#/" },
           { tabName: "About", tabUrl: "../../Resource/templates/beforeLogin/web/about.html" },
-          { tabName: "Services", tabUrl: "../../Resource/templates/beforeLogin/web/services.html" },
+          { tabName: "Services", tabUrl: "#/services" },
           { tabName: "Clients", tabUrl: "../../Resource/templates/beforeLogin/web/404.html" },
           { tabName: "Contact", tabUrl: "../../Resource/templates/beforeLogin/web/contact.html" }
         ];
@@ -53,7 +53,6 @@ ZestorkApp.controller('beforeLoginHeaderController', function ($scope) {
         
     };
 });
-
 ZestorkApp.controller('homeTemplate', function ($scope) {
 
     $scope.dataLoaded={
@@ -121,6 +120,16 @@ ZestorkApp.controller('homeTemplate', function ($scope) {
             rightColumnLink:"viewall.html"
             
         //copyRightInfo: "<p>Company Name © All Rights Reseverd | Design by  <a href=\"http://zestork.com\">W3Layouts</a></p>"        
+    };
+
+});
+ZestorkApp.controller('serviceTemplate', function ($scope) {
+
+    $scope.sampleData = {
+        imageurl: "../../Resource/templates/beforeLogin/web/images/service-6.png",
+        header: "My header",
+        imageurl2: "../../Resource/templates/beforeLogin/web/images/service-2.png",
+        header2: "D.G."
     };
 
 });
