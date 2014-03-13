@@ -6,7 +6,8 @@ ZestorkApp.config(function ($routeProvider) {
     $routeProvider.when("/", { templateUrl: "../../Resource/templates/beforeLogin/contentView/home.html" }).
                    when("/services", { templateUrl: "../../Resource/templates/beforeLogin/contentView/services.html" }).
                    when("/about", { templateUrl: "../../Resource/templates/beforeLogin/contentView/about.html" }).
-                   otherwise({ redirectTo: '/' });
+                   when("/404", { templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" }).
+                   otherwise({ templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" });
 
 });
 
@@ -30,8 +31,8 @@ ZestorkApp.controller('beforeLoginHeaderController', function ($scope) {
           { tabName: "Home", tabUrl: "#/" },
           { tabName: "About", tabUrl: "#/about" },
           { tabName: "Services", tabUrl: "#/services" },
-          { tabName: "Clients", tabUrl: "../../Resource/templates/beforeLogin/web/404.html" },
-          { tabName: "Contact", tabUrl: "../../Resource/templates/beforeLogin/web/contact.html" }
+          { tabName: "Clients", tabUrl: "#/Clients" },
+          { tabName: "Contact", tabUrl: "#/Contact" }
         ];
 
     $scope.beforeLoginFooterInfo = {
