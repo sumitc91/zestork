@@ -19,7 +19,7 @@ ZestorkApp.controller('myController', function ($scope) {
 });
 ZestorkApp.controller('beforeLoginHeaderController', function ($scope) {
 
-NProgress.start();
+
     $scope.beforeLoginHeaderInfo = {
 
         logoUrl: "../../Resource/templates/beforeLogin/web/index.html",
@@ -53,6 +53,6 @@ NProgress.start();
         //copyRightInfo: "<p>Company Name © All Rights Reseverd | Design by  <a href=\"http://zestork.com\">W3Layouts</a></p>"
         
     };
-    NProgress.done();
+    
 });
 
