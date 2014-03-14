@@ -1220,7 +1220,6 @@
     <Content Include="Resource\templates\afterLogin\tables-large.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\404.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\about.html" />
-    <Content Include="Resource\templates\beforeLogin\contentView\ajax\modal_ajax_test.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\home.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\services.html" />
     <Content Include="Resource\templates\beforeLogin\web\404.html" />
@@ -1273,6 +1272,7 @@
     <Folder Include="Models\DataContract\" />
     <Folder Include="Models\DataWrapper\" />
     <Folder Include="Resource\templates\afterLogin\js\plugins\elfinder\files\.quarantine\" />
+    <Folder Include="Resource\templates\beforeLogin\contentView\ajax\" />
     <Folder Include="Service\" />
   </ItemGroup>
   <ItemGroup>
