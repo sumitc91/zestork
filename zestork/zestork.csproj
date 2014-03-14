@@ -7,19 +7,14 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FFAE0764-14C0-4C28-89E6-64F4B1ECE586}</ProjectGuid>
+    <ProjectGuid>{458B83BD-29C5-4B2E-9368-E7560E277C0D}</ProjectGuid>
     <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>zestork</RootNamespace>
     <AssemblyName>zestork</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -66,11 +61,15 @@
       <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -114,11 +113,45 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Content Include="Content\app\beforeLoginApp.js" />
+    <Content Include="Content\app\beforeLogin\aboutTemplate.js" />
+    <Content Include="Content\app\beforeLogin\serviceTemplate.js" />
+    <Content Include="Content\app\beforeLogin\homeTemplate.js" />
+    <Content Include="Content\app\beforeLogin\beforeLoginApp.js" />
+    <Content Include="Content\css\nprogress.css" />
+    <Content Include="Content\js\nprogress.js" />
     <Content Include="Content\lib\angular.js" />
     <Content Include="Content\lib\angular.min.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\styles\bootstrap.css" />
+    <Content Include="Content\third-party\bootstrap-modal-master\bs3.html" />
+    <Content Include="Content\third-party\bootstrap-modal-master\css\bootstrap-modal-bs3patch.css" />
+    <Content Include="Content\third-party\bootstrap-modal-master\css\bootstrap-modal.css" />
+    <Content Include="Content\third-party\bootstrap-modal-master\img\ajax-loader.gif" />
+    <Content Include="Content\third-party\bootstrap-modal-master\index.html" />
+    <Content Include="Content\third-party\bootstrap-modal-master\js\bootstrap-modal.js" />
+    <Content Include="Content\third-party\bootstrap-modal-master\js\bootstrap-modalmanager.js" />
+    <Content Include="Content\third-party\bootstrap-modal-master\modal_ajax_test.html" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\css\jquery.modalbox-basic.css" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\css\jquery.modalbox-skin-default.css" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\css\jquery.modalbox-skin-precious-white.css" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\css\jquery.modalbox-skin-rounded-black.css" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\css\jquery.modalbox.css" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\ajax-loader.gif" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\default\bg_shadows_left.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\default\bg_shadows_right.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\default\bg_shadows_sprite.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\default\closebutton_21x21.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\precious_white\bg_shadows_left.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\precious_white\bg_shadows_right.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\precious_white\bg_shadows_sprite.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\precious_white\closebutton_13x13.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\rounded_black\bg_shadows_left.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\rounded_black\bg_shadows_right.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\rounded_black\bg_shadows_sprite.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\rounded_black\closebutton_29x20.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\index.html" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\js\jquery.modalbox-1.5.0-min.js" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\js\jquery.modalbox-1.5.0.js" />
     <Content Include="Global.asax" />
     <Content Include="Resource\templates\afterLogin\components-bootstrap.html" />
     <Content Include="Resource\templates\afterLogin\components-elements.html" />
@@ -1185,7 +1218,11 @@
     <Content Include="Resource\templates\afterLogin\tables-basic.html" />
     <Content Include="Resource\templates\afterLogin\tables-dynamic.html" />
     <Content Include="Resource\templates\afterLogin\tables-large.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\404.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\about.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\ajax\modal_ajax_test.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\home.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\services.html" />
     <Content Include="Resource\templates\beforeLogin\web\404.html" />
     <Content Include="Resource\templates\beforeLogin\web\about.html" />
     <Content Include="Resource\templates\beforeLogin\web\contact.html" />
@@ -1219,7 +1256,9 @@
     <Content Include="Resource\templates\beforeLogin\web\js\responsiveslides.min.js" />
     <Content Include="Resource\templates\beforeLogin\web\services.html" />
     <Content Include="Resource\templates\beforeLogin\web\w3layouts-license.txt" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1240,122 +1279,121 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resource\templates\afterLogin\css\plugins\.DS_Store" />
-    <Content Include="Resource\templates\afterLogin\css\plugins\._.DS_Store" />
-    <Content Include="Resource\templates\afterLogin\font\fontawesome-webfont.eot" />
-    <Content Include="Resource\templates\afterLogin\font\fontawesome-webfont.svg" />
-    <Content Include="Resource\templates\afterLogin\font\fontawesome-webfont.ttf" />
-    <Content Include="Resource\templates\afterLogin\font\fontawesome-webfont.woff" />
-    <Content Include="Resource\templates\afterLogin\font\FontAwesome.otf" />
-    <Content Include="Resource\templates\afterLogin\font\glyphicons-regular.eot" />
-    <Content Include="Resource\templates\afterLogin\font\glyphicons-regular.otf" />
-    <Content Include="Resource\templates\afterLogin\font\glyphicons-regular.svg" />
-    <Content Include="Resource\templates\afterLogin\font\glyphicons-regular.ttf" />
-    <Content Include="Resource\templates\afterLogin\font\glyphicons-regular.woff" />
-    <Content Include="Resource\templates\afterLogin\img\.DS_Store" />
-    <Content Include="Resource\templates\afterLogin\img\._.DS_Store" />
-    <Content Include="Resource\templates\afterLogin\img\demo\flags\.DS_Store" />
-    <Content Include="Resource\templates\afterLogin\img\demo\flags\._.DS_Store" />
-    <Content Include="Resource\templates\afterLogin\img\plugins\.DS_Store" />
-    <Content Include="Resource\templates\afterLogin\img\plugins\._.DS_Store" />
-    <Content Include="Resource\templates\afterLogin\js\.DS_Store" />
-    <Content Include="Resource\templates\afterLogin\js\._.DS_Store" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\.DS_Store" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\._.DS_Store" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\ckeditor\CHANGES.md" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\ckeditor\LICENSE.md" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\ckeditor\plugins\scayt\LICENSE.md" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\ckeditor\plugins\scayt\README.md" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\ckeditor\plugins\wsc\LICENSE.md" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\ckeditor\plugins\wsc\README.md" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\ckeditor\README.md" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\ckeditor\skins\moono\readme.md" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\datatable\as3\lib\AlivePDF.swc" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\datatable\as3\ZeroClipboard.as" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\datatable\as3\ZeroClipboardPdf.as" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\elfinder\php\connector.minimal.php" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\elfinder\php\connector.php" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\elfinder\php\elFinder.class.php" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\elfinder\php\elFinderConnector.class.php" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\elfinder\php\elFinderVolumeDriver.class.php" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\elfinder\php\elFinderVolumeDropbox.class.php" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\elfinder\php\elFinderVolumeFTP.class.php" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\elfinder\php\elFinderVolumeLocalFileSystem.class.php" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\elfinder\php\elFinderVolumeMySQL.class.php" />
-    <Content Include="Resource\templates\afterLogin\js\plugins\elfinder\php\mime.types" />
-    <Content Include="Resource\templates\afterLogin\sass\bootstrap-override.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\colors.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\font-awesome\font-awesome.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\font-awesome\_bootstrap.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\font-awesome\_core.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\font-awesome\_extras.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\font-awesome\_icons.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\font-awesome\_mixins.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\font-awesome\_path.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\font-awesome\_variables.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\glyphicons.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\media-queries.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\page-elements\accordion.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\page-elements\address-book.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\page-elements\blog.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\page-elements\box.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\page-elements\custom-checkbox.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\page-elements\forms.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\page-elements\gallery.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\page-elements\messages.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\page-elements\pagestats.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\page-elements\pricing-tables.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\page-elements\sidebar-widgets.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\page-elements\tables.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\page-elements\tabs.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\page-elements\tasks.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\page-elements\tiles.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\page-elements\timeline.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\pages\error.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\pages\grids.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\pages\invoice.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\pages\locked.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\pages\login.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\pages\search-results.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\pages\shop.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\calendar.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\charts.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\chosen.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\ckeditor.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\datatables.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\datepicker.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\daterangepicker.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\elfinder.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\filetree.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\fileupload.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\form-wizard.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\gritter.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\maps.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\multiselect.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\plupload.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\resize.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\scroll.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\select2.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\slider.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\spinner.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\tagsinput.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\timepicker.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\plugins\xeditable.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\structure\content.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\structure\footer.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\structure\sidebar.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\structure\topbar.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\style.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\themes.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\_elements.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\_pages.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\_plugins.scss" />
-    <Content Include="Resource\templates\afterLogin\sass\_structure.scss" />
-    <Content Include="Resource\templates\beforeLogin\web\fonts\Amble-Regular-webfont.ttf" />
-    <Content Include="Resource\templates\beforeLogin\web\images\Thumbs.db" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Content\third-party\bootstrap-modal-master\.gitattributes" />
+    <None Include="Content\third-party\bootstrap-modal-master\.gitignore" />
+    <None Include="Content\third-party\bootstrap-modal-master\component.json" />
+    <None Include="Content\third-party\bootstrap-modal-master\composer.json" />
+    <None Include="Content\third-party\bootstrap-modal-master\LICENSE" />
+    <None Include="Content\third-party\bootstrap-modal-master\params.json" />
+    <None Include="Content\third-party\bootstrap-modal-master\README.md" />
+    <None Include="Resource\templates\afterLogin\css\plugins\._.DS_Store" />
+    <None Include="Resource\templates\afterLogin\font\fontawesome-webfont.eot" />
+    <None Include="Resource\templates\afterLogin\font\fontawesome-webfont.svg" />
+    <None Include="Resource\templates\afterLogin\font\fontawesome-webfont.ttf" />
+    <None Include="Resource\templates\afterLogin\font\fontawesome-webfont.woff" />
+    <None Include="Resource\templates\afterLogin\font\FontAwesome.otf" />
+    <None Include="Resource\templates\afterLogin\font\glyphicons-regular.eot" />
+    <None Include="Resource\templates\afterLogin\font\glyphicons-regular.otf" />
+    <None Include="Resource\templates\afterLogin\font\glyphicons-regular.svg" />
+    <None Include="Resource\templates\afterLogin\font\glyphicons-regular.ttf" />
+    <None Include="Resource\templates\afterLogin\font\glyphicons-regular.woff" />
+    <None Include="Resource\templates\afterLogin\img\._.DS_Store" />
+    <None Include="Resource\templates\afterLogin\img\demo\flags\._.DS_Store" />
+    <None Include="Resource\templates\afterLogin\img\plugins\._.DS_Store" />
+    <None Include="Resource\templates\afterLogin\js\._.DS_Store" />
+    <None Include="Resource\templates\afterLogin\js\plugins\._.DS_Store" />
+    <None Include="Resource\templates\afterLogin\js\plugins\ckeditor\CHANGES.md" />
+    <None Include="Resource\templates\afterLogin\js\plugins\ckeditor\LICENSE.md" />
+    <None Include="Resource\templates\afterLogin\js\plugins\ckeditor\plugins\scayt\LICENSE.md" />
+    <None Include="Resource\templates\afterLogin\js\plugins\ckeditor\plugins\scayt\README.md" />
+    <None Include="Resource\templates\afterLogin\js\plugins\ckeditor\plugins\wsc\LICENSE.md" />
+    <None Include="Resource\templates\afterLogin\js\plugins\ckeditor\plugins\wsc\README.md" />
+    <None Include="Resource\templates\afterLogin\js\plugins\ckeditor\README.md" />
+    <None Include="Resource\templates\afterLogin\js\plugins\ckeditor\skins\moono\readme.md" />
+    <None Include="Resource\templates\afterLogin\js\plugins\datatable\as3\lib\AlivePDF.swc" />
+    <None Include="Resource\templates\afterLogin\js\plugins\datatable\as3\ZeroClipboard.as" />
+    <None Include="Resource\templates\afterLogin\js\plugins\datatable\as3\ZeroClipboardPdf.as" />
+    <None Include="Resource\templates\afterLogin\js\plugins\elfinder\php\connector.minimal.php" />
+    <None Include="Resource\templates\afterLogin\js\plugins\elfinder\php\connector.php" />
+    <None Include="Resource\templates\afterLogin\js\plugins\elfinder\php\elFinder.class.php" />
+    <None Include="Resource\templates\afterLogin\js\plugins\elfinder\php\elFinderConnector.class.php" />
+    <None Include="Resource\templates\afterLogin\js\plugins\elfinder\php\elFinderVolumeDriver.class.php" />
+    <None Include="Resource\templates\afterLogin\js\plugins\elfinder\php\elFinderVolumeDropbox.class.php" />
+    <None Include="Resource\templates\afterLogin\js\plugins\elfinder\php\elFinderVolumeFTP.class.php" />
+    <None Include="Resource\templates\afterLogin\js\plugins\elfinder\php\elFinderVolumeLocalFileSystem.class.php" />
+    <None Include="Resource\templates\afterLogin\js\plugins\elfinder\php\elFinderVolumeMySQL.class.php" />
+    <None Include="Resource\templates\afterLogin\js\plugins\elfinder\php\mime.types" />
+    <None Include="Resource\templates\afterLogin\sass\bootstrap-override.scss" />
+    <None Include="Resource\templates\afterLogin\sass\colors.scss" />
+    <None Include="Resource\templates\afterLogin\sass\font-awesome\font-awesome.scss" />
+    <None Include="Resource\templates\afterLogin\sass\font-awesome\_bootstrap.scss" />
+    <None Include="Resource\templates\afterLogin\sass\font-awesome\_core.scss" />
+    <None Include="Resource\templates\afterLogin\sass\font-awesome\_extras.scss" />
+    <None Include="Resource\templates\afterLogin\sass\font-awesome\_icons.scss" />
+    <None Include="Resource\templates\afterLogin\sass\font-awesome\_mixins.scss" />
+    <None Include="Resource\templates\afterLogin\sass\font-awesome\_path.scss" />
+    <None Include="Resource\templates\afterLogin\sass\font-awesome\_variables.scss" />
+    <None Include="Resource\templates\afterLogin\sass\glyphicons.scss" />
+    <None Include="Resource\templates\afterLogin\sass\media-queries.scss" />
+    <None Include="Resource\templates\afterLogin\sass\page-elements\accordion.scss" />
+    <None Include="Resource\templates\afterLogin\sass\page-elements\address-book.scss" />
+    <None Include="Resource\templates\afterLogin\sass\page-elements\blog.scss" />
+    <None Include="Resource\templates\afterLogin\sass\page-elements\box.scss" />
+    <None Include="Resource\templates\afterLogin\sass\page-elements\custom-checkbox.scss" />
+    <None Include="Resource\templates\afterLogin\sass\page-elements\forms.scss" />
+    <None Include="Resource\templates\afterLogin\sass\page-elements\gallery.scss" />
+    <None Include="Resource\templates\afterLogin\sass\page-elements\messages.scss" />
+    <None Include="Resource\templates\afterLogin\sass\page-elements\pagestats.scss" />
+    <None Include="Resource\templates\afterLogin\sass\page-elements\pricing-tables.scss" />
+    <None Include="Resource\templates\afterLogin\sass\page-elements\sidebar-widgets.scss" />
+    <None Include="Resource\templates\afterLogin\sass\page-elements\tables.scss" />
+    <None Include="Resource\templates\afterLogin\sass\page-elements\tabs.scss" />
+    <None Include="Resource\templates\afterLogin\sass\page-elements\tasks.scss" />
+    <None Include="Resource\templates\afterLogin\sass\page-elements\tiles.scss" />
+    <None Include="Resource\templates\afterLogin\sass\page-elements\timeline.scss" />
+    <None Include="Resource\templates\afterLogin\sass\pages\error.scss" />
+    <None Include="Resource\templates\afterLogin\sass\pages\grids.scss" />
+    <None Include="Resource\templates\afterLogin\sass\pages\invoice.scss" />
+    <None Include="Resource\templates\afterLogin\sass\pages\locked.scss" />
+    <None Include="Resource\templates\afterLogin\sass\pages\login.scss" />
+    <None Include="Resource\templates\afterLogin\sass\pages\search-results.scss" />
+    <None Include="Resource\templates\afterLogin\sass\pages\shop.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\calendar.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\charts.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\chosen.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\ckeditor.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\datatables.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\datepicker.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\daterangepicker.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\elfinder.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\filetree.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\fileupload.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\form-wizard.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\gritter.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\maps.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\multiselect.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\plupload.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\resize.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\scroll.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\select2.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\slider.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\spinner.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\tagsinput.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\timepicker.scss" />
+    <None Include="Resource\templates\afterLogin\sass\plugins\xeditable.scss" />
+    <None Include="Resource\templates\afterLogin\sass\structure\content.scss" />
+    <None Include="Resource\templates\afterLogin\sass\structure\footer.scss" />
+    <None Include="Resource\templates\afterLogin\sass\structure\sidebar.scss" />
+    <None Include="Resource\templates\afterLogin\sass\structure\topbar.scss" />
+    <None Include="Resource\templates\afterLogin\sass\style.scss" />
+    <None Include="Resource\templates\afterLogin\sass\themes.scss" />
+    <None Include="Resource\templates\afterLogin\sass\_elements.scss" />
+    <None Include="Resource\templates\afterLogin\sass\_pages.scss" />
+    <None Include="Resource\templates\afterLogin\sass\_plugins.scss" />
+    <None Include="Resource\templates\afterLogin\sass\_structure.scss" />
+    <None Include="Resource\templates\beforeLogin\web\fonts\Amble-Regular-webfont.ttf" />
+    <None Include="Resource\templates\beforeLogin\web\images\Thumbs.db" />
+    <None Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -1371,11 +1409,12 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>60081</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:2853/</IISUrl>
+          <IISUrl>
+          </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
