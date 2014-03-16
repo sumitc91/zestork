@@ -360,3 +360,8 @@
 	background: #e8ecfd;
 	min-height: 264px;
 }
+
+.text_watermark {
+    color: #cdcdcd;
+    font-weight: bold;
+}
