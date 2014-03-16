@@ -18,6 +18,18 @@ ZestorkApp.controller('myController', function ($scope) {
     };
 
 });
+
+
+ZestorkApp.controller('loginControllerPlaceHolders', function ($scope) {
+
+    
+    $scope.userName= "Username";
+    $scope.password= "password";
+    $scope.userNamePlaceholder= "Username";
+    
+
+});
+
 ZestorkApp.controller('beforeLoginHeaderController', function ($scope) {
 
 
