@@ -1,0 +1,362 @@
+
+
+.global_container_ {
+	padding: 112px 195px 124px 193px;
+	width: 162px;
+	min-height: 500px;
+	margin: 0 auto 0 auto;
+	float: left;
+	height: auto;
+	position: relative;
+}
+
+.twitter {
+	padding: 0 4px 0 7px;
+	width: 151px;
+	float: left;
+	position: relative;
+}
+.layer_3 {
+	float: left;
+	margin: 8px 0 0 0;
+}
+.sap {
+	background-color: #0c7fb3; /*Layer's solid color*/
+	width: 1px;
+	height: 29px;
+	float: left;
+	margin: 0 0 0 4px;
+}
+.sap_2 {
+	background-color: #5ecefc; /*Layer's solid color*/
+	width: 1px;
+	height: 29px;
+	float: left;
+	margin: 0 0 0 0;
+}
+.sign_in_with_twitter {
+	text-align: left;
+	font-family: Calibri, 'Droid Sans', sans-serif;
+	text-decoration: none;
+	color: #ffffff;
+	font-size: 107.69%;
+	margin: 8px 0 0 0;
+	float: right;
+	min-width: 122px;
+}
+.twitter {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	background: -moz-linear-gradient(90deg, #2398cd 0, #4ac6fa 100%);
+	background: -o-linear-gradient(90deg, #2398cd 0, #4ac6fa 100%);
+	background: -webkit-linear-gradient(90deg, #2398cd 0, #4ac6fa 100%);
+	background: linear-gradient(0deg, #2398cd 0, #4ac6fa 100%);
+
+	min-height: 29px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box; /*Will not allow bg color to leak outside borders*/
+}
+.maincontentwrapper {
+	float: left;
+	clear: both;
+	position: relative;
+	width: 162px;
+	margin: 19px 0 0 0;
+}
+.facebook {
+	padding: 0 0 0 10px;
+	float: left;
+	position: relative;
+	width: 152px;
+	margin: 0 0 0 0;
+}
+.layer_7 {
+	float: left;
+	margin: 6px 0 0 0;
+}
+.sap_3 {
+	background-color: #1f3c6f; /*Layer's solid color*/
+	width: 1px;
+	height: 29px;
+	float: left;
+	margin: 0 0 0 9px;
+}
+.sap_4 {
+	background-color: #92acd7; /*Layer's solid color*/
+	width: 1px;
+	height: 29px;
+	float: left;
+	margin: 0 0 0 0;
+}
+.sign_in_with_facebook {
+	text-align: left;
+	font-family: Calibri, 'Droid Sans', sans-serif;
+	letter-spacing: -0.03em;
+	text-decoration: none;
+	color: #ffffff;
+	font-size: 107.69%;
+	margin: 7px 0 0 0;
+	float: right;
+	min-width: 129px;
+}
+.facebook {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	background: -moz-linear-gradient(90deg, #435e8d 0, #6d89b9 100%);
+	background: -o-linear-gradient(90deg, #435e8d 0, #6d89b9 100%);
+	background: -webkit-linear-gradient(90deg, #435e8d 0, #6d89b9 100%);
+	background: linear-gradient(0deg, #435e8d 0, #6d89b9 100%);
+
+	min-height: 29px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box; /*Will not allow bg color to leak outside borders*/
+}
+.linkedin {
+	padding: 0 5px 0 7px;
+	float: left;
+	clear: both;
+	position: relative;
+	width: 150px;
+	margin: 16px 0 0 0;
+}
+.layer_11 {
+	float: left;
+	margin: 6px 0 0 0;
+}
+.sep {
+	background-color: #035e83; /*Layer's solid color*/
+	width: 1px;
+	height: 29px;
+	float: left;
+	margin: 0 0 0 6px;
+}
+.sep_2 {
+	background-color: #a5dbf1; /*Layer's solid color*/
+	width: 1px;
+	height: 29px;
+	float: left;
+	margin: 0 0 0 0;
+}
+.sign_in_with_linkedin {
+	text-align: left;
+	font-family: Calibri, 'Droid Sans', sans-serif;
+	letter-spacing: -0.03em;
+	text-decoration: none;
+	color: #ffffff;
+	font-size: 107.69%;
+	margin: 8px 0 0 0;
+	float: right;
+	min-width: 122px;
+}
+.linkedin {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	background: -moz-linear-gradient(90deg, #0073a2 0, #8bc4dc 100%);
+	background: -o-linear-gradient(90deg, #0073a2 0, #8bc4dc 100%);
+	background: -webkit-linear-gradient(90deg, #0073a2 0, #8bc4dc 100%);
+	background: linear-gradient(0deg, #0073a2 0, #8bc4dc 100%);
+
+	min-height: 29px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box; /*Will not allow bg color to leak outside borders*/
+}
+.yahoo {
+	padding: 0 10px 0 4px;
+	float: left;
+	clear: both;
+	position: relative;
+	width: 148px;
+	margin: 19px 0 0 0;
+}
+.layer_15 {
+	float: left;
+	margin: 10px 0 0 0;
+}
+.sep_3 {
+	background-color: #250025; /*Layer's solid color*/
+	width: 1px;
+	height: 29px;
+	float: left;
+	margin: 0 0 0 3px;
+}
+.sep_4 {
+	background-color: #bd57bd; /*Layer's solid color*/
+	width: 1px;
+	height: 29px;
+	float: left;
+	margin: 0 0 0 0;
+}
+.sign_in_with_yahoo {
+	text-align: left;
+	font-family: Calibri, 'Droid Sans', sans-serif;
+	letter-spacing: -0.03em;
+	text-decoration: none;
+	color: #ffffff;
+	font-size: 107.69%;
+	margin: 7px 0 0 0;
+	float: right;
+	min-width: 111px;
+}
+.yahoo {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	background: -moz-linear-gradient(90deg, #3f003f 0, #a948a9 100%);
+	background: -o-linear-gradient(90deg, #3f003f 0, #a948a9 100%);
+	background: -webkit-linear-gradient(90deg, #3f003f 0, #a948a9 100%);
+	background: linear-gradient(0deg, #3f003f 0, #a948a9 100%);
+
+	min-height: 29px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box; /*Will not allow bg color to leak outside borders*/
+}
+.openid {
+	padding: 0 7px 0 4px;
+	float: left;
+	clear: both;
+	position: relative;
+	width: 151px;
+	margin: 18px 0 0 0;
+}
+.layer_17 {
+	float: left;
+	margin: 5px 0 0 0;
+}
+.sep_5 {
+	background-color: #b76200; /*Layer's solid color*/
+	width: 1px;
+	height: 29px;
+	float: left;
+	margin: 0 0 0 3px;
+}
+.sep_6 {
+	background-color: #ffa63c; /*Layer's solid color*/
+	width: 1px;
+	height: 29px;
+	float: left;
+	margin: 0 0 0 0;
+}
+.sign_in_with_openid {
+	text-align: left;
+	font-family: Calibri, 'Droid Sans', sans-serif;
+	letter-spacing: -0.03em;
+	text-decoration: none;
+	color: #ffffff;
+	font-size: 107.69%;
+	margin: 7px 0 0 0;
+	float: right;
+	min-width: 118px;
+}
+.openid {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	background: -moz-linear-gradient(90deg, #dc7b09 0, #f7931e 100%);
+	background: -o-linear-gradient(90deg, #dc7b09 0, #f7931e 100%);
+	background: -webkit-linear-gradient(90deg, #dc7b09 0, #f7931e 100%);
+	background: linear-gradient(0deg, #dc7b09 0, #f7931e 100%);
+
+	min-height: 29px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box; /*Will not allow bg color to leak outside borders*/
+}
+
+.google {
+	padding: 0 9px 0 9px;
+	width: 144px;
+	float: left;
+	position: relative;
+}
+.layer_19 {
+	float: left;
+	margin: 6px 0 0 0;
+}
+.sep_7 {
+	background-color: #3b54b4; /*Layer's solid color*/
+	width: 1px;
+	height: 29px;
+	float: left;
+	margin: 0 0 0 7px;
+}
+.socialButtonRightAlign {
+    float: left;
+    height: 29px;
+    margin: 0 0 0 7px;
+    position: absolute;
+    width: 1px;
+}
+.twitterRightAlign {
+    left: 315px;
+    top: -127px;
+    position:absolute;
+}
+.facebookRightAlign {
+    left: 315px;
+    top: -87px;
+    position:absolute;
+}
+.linkedinRightAlign {
+    left: 315px;
+    top: -63px;
+    position:absolute;
+}
+.yahooRightAlign {
+    left: 315px;
+    top: -25px;
+    position:absolute;
+}
+.googleRightAlign {
+    left: 315px;
+    top: 34px;
+    position:absolute;
+}
+.sep_8 {
+	background-color: #a7b9fd; /*Layer's solid color*/
+	width: 1px;
+	height: 29px;
+	float: left;
+	margin: 0 0 0 0;
+}
+.sign_in_with_google {
+	text-align: left;
+	font-family: Calibri, 'Droid Sans', sans-serif;
+	letter-spacing: -0.03em;
+	text-decoration: none;
+	color: #ffffff;
+	font-size: 107.69%;
+	margin: 7px 0 0 0;
+	float: right;
+	min-width: 116px;
+}
+.google {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	background: -moz-linear-gradient(90deg, #637bd4 0, #839aed 100%);
+	background: -o-linear-gradient(90deg, #637bd4 0, #839aed 100%);
+	background: -webkit-linear-gradient(90deg, #637bd4 0, #839aed 100%);
+	background: linear-gradient(0deg, #637bd4 0, #839aed 100%);
+
+	min-height: 29px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box; /*Will not allow bg color to leak outside borders*/
+}
+.global_container_ {
+	background: #e8ecfd;
+	min-height: 264px;
+}
