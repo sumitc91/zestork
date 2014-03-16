@@ -15,6 +15,11 @@
     <AssemblyName>zestork</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -118,6 +123,38 @@
     <Content Include="Content\app\beforeLogin\homeTemplate.js" />
     <Content Include="Content\app\beforeLogin\beforeLoginApp.js" />
     <Content Include="Content\css\nprogress.css" />
+    <Content Include="Content\css\SocialButtons\images\layer_1.jpg" />
+    <Content Include="Content\css\SocialButtons\images\layer_11.png" />
+    <Content Include="Content\css\SocialButtons\images\layer_15.png" />
+    <Content Include="Content\css\SocialButtons\images\layer_17.png" />
+    <Content Include="Content\css\SocialButtons\images\layer_19.png" />
+    <Content Include="Content\css\SocialButtons\images\layer_3.png" />
+    <Content Include="Content\css\SocialButtons\images\layer_7.png" />
+    <Content Include="Content\css\SocialButtons\images\sap.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sap_2.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sap_3.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sap_4.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sep.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sep_2.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sep_3.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sep_4.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sep_5.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sep_6.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sep_7.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sep_8.jpg" />
+    <Content Include="Content\css\SocialButtons\images\shape_2.png" />
+    <Content Include="Content\css\SocialButtons\images\shape_2_copy.png" />
+    <Content Include="Content\css\SocialButtons\images\shape_2_copy_2.png" />
+    <Content Include="Content\css\SocialButtons\images\shape_2_copy_3.png" />
+    <Content Include="Content\css\SocialButtons\images\shape_2_copy_4.png" />
+    <Content Include="Content\css\SocialButtons\images\shape_2_copy_5.png" />
+    <Content Include="Content\css\SocialButtons\style.css" />
+    <Content Include="Content\css\SocialButtons\unused_images\sign_in_with_facebook.png" />
+    <Content Include="Content\css\SocialButtons\unused_images\sign_in_with_google.png" />
+    <Content Include="Content\css\SocialButtons\unused_images\sign_in_with_linkedin.png" />
+    <Content Include="Content\css\SocialButtons\unused_images\sign_in_with_openid.png" />
+    <Content Include="Content\css\SocialButtons\unused_images\sign_in_with_twitter.png" />
+    <Content Include="Content\css\SocialButtons\unused_images\sign_in_with_yahoo.png" />
     <Content Include="Content\js\nprogress.js" />
     <Content Include="Content\lib\angular.js" />
     <Content Include="Content\lib\angular.min.js" />
