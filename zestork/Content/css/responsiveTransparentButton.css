@@ -1,0 +1,15 @@
+
+ p.figcaption{
+    bottom: 0;
+    color: #FFFFFF;
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 9;
+    background-color:#000000; 
+    filter:alpha(opacity=60); 
+    opacity:.6;
+    }
