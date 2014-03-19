@@ -88,3 +88,4 @@ E:\pcongo_svn\tags\zestork\zestork\bin\System.Web.WebPages.Razor.xml
 E:\pcongo_svn\tags\zestork\zestork\obj\Debug\zestork.csprojResolveAssemblyReference.cache
 E:\pcongo_svn\tags\zestork\zestork\obj\Debug\zestork.dll
 E:\pcongo_svn\tags\zestork\zestork\obj\Debug\zestork.pdb
+F:\pcongo\tags\zestork\zestork\bin\log4net.dll

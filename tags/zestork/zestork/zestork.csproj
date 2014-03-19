@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -112,6 +116,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logger\ILogger.cs" />
+    <Compile Include="Logger\Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -192,6 +198,7 @@
     <Content Include="Content\third-party\jquery.modalbox-1.5.0\index.html" />
     <Content Include="Content\third-party\jquery.modalbox-1.5.0\js\jquery.modalbox-1.5.0-min.js" />
     <Content Include="Content\third-party\jquery.modalbox-1.5.0\js\jquery.modalbox-1.5.0.js" />
+    <Content Include="dll\log4net.dll" />
     <Content Include="Global.asax" />
     <Content Include="Resource\templates\afterLogin\components-bootstrap.html" />
     <Content Include="Resource\templates\afterLogin\components-elements.html" />
@@ -1309,6 +1316,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="DAO\" />
+    <Folder Include="logs\" />
     <Folder Include="Models\DataContract\" />
     <Folder Include="Models\DataWrapper\" />
     <Folder Include="Resource\templates\afterLogin\js\plugins\elfinder\files\.quarantine\" />
