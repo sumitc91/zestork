@@ -138,6 +138,12 @@ img{max-width:100%;}
 	text-align: center;
 	border:1px solid #EEE;
 }
+.images_1_of_2 {
+	width:49%;
+	padding:1.5%;
+	text-align: center;
+	border:1px solid #EEE;
+}
 .images_1_of_3  img {
 	max-width:100%;
 	display:block;
@@ -429,7 +435,7 @@ img{max-width:100%;}
 .listview_1_of_2:first-child { margin-left: 0; } 
 
 .images_1_of_2 {
-	width: 46.2%;
+	width: 46%;
 	padding:1.5%; 
 }
 .listimg_2_of_1 {
