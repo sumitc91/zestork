@@ -5,6 +5,8 @@ ZestorkApp.controller('homeTemplate', function ($scope) {
         status: true
     }
 
+    $scope.showImageSlider = false;
+
     $scope.sliderImageList = [
           { ImageAlt: "slider1", ImageUrl: "../../Resource/templates/beforeLogin/web/images/slider1.jpg" },
           { ImageAlt: "slider2", ImageUrl: "../../Resource/templates/beforeLogin/web/images/slider2.jpg" },
