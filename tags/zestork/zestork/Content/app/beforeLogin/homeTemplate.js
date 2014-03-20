@@ -17,15 +17,15 @@ ZestorkApp.controller('homeTemplate', function ($scope) {
     $scope.gridIconDataList = [
           { ImageLink: "../../Resource/templates/beforeLogin/web/about.html",
               ImageIconUrl: "../../Resource/templates/beforeLogin/web/images/g1.png",
-              Headline: "Success Stories",
-              Content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+              Headline: "I will do it",
+              Content: "Enthusiastic peoples want to work in their leisure time",
               BottomButtonUrl: "../../Resource/templates/beforeLogin/web/about.html",
               BottomButtonText: "Read More"
           },
           { ImageLink: "../../Resource/templates/beforeLogin/web/services.html",
               ImageIconUrl: "../../Resource/templates/beforeLogin/web/images/g2.png",
-              Headline: "Custom Design",
-              Content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+              Headline: "I need it done",
+              Content: "Have a work. let it be done.",
               BottomButtonUrl: "../../Resource/templates/beforeLogin/web/about.html",
               BottomButtonText: "Read More"
           }
