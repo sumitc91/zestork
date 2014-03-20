@@ -63,7 +63,7 @@ ZestorkApp.controller('beforeLoginHeaderController', function ($scope) {
     $scope.beforeLoginFooterCopyRightInfo = {
 
         companyName : "Zestork",
-        designedByText : "Sumit Chourasia",
+        designedByText : "Zestork",
         designedByUrl : "http://zestork.com"
         //copyRightInfo: "<p>Company Name © All Rights Reseverd | Design by  <a href=\"http://zestork.com\">W3Layouts</a></p>"
         
