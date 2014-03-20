@@ -48,14 +48,14 @@ ZestorkApp.controller('homeTemplate', function ($scope) {
 
         middleColumnHeading: "What we do",
         middleColumnContentList: [
-              { Content: "Lorem ipsum dolor sit amet qui officia" },
-              { Content: "Duis aute irure dolor in culpa qui" },
-              { Content: "Duis aute irure dolor in culpa qui2" },
-              { Content: "Duis aute irure dolor in culpa qui3" },
-              { Content: "Sunt in culpa qui officia vel illum qui" },
-              { Content: "Sunt in culpa qui officia vel illum qui2" },
-              { Content: "vel illum qui dolorem eum wise man therefore" },
-              { Content: "vel illum qui dolorem eum wise man therefore" }
+              { Content: "Article rewriting" },
+              { Content: "Copy typing" },
+              { Content: "Slogan wrting" },
+              { Content: "Commenting on websites" },
+              { Content: "Finding good pics for a website" },
+              { Content: "Voting" },
+              { Content: "Translation" },
+              { Content: "Drawing" }
         ],
         rightColumnHeading: "Our Stafff",
         rightColumnImageList: [
