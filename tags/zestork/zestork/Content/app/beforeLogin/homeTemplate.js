@@ -28,14 +28,15 @@ ZestorkApp.controller('homeTemplate', function ($scope) {
               Content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
               BottomButtonUrl: "../../Resource/templates/beforeLogin/web/about.html",
               BottomButtonText: "Read More"
-          },
-          { ImageLink: "../../Resource/templates/beforeLogin/web/services.html",
-              ImageIconUrl: "../../Resource/templates/beforeLogin/web/images/g3.png",
-              Headline: "Customer Support",
-              Content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-              BottomButtonUrl: "../../Resource/templates/beforeLogin/web/services.html",
-              BottomButtonText: "Read More"
           }
+//          ,
+//          { ImageLink: "../../Resource/templates/beforeLogin/web/services.html",
+//              ImageIconUrl: "../../Resource/templates/beforeLogin/web/images/g3.png",
+//              Headline: "Customer Support",
+//              Content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+//              BottomButtonUrl: "../../Resource/templates/beforeLogin/web/services.html",
+//              BottomButtonText: "Read More"
+//          }
         ];
 
     $scope.bottomContent = {
