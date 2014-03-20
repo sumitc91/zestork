@@ -130,7 +130,7 @@ img{max-width:100%;}
 	margin: 3% 0 3% 1.6%;
 }
 .grid_1_of_3:first-child { 
-	margin-left: 0; 
+	margin-left: 30%; 
 } 
 .images_1_of_3 {
 	width:29%;
@@ -435,7 +435,7 @@ img{max-width:100%;}
 .listview_1_of_2:first-child { margin-left: 0; } 
 
 .images_1_of_2 {
-	width: 46%;
+	width: 30%;
 	padding:1.5%; 
 }
 .listimg_2_of_1 {
