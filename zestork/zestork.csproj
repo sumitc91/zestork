@@ -119,6 +119,11 @@
     <Compile Include="Logger\ILogger.cs" />
     <Compile Include="Logger\Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerCache\ServerConfig.cs" />
+    <Compile Include="ServerCache\ServerCache.cs" />
+    <Compile Include="ServerCache\ServerCacheItem.cs" />
+    <Compile Include="Session\CPSession.cs" />
+    <Compile Include="Session\TokenManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
