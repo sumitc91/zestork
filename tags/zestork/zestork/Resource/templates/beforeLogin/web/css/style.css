@@ -45,16 +45,16 @@ img{max-width:100%;}
 	-ms-transition:all .2s linear;
  }
  .header_top{
- 	 background:#232322;
- 	 border-bottom: 2px solid #C83939;
+ 	 background:#368EE0;
+ 	 border-bottom: 2px solid #FA5072;
  }
  .logo{
 	float:left;
-	padding:16px 0;
+	padding: 0;
  }
   .menu{
 	 float:right;
-	 margin:40px 0;
+	 margin:17px 0;
  }
   .menu li{
 	 float:left;
@@ -160,7 +160,7 @@ img{max-width:100%;}
 	-o-box-shadow: 0px 0px 10px rgba(119, 119, 119, 0.25);
 	display: inline-block;
 	padding: 15px;
-	background:#C83939;
+	background:#368EE0;
 	cursor:pointer;
 	transition: 0.5s ease;
 	-moz-transition: 0.5s ease;
@@ -169,6 +169,52 @@ img{max-width:100%;}
 }
 .grid_icon:hover{
    background:#232322;
+}
+
+.grid_icon_work{
+	border-radius:4em;
+	-webkit-border-radius:4em;
+	-moz-border-radius:4em;
+	-o-border-radius:4em;
+	border: 5px solid #FFF;
+	box-shadow: 0px 0px 10px rgba(119, 119, 119, 0.25);
+	-webkit-box-shadow: 0px 0px 10px rgba(119, 119, 119, 0.25);
+	-moz-box-shadow: 0px 0px 10px rgba(119, 119, 119, 0.25);
+	-o-box-shadow: 0px 0px 10px rgba(119, 119, 119, 0.25);
+	display: inline-block;
+	padding: 15px;
+	background:#40BF40;
+	cursor:pointer;
+	transition: 0.5s ease;
+	-moz-transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	-webkit-transition: 0.5s ease;
+}
+.grid_icon_work:hover{
+   background:#FA5072;
+}
+
+.grid_icon_hire{
+	border-radius:4em;
+	-webkit-border-radius:4em;
+	-moz-border-radius:4em;
+	-o-border-radius:4em;
+	border: 5px solid #FFF;
+	box-shadow: 0px 0px 10px rgba(119, 119, 119, 0.25);
+	-webkit-box-shadow: 0px 0px 10px rgba(119, 119, 119, 0.25);
+	-moz-box-shadow: 0px 0px 10px rgba(119, 119, 119, 0.25);
+	-o-box-shadow: 0px 0px 10px rgba(119, 119, 119, 0.25);
+	display: inline-block;
+	padding: 15px;
+	background:#368EE0;
+	cursor:pointer;
+	transition: 0.5s ease;
+	-moz-transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	-webkit-transition: 0.5s ease;
+}
+.grid_icon_hire:hover{
+   background:#FA5072;
 }
 .images_1_of_3  h3{
 	font-family: 'ambleregular';
@@ -184,7 +230,7 @@ img{max-width:100%;}
 	padding: 10px 0px;
 }
 .content_bottom{
-	background:#232322;
+	background:#FDFDFC;
 }
  .section {
 	clear: both;
@@ -308,7 +354,7 @@ img{max-width:100%;}
 /********** Footer **********/
 .footer{
 	padding:20px 0;
-	background:#C83939;
+	background:#FA5072;
  }
 .footer p{
 	font-size:1.2em;
@@ -329,7 +375,7 @@ img{max-width:100%;}
  }
 .copy-right{
 	padding:20px 0;
-	background:#232322;
+	background:#313640;
  }
  .copy-right p{
 	font-size:0.85em;
