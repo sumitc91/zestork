@@ -7,6 +7,7 @@ ZestorkApp.config(function ($routeProvider) {
                    when("/services", { templateUrl: "../../Resource/templates/beforeLogin/contentView/services.html" }).
                    when("/about", { templateUrl: "../../Resource/templates/beforeLogin/contentView/about.html" }).
                    when("/404", { templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" }).
+                   when("/contact", { templateUrl: "../../Resource/templates/beforeLogin/contentView/contact.html" }).
                    otherwise({ templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" });
 
 });

@@ -17,6 +17,7 @@ namespace zestork.Controllers
         public ActionResult Index()
         {
             logger.Info("Home-Index");
+            
             return View();
         }
 
