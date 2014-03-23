@@ -37,7 +37,7 @@ ZestorkApp.controller('beforeLoginHeaderController', function ($scope) {
     $scope.beforeLoginHeaderInfo = {
 
         logoUrl: "../../Resource/templates/beforeLogin/web/index.html",
-        logoImage: "../../Resource/templates/beforeLogin/web/images/logo.png"
+        logoImage: "../../Resource/templates/afterLogin/web/img/logo.png"
     };
 
     $scope.showBeforeLoginMenuTab = false;

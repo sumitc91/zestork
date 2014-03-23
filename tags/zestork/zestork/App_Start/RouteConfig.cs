@@ -18,6 +18,12 @@ namespace zestork
                 url: "",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute("UserDetails",
+                "{id}/{controller}/{action}",
+                new { controller = "User", action = "index" }
+
+                );
         }
     }
 }
