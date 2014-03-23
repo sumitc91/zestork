@@ -53,7 +53,7 @@ img{max-width:100%;}
  }
   .menu{
 	 float:right;
-	 margin:17px 0;
+	 margin:8px 0;
  }
   .menu li{
 	 float:left;
@@ -104,7 +104,11 @@ img{max-width:100%;}
   }
 /******************** Main ***********/
 .icon_grids{
-	background:#FFFFFF;
+	background:#EEEDED;
+}
+
+.icon_grids_signup {
+    background: #FFFFFF;
 }
 /*  GRID OF THREE   ============================================================================= */
 .section {
