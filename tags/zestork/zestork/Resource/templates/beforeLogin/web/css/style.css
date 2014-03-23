@@ -45,8 +45,7 @@ img{max-width:100%;}
 	-ms-transition:all .2s linear;
  }
  .header_top{
- 	 background:#368EE0;
- 	 border-bottom: 2px solid #FA5072;
+ 	 background:#368EE0; 	 
  }
  .logo{
 	float:left;
