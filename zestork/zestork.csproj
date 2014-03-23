@@ -1272,7 +1272,7 @@
     <Content Include="Resource\templates\afterLogin\tables-large.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\404.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\about.html" />
-    <Content Include="Resource\templates\beforeLogin\contentView\contact.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\signup.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\home.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\services.html" />
     <Content Include="Resource\templates\beforeLogin\web\404.html" />
