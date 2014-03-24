@@ -131,7 +131,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\app\afterLogin\afterLoginApp.js" />
-    <Content Include="Content\app\beforeLogin\aboutTemplate.js" />
+    <Content Include="Content\app\beforeLogin\signUpTemplate.js" />
     <Content Include="Content\app\beforeLogin\serviceTemplate.js" />
     <Content Include="Content\app\beforeLogin\homeTemplate.js" />
     <Content Include="Content\app\beforeLogin\beforeLoginApp.js" />

@@ -67,7 +67,7 @@
   	 <div class="header_top">
 	        <div class="wrap">		
 		 		<div class="logo">
-						<a href="{{beforeLoginHeaderInfo.logoUrl}}"><img src="{{beforeLoginHeaderInfo.logoImage}}" alt="" /></a>                        	  
+						<a href="{{beforeLoginHeaderInfo.logoUrl}}" ng-click="beforeLoginLogoClick()"><img src="{{beforeLoginHeaderInfo.logoImage}}" alt="" /></a>                        	  
 					</div>	
 					 <div class="menu">
 					    <ul>
@@ -75,7 +75,10 @@
                                 <a href={{tabData.tabUrl}}>{{tabData.tabName}}</a>
                             </li>
 							<li>
-								<div class="openmodalbox">								
+                                <div ng-show="showLabelAlreadyRegistered">
+                                    Already Registered {{showLabelAlreadyRegistered}}
+                                </div>
+								<div class="openmodalbox" ng-show="showLoginButton">								
 									<a href="3"><button class="btn btn-primary_login">Login</button></a>
 									<div class="modalboxContent">
 										<div class="wrapper">											
@@ -155,8 +158,9 @@
 								</div>
 							</li>
 							<li>
-							<div>								
-									<a href="#/signup"><button class="btn btn-success">Signup</button></a>									
+							
+                                <div ng-show="showSignUpButton">								
+								<a href="#/signup"><button ng-click="signUpClick()" class="btn btn-success">Signup</button></a>									
 								</div>
 							</li>					                            
 							<div class="clear"></div>
