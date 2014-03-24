@@ -1,6 +1,5 @@
 
 var ZestorkApp = angular.module('ZestorkApp', []);
-
 ZestorkApp.config(function ($routeProvider) {
 
     $routeProvider.when("/", { templateUrl: "../../Resource/templates/beforeLogin/contentView/home.html" }).
@@ -36,12 +35,22 @@ ZestorkApp.controller('beforeLoginHeaderController', function ($scope) {
 
     $scope.beforeLoginHeaderInfo = {
 
-        logoUrl: "../../Resource/templates/beforeLogin/web/index.html",
+        logoUrl: "#/",
         logoImage: "../../Resource/templates/afterLogin/web/img/logo.png"
     };
 
     $scope.showBeforeLoginMenuTab = false;
-
+    $scope.showLoginButton = true;
+    $scope.showSignUpButton = true;
+    $scope.showLabelAlreadyRegistered = false;
+    $scope.signUpClick = function () {
+        $scope.showSignUpButton = false;
+        $scope.showLabelAlreadyRegistered = true;
+    };
+    $scope.beforeLoginLogoClick = function () {
+        $scope.showSignUpButton = true;
+        $scope.showLabelAlreadyRegistered = false;
+    };
     $scope.beforeLoginMenuTab = [
           { tabName: "Home", tabUrl: "#/" },
           { tabName: "About", tabUrl: "#/about" },

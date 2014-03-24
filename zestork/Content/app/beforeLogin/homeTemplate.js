@@ -1,6 +1,7 @@
 ZestorkApp.controller('homeTemplate', function ($scope) {
 
     NProgress.start();
+    
     $scope.dataLoaded = {
         status: true
     }
