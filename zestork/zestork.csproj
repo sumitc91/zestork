@@ -1279,7 +1279,7 @@
     <Content Include="Resource\templates\beforeLogin\contentView\about.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\signup.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\home.html" />
-    <Content Include="Resource\templates\beforeLogin\contentView\services.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\signupuser.html" />
     <Content Include="Resource\templates\beforeLogin\web\404.html" />
     <Content Include="Resource\templates\beforeLogin\web\about.html" />
     <Content Include="Resource\templates\beforeLogin\web\contact.html" />

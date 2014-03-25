@@ -15,19 +15,19 @@ ZestorkApp.controller('homeTemplate', function ($scope) {
           { ImageAlt: "slider4", ImageUrl: "../../Resource/templates/beforeLogin/web/images/slider4.jpg" },
         ];
 
-    $scope.gridIconDataList = [
-          { ImageLink: "../../Resource/templates/beforeLogin/web/about.html",
-              ImageIconUrl: "../../Resource/templates/beforeLogin/web/images/g1.png",
-              Headline: "I will do it",
-              Content: "Enthusiastic peoples want to work in their leisure time",
-              BottomButtonUrl: "../../Resource/templates/beforeLogin/web/about.html",
-              BottomButtonText: "Read More"
-          },
+    $scope.gridIconDataList = [          
           { ImageLink: "../../Resource/templates/beforeLogin/web/services.html",
               ImageIconUrl: "../../Resource/templates/beforeLogin/web/images/g2.png",
               Headline: "I need it done",
-              Content: "Have a work. let it be done.",
+              Content: "Want to hire? Post a job!",
               BottomButtonUrl: "../../Resource/templates/beforeLogin/web/about.html",
+              BottomButtonText: "Read More"
+          },
+          { ImageLink: "#/signup/user",
+              ImageIconUrl: "../../Resource/templates/beforeLogin/web/images/g1.png",
+              Headline: "I will do it",
+              Content: "Want to work? Sign up!",
+              BottomButtonUrl: "#/signup/user",
               BottomButtonText: "Read More"
           }
 //          ,
