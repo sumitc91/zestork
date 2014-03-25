@@ -4,7 +4,7 @@ var ZestorkApp = angular.module('ZestorkApp', []);
 ZestorkApp.config(function ($routeProvider) {
 
     $routeProvider.when("/", { templateUrl: "../../Resource/templates/beforeLogin/contentView/home.html" }).
-                   when("/services", { templateUrl: "../../Resource/templates/beforeLogin/contentView/services.html" }).
+                   when("/signup/user", { templateUrl: "../../Resource/templates/beforeLogin/contentView/signupuser.html" }).
                    when("/about", { templateUrl: "../../Resource/templates/beforeLogin/contentView/about.html" }).
                    when("/404", { templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" }).
                    when("/signup", { templateUrl: "../../Resource/templates/beforeLogin/contentView/signup.html" }).
