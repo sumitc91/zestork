@@ -59,15 +59,14 @@
 
 		<link href="../../Content/css/responsiveTransparentButton.css" rel='stylesheet' />
 		<link href="../../Content/css/nprogress.css" rel='stylesheet' />
-		<script src='../../Content/js/nprogress.js'></script>
-
+		<script src='../../Content/js/nprogress.js'></script>		
   </head>
 <body ng-controller="beforeLoginHeaderController" ng-cloak>
   <div class="header">
   	 <div class="header_top">
 	        <div class="wrap">		
 		 		<div class="logo">
-						<a href="{{beforeLoginHeaderInfo.logoUrl}}" ng-click="beforeLoginLogoClick()"><img src="{{beforeLoginHeaderInfo.logoImage}}" alt="" /></a>                        	  
+						<a href="{{beforeLoginHeaderInfo.logoUrl}}"><img src="{{beforeLoginHeaderInfo.logoImage}}" alt="" /></a>                        	  
 					</div>	
 					 <div class="menu">
 					    <ul>
@@ -160,7 +159,7 @@
 							<li>
 							
                                 <div ng-show="showSignUpButton">								
-								<a href="#/signup"><button ng-click="signUpClick()" class="btn btn-success">Signup</button></a>									
+								<a href="#/signup"><button class="btn btn-success">Signup</button></a>									
 								</div>
 							</li>					                            
 							<div class="clear"></div>
@@ -172,8 +171,7 @@
   	</div>		
       
       <div ng-view></div>
-
-      
+	
      <div class="copy-right">
 			<div class="wrap">
 			     <p>{{beforeLoginFooterCopyRightInfo.companyName}} © All Rights Reserved | Design by  <a href={{beforeLoginFooterCopyRightInfo.designedByUrl}}>{{beforeLoginFooterCopyRightInfo.designedByText}}</a></p>
