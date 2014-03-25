@@ -147,7 +147,9 @@ namespace zestork.Models
         /// <param name="password">Initial value of the Password property.</param>
         /// <param name="isActive">Initial value of the isActive property.</param>
         /// <param name="type">Initial value of the Type property.</param>
-        public static Users CreateUsers(global::System.Int32 id, global::System.String username, global::System.String password, global::System.String isActive, global::System.String type)
+        /// <param name="source">Initial value of the Source property.</param>
+        /// <param name="uid">Initial value of the Uid property.</param>
+        public static Users CreateUsers(global::System.Int32 id, global::System.String username, global::System.String password, global::System.String isActive, global::System.String type, global::System.String source, global::System.String uid)
         {
             Users users = new Users();
             users.Id = id;
@@ -155,6 +157,8 @@ namespace zestork.Models
             users.Password = password;
             users.isActive = isActive;
             users.Type = type;
+            users.Source = source;
+            users.Uid = uid;
             return users;
         }
 
@@ -283,6 +287,54 @@ namespace zestork.Models
         private global::System.String _Type;
         partial void OnTypeChanging(global::System.String value);
         partial void OnTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Source
+        {
+            get
+            {
+                return _Source;
+            }
+            set
+            {
+                OnSourceChanging(value);
+                ReportPropertyChanging("Source");
+                _Source = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Source");
+                OnSourceChanged();
+            }
+        }
+        private global::System.String _Source;
+        partial void OnSourceChanging(global::System.String value);
+        partial void OnSourceChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Uid
+        {
+            get
+            {
+                return _Uid;
+            }
+            set
+            {
+                OnUidChanging(value);
+                ReportPropertyChanging("Uid");
+                _Uid = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Uid");
+                OnUidChanged();
+            }
+        }
+        private global::System.String _Uid;
+        partial void OnUidChanging(global::System.String value);
+        partial void OnUidChanged();
 
         #endregion
     
