@@ -1,5 +1,6 @@
 
 var ZestorkApp = angular.module('ZestorkApp', []);
+
 ZestorkApp.config(function ($routeProvider) {
 
     $routeProvider.when("/", { templateUrl: "../../Resource/templates/beforeLogin/contentView/home.html" }).
@@ -9,6 +10,30 @@ ZestorkApp.config(function ($routeProvider) {
                    when("/signup", { templateUrl: "../../Resource/templates/beforeLogin/contentView/signup.html" }).
                    otherwise({ templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" });
 
+});
+
+ZestorkApp.run(function ($rootScope, $location) { //Insert in the function definition the dependencies you need.
+    //Do your $on in here, like this:
+    $rootScope.showSignUpButton = true; //global variable
+    $rootScope.showLabelAlreadyRegistered = false; //global variable
+
+    $rootScope.$on("$locationChangeStart",function(event, next, current){
+        //Do your things        
+        //var path = $location.path();        
+        var path = next.split('#');
+        var contextPath = path[1]; 
+        if(contextPath=="/signup")
+        {
+            $rootScope.showSignUpButton = false;
+            $rootScope.showLabelAlreadyRegistered = true;
+        }
+        else
+        {
+            $rootScope.showSignUpButton = true;
+            $rootScope.showLabelAlreadyRegistered = false;
+        }
+        
+    });
 });
 
 ZestorkApp.controller('myController', function ($scope) {
@@ -30,7 +55,7 @@ ZestorkApp.controller('loginControllerPlaceHolders', function ($scope) {
 
 });
 
-ZestorkApp.controller('beforeLoginHeaderController', function ($scope) {
+ZestorkApp.controller('beforeLoginHeaderController', function ($scope, $route, $routeParams, $location) {
 
 
     $scope.beforeLoginHeaderInfo = {
@@ -39,18 +64,10 @@ ZestorkApp.controller('beforeLoginHeaderController', function ($scope) {
         logoImage: "../../Resource/templates/afterLogin/web/img/logo.png"
     };
 
+
     $scope.showBeforeLoginMenuTab = false;
-    $scope.showLoginButton = true;
-    $scope.showSignUpButton = true;
-    $scope.showLabelAlreadyRegistered = false;
-    $scope.signUpClick = function () {
-        $scope.showSignUpButton = false;
-        $scope.showLabelAlreadyRegistered = true;
-    };
-    $scope.beforeLoginLogoClick = function () {
-        $scope.showSignUpButton = true;
-        $scope.showLabelAlreadyRegistered = false;
-    };
+    $scope.showLoginButton = true;   
+    
     $scope.beforeLoginMenuTab = [
           { tabName: "Home", tabUrl: "#/" },
           { tabName: "About", tabUrl: "#/about" },
