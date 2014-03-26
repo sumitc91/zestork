@@ -112,3 +112,22 @@
 [2014-03-26 16:55:13] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
 [2014-03-26 16:55:35] [INFO] [zestork.CommonMethods.dbContextException:25] - Entity of type "Users" in state "Added" has the following validation errors:
 [2014-03-26 16:55:35] [INFO] [zestork.CommonMethods.dbContextException:25] - - Property: "Password", Error: "The Password field is required."
+[2014-03-26 17:09:13] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 17:10:12] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
+[2014-03-26 17:14:13] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 17:18:35] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 17:19:10] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
+[2014-03-26 17:22:27] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 17:22:36] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 17:22:54] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
+[2014-03-26 17:23:01] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
+[2014-03-26 17:23:09] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 17:23:37] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
+[2014-03-26 17:28:11] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 17:28:37] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
+[2014-03-26 17:30:08] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 17:30:55] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
+[2014-03-26 17:37:25] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 17:37:37] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 17:38:04] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
+[2014-03-26 17:38:13] [INFO] [zestork.Controllers.AccountController:25] - new account creation request

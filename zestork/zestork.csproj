@@ -221,6 +221,18 @@
     <Content Include="Content\third-party\bootstrap-modal-master\js\bootstrap-modal.js" />
     <Content Include="Content\third-party\bootstrap-modal-master\js\bootstrap-modalmanager.js" />
     <Content Include="Content\third-party\bootstrap-modal-master\modal_ajax_test.html" />
+    <Content Include="Content\third-party\humane-js-master\humane.js" />
+    <Content Include="Content\third-party\humane-js-master\humane.min.js" />
+    <Content Include="Content\third-party\humane-js-master\index.html" />
+    <Content Include="Content\third-party\humane-js-master\test\issue23.html" />
+    <Content Include="Content\third-party\humane-js-master\test\issue36.html" />
+    <Content Include="Content\third-party\humane-js-master\test\issue38.html" />
+    <Content Include="Content\third-party\humane-js-master\test\issue49.html" />
+    <Content Include="Content\third-party\humane-js-master\themes\bigbox.css" />
+    <Content Include="Content\third-party\humane-js-master\themes\boldlight.css" />
+    <Content Include="Content\third-party\humane-js-master\themes\jackedup.css" />
+    <Content Include="Content\third-party\humane-js-master\themes\libnotify.css" />
+    <Content Include="Content\third-party\humane-js-master\themes\original.css" />
     <Content Include="Content\third-party\jquery.modalbox-1.5.0\css\jquery.modalbox-basic.css" />
     <Content Include="Content\third-party\jquery.modalbox-1.5.0\css\jquery.modalbox-skin-default.css" />
     <Content Include="Content\third-party\jquery.modalbox-1.5.0\css\jquery.modalbox-skin-precious-white.css" />
@@ -1488,6 +1500,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Zestork.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Content\third-party\humane-js-master\.gitignore" />
+    <None Include="Content\third-party\humane-js-master\bower.json" />
+    <None Include="Content\third-party\humane-js-master\changelog.md" />
+    <None Include="Content\third-party\humane-js-master\Makefile" />
+    <None Include="Content\third-party\humane-js-master\package.json" />
+    <None Include="Content\third-party\humane-js-master\readme.md" />
+    <None Include="Content\third-party\humane-js-master\theme-src\bigbox.styl" />
+    <None Include="Content\third-party\humane-js-master\theme-src\boldlight.styl" />
+    <None Include="Content\third-party\humane-js-master\theme-src\jackedup.styl" />
+    <None Include="Content\third-party\humane-js-master\theme-src\libnotify.styl" />
+    <None Include="Content\third-party\humane-js-master\theme-src\original.styl" />
     <None Include="Models\ZestorkModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ZestorkModel.Context.cs</LastGenOutput>

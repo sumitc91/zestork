@@ -67,8 +67,8 @@ namespace zestork.Controllers
                 throw;
             }
 
-            Users User = _db.Users.SingleOrDefault(x => x.Username == req.userName);
-            ValidateUserKey key = _db.ValidateUserKeys.SingleOrDefault(x => x.Username == req.userName);
+            //Users User = _db.Users.SingleOrDefault(x => x.Username == req.userName);
+            //ValidateUserKey key = _db.ValidateUserKeys.SingleOrDefault(x => x.Username == req.userName);
 
             return Json(new { code="200",msg="successfully created account" });
         }
