@@ -9,6 +9,7 @@ using System.Reflection;
 using Newtonsoft.Json;
 using zestork.Models;
 using System.Data.Entity.Validation;
+using zestork.CommonMethods;
 
 namespace zestork.Controllers
 {
@@ -17,12 +18,8 @@ namespace zestork.Controllers
         //
         // GET: /Account/
         private ILogger logger = new Logger(Convert.ToString(MethodBase.GetCurrentMethod().DeclaringType));
+        private dbContextException dbContextException = new dbContextException();
        
-        //public AccountController(ZestorkContainer ZestorkContainer)
-        //{
-        //    _db = ZestorkContainer;
-        //}
-
         public ActionResult Index()
         {
             return View();
@@ -66,16 +63,12 @@ namespace zestork.Controllers
             }
             catch (DbEntityValidationException e)
             {
-                foreach (var eve in e.EntityValidationErrors)
-                {
-                    logger.Info("Entity of type \"" + eve.Entry.Entity.GetType().Name + "\" in state \"" + eve.Entry.State + "\" has the following validation errors:");
-                    foreach (var ve in eve.ValidationErrors)
-                    {
-                        logger.Info("- Property: \"" + ve.PropertyName + "\", Error: \"" + ve.ErrorMessage + "\"");
-                    }
-                }
+                dbContextException.logDbContextException(e);
                 throw;
             }
+
+            Users User = _db.Users.SingleOrDefault(x => x.Username == req.userName);
+            ValidateUserKey key = _db.ValidateUserKeys.SingleOrDefault(x => x.Username == req.userName);
 
             return Json(new { code="200",msg="successfully created account" });
         }

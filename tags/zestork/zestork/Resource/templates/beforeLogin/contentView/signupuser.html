@@ -49,7 +49,20 @@
                                             <div ng-cloak>{{userName}}</div>
 										</div>
 									</div>
-
+                                    <div class="control-group">
+										<label for="pwfield" class="control-label">Password</label>
+										<div class="controls">
+											<input type="password" ng-model="password" name="pwfield" id="pwfield" class="input-xlarge" data-rule-required="true">
+                                            <div ng-cloak>{{password}}</div>
+										</div>
+									</div>
+									<div class="control-group">
+										<label for="confirmfield" class="control-label">Confirm password</label>
+										<div class="controls">
+											<input type="password" ng-model="confirmPassword" name="confirmfield" id="confirmfield" class="input-xlarge" data-rule-equalTo="#pwfield" data-rule-required="true">
+                                            <div ng-cloak>{{confirmPassword}}</div>
+										</div>
+									</div>
 									<div class="control-group">
 										<label for="textfield" class="control-label">First Name</label>
 										<div class="controls">
@@ -65,20 +78,6 @@
 										</div>
 									</div>                                    
 									
-									<div class="control-group">
-										<label for="pwfield" class="control-label">Password</label>
-										<div class="controls">
-											<input type="password" ng-model="password" name="pwfield" id="pwfield" class="input-xlarge" data-rule-required="true">
-                                            <div ng-cloak>{{password}}</div>
-										</div>
-									</div>
-									<div class="control-group">
-										<label for="confirmfield" class="control-label">Confirm password</label>
-										<div class="controls">
-											<input type="password" ng-model="confirmPassword" name="confirmfield" id="confirmfield" class="input-xlarge" data-rule-equalTo="#pwfield" data-rule-required="true">
-                                            <div ng-cloak>{{confirmPassword}}</div>
-										</div>
-									</div>
 									<div class="control-group">
 										<label for="policy" class="control-label">Agree our policy</label>
 										<div class="controls">
