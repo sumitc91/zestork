@@ -8,10 +8,6 @@
   <EntityContainer Name="ZestorkStoreContainer">
     <EntitySet Name="Users" EntityType="Zestork.Store.Users" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ValidateUserKeys" EntityType="Zestork.Store.ValidateUserKeys" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="UsersValidateUserKey" Association="Zestork.Store.UsersValidateUserKey">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="ValidateUserKey" EntitySet="ValidateUserKeys" />
-    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Users">
     <Key>
@@ -32,20 +28,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
     <Property Name="guid" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="UsersId" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="UsersValidateUserKey">
-    <End Role="Users" Type="Zestork.Store.Users" Multiplicity="1" />
-    <End Role="ValidateUserKey" Type="Zestork.Store.ValidateUserKeys" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Users">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ValidateUserKey">
-        <PropertyRef Name="UsersId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -53,10 +36,6 @@
         <EntityContainer Name="ZestorkContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Users" EntityType="Zestork.Users" />
           <EntitySet Name="ValidateUserKeys" EntityType="Zestork.ValidateUserKey" />
-          <AssociationSet Name="UsersValidateUserKey" Association="Zestork.UsersValidateUserKey">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="ValidateUserKey" EntitySet="ValidateUserKeys" />
-          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Users">
           <Key>
@@ -69,7 +48,6 @@
           <Property Type="String" Name="Type" Nullable="false" />
           <Property Type="String" Name="Source" Nullable="false" />
           <Property Type="String" Name="Uid" Nullable="false" />
-          <NavigationProperty Name="ValidateUserKeys" Relationship="Zestork.UsersValidateUserKey" FromRole="Users" ToRole="ValidateUserKey" />
         </EntityType>
         <EntityType Name="ValidateUserKey">
           <Key>
@@ -78,21 +56,7 @@
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Username" Nullable="false" />
           <Property Type="String" Name="guid" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="Zestork.UsersValidateUserKey" FromRole="ValidateUserKey" ToRole="Users" />
-          <Property Type="Int32" Name="UsersId" Nullable="false" />
         </EntityType>
-        <Association Name="UsersValidateUserKey">
-          <End Type="Zestork.Users" Role="Users" Multiplicity="1" />
-          <End Type="Zestork.ValidateUserKey" Role="ValidateUserKey" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ValidateUserKey">
-              <PropertyRef Name="UsersId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -118,7 +82,6 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="guid" ColumnName="guid" />
-          <ScalarProperty Name="UsersId" ColumnName="UsersId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -142,12 +105,8 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram Name="Zestork" >
-        <EntityTypeShape EntityType="Zestork.Users" Width="1.5" PointX="3.875" PointY="1.25" Height="2.5571907552083331" />
-        <EntityTypeShape EntityType="Zestork.ValidateUserKey" Width="1.5" PointX="1.625" PointY="1.25" Height="1.787985026041667" />
-        <AssociationConnector Association="Zestork.UsersValidateUserKey">
-          <ConnectorPoint PointX="3.875" PointY="2.2401432291666667" />
-          <ConnectorPoint PointX="3.125" PointY="2.2401432291666667" />
-        </AssociationConnector>
+        <EntityTypeShape EntityType="Zestork.Users" Width="1.5" PointX="3.875" PointY="1.25" Height="2.3848893229166666" />
+        <EntityTypeShape EntityType="Zestork.ValidateUserKey" Width="1.5" PointX="1.625" PointY="1.25" Height="1.59568359375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

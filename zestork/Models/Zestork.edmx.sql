@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 03/26/2014 12:30:35
+-- Date Created: 03/26/2014 16:24:24
 -- Generated from EDMX file: F:\pcongo\tags\zestork\zestork\Models\Zestork.edmx
 -- --------------------------------------------------
 
@@ -17,9 +17,6 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_UsersValidateUserKey]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ValidateUserKeys] DROP CONSTRAINT [FK_UsersValidateUserKey];
-GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -52,8 +49,7 @@ GO
 CREATE TABLE [dbo].[ValidateUserKeys] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Username] nvarchar(max)  NOT NULL,
-    [guid] nvarchar(max)  NOT NULL,
-    [UsersId] int  NOT NULL
+    [guid] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -76,20 +72,6 @@ GO
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
-
--- Creating foreign key on [UsersId] in table 'ValidateUserKeys'
-ALTER TABLE [dbo].[ValidateUserKeys]
-ADD CONSTRAINT [FK_UsersValidateUserKey]
-    FOREIGN KEY ([UsersId])
-    REFERENCES [dbo].[Users]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_UsersValidateUserKey'
-CREATE INDEX [IX_FK_UsersValidateUserKey]
-ON [dbo].[ValidateUserKeys]
-    ([UsersId]);
-GO
 
 -- --------------------------------------------------
 -- Script has ended
