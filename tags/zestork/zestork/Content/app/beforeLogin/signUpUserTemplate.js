@@ -23,16 +23,7 @@ ZestorkApp.controller('signUpUserController', function ($scope, $http) {
             type: $scope.type
         }
 
-        //        <option selected="">libnotify</option>
-        //        <option>bigbox</option>
-        //        <option>boldlight</option>
-        //        <option>jackedup</option>
-        //        <option>original</option>
-        //        <option>flatty</option>
-
-        humane.timeout = 30000;
-        humane.baseCls = "humane-boldlight";
-        humane.log("Please wait While Creating your Account....");
+        $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Creating your account...</h1>' }); 
 
         $http({
             url: '/Account/CreateAccount',
@@ -41,16 +32,14 @@ ZestorkApp.controller('signUpUserController', function ($scope, $http) {
             headers: { 'Content-Type': 'application/json' }
         }).success(function (data, status, headers, config) {
             //$scope.persons = data; // assign  $scope.persons here as promise is resolved here
-            humane.remove(function () { });
+            $.unblockUI();
             if (data.code == "200") {
-                humane.timeout = 2000;
-                humane.baseCls = "humane-bigbox";
-                humane.log("Account Successfully Created.");
+                
+                alert("Account Successfully Created.");
             }
             else if (data.code == "402") {
-                humane.timeout = 2000;
-                humane.baseCls = "humane-bigbox";
-                humane.log($scope.userName + "  Already Exists.");
+               
+               alert("Account already exists.");
             }            
             console.log(data);
         }).error(function (data, status, headers, config) {
