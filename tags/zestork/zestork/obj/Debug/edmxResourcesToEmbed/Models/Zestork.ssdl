@@ -17,6 +17,8 @@
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
     <Property Name="isActive" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Source" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Uid" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="ValidateUserKeys">
     <Key>
@@ -25,7 +27,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
     <Property Name="guid" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="User_Id" Type="int" Nullable="false" />
+    <Property Name="UsersId" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="UsersValidateUserKey">
     <End Role="Users" Type="Zestork.Store.Users" Multiplicity="1" />
@@ -35,7 +37,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="ValidateUserKey">
-        <PropertyRef Name="User_Id" />
+        <PropertyRef Name="UsersId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

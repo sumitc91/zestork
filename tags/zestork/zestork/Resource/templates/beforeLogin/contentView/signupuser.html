@@ -28,7 +28,7 @@
 	<!-- Just for demonstration -->
 	<script src="../../Resource/templates/afterLogin/web/js/demonstration.min.js"></script>
 
-  <div class="container-fluid">
+  <div class="container-fluid" ng-controller="signUpUserController">
 				
 				<div class="row-fluid">
 					<div class="span12">
@@ -40,38 +40,43 @@
 								</h3>
 							</div>
 							<div class="box-content">
-								<form action="#" method="POST" class='form-horizontal form-validate' id="bb">
+								<form ng-submit="submitCreateAccountData()" class='form-horizontal form-validate' id="bb">
                                     <div class="control-group">
 										<label for="emailfield" class="control-label">Email</label>
 										<div class="controls">
-											<input type="text" name="emailfield" id="emailfield" class="input-xlarge" data-rule-email="true" data-rule-required="true">
+											<input type="text" ng-model="userName" name="emailfield" id="emailfield" class="input-xlarge" data-rule-email="true" data-rule-required="true">
                                             <a class="btn add-on username-check-force" href="#"><i class="icon-refresh"></i></a>
+                                            <div ng-cloak>{{userName}}</div>
 										</div>
 									</div>
 
 									<div class="control-group">
 										<label for="textfield" class="control-label">First Name</label>
 										<div class="controls">
-											<input type="text" name="textfield" id="textfield" class="input-xlarge" data-rule-required="true" data-rule-minlength="2">
+											<input type="text" ng-model="firstName" name="textfield" id="textfield" class="input-xlarge" data-rule-required="true" data-rule-minlength="2">
+                                            <div ng-cloak>{{firstName}}</div>
 										</div>
 									</div>
                                     <div class="control-group">
 										<label for="textfield" class="control-label">Last Name</label>
 										<div class="controls">
-											<input type="text" name="textfield" id="text1" class="input-xlarge" data-rule-required="true" data-rule-minlength="2">
+											<input type="text" ng-model="lastName" name="textfield" id="text1" class="input-xlarge" data-rule-required="true" data-rule-minlength="2">
+                                            <div ng-cloak>{{lastName}}</div>
 										</div>
 									</div>                                    
 									
 									<div class="control-group">
 										<label for="pwfield" class="control-label">Password</label>
 										<div class="controls">
-											<input type="password" name="pwfield" id="pwfield" class="input-xlarge" data-rule-required="true">
+											<input type="password" ng-model="password" name="pwfield" id="pwfield" class="input-xlarge" data-rule-required="true">
+                                            <div ng-cloak>{{password}}</div>
 										</div>
 									</div>
 									<div class="control-group">
 										<label for="confirmfield" class="control-label">Confirm password</label>
 										<div class="controls">
-											<input type="password" name="confirmfield" id="confirmfield" class="input-xlarge" data-rule-equalTo="#pwfield" data-rule-required="true">
+											<input type="password" ng-model="confirmPassword" name="confirmfield" id="confirmfield" class="input-xlarge" data-rule-equalTo="#pwfield" data-rule-required="true">
+                                            <div ng-cloak>{{confirmPassword}}</div>
 										</div>
 									</div>
 									<div class="control-group">

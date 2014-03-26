@@ -120,6 +120,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -127,6 +128,7 @@
     </Compile>
     <Compile Include="Logger\ILogger.cs" />
     <Compile Include="Logger\Logger.cs" />
+    <Compile Include="Models\DataContract\CreateAccountRequest.cs" />
     <Compile Include="Models\Users.cs">
       <DependentUpon>ZestorkModel.tt</DependentUpon>
     </Compile>
@@ -164,6 +166,7 @@
       <DependentUpon>Zestork.mdf</DependentUpon>
     </Content>
     <Content Include="Content\app\afterLogin\afterLoginApp.js" />
+    <Content Include="Content\app\beforeLogin\signUpUserTemplate.js" />
     <Content Include="Content\app\beforeLogin\signUpTemplate.js" />
     <Content Include="Content\app\beforeLogin\serviceTemplate.js" />
     <Content Include="Content\app\beforeLogin\homeTemplate.js" />
@@ -1361,7 +1364,6 @@
   <ItemGroup>
     <Folder Include="DAO\" />
     <Folder Include="logs\" />
-    <Folder Include="Models\DataContract\" />
     <Folder Include="Models\DataWrapper\" />
     <Folder Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\.quarantine\" />
     <Folder Include="Resource\templates\beforeLogin\contentView\ajax\" />
