@@ -22,6 +22,8 @@
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
     <Property Name="isActive" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Source" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Uid" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="ValidateUserKeys">
     <Key>
@@ -30,7 +32,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
     <Property Name="guid" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="User_Id" Type="int" Nullable="false" />
+    <Property Name="UsersId" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="UsersValidateUserKey">
     <End Role="Users" Type="Zestork.Store.Users" Multiplicity="1" />
@@ -40,7 +42,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="ValidateUserKey">
-        <PropertyRef Name="User_Id" />
+        <PropertyRef Name="UsersId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -105,6 +107,8 @@
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="isActive" ColumnName="isActive" />
           <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -114,6 +118,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="UsersId" ColumnName="UsersId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
