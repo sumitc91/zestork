@@ -11,12 +11,12 @@ ZestorkApp.controller('signUpUserController', function ($scope, $http) {
     $scope.type = "user";
 
     $scope.submitCreateAccountData = function () {
-         
+
         var CreateAccountRequest = {
             userName: $scope.userName,
             firstName: $scope.firstName,
             lastName: $scope.lastName,
-            password: $scope.password,
+            password: $scope.confirmPassword,
             source: $scope.source,
             type: $scope.type
         }
@@ -27,7 +27,8 @@ ZestorkApp.controller('signUpUserController', function ($scope, $http) {
             data: CreateAccountRequest,
             headers: { 'Content-Type': 'application/json' }
         }).success(function (data, status, headers, config) {
-            $scope.persons = data; // assign  $scope.persons here as promise is resolved here 
+            //$scope.persons = data; // assign  $scope.persons here as promise is resolved here 
+            console.log(data);
         }).error(function (data, status, headers, config) {
             $scope.status = status;
         });

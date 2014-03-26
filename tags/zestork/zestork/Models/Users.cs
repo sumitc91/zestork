@@ -14,11 +14,6 @@ namespace zestork.Models
     
     public partial class Users
     {
-        public Users()
-        {
-            this.ValidateUserKeys = new HashSet<ValidateUserKey>();
-        }
-    
         public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
@@ -26,7 +21,5 @@ namespace zestork.Models
         public string Type { get; set; }
         public string Source { get; set; }
         public string Uid { get; set; }
-    
-        public virtual ICollection<ValidateUserKey> ValidateUserKeys { get; set; }
     }
 }

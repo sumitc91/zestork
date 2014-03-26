@@ -17,8 +17,5 @@ namespace zestork.Models
         public int Id { get; set; }
         public string Username { get; set; }
         public string guid { get; set; }
-        public int UsersId { get; set; }
-    
-        public virtual Users User { get; set; }
     }
 }
