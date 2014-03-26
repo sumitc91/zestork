@@ -22,7 +22,7 @@ ZestorkApp.run(function ($rootScope, $location) { //Insert in the function defin
         //var path = $location.path();        
         var path = next.split('#');
         var contextPath = path[1]; 
-        if(contextPath=="/signup")
+        if(contextPath=="/signup" || contextPath == "/signup/user")
         {
             $rootScope.showSignUpButton = false;
             $rootScope.showLabelAlreadyRegistered = true;

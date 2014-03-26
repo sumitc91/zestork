@@ -95,3 +95,20 @@
 [2014-03-26 16:22:55] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
 [2014-03-26 16:26:02] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
 [2014-03-26 16:26:34] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
+[2014-03-26 16:34:56] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 16:36:00] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 16:36:49] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 16:40:18] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 16:41:20] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 16:41:28] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 16:42:00] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
+[2014-03-26 16:43:02] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
+[2014-03-26 16:43:12] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
+[2014-03-26 16:44:55] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 16:45:24] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
+[2014-03-26 16:54:29] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 16:54:40] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
+[2014-03-26 16:54:56] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
+[2014-03-26 16:55:13] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
+[2014-03-26 16:55:35] [INFO] [zestork.CommonMethods.dbContextException:25] - Entity of type "Users" in state "Added" has the following validation errors:
+[2014-03-26 16:55:35] [INFO] [zestork.CommonMethods.dbContextException:25] - - Property: "Password", Error: "The Password field is required."
