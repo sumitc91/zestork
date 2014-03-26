@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Zestork.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ZestorkStoreContainer">
+    <EntitySet Name="Users" EntityType="Zestork.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ValidateUserKeys" EntityType="Zestork.Store.ValidateUserKeys" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="UsersValidateUserKey" Association="Zestork.Store.UsersValidateUserKey">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ValidateUserKey" EntitySet="ValidateUserKeys" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="isActive" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ValidateUserKeys">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="guid" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="UsersValidateUserKey">
+    <End Role="Users" Type="Zestork.Store.Users" Multiplicity="1" />
+    <End Role="ValidateUserKey" Type="Zestork.Store.ValidateUserKeys" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ValidateUserKey">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
