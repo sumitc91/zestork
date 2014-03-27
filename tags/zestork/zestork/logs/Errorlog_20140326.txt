@@ -190,3 +190,5 @@
 [2014-03-26 19:29:41] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
 [2014-03-26 20:30:52] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
 [2014-03-26 20:32:05] [INFO] [zestork.Controllers.AccountController:25] - new account creation request
+[2014-03-26 20:35:10] [INFO] [zestork.Controllers.HomeController:25] - Home-Index
+[2014-03-26 20:35:28] [INFO] [zestork.Controllers.AccountController:25] - new account creation request

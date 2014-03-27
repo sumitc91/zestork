@@ -27,11 +27,10 @@ namespace zestork.Controllers
 
         [HttpPost]
         public ActionResult CreateAccount(CreateAccountRequest req)
-        {           
-            //logger.Info("new account creation request : " + JsonConvert.SerializeObject(req));           
+        {                       
             logger.Info("new account creation request");            
             var _db = new ZestorkContainer();
-
+            String emailRetVal = String.Empty;
             //if user already exists
             if(_db.Users.Any(x=>x.Username==req.userName))
                 return Json(new { code="402",msg="User Already Exists" });
@@ -60,6 +59,8 @@ namespace zestork.Controllers
             try
             {
                 _db.SaveChanges();
+                sendAccountCreationValidationEmail sendAccountCreationValidationEmail = new sendAccountCreationValidationEmail();
+                emailRetVal = sendAccountCreationValidationEmail.sendAccountCreationValidationEmailMessage(req.userName, ID);
             }
             catch (DbEntityValidationException e)
             {

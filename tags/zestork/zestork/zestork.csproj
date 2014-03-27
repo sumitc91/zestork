@@ -121,6 +121,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonMethods\dbContextException.cs" />
+    <Compile Include="CommonMethods\sendAccountCreationValidationEmail.cs" />
+    <Compile Include="CommonMethods\sendEmail.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
