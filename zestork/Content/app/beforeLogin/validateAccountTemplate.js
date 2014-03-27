@@ -1,9 +1,9 @@
-ZestorkApp.controller('validateAccountTemplate', function ($scope,$http,$routeParams) {
+ZestorkApp.controller('validateAccountTemplate', function ($scope, $http, $routeParams,$location) {
     NProgress.start();
     $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Validating your account...</h1>' });
     var ValidateAccountRequest = {
         userName: $routeParams.userName,
-        guid: $routeParams.guid     
+        guid: $routeParams.guid
     };
     $http({
         url: '/Account/ValidateAccount',
@@ -16,11 +16,13 @@ ZestorkApp.controller('validateAccountTemplate', function ($scope,$http,$routePa
         if (data.code == "200") {
             $.blockUI({ message: '<h1>Account Successfully Validated.' });
             setTimeout($.unblockUI, 2000);
+            $location.path("");
             //alert("Account Successfully Created.");
         }
         else if (data.code == "402") {
             $.blockUI({ message: '<h1>Link Seems to be Expired' });
             setTimeout($.unblockUI, 2000);
+            $location.path("");
             //alert("Account already exists.");
         }
         console.log(data);

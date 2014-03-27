@@ -46,7 +46,10 @@
 										<div class="controls">
 											<input type="text" ng-model="userName" ng-blur="checkEmailAvailableOnFocusOut()" name="emailfield" id="emailfield" class="input-xlarge" data-rule-email="true" data-rule-required="true">
                                             <a class="btn add-on username-check-force" href="" ng-click="checkUserExists()"><i class="icon-refresh"></i></a>
-                                            <div ng-cloak>{{emailAlreadyExists}}</div>
+                                            <div ng-show="showEmailMessage" ng-cloak>
+                                                <span ng-hide="emailAlreadyExists" style='color:green'>Username Available</span>
+                                                <span ng-show="emailAlreadyExists" style="color:red">Username already taken</span>
+                                            </div>                                            
 										</div>
 									</div>
                                     <div class="control-group">
