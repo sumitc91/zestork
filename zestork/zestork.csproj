@@ -132,6 +132,7 @@
     <Compile Include="Logger\ILogger.cs" />
     <Compile Include="Logger\Logger.cs" />
     <Compile Include="Models\DataContract\CreateAccountRequest.cs" />
+    <Compile Include="Models\DataContract\ValidateAccountRequest.cs" />
     <Compile Include="Models\Users.cs">
       <DependentUpon>ZestorkModel.tt</DependentUpon>
     </Compile>
@@ -169,6 +170,7 @@
       <DependentUpon>Zestork.mdf</DependentUpon>
     </Content>
     <Content Include="Content\app\afterLogin\afterLoginApp.js" />
+    <Content Include="Content\app\beforeLogin\validateAccountTemplate.js" />
     <Content Include="Content\app\beforeLogin\signUpUserTemplate.js" />
     <Content Include="Content\app\beforeLogin\signUpTemplate.js" />
     <Content Include="Content\app\beforeLogin\serviceTemplate.js" />
@@ -1328,6 +1330,7 @@
     <Content Include="Resource\templates\afterLogin\web\tables-large.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\404.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\about.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\validateAccount.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\signup.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\home.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\signupuser.html" />

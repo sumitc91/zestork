@@ -58,9 +58,9 @@ namespace zestork.Controllers
 
             try
             {
-                _db.SaveChanges();
+                _db.SaveChanges();                
                 sendAccountCreationValidationEmail sendAccountCreationValidationEmail = new sendAccountCreationValidationEmail();
-                emailRetVal = sendAccountCreationValidationEmail.sendAccountCreationValidationEmailMessage(req.userName, ID);
+                emailRetVal = sendAccountCreationValidationEmail.sendAccountCreationValidationEmailMessage(req.userName, ID,Request);
             }
             catch (DbEntityValidationException e)
             {
@@ -72,6 +72,32 @@ namespace zestork.Controllers
             //ValidateUserKey key = _db.ValidateUserKeys.SingleOrDefault(x => x.Username == req.userName);
 
             return Json(new { code="200",msg="successfully created account" });
+        }
+
+        [HttpPost]
+        public JsonResult validateAccount(ValidateAccountRequest req)
+        {            
+            var _db = new ZestorkContainer();
+            if (_db.ValidateUserKeys.Any(x => x.Username == req.userName && x.guid == req.guid))
+            {
+                Users User = _db.Users.SingleOrDefault(x => x.Username == req.userName);
+                User.isActive = "true";
+                try
+                {
+                    _db.SaveChanges();                    
+                }
+                catch (DbEntityValidationException e)
+                {
+                    dbContextException.logDbContextException(e);
+                    throw;
+                }
+                return Json(new { code = "200", msg = "account validated successfully" });
+            }
+            else
+            {
+                return Json(new { code = "402", msg = "Link might be expired" });
+            }                        
+
         }
 
         public JsonResult showData()
