@@ -46,6 +46,8 @@ ZestorkApp.controller('signUpUserController', function ($scope, $http) {
             });
         }
         else {
+            $scope.showEmailMessage = false;
+
             //alert("invalid email");
         }
 
