@@ -34,12 +34,14 @@ ZestorkApp.controller('signUpUserController', function ($scope, $http) {
             //$scope.persons = data; // assign  $scope.persons here as promise is resolved here
             $.unblockUI();
             if (data.code == "200") {
-                
-                alert("Account Successfully Created.");
+                $.blockUI({ message: '<h1>Account Successfully Created.' });
+                setTimeout($.unblockUI, 2000);
+                //alert("Account Successfully Created.");
             }
             else if (data.code == "402") {
-               
-               alert("Account already exists.");
+                $.blockUI({ message: '<h1>Account already exists.' });
+                setTimeout($.unblockUI, 2000);
+                //alert("Account already exists.");
             }            
             console.log(data);
         }).error(function (data, status, headers, config) {
