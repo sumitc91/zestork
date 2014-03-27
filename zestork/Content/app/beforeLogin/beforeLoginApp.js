@@ -37,6 +37,17 @@ ZestorkApp.run(function ($rootScope, $location) { //Insert in the function defin
     });
 });
 
+ZestorkApp.directive('ngBlur', ['$parse', function($parse) {
+  return function(scope, element, attr) {
+    var fn = $parse(attr['ngBlur']);
+    element.bind('blur', function(event) {
+      scope.$apply(function() {
+        fn(scope, {$event:event});
+      });
+    });
+  }
+}]);
+
 ZestorkApp.controller('myController', function ($scope) {
 
     $scope.person = {

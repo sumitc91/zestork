@@ -100,6 +100,21 @@ namespace zestork.Controllers
 
         }
 
+        [HttpPost]
+        public JsonResult checkUsernameExists(ValidateAccountRequest req)
+        {
+            var _db = new ZestorkContainer();
+            if (_db.Users.Any(x => x.Username == req.userName))
+            {
+                return Json(new { code = "402", msg = "username already exists" });
+            }
+            else
+            {
+                return Json(new { code = "200", msg = "this is a new username" });                
+            }
+
+        }
+
         public JsonResult showData()
         {
             var _db = new ZestorkContainer();

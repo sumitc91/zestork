@@ -131,6 +131,7 @@
     </Compile>
     <Compile Include="Logger\ILogger.cs" />
     <Compile Include="Logger\Logger.cs" />
+    <Compile Include="Models\DataContract\checkUsernameExistsRequest.cs" />
     <Compile Include="Models\DataContract\CreateAccountRequest.cs" />
     <Compile Include="Models\DataContract\ValidateAccountRequest.cs" />
     <Compile Include="Models\Users.cs">
