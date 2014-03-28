@@ -26,13 +26,12 @@ namespace zestork.Controllers
             return View();
         }
         
-        public JsonResult Login()
+        public JsonResult Login(string id)
         {
             var userData = new LogOnModel();
             LoginService LoginService = new LoginService();
             String code = Request.QueryString["code"];
-            userData = LoginService.Login("http://" + Request.Url.Authority+"/Account/Login/", code);
-
+            userData = LoginService.Login("http://" + Request.Url.Authority + "/Account/Login/facebook/", code, id);
             return Json(userData, JsonRequestBehavior.AllowGet);
         }
         

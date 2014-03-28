@@ -12,11 +12,14 @@ namespace zestork.Service
     {
         private ILogger logger = new Logger(Convert.ToString(MethodBase.GetCurrentMethod().DeclaringType));
 
-        public LogOnModel Login(string returnUrl,string code)
+        public LogOnModel Login(string returnUrl,string code,string id)
         {
-            var model = new LogOnModel();            
-            FacebookService FacebookService = new FacebookService();
-            model = FacebookService.Login(returnUrl, code);
+            var model = new LogOnModel();
+            if (id == "facebook")
+            {
+                FacebookService FacebookService = new FacebookService();
+                model = FacebookService.Login(returnUrl, code);
+            }            
             return model;
         }
         
