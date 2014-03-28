@@ -19,6 +19,7 @@
 		<script src="../../Content/app/beforeLogin/aboutTemplate.js" type="text/javascript"></script>
 		<script src="../../Content/app/beforeLogin/signUpUserTemplate.js" type="text/javascript"></script>
 		<script src="../../Content/app/beforeLogin/validateAccountTemplate.js" type="text/javascript"></script>
+		<script src="../../Content/app/beforeLogin/signInTemplate.js" type="text/javascript"></script>
 
 		<link type="text/css" rel="stylesheet" href="../../Content/third-party/jquery.modalbox-1.5.0/css/jquery.modalbox.css" />
 		<script type="text/javascript" src="http//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -109,12 +110,12 @@
                                                             </div>
                                                         </span>
                                                         
-                                                        <span class="facebookRightAlign">
+                                                        <span class="facebookRightAlign" ng-controller="signInController">														
                                                             <div class="facebook clearfix">
                                                              <img class="layer_7" src="../../Content/css/SocialButtons/images/layer_7.png" alt="" width="8" height="17" />
                                                              <div class="sap_3"></div>
                                                              <div class="sap_4"></div>
-                                                             <a href="#"><p class="sign_in_with_facebook">Sign in with Facebook</p></a>
+                                                             <a href="/Account/Login"><p class="sign_in_with_facebook">Sign in with Facebook</p></a>
                                                             </div>
                                                         </span>
 
