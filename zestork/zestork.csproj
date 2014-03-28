@@ -1342,6 +1342,7 @@
     <Content Include="Resource\templates\afterLogin\web\tables-large.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\404.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\about.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\facebookLogin.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\validateAccount.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\signup.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\home.html" />
