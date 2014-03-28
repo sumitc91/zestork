@@ -27,5 +27,6 @@ namespace zestork.Models
     
         public DbSet<Users> Users { get; set; }
         public DbSet<ValidateUserKey> ValidateUserKeys { get; set; }
+        public DbSet<ThirdPartyLogin> ThirdPartyLogins { get; set; }
     }
 }

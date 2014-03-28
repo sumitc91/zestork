@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using zestork.Models;
 using System.Data.Entity.Validation;
 using zestork.CommonMethods;
+using zestork.Service;
 
 namespace zestork.Controllers
 {
@@ -24,6 +25,17 @@ namespace zestork.Controllers
         {
             return View();
         }
+        
+        public JsonResult Login()
+        {
+            var userData = new LogOnModel();
+            LoginService LoginService = new LoginService();
+            String code = Request.QueryString["code"];
+            userData = LoginService.Login("http://localhost:60081/Account/Login/", code);
+
+            return Json(userData.ReturnUrl, JsonRequestBehavior.AllowGet);
+        }
+        
 
         [HttpPost]
         public ActionResult CreateAccount(CreateAccountRequest req)
@@ -34,7 +46,7 @@ namespace zestork.Controllers
             //if user already exists
             if(_db.Users.Any(x=>x.Username==req.userName))
                 return Json(new { code="402",msg="User Already Exists" });
-
+            
             String ID = Guid.NewGuid().ToString();
             var user = new Users
             {
@@ -43,7 +55,10 @@ namespace zestork.Controllers
                 Source = req.source,
                 isActive = "false",
                 Type = req.type,                
-                Uid = "abcde"
+                guid = "abcde",
+                FirstName = req.firstName,
+                LastName = req.lastName,
+                ImageUrl = "imageLink"
             };
 
             _db.Users.Add(user);
@@ -117,6 +132,9 @@ namespace zestork.Controllers
 
         public JsonResult showData()
         {
+            String path = Request.Url.AbsolutePath;
+            String code = Request.QueryString["code"];
+
             var _db = new ZestorkContainer();
             Users User = _db.Users.SingleOrDefault(x=>x.Username== "sumitchourasia91@gmail.com");
             ValidateUserKey key = _db.ValidateUserKeys.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
