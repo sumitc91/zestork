@@ -31,9 +31,9 @@ namespace zestork.Controllers
             var userData = new LogOnModel();
             LoginService LoginService = new LoginService();
             String code = Request.QueryString["code"];
-            userData = LoginService.Login("http://localhost:60081/Account/Login/", code);
+            userData = LoginService.Login("http://" + Request.Url.Authority+"/Account/Login/", code);
 
-            return Json(userData.ReturnUrl, JsonRequestBehavior.AllowGet);
+            return Json(userData, JsonRequestBehavior.AllowGet);
         }
         
 
