@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 03/28/2014 12:08:02
+-- Date Created: 03/28/2014 16:51:04
 -- Generated from EDMX file: F:\pcongo\tags\zestork\zestork\Models\Zestork.edmx
 -- --------------------------------------------------
 
@@ -28,6 +28,9 @@ GO
 IF OBJECT_ID(N'[dbo].[ValidateUserKeys]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ValidateUserKeys];
 GO
+IF OBJECT_ID(N'[dbo].[ThirdPartyLogins]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ThirdPartyLogins];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -44,7 +47,8 @@ CREATE TABLE [dbo].[Users] (
     [guid] nvarchar(max)  NOT NULL,
     [FirstName] nvarchar(max)  NOT NULL,
     [LastName] nvarchar(max)  NOT NULL,
-    [ImageUrl] nvarchar(max)  NOT NULL
+    [ImageUrl] nvarchar(max)  NOT NULL,
+    [gender] nvarchar(max)  NOT NULL
 );
 GO
 

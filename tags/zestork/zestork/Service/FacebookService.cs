@@ -8,6 +8,10 @@ using System.Reflection;
 using System.Net;
 using System.IO;
 using Facebook;
+using System.Configuration;
+using zestork.Models;
+using zestork.CommonMethods;
+using System.Data.Entity.Validation;
 
 namespace zestork.Service
 {
@@ -18,17 +22,28 @@ namespace zestork.Service
         public LogOnModel Login(string returnUrl,string code)
         {
             var userData = new LogOnModel();
-            userData = checkAuthorization(returnUrl, code);
+            userData = checkFacebookAuthorization(returnUrl, code);
             return userData;
         }
 
-        private LogOnModel checkAuthorization(string returnUrl, string code)
+        private LogOnModel checkFacebookAuthorization(string returnUrl, string code)
         {
+            var _db = new ZestorkContainer();
+            string app_id = string.Empty;
+            string app_secret = string.Empty;
+            if(returnUrl.Contains("zestork.pcongo"))
+            {
+                app_id = ConfigurationManager.AppSettings["FacebookAppIDZestork"].ToString();
+                app_secret = ConfigurationManager.AppSettings["FacebookAppSecretZestork"].ToString(); 
+            }
+            else
+            {
+                app_id = ConfigurationManager.AppSettings["FacebookAppID"].ToString();
+                app_secret = ConfigurationManager.AppSettings["FacebookAppSecret"].ToString(); 
+            }
             
-            string app_id = "226108297510981";            
-            string app_secret = "8e01ee04ed1f1372310b76e6ad54e9eb";
             var userData = new LogOnModel();
-            string scope = "";
+            string scope = "email";
             if (code == null)
             {
                 userData.ReturnUrl = (string.Format(
@@ -64,17 +79,83 @@ namespace zestork.Service
                 string access_token = tokens["access_token"];
 
                 var client = new FacebookClient(access_token);
+                dynamic me = client.Get("me");                           
+                String userName = Convert.ToString(me.username);
+                userData.User = new User();
+                if (_db.Users.Any(x => x.Username == userName + "@facebook.com"))
+                {
+                    Users user = _db.Users.SingleOrDefault(x => x.Username == userName + "@facebook.com");
+                    //user is already registered
+                    userData.User.FirstName = user.FirstName;
+                    userData.User.LastName = user.LastName;
+                    userData.User.Username = user.Username;
+                    userData.User.Gender = user.gender;
+                    userData.User.ImageUrl = user.ImageUrl;
+                }
+                else
+                {
+                    // add user in database
+                    String ID = Guid.NewGuid().ToString();
+                    String ImageUrl = FacebookService.GetPictureUrl(userName);
 
-                //client.Post("/me/feed", new { message = "this is just a sample message2" });
+                    userData.User.FirstName = me.first_name;
+                    userData.User.LastName = me.last_name;
+                    userData.User.Username = me.username;
+                    userData.User.Email = me.email;
+                    userData.User.Gender = me.gender;
+                    userData.User.ImageUrl = ImageUrl;
+                    var user = new Users
+                    {
+                        Username = userName + "@facebook.com",
+                        Password = Guid.NewGuid().ToString(),
+                        Source = "facebook",
+                        isActive = "true",
+                        Type = "user",
+                        guid = "abcde",
+                        FirstName = me.first_name,
+                        LastName = me.last_name,
+                        gender = me.gender,
+                        ImageUrl = ImageUrl
+                    };
 
-                dynamic me = client.Get("me");
-                string firstName = me.first_name;
-                string lastName = me.last_name;
-                string username = me.username;
-                string gender = me.gender;
+                    _db.Users.Add(user);
+
+                    try
+                    {
+                        _db.SaveChanges();                        
+                    }
+                    catch (DbEntityValidationException e)
+                    {
+                        dbContextException dbContextException = new CommonMethods.dbContextException();
+                        dbContextException.logDbContextException(e);
+                        throw;
+                    }
+                }
+                
             }
 
             return userData;
+        }
+
+        public static string GetPictureUrl(string faceBookId)
+        {
+            WebResponse response = null;
+            string pictureUrl = string.Empty;
+            try
+            {
+                WebRequest request = WebRequest.Create(string.Format("http://graph.facebook.com/{0}/picture?type=large", faceBookId));
+                response = request.GetResponse();
+                pictureUrl = response.ResponseUri.ToString();
+            }
+            catch (Exception ex)
+            {
+                //? handle
+            }
+            finally
+            {
+                if (response != null) response.Close();
+            }
+            return pictureUrl;
         }
 
     }
