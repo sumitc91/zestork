@@ -45,7 +45,7 @@ img{max-width:100%;}
 	-ms-transition:all .2s linear;
  }
  .header_top{
- 	 background:#368EE0; 	 
+ 	 background:#085706; 	 
  }
  .logo{
 	float:left;
@@ -378,7 +378,7 @@ img{max-width:100%;}
  }
 .copy-right{
 	padding:20px 0;
-	background:#313640;
+	background:#454444;
  }
  .copy-right p{
 	font-size:0.85em;
