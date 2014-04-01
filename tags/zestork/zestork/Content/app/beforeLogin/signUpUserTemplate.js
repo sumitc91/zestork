@@ -14,6 +14,10 @@ ZestorkApp.controller('signUpUserController', function ($scope, $http) {
     $scope.type = "user";
     $scope.showEmailMessage = false;
 
+    $scope.$watch('[tncModel]', function () {
+        //alert($scope.tncModel);
+    }, true);
+
     $scope.checkEmailAvailableOnFocusOut = function () {
         var checkUserExistsRequestData = {
             userName: $scope.userName
@@ -97,38 +101,47 @@ ZestorkApp.controller('signUpUserController', function ($scope, $http) {
             source: $scope.source,
             type: $scope.type
         }
-
+        
         if ($scope.confirmPassword == $scope.password && isValidEmailAddress($scope.userName)) {
-            $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Creating your account...</h1>' });
+            if ($scope.tncModel) {
+                $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Creating your account...</h1>' });
 
-            $http({
-                url: '/Account/CreateAccount',
-                method: "POST",
-                data: CreateAccountRequest,
-                headers: { 'Content-Type': 'application/json' }
-            }).success(function (data, status, headers, config) {
-                //$scope.persons = data; // assign  $scope.persons here as promise is resolved here
-                $.unblockUI();
-                if (data.code == "200") {
-                    $.blockUI({ message: '<h1>Account Successfully Created.' });
-                    setTimeout($.unblockUI, 2000);
-                    //alert("Account Successfully Created.");
-                }
-                else if (data.code == "402") {
-                    $.blockUI({ message: '<h1>Account already exists.' });
-                    setTimeout($.unblockUI, 2000);
-                    //alert("Account already exists.");
-                }
-                console.log(data);
-            }).error(function (data, status, headers, config) {
-                $scope.status = status;
-            });
+                $http({
+                    url: '/Account/CreateAccount',
+                    method: "POST",
+                    data: CreateAccountRequest,
+                    headers: { 'Content-Type': 'application/json' }
+                }).success(function (data, status, headers, config) {
+                    //$scope.persons = data; // assign  $scope.persons here as promise is resolved here
+                    $.unblockUI();
+                    if (data.code == "200") {
+                        $.blockUI({ message: '<h1>Account Successfully Created.' });
+                        setTimeout($.unblockUI, 2000);
+                        //alert("Account Successfully Created.");
+                    }
+                    else if (data.code == "402") {
+                        $.blockUI({ message: '<h1>Account already exists.' });
+                        setTimeout($.unblockUI, 2000);
+                        //alert("Account already exists.");
+                    }
+                    console.log(data);
+                }).error(function (data, status, headers, config) {
+                    $scope.status = status;
+                });
+            }
+            else {
+                alert("Agree with terms and conditions to continue");
+            }
+            
         }
         else {
             alert("some field have invalid entries.");
             //password didn't match
         }
     }
+
+
+
 
     NProgress.done();
 });
