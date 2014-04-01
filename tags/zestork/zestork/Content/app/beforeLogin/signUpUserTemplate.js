@@ -98,8 +98,7 @@ ZestorkApp.controller('signUpUserController', function ($scope, $http) {
             type: $scope.type
         }
 
-        
-        if ($scope.confirmPassword == $scope.password) {
+        if ($scope.confirmPassword == $scope.password && isValidEmailAddress($scope.userName)) {
             $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Creating your account...</h1>' });
 
             $http({
@@ -126,7 +125,7 @@ ZestorkApp.controller('signUpUserController', function ($scope, $http) {
             });
         }
         else {
-            alert("password didn't match");
+            alert("some field have invalid entries.");
             //password didn't match
         }
     }
