@@ -1342,6 +1342,7 @@
     <Content Include="Resource\templates\afterLogin\web\tables-large.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\404.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\about.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\ajax\signInTemplate.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\facebookLogin.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\validateAccount.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\signup.html" />
@@ -1396,7 +1397,6 @@
     <Folder Include="logs\" />
     <Folder Include="Models\DataWrapper\" />
     <Folder Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\.quarantine\" />
-    <Folder Include="Resource\templates\beforeLogin\contentView\ajax\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -28,6 +28,9 @@ namespace zestork.Controllers
         
         public JsonResult Login(string id)
         {
+            string testing = Request.Url.AbsolutePath;
+            String userName = Request.Form["userName"];
+            String password = Request.Form["password"];
             var userData = new LogOnModel();
             LoginService LoginService = new LoginService();
             String code = Request.QueryString["code"];

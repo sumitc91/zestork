@@ -30,3 +30,14 @@ ZestorkApp.controller('facebookLoginController', function ($scope,$http) {
         $scope.status = status;
     });
 });
+
+ZestorkApp.controller('webLoginController', function ($scope) {
+   
+    $scope.submitLogintDataRequest = function () {
+
+     
+        alert("HI.........................");
+        
+    }
+
+});
