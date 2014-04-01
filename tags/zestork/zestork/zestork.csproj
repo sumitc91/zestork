@@ -1,0 +1,1632 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{458B83BD-29C5-4B2E-9368-E7560E277C0D}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>zestork</RootNamespace>
+    <AssemblyName>zestork</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Facebook.6.4.2\lib\net40-client\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis">
+      <HintPath>..\packages\Google.Apis.1.8.1\lib\net40\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth">
+      <HintPath>..\packages\Google.Apis.Auth.1.8.1\lib\net40\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices">
+      <HintPath>..\packages\Google.Apis.Auth.1.8.1\lib\net40\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Authentication.OAuth2">
+      <HintPath>..\packages\Google.Apis.Authentication.OAuth2.1.2.4696.27634\lib\Google.Apis.Authentication.OAuth2.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core">
+      <HintPath>..\packages\Google.Apis.Core.1.8.1\lib\portable-net4+sl4+wp71+win8\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Oauth2.v2">
+      <HintPath>..\packages\Google.Apis.Oauth2.v2.1.8.1.650\lib\portable-net4+sl4+wp71+win8\Google.Apis.Oauth2.v2.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices">
+      <HintPath>..\packages\Google.Apis.1.8.1\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.16\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.16\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.16\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.5\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=2.1.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.1.10\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.1.10\lib\net40\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.1.10\lib\net40\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.1.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.1.10\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>..\packages\Microsoft.Bcl.1.0.19\lib\net40\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.1.0.19\lib\net40\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Zlib.Portable">
+      <HintPath>..\packages\Zlib.Portable.1.9.2\lib\portable-net4+sl4+wp71+win8\Zlib.Portable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonMethods\dbContextException.cs" />
+    <Compile Include="CommonMethods\sendAccountCreationValidationEmail.cs" />
+    <Compile Include="CommonMethods\sendEmail.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Logger\ILogger.cs" />
+    <Compile Include="Logger\Logger.cs" />
+    <Compile Include="Models\DataContract\checkUsernameExistsRequest.cs" />
+    <Compile Include="Models\DataContract\CreateAccountRequest.cs" />
+    <Compile Include="Models\DataContract\googleUserDetails.cs" />
+    <Compile Include="Models\DataContract\LogOnModel.cs" />
+    <Compile Include="Models\DataContract\User.cs" />
+    <Compile Include="Models\DataContract\ValidateAccountRequest.cs" />
+    <Compile Include="Models\DataWrapper\googleAccessTokenWrapper.cs" />
+    <Compile Include="Models\ThirdPartyLogin.cs">
+      <DependentUpon>ZestorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Users.cs">
+      <DependentUpon>ZestorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ValidateUserKey.cs">
+      <DependentUpon>ZestorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Zestork.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Zestork.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ZestorkModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZestorkModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ZestorkModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZestorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerCache\ServerConfig.cs" />
+    <Compile Include="ServerCache\ServerCache.cs" />
+    <Compile Include="ServerCache\ServerCacheItem.cs" />
+    <Compile Include="Service\FacebookService.cs" />
+    <Compile Include="Service\googleService.cs" />
+    <Compile Include="Service\LoginService.cs" />
+    <Compile Include="Service\webLoginService.cs" />
+    <Compile Include="Session\CPSession.cs" />
+    <Compile Include="Session\TokenManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Data\Zestork.mdf" />
+    <Content Include="App_Data\Zestork_log.ldf">
+      <DependentUpon>Zestork.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\app\afterLogin\afterLoginApp.js" />
+    <Content Include="Content\app\beforeLogin\signInTemplate.js" />
+    <Content Include="Content\app\beforeLogin\validateAccountTemplate.js" />
+    <Content Include="Content\app\beforeLogin\signUpUserTemplate.js" />
+    <Content Include="Content\app\beforeLogin\signUpTemplate.js" />
+    <Content Include="Content\app\beforeLogin\serviceTemplate.js" />
+    <Content Include="Content\app\beforeLogin\homeTemplate.js" />
+    <Content Include="Content\app\beforeLogin\beforeLoginApp.js" />
+    <Content Include="Content\css\nprogress.css" />
+    <Content Include="Content\css\SocialButtons\images\layer_1.jpg" />
+    <Content Include="Content\css\SocialButtons\images\layer_11.png" />
+    <Content Include="Content\css\SocialButtons\images\layer_15.png" />
+    <Content Include="Content\css\SocialButtons\images\layer_17.png" />
+    <Content Include="Content\css\SocialButtons\images\layer_19.png" />
+    <Content Include="Content\css\SocialButtons\images\layer_3.png" />
+    <Content Include="Content\css\SocialButtons\images\layer_7.png" />
+    <Content Include="Content\css\SocialButtons\images\sap.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sap_2.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sap_3.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sap_4.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sep.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sep_2.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sep_3.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sep_4.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sep_5.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sep_6.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sep_7.jpg" />
+    <Content Include="Content\css\SocialButtons\images\sep_8.jpg" />
+    <Content Include="Content\css\SocialButtons\images\shape_2.png" />
+    <Content Include="Content\css\SocialButtons\images\shape_2_copy.png" />
+    <Content Include="Content\css\SocialButtons\images\shape_2_copy_2.png" />
+    <Content Include="Content\css\SocialButtons\images\shape_2_copy_3.png" />
+    <Content Include="Content\css\SocialButtons\images\shape_2_copy_4.png" />
+    <Content Include="Content\css\SocialButtons\images\shape_2_copy_5.png" />
+    <Content Include="Content\css\SocialButtons\style.css" />
+    <Content Include="Content\css\SocialButtons\unused_images\sign_in_with_facebook.png" />
+    <Content Include="Content\css\SocialButtons\unused_images\sign_in_with_google.png" />
+    <Content Include="Content\css\SocialButtons\unused_images\sign_in_with_linkedin.png" />
+    <Content Include="Content\css\SocialButtons\unused_images\sign_in_with_openid.png" />
+    <Content Include="Content\css\SocialButtons\unused_images\sign_in_with_twitter.png" />
+    <Content Include="Content\css\SocialButtons\unused_images\sign_in_with_yahoo.png" />
+    <Content Include="Content\css\responsiveTransparentButton.css" />
+    <Content Include="Content\js\jquery.blockUI.js" />
+    <Content Include="Content\js\nprogress.js" />
+    <Content Include="Content\lib\angular.js" />
+    <Content Include="Content\lib\angular.min.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\styles\bootstrap.css" />
+    <Content Include="Content\third-party\bootstrap-modal-master\bs3.html" />
+    <Content Include="Content\third-party\bootstrap-modal-master\css\bootstrap-modal-bs3patch.css" />
+    <Content Include="Content\third-party\bootstrap-modal-master\css\bootstrap-modal.css" />
+    <Content Include="Content\third-party\bootstrap-modal-master\img\ajax-loader.gif" />
+    <Content Include="Content\third-party\bootstrap-modal-master\index.html" />
+    <Content Include="Content\third-party\bootstrap-modal-master\js\bootstrap-modal.js" />
+    <Content Include="Content\third-party\bootstrap-modal-master\js\bootstrap-modalmanager.js" />
+    <Content Include="Content\third-party\bootstrap-modal-master\modal_ajax_test.html" />
+    <Content Include="Content\third-party\humane-js-master\humane.js" />
+    <Content Include="Content\third-party\humane-js-master\humane.min.js" />
+    <Content Include="Content\third-party\humane-js-master\index.html" />
+    <Content Include="Content\third-party\humane-js-master\test\issue23.html" />
+    <Content Include="Content\third-party\humane-js-master\test\issue36.html" />
+    <Content Include="Content\third-party\humane-js-master\test\issue38.html" />
+    <Content Include="Content\third-party\humane-js-master\test\issue49.html" />
+    <Content Include="Content\third-party\humane-js-master\themes\bigbox.css" />
+    <Content Include="Content\third-party\humane-js-master\themes\boldlight.css" />
+    <Content Include="Content\third-party\humane-js-master\themes\jackedup.css" />
+    <Content Include="Content\third-party\humane-js-master\themes\libnotify.css" />
+    <Content Include="Content\third-party\humane-js-master\themes\original.css" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\css\jquery.modalbox-basic.css" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\css\jquery.modalbox-skin-default.css" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\css\jquery.modalbox-skin-precious-white.css" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\css\jquery.modalbox-skin-rounded-black.css" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\css\jquery.modalbox.css" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\ajax-loader.gif" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\default\bg_shadows_left.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\default\bg_shadows_right.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\default\bg_shadows_sprite.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\default\closebutton_21x21.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\precious_white\bg_shadows_left.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\precious_white\bg_shadows_right.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\precious_white\bg_shadows_sprite.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\precious_white\closebutton_13x13.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\rounded_black\bg_shadows_left.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\rounded_black\bg_shadows_right.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\rounded_black\bg_shadows_sprite.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\img\skins\rounded_black\closebutton_29x20.png" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\index.html" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\js\jquery.modalbox-1.5.0-min.js" />
+    <Content Include="Content\third-party\jquery.modalbox-1.5.0\js\jquery.modalbox-1.5.0.js" />
+    <Content Include="dll\log4net.dll" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\Zestork.edmx.sql" />
+    <Content Include="Resource\templates\afterLogin\contentView\searchJob.html" />
+    <Content Include="Resource\templates\afterLogin\web\components-bootstrap.html" />
+    <Content Include="Resource\templates\afterLogin\web\components-elements.html" />
+    <Content Include="Resource\templates\afterLogin\web\components-gallery.html" />
+    <Content Include="Resource\templates\afterLogin\web\components-grid.html" />
+    <Content Include="Resource\templates\afterLogin\web\components-icons.html" />
+    <Content Include="Resource\templates\afterLogin\web\components-messages.html" />
+    <Content Include="Resource\templates\afterLogin\web\components-pagestatistics.html" />
+    <Content Include="Resource\templates\afterLogin\web\components-sidebarwidgets.html" />
+    <Content Include="Resource\templates\afterLogin\web\components-tiles.html" />
+    <Content Include="Resource\templates\afterLogin\web\components-timeline.html" />
+    <Content Include="Resource\templates\afterLogin\web\components-typography.html" />
+    <Content Include="Resource\templates\afterLogin\web\css\bootstrap-responsive.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\bootstrap-responsive.min.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\bootstrap.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\bootstrap.min.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\chosen\chosen.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\colorbox\colorbox.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\colorpicker\colorpicker.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\datatable\jquery.dataTables.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\datatable\TableTools.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\datepicker\datepicker.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\daterangepicker\daterangepicker.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\dynatree\icons.gif" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\dynatree\loading.gif" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\dynatree\ui.dynatree.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\easy-pie-chart\jquery.easy-pie-chart.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\elfinder\elfinder.min.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\elfinder\theme.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\fullcalendar\fullcalendar.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\gmap\gmap3-menu.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\gritter\jquery.gritter.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\all.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\flat\aero.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\flat\blue.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\flat\flat.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\flat\green.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\flat\grey.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\flat\orange.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\flat\pink.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\flat\purple.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\flat\red.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\flat\yellow.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\flat\_all.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\futurico\futurico.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\line\aero.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\line\blue.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\line\green.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\line\grey.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\line\line.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\line\orange.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\line\pink.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\line\purple.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\line\red.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\line\yellow.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\line\_all.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\minimal\aero.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\minimal\blue.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\minimal\green.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\minimal\grey.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\minimal\minimal.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\minimal\orange.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\minimal\pink.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\minimal\purple.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\minimal\red.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\minimal\yellow.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\minimal\_all.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\polaris\polaris.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\square\aero.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\square\blue.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\square\green.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\square\grey.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\square\orange.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\square\pink.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\square\purple.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\square\red.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\square\square.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\square\yellow.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\icheck\square\_all.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\jquery-ui\smoothness\images\animated-overlay.gif" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\jquery-ui\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\jquery-ui\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\jquery-ui\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\jquery-ui\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\jquery-ui\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\jquery-ui\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\jquery-ui\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\jquery-ui\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\jquery-ui\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\jquery-ui\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\jquery-ui\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\jquery-ui\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\jquery-ui\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\jquery-ui\smoothness\jquery-ui.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\jquery-ui\smoothness\jquery.ui.theme.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\multiselect\multi-select.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\pageguide\pageguide.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\plupload\jquery.plupload.queue.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\select2\select2.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\tagsinput\jquery.tagsinput.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\xeditable\bootstrap-editable.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\style.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\style__not-minified.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\themes.css" />
+    <Content Include="Resource\templates\afterLogin\web\css\themes__not-minified.css" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-blue.html" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-brown.html" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-darkblue.html" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-green.html" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-grey.html" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-lightgrey.html" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-lightred.html" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-lime.html" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-magenta.html" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-newsletter.html" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-offer.html" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-orange.html" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-pink.html" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-products.html" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-purple.html" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-red.html" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-satblue.html" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-satgreen.html" />
+    <Content Include="Resource\templates\afterLogin\web\emails\email-teal.html" />
+    <Content Include="Resource\templates\afterLogin\web\font\fontawesome-webfont.svg" />
+    <Content Include="Resource\templates\afterLogin\web\font\glyphicons-regular.svg" />
+    <Content Include="Resource\templates\afterLogin\web\forms-basic.html" />
+    <Content Include="Resource\templates\afterLogin\web\forms-extended.html" />
+    <Content Include="Resource\templates\afterLogin\web\forms-validation.html" />
+    <Content Include="Resource\templates\afterLogin\web\forms-wizard.html" />
+    <Content Include="Resource\templates\afterLogin\web\img\._apple-touch-icon-precomposed.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\._collapsed-group.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\._email-login.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\._email-logo.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\._expanded-group.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\._logo%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\._logo-big%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\._logo-big.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\._logo.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\._navigation-bg-small.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\._navigation-bg.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\._sorting-asc.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\._sorting-desc.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\._sorting.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\apple-touch-icon-precomposed.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\collapsed-group.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\._10_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\._1_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\._2_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\._3_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\._4_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\._5_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\._6_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\._7_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\._8_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\._9_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\._locked.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\._user-1.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\._user-2.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\._user-3.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\._user-4.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\._user-5.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\._user-6.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\._user-avatar.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\1.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\10.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\10_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\11.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\12.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\13.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\14.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\15.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\1_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\2.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\2_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\3.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\3_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\4.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\4_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\5.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\5_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\6.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\6_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\7.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\7_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\8.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\8_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\9.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\9_dyn.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\._blog-1.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\._blog-2.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\._blog-3.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\._blog-4.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\1.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\10.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\11.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\12.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\13.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\14.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\15.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\2.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\3.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\4.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\5.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\6.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\7.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\8.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\9.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\blog-1.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\blog-2.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\blog-3.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\big\blog-4.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\directd.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\._ao.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\._catalonia.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\._cd.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\._europeanunion.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\._gb.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\._lc.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\._me.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\._rs.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ad.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ae.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\af.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ag.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ai.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\al.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\am.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\an.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ao.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ar.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\as.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\at.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\au.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\aw.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ax.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\az.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ba.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\bb.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\bd.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\be.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\bf.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\bg.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\bh.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\bi.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\bj.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\bm.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\bn.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\bo.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\br.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\bs.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\bt.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\bv.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\bw.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\by.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\bz.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ca.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\catalonia.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\cc.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\cd.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\cf.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\cg.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ch.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ci.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ck.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\cl.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\cm.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\cn.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\co.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\cr.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\cs.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\cu.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\cv.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\cx.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\cy.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\cz.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\de.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\dj.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\dk.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\dm.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\do.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\dz.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ec.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ee.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\eg.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\eh.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\england.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\er.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\es.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\et.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\europeanunion.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\fam.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\fi.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\fj.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\fk.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\fm.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\fo.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\fr.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ga.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\gb.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\gd.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ge.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\gf.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\gh.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\gi.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\gl.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\gm.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\gn.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\gp.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\gq.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\gr.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\gs.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\gt.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\gu.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\gw.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\gy.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\hk.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\hm.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\hn.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\hr.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ht.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\hu.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\id.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ie.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\il.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\in.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\io.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\iq.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ir.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\is.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\it.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\jm.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\jo.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\jp.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ke.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\kg.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\kh.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ki.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\km.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\kn.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\kp.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\kr.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\kw.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ky.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\kz.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\la.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\lb.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\lc.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\li.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\lk.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\lr.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ls.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\lt.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\lu.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\lv.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ly.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ma.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\mc.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\md.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\me.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\mg.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\mh.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\mk.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ml.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\mm.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\mn.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\mo.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\mp.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\mq.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\mr.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ms.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\mt.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\mu.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\mv.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\mw.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\mx.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\my.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\mz.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\na.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\nc.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ne.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\nf.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ng.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ni.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\nl.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\no.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\np.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\nr.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\nu.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\nz.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\om.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\pa.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\pe.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\pf.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\pg.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ph.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\pk.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\pl.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\pm.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\pn.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\pr.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ps.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\pt.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\pw.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\py.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\qa.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\re.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ro.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\rs.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ru.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\rw.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\sa.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\sb.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\sc.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\scotland.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\sd.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\se.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\sg.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\sh.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\si.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\sj.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\sk.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\sl.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\sm.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\sn.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\so.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\sr.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\st.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\sv.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\sy.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\sz.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\tc.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\td.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\tf.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\tg.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\th.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\tj.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\tk.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\tl.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\tm.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\tn.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\to.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\tr.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\tt.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\tv.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\tw.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\tz.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ua.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ug.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\um.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\us.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\uy.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\uz.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\va.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\vc.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ve.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\vg.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\vi.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\vn.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\vu.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\wales.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\wf.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ws.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\ye.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\yt.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\za.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\zm.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\zw.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\locked.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\mastercard.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\paypal.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\user-1.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\user-2.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\user-3.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\user-4.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\user-5.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\user-6.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\user-avatar.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\visa.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\email-login.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\email-logo.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\expanded-group.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\img\favicon.ico" />
+    <Content Include="Resource\templates\afterLogin\web\img\glyphicons-halflings-white.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\glyphicons-halflings.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\loading.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\logo%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\logo-big%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\logo-big.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\logo.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\navigation-bg-small.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\navigation-bg.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\chosen\chosen-sprite.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\colorbox\controls.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\colorbox\loading.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\colorpicker\alpha.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\colorpicker\hue.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\colorpicker\saturation.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\elfinder\arrows-active.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\elfinder\arrows-normal.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\elfinder\crop.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\elfinder\dialogs.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\elfinder\icons-big.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\elfinder\icons-small.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\elfinder\logo.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\elfinder\progress.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\elfinder\quicklook-bg.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\elfinder\quicklook-icons.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\elfinder\resize.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\elfinder\spinner-mini.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\elfinder\toolbar.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\gmap\here.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\gmap\icon_greenA.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\gmap\icon_greenB.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\gmap\zoomin.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\gmap\zoomout.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\gritter\._gritter.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\gritter\gritter-light.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\gritter\gritter-long.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\gritter\gritter.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\gritter\ie-spacer.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\aero%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\aero.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\blue%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\blue.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\flat%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\flat.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\green%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\green.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\grey%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\grey.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\orange%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\orange.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\pink%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\pink.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\purple%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\purple.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\red%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\red.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\yellow%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\flat\yellow.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\futurico\futurico%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\futurico\futurico.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\line\line%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\line\line.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\aero%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\aero.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\blue%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\blue.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\green%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\green.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\grey%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\grey.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\minimal%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\minimal.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\orange%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\orange.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\pink%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\pink.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\purple%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\purple.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\red%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\red.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\yellow%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\minimal\yellow.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\polaris\polaris%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\polaris\polaris.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\._blue%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\._blue.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\aero%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\aero.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\blue%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\blue.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\green%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\green.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\grey%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\grey.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\orange%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\orange.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\pink%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\pink.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\purple%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\purple.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\red%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\red.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\square%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\square.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\yellow%402x.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\icheck\square\yellow.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\multiselect\switch.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\pageguide\pageguide_arrow.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\plupload\backgrounds.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\plupload\buttons-disabled.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\plupload\buttons.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\plupload\delete.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\plupload\done.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\plupload\error.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\plupload\throbber.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\plupload\transp50.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\select2\select2-spinner.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\select2\select2.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\select2\select2x2.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\xeditable\clear.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\xeditable\loading.gif" />
+    <Content Include="Resource\templates\afterLogin\web\img\sorting-asc.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\sorting-desc.png" />
+    <Content Include="Resource\templates\afterLogin\web\img\sorting.png" />
+    <Content Include="Resource\templates\afterLogin\web\index.html" />
+    <Content Include="Resource\templates\afterLogin\web\js\application.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\application.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\bootstrap.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\bootstrap.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\demonstration.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\demonstration.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\eakroko.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\eakroko.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\jquery.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\bootbox\jquery.bootbox.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\chosen\chosen.jquery.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\chosen\chosen.jquery.min.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\build-config.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\ckeditor.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\config.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\contents.css" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\af.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\ar.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\bg.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\bn.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\bs.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\ca.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\cs.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\cy.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\da.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\de.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\el.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\en-au.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\en-ca.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\en-gb.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\en.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\eo.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\es.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\et.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\eu.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\fa.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\fi.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\fo.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\fr-ca.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\fr.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\gl.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\gu.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\he.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\hi.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\hr.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\hu.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\is.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\it.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\ja.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\ka.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\km.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\ko.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\ku.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\lt.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\lv.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\mk.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\mn.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\ms.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\nb.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\nl.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\no.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\pl.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\pt-br.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\pt.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\ro.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\ru.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\sk.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\sl.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\sr-latn.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\sr.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\sv.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\th.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\tr.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\ug.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\uk.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\vi.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\zh-cn.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\lang\zh.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\fakeobjects\images\spacer.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\icons.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\preview\preview.html" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\embarrassed_smile.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\tongue_smile.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\templates\dialogs\templates.css" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\skins\moono\dialog.css" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\skins\moono\dialog_opera.css" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\skins\moono\editor.css" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\skins\moono\icons.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\skins\moono\images\close.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\skins\moono\images\mini.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\styles.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\colorbox\jquery.colorbox-min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\colorpicker\bootstrap-colorpicker.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\complexify\jquery.complexify-banlist.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\complexify\jquery.complexify-banlist.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\complexify\jquery.complexify.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\complexify\jquery.complexify.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\ColReorder.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\ColReorderWithResize.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\ColVis.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\ColVis.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\dataTables.scroller.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\demo.txt" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\FixedColumns.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\FixedColumns.min.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\jquery.dataTables.columnFilter.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\jquery.dataTables.columnFilter.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\jquery.dataTables.grouping.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\jquery.dataTables.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\jquery.dataTables.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\swf\copy_csv_xls.swf" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\TableTools.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\bootstrap-datepicker.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.uk.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datepicker\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\daterangepicker\daterangepicker.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\daterangepicker\moment.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\dynatree\jquery.dynatree.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\easy-pie-chart\jquery.easy-pie-chart.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\elfinder.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\.tmb\l1_bWFkbmVzc19ib2F0LmpwZw1208954324.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\.tmb\l1_bWFkbmVzc19iZWFjaC5qcGc1208954324.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\.tmb\l1_c2NvdHR3aWxsc19hdXR1bW4zLmpwZw1221239274.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\.tmb\l1_c2NvdHR3aWxsc19idWZmYWxvLmpwZw1221239094.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\.tmb\l1_c2NvdHR3aWxsc19idXR0ZXJmbHkuanBn1221239286.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\.tmb\l1_Rm9sZGVyICMxL3Njb3R0d2lsbHNfdW5kZXJ3YXRlcjIuanBn1221239104.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\.tmb\l1_Rm9sZGVyICMxL3Njb3R0d2lsbHNfdW5kZXJ3YXRlcjUuanBn1221239108.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\.tmb\l1_Rm9sZGVyICMyL3Njb3R0d2lsbHNfaG9yc2UuanBn1221239096.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\.tmb\l1_Rm9sZGVyICMyL3Njb3R0d2lsbHNfY2F0LmpwZw1221239094.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\.tmb\l1_Rm9sZGVyICMyL3Njb3R0d2lsbHNfZ2FyZGVucy5qcGc1221239206.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\.tmb\l1_Rm9sZGVyICMyL3Njb3R0d2lsbHNfZmlzaC5qcGc1221239096.png" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\Folder #1\Another_file.txt" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\Folder #1\file.txt" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\Folder #1\scottwills_underwater2.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\Folder #1\scottwills_underwater5.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\Folder #2\scottwills_cat.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\Folder #2\scottwills_fish.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\Folder #2\scottwills_gardens.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\Folder #2\scottwills_horse.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\madness_beach.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\madness_boat.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\Main-file.txt" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\scottwills_autumn3.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\scottwills_buffalo.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\scottwills_butterfly.jpg" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.ar.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.bg.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.ca.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.cs.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.de.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.el.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.es.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.fa.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.fr.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.hu.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.it.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.jp.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.ko.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.LANG.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.nl.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.no.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.pl.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.pt_BR.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.ru.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.tr.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.vi.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\i18n\elfinder.zh_CN.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\php\MySQLStorage.sql" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\proxy\elFinderSupportVer1.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\fileupload\bootstrap-fileupload.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\flot\jquery.flot.bar.order.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\flot\jquery.flot.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\flot\jquery.flot.jum.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\flot\jquery.flot.JUMlib.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\flot\jquery.flot.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\flot\jquery.flot.pie.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\flot\jquery.flot.resize.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\flot\jquery.flot.spider.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\flot\jquery.flot.spider.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\flot\jquery.flot.stack.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\form\jquery.form.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\gmap\gmap3-menu.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\gmap\gmap3.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\gritter\jquery.gritter.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\icheck\jquery.icheck.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\imagesLoaded\jquery.imagesloaded.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\jquery-ui\jquery.ui.core.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\jquery-ui\jquery.ui.datepicker.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\jquery-ui\jquery.ui.draggable.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\jquery-ui\jquery.ui.droppable.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\jquery-ui\jquery.ui.mouse.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\jquery-ui\jquery.ui.position.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\jquery-ui\jquery.ui.resizable.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\jquery-ui\jquery.ui.selectable.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\jquery-ui\jquery.ui.slider.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\jquery-ui\jquery.ui.sortable.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\jquery-ui\jquery.ui.spinner.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\jquery-ui\jquery.ui.widget.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\maskedinput\jquery.maskedinput.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\masonry\jquery.masonry.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\mockjax\jquery.mockjax.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\mockjax\jquery.mockjax.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\momentjs\jquery.moment.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\multiselect\jquery.multi-select.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\nicescroll\jquery.nicescroll.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\pageguide\jquery.pageguide.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\placeholder\jquery.placeholder.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\plupload\jquery.plupload.queue.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\plupload\plupload.flash.swf" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\plupload\plupload.full.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\plupload\plupload.silverlight.xap" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\select2\select2.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\slimscroll\jquery.slimscroll.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\sparklines\jquery.sparklines.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\tagsinput\jquery.tagsinput.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\touch-punch\jquery.touch-punch.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\touchwipe\touchwipe.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\touchwipe\touchwipe.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\validation\additional-methods.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\validation\jquery.validate.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\vmap\jquery.vmap.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\vmap\jquery.vmap.sampledata.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\vmap\jquery.vmap.world.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\wizard\jquery.form.wizard.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\xeditable\address.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\xeditable\bootstrap-editable.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\xeditable\demo.js" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\xeditable\demo.min.js" />
+    <Content Include="Resource\templates\afterLogin\web\layouts-color.html" />
+    <Content Include="Resource\templates\afterLogin\web\layouts-fixed-topside.html" />
+    <Content Include="Resource\templates\afterLogin\web\layouts-fixed.html" />
+    <Content Include="Resource\templates\afterLogin\web\layouts-footer.html" />
+    <Content Include="Resource\templates\afterLogin\web\layouts-mobile-button.html" />
+    <Content Include="Resource\templates\afterLogin\web\layouts-mobile-slide.html" />
+    <Content Include="Resource\templates\afterLogin\web\layouts-sidebar-hidden.html" />
+    <Content Include="Resource\templates\afterLogin\web\layouts-sidebar-right.html" />
+    <Content Include="Resource\templates\afterLogin\web\more-blank.html" />
+    <Content Include="Resource\templates\afterLogin\web\more-blog-list-small.html" />
+    <Content Include="Resource\templates\afterLogin\web\more-blog-list.html" />
+    <Content Include="Resource\templates\afterLogin\web\more-blog-post.html" />
+    <Content Include="Resource\templates\afterLogin\web\more-email.html" />
+    <Content Include="Resource\templates\afterLogin\web\more-error.html" />
+    <Content Include="Resource\templates\afterLogin\web\more-faq.html" />
+    <Content Include="Resource\templates\afterLogin\web\more-invoice.html" />
+    <Content Include="Resource\templates\afterLogin\web\more-locked.html" />
+    <Content Include="Resource\templates\afterLogin\web\more-login.html" />
+    <Content Include="Resource\templates\afterLogin\web\more-pricing.html" />
+    <Content Include="Resource\templates\afterLogin\web\more-searchresults.html" />
+    <Content Include="Resource\templates\afterLogin\web\more-shop-list.html" />
+    <Content Include="Resource\templates\afterLogin\web\more-shop-product.html" />
+    <Content Include="Resource\templates\afterLogin\web\more-userprofile.html" />
+    <Content Include="Resource\templates\afterLogin\web\plugins-calendar.html" />
+    <Content Include="Resource\templates\afterLogin\web\plugins-charts.html" />
+    <Content Include="Resource\templates\afterLogin\web\plugins-dragdrop.html" />
+    <Content Include="Resource\templates\afterLogin\web\plugins-elements.html" />
+    <Content Include="Resource\templates\afterLogin\web\plugins-filemanager.html" />
+    <Content Include="Resource\templates\afterLogin\web\plugins-filetrees.html" />
+    <Content Include="Resource\templates\afterLogin\web\plugins-maps.html" />
+    <Content Include="Resource\templates\afterLogin\web\tables-basic.html" />
+    <Content Include="Resource\templates\afterLogin\web\tables-dynamic.html" />
+    <Content Include="Resource\templates\afterLogin\web\tables-large.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\404.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\about.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\ajax\signInTemplate.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\googleLogin.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\facebookLogin.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\validateAccount.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\signup.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\home.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\signupuser.html" />
+    <Content Include="Resource\templates\beforeLogin\web\404.html" />
+    <Content Include="Resource\templates\beforeLogin\web\about.html" />
+    <Content Include="Resource\templates\beforeLogin\web\contact.html" />
+    <Content Include="Resource\templates\beforeLogin\web\css\style.css" />
+    <Content Include="Resource\templates\beforeLogin\web\images\about_img.jpg" />
+    <Content Include="Resource\templates\beforeLogin\web\images\g1.png" />
+    <Content Include="Resource\templates\beforeLogin\web\images\g2.png" />
+    <Content Include="Resource\templates\beforeLogin\web\images\g3.png" />
+    <Content Include="Resource\templates\beforeLogin\web\images\list_marker.png" />
+    <Content Include="Resource\templates\beforeLogin\web\images\location.png" />
+    <Content Include="Resource\templates\beforeLogin\web\images\logo.png" />
+    <Content Include="Resource\templates\beforeLogin\web\images\management-1.jpg" />
+    <Content Include="Resource\templates\beforeLogin\web\images\management-2.jpg" />
+    <Content Include="Resource\templates\beforeLogin\web\images\management-3.jpg" />
+    <Content Include="Resource\templates\beforeLogin\web\images\management-4.jpg" />
+    <Content Include="Resource\templates\beforeLogin\web\images\management-5.jpg" />
+    <Content Include="Resource\templates\beforeLogin\web\images\management-6.jpg" />
+    <Content Include="Resource\templates\beforeLogin\web\images\phone.png" />
+    <Content Include="Resource\templates\beforeLogin\web\images\service-1.png" />
+    <Content Include="Resource\templates\beforeLogin\web\images\service-2.png" />
+    <Content Include="Resource\templates\beforeLogin\web\images\service-3.png" />
+    <Content Include="Resource\templates\beforeLogin\web\images\service-4.png" />
+    <Content Include="Resource\templates\beforeLogin\web\images\service-5.png" />
+    <Content Include="Resource\templates\beforeLogin\web\images\service-6.png" />
+    <Content Include="Resource\templates\beforeLogin\web\images\slider1.jpg" />
+    <Content Include="Resource\templates\beforeLogin\web\images\slider2.jpg" />
+    <Content Include="Resource\templates\beforeLogin\web\images\slider3.jpg" />
+    <Content Include="Resource\templates\beforeLogin\web\images\slider4.jpg" />
+    <Content Include="Resource\templates\beforeLogin\web\index.html" />
+    <Content Include="Resource\templates\beforeLogin\web\js\jquery.min.js" />
+    <Content Include="Resource\templates\beforeLogin\web\js\responsiveslides.min.js" />
+    <Content Include="Resource\templates\beforeLogin\web\services.html" />
+    <Content Include="Resource\templates\beforeLogin\web\w3layouts-license.txt" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAO\" />
+    <Folder Include="logs\" />
+    <Folder Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\.quarantine\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\third-party\bootstrap-modal-master\.gitattributes" />
+    <None Include="Content\third-party\bootstrap-modal-master\.gitignore" />
+    <None Include="Content\third-party\bootstrap-modal-master\component.json" />
+    <None Include="Content\third-party\bootstrap-modal-master\composer.json" />
+    <None Include="Content\third-party\bootstrap-modal-master\LICENSE" />
+    <None Include="Content\third-party\bootstrap-modal-master\params.json" />
+    <None Include="Content\third-party\bootstrap-modal-master\README.md" />
+    <Content Include="Resource\templates\afterLogin\web\css\plugins\._.DS_Store" />
+    <Content Include="Resource\templates\afterLogin\web\font\fontawesome-webfont.eot" />
+    <Content Include="Resource\templates\afterLogin\web\font\fontawesome-webfont.ttf" />
+    <Content Include="Resource\templates\afterLogin\web\font\fontawesome-webfont.woff" />
+    <Content Include="Resource\templates\afterLogin\web\font\FontAwesome.otf" />
+    <Content Include="Resource\templates\afterLogin\web\font\glyphicons-regular.eot" />
+    <Content Include="Resource\templates\afterLogin\web\font\glyphicons-regular.otf" />
+    <Content Include="Resource\templates\afterLogin\web\font\glyphicons-regular.ttf" />
+    <Content Include="Resource\templates\afterLogin\web\font\glyphicons-regular.woff" />
+    <Content Include="Resource\templates\afterLogin\web\img\._.DS_Store" />
+    <Content Include="Resource\templates\afterLogin\web\img\demo\flags\._.DS_Store" />
+    <Content Include="Resource\templates\afterLogin\web\img\plugins\._.DS_Store" />
+    <Content Include="Resource\templates\afterLogin\web\js\._.DS_Store" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\._.DS_Store" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\CHANGES.md" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\LICENSE.md" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\plugins\wsc\README.md" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\README.md" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\ckeditor\skins\moono\readme.md" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\as3\lib\AlivePDF.swc" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\as3\ZeroClipboard.as" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\datatable\as3\ZeroClipboardPdf.as" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\php\connector.minimal.php" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\php\connector.php" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\php\elFinder.class.php" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\php\elFinderConnector.class.php" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\php\elFinderVolumeDriver.class.php" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\php\elFinderVolumeDropbox.class.php" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\php\elFinderVolumeFTP.class.php" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\php\elFinderVolumeLocalFileSystem.class.php" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\php\elFinderVolumeMySQL.class.php" />
+    <Content Include="Resource\templates\afterLogin\web\js\plugins\elfinder\php\mime.types" />
+    <Content Include="Resource\templates\afterLogin\web\sass\bootstrap-override.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\colors.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\font-awesome\font-awesome.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\font-awesome\_bootstrap.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\font-awesome\_core.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\font-awesome\_extras.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\font-awesome\_icons.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\font-awesome\_mixins.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\font-awesome\_path.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\font-awesome\_variables.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\glyphicons.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\media-queries.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\page-elements\accordion.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\page-elements\address-book.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\page-elements\blog.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\page-elements\box.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\page-elements\custom-checkbox.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\page-elements\forms.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\page-elements\gallery.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\page-elements\messages.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\page-elements\pagestats.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\page-elements\pricing-tables.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\page-elements\sidebar-widgets.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\page-elements\tables.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\page-elements\tabs.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\page-elements\tasks.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\page-elements\tiles.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\page-elements\timeline.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\pages\error.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\pages\grids.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\pages\invoice.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\pages\locked.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\pages\login.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\pages\search-results.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\pages\shop.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\calendar.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\charts.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\chosen.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\ckeditor.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\datatables.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\datepicker.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\daterangepicker.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\elfinder.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\filetree.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\fileupload.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\form-wizard.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\gritter.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\maps.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\multiselect.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\plupload.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\resize.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\scroll.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\select2.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\slider.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\spinner.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\tagsinput.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\timepicker.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\plugins\xeditable.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\structure\content.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\structure\footer.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\structure\sidebar.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\structure\topbar.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\style.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\themes.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\_elements.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\_pages.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\_plugins.scss" />
+    <Content Include="Resource\templates\afterLogin\web\sass\_structure.scss" />
+    <EntityDeploy Include="Models\Zestork.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Zestork.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Content\third-party\humane-js-master\.gitignore" />
+    <None Include="Content\third-party\humane-js-master\bower.json" />
+    <None Include="Content\third-party\humane-js-master\changelog.md" />
+    <None Include="Content\third-party\humane-js-master\Makefile" />
+    <None Include="Content\third-party\humane-js-master\package.json" />
+    <None Include="Content\third-party\humane-js-master\readme.md" />
+    <None Include="Content\third-party\humane-js-master\theme-src\bigbox.styl" />
+    <None Include="Content\third-party\humane-js-master\theme-src\boldlight.styl" />
+    <None Include="Content\third-party\humane-js-master\theme-src\jackedup.styl" />
+    <None Include="Content\third-party\humane-js-master\theme-src\libnotify.styl" />
+    <None Include="Content\third-party\humane-js-master\theme-src\original.styl" />
+    <None Include="Models\ZestorkModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ZestorkModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Models\ZestorkModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ZestorkModel.cs</LastGenOutput>
+    </None>
+    <None Include="Resource\templates\beforeLogin\web\fonts\Amble-Regular-webfont.ttf" />
+    <None Include="Resource\templates\beforeLogin\web\images\Thumbs.db" />
+    <None Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60081</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.7\tools\Microsoft.Bcl.Build.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
