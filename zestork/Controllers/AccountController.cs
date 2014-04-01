@@ -43,7 +43,11 @@ namespace zestork.Controllers
                 userData = LoginService.webLogin(userName,password,returnUrl);
                 if (userData.statusCode != "200")
                 {
-                    Response.Redirect("/#/login/"+userData.statusCode);
+                    Response.Redirect("/#/login/" + userData.statusCode);
+                }
+                else
+                {
+                    Response.Redirect("/Account/");
                 }
             }
             

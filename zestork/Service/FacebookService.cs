@@ -32,6 +32,7 @@ namespace zestork.Service
             try
             {
                 var _db = new ZestorkContainer();
+
                 string app_id = string.Empty;
                 string app_secret = string.Empty;
                 if (returnUrl.Contains("zestork.pcongo"))
@@ -44,7 +45,6 @@ namespace zestork.Service
                     app_id = ConfigurationManager.AppSettings["FacebookAppID"].ToString();
                     app_secret = ConfigurationManager.AppSettings["FacebookAppSecret"].ToString();
                 }
-
                
                 string scope = "email";
                 if (code == null)
@@ -57,30 +57,8 @@ namespace zestork.Service
                 }
                 else
                 {
-                    Dictionary<string, string> tokens = new Dictionary<string, string>();
-                    string url = string.Format(
-                        "https://graph.facebook.com/oauth/access_token?client_id={0}&redirect_uri={1}&scope={2}&code={3}&client_secret={4}",
-                        app_id, returnUrl, scope, code, app_secret);
 
-                    HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
-
-                    using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
-                    {
-
-                        StreamReader reader = new StreamReader(response.GetResponseStream());
-
-                        string vals = reader.ReadToEnd();
-
-                        foreach (string token in vals.Split('&'))
-                        {
-                            tokens.Add(token.Substring(0, token.IndexOf("=")),
-                                token.Substring(token.IndexOf("=") + 1, token.Length - token.IndexOf("=") - 1));
-                        }
-
-                    }
-
-                    string access_token = tokens["access_token"];
-
+                    string access_token = getFacebookAuthToken(returnUrl, scope, code,app_id,app_secret);
                     var client = new FacebookClient(access_token);
                     dynamic me = client.Get("me");
                     String userName = Convert.ToString(me.username);
@@ -104,7 +82,16 @@ namespace zestork.Service
                         userData.User.FirstName = me.first_name;
                         userData.User.LastName = me.last_name;
                         userData.User.Username = me.username;
-                        userData.User.Email = me.email;
+                        try
+                        {
+                            userData.User.Email = me.email;
+                        }
+                        catch (Exception)
+                        {
+
+                            userData.User.Email = "NA";
+                        }
+                        
                         userData.User.Gender = me.gender;
                         userData.User.ImageUrl = ImageUrl;
                         var user = new Users
@@ -147,6 +134,34 @@ namespace zestork.Service
             return userData;
         }
 
+        private string getFacebookAuthToken(string returnUrl, string scope, string code, string app_id, string app_secret)
+        {
+            
+            Dictionary<string, string> tokens = new Dictionary<string, string>();
+            string url = string.Format(
+                "https://graph.facebook.com/oauth/access_token?client_id={0}&redirect_uri={1}&scope={2}&code={3}&client_secret={4}",
+                app_id, returnUrl, scope, code, app_secret);
+
+            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+
+            using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+            {
+
+                StreamReader reader = new StreamReader(response.GetResponseStream());
+
+                string vals = reader.ReadToEnd();
+
+                foreach (string token in vals.Split('&'))
+                {
+                    tokens.Add(token.Substring(0, token.IndexOf("=")),
+                        token.Substring(token.IndexOf("=") + 1, token.Length - token.IndexOf("=") - 1));
+                }
+
+            }
+
+            string access_token = tokens["access_token"];
+            return access_token;
+        }
         public static string GetPictureUrl(string faceBookId)
         {
             WebResponse response = null;
