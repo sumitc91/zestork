@@ -169,6 +169,7 @@
     <Compile Include="ServerCache\ServerCacheItem.cs" />
     <Compile Include="Service\FacebookService.cs" />
     <Compile Include="Service\LoginService.cs" />
+    <Compile Include="Service\webLoginService.cs" />
     <Compile Include="Session\CPSession.cs" />
     <Compile Include="Session\TokenManager.cs" />
   </ItemGroup>
