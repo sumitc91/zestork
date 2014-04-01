@@ -14,6 +14,7 @@ using zestork.Models.DataWrapper;
 using zestork.Models;
 using System.Data.Entity.Validation;
 using zestork.CommonMethods;
+using System.Configuration;
 
 namespace zestork.Service
 {
@@ -26,16 +27,26 @@ namespace zestork.Service
 
             var _db = new ZestorkContainer();
             var userData = new LogOnModel();
-            string app_id = "49061279195-nqd7afreosf3hp9lidir8h1upsfp9q18.apps.googleusercontent.com";
-            string app_secret = "U4ToxM2xjCf1kF3gvgYJ6Kqn";
-            string scope = "email%20profile";
-            returnUrl = "http://localhost:60081/Account/Login/google";
-            string client_id = "49061279195-nqd7afreosf3hp9lidir8h1upsfp9q18.apps.googleusercontent.com";
+            string app_id = "";
+            string app_secret = "";
+            if (returnUrl.Contains("zestork.pcongo"))
+            {
+                app_id = ConfigurationManager.AppSettings["googleAppIDZestork"].ToString();
+                app_secret = ConfigurationManager.AppSettings["googleAppSecretZestork"].ToString();
+            }
+            else
+            {
+                app_id = ConfigurationManager.AppSettings["googleAppID"].ToString();
+                app_secret = ConfigurationManager.AppSettings["googleAppSecret"].ToString();
+            }
+           
+            string scope = "email%20profile";            
+            
             if (code == null)
             {
                 userData.ReturnUrl = (string.Format(
                     "https://accounts.google.com/o/oauth2/auth?scope={0}&state=%2Fprofile&redirect_uri={1}&response_type=code&client_id={2}&approval_prompt=force",
-                    scope, returnUrl, client_id));
+                    scope, returnUrl, app_id));
 
                 return userData;
             }
