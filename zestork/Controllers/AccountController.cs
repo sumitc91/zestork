@@ -41,6 +41,10 @@ namespace zestork.Controllers
                 String userName = Request.Form["userName"];
                 String password = Request.Form["password"];
                 userData = LoginService.webLogin(userName,password,returnUrl);
+                if (userData.statusCode != "200")
+                {
+                    Response.Redirect("/#/login/"+userData.statusCode);
+                }
             }
             
             return Json(userData, JsonRequestBehavior.AllowGet);
