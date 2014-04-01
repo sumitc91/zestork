@@ -45,14 +45,18 @@ namespace zestork.Controllers
 
 
             //check for specific status code
-            if (userData.statusCode != "200")
+            if (userData.statusCode != null)
             {
-                Response.Redirect("/#/login/" + userData.statusCode);
+                if (userData.statusCode != "200")
+                {
+                    Response.Redirect("/#/login/" + userData.statusCode);
+                }
+                else
+                {
+                    Response.Redirect("/" + userData.User.Username + "/#/");
+                }
             }
-            else
-            {
-                Response.Redirect("/Account/");
-            }
+            
             return Json(userData, JsonRequestBehavior.AllowGet);
         }
         
