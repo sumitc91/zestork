@@ -40,17 +40,19 @@ namespace zestork.Controllers
             {
                 String userName = Request.Form["userName"];
                 String password = Request.Form["password"];
-                userData = LoginService.webLogin(userName,password,returnUrl);
-                if (userData.statusCode != "200")
-                {
-                    Response.Redirect("/#/login/" + userData.statusCode);
-                }
-                else
-                {
-                    Response.Redirect("/Account/");
-                }
+                userData = LoginService.webLogin(userName,password,returnUrl);                
             }
-            
+
+
+            //check for specific status code
+            if (userData.statusCode != "200")
+            {
+                Response.Redirect("/#/login/" + userData.statusCode);
+            }
+            else
+            {
+                Response.Redirect("/Account/");
+            }
             return Json(userData, JsonRequestBehavior.AllowGet);
         }
         

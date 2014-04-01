@@ -72,6 +72,7 @@ namespace zestork.Service
                         userData.User.Username = user.Username;
                         userData.User.Gender = user.gender;
                         userData.User.ImageUrl = user.ImageUrl;
+                        userData.statusCode = "200";
                     }
                     else
                     {
@@ -113,6 +114,7 @@ namespace zestork.Service
                         try
                         {
                             _db.SaveChanges();
+                            userData.statusCode = "200";
                         }
                         catch (DbEntityValidationException e)
                         {
