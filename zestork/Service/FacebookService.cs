@@ -102,7 +102,7 @@ namespace zestork.Service
                             Source = "facebook",
                             isActive = "true",
                             Type = "user",
-                            guid = "abcde",
+                            guid = Guid.NewGuid().ToString(),
                             FirstName = me.first_name,
                             LastName = me.last_name,
                             gender = me.gender,
