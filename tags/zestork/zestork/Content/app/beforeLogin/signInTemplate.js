@@ -41,3 +41,20 @@ ZestorkApp.controller('webLoginController', function ($scope) {
     }
 
 });
+
+ZestorkApp.controller('LoginViewController', function ($scope, $routeParams) {
+
+    $scope.showMssg = false;
+    if ($routeParams.code == "403") {
+        $scope.showMssg = true;
+        $scope.mssg = "User Not Validated !";
+        $scope.content = " Click on the Activation code sent to you on your mail. please check your inbox/spam.";
+    }
+    else if ($routeParams.code == "401") {
+        $scope.showMssg = true;
+        $scope.mssg = "Unauthenticated !";
+        $scope.content = "either username or password is wrong ! try again.";
+    }
+
+
+});

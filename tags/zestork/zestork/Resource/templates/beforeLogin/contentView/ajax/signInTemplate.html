@@ -1,5 +1,11 @@
-﻿<div class="wrapper" ng-controller="webLoginController">											
+﻿
+<div class="wrapper" ng-controller="LoginViewController">	
+                                    <div class="alert alert-error" ng-show="showMssg">
+											<button data-dismiss="alert" class="close" type="button">×</button>
+											<strong>{{mssg}}</strong> {{content}}
+                                    </div>										
 											<div class="login-body" >
+                                                
                                                 <br />                                                                                              
 												<h1> <b> Sign in:</b></h1>
                                                 <br /> 
