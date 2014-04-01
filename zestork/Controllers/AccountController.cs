@@ -60,6 +60,7 @@ namespace zestork.Controllers
                 guid = "abcde",
                 FirstName = req.firstName,
                 LastName = req.lastName,
+                gender = "NA",
                 ImageUrl = "imageLink"
             };
 
