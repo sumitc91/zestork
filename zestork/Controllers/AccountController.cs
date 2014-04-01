@@ -27,14 +27,22 @@ namespace zestork.Controllers
         }
         
         public JsonResult Login(string id)
-        {
-            string testing = Request.Url.AbsolutePath;
-            String userName = Request.Form["userName"];
-            String password = Request.Form["password"];
+        {                        
+            String returnUrl = "";
             var userData = new LogOnModel();
             LoginService LoginService = new LoginService();
-            String code = Request.QueryString["code"];
-            userData = LoginService.Login("http://" + Request.Url.Authority + "/Account/Login/facebook/", code, id);
+            if (id == "facebook")
+            {
+                String code = Request.QueryString["code"];
+                userData = LoginService.facebookLogin("http://" + Request.Url.Authority + "/Account/Login/facebook/", code);
+            }
+            else if (id == "web")
+            {
+                String userName = Request.Form["userName"];
+                String password = Request.Form["password"];
+                userData = LoginService.webLogin(userName,password,returnUrl);
+            }
+            
             return Json(userData, JsonRequestBehavior.AllowGet);
         }
         
