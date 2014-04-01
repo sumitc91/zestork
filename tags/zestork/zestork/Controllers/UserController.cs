@@ -17,8 +17,8 @@ namespace zestork.Controllers
 
         public ActionResult Index(String id)
         {
-            string userId = id;            
-
+            string userId = id;
+            
             return View();
         }
         

@@ -42,7 +42,15 @@ namespace zestork.Controllers
                 String password = Request.Form["password"];
                 userData = LoginService.webLogin(userName,password,returnUrl);                
             }
-
+            else if (id == "google")
+            {
+                if (Request.QueryString["access_token"] != null)
+                {
+                    string access_token = Request.QueryString["access_token"];
+                }
+                String code = Request.QueryString["code"];
+                userData = LoginService.googleLogin(returnUrl,code);
+            }
 
             //check for specific status code
             if (userData.statusCode != null)
@@ -78,8 +86,8 @@ namespace zestork.Controllers
                 Password = req.password,
                 Source = req.source,
                 isActive = "false",
-                Type = req.type,                
-                guid = "abcde",
+                Type = req.type,
+                guid = Guid.NewGuid().ToString(),
                 FirstName = req.firstName,
                 LastName = req.lastName,
                 gender = "NA",

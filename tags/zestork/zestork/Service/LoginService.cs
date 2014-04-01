@@ -20,6 +20,13 @@ namespace zestork.Service
                     
             return model;
         }
+        public LogOnModel googleLogin(string returnUrl,string code)
+        {
+            var model = new LogOnModel();
+            googleService googleService = new googleService();            
+            model = googleService.Login(returnUrl, code);
+            return model;
+        }
         public LogOnModel webLogin(string userName, string passwrod, string returnUrl)
         {
             var model = new LogOnModel();
