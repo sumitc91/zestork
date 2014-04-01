@@ -85,80 +85,8 @@
 							<li>                                
 								<div class="openmodalbox" ng-show="showLoginButton">								
 									<a href="3"><button class="btn btn-primary_login">Login</button></a>
-									<div class="modalboxContent">
-										<div class="wrapper">											
-											<div class="login-body">
-                                                <br />                                                                                              
-												<h1> <b> Sign in:</b></h1>
-                                                <br /> 
-												<form method="post" action="contact-post.html">
-					    							<div>
-						    							<span><input id="userNameBeforeLogin" name="userName" type="text" placeholder="Username" class="textbox"></span>                                                                                                                
-													</div>
-													<div>
-						    							<span><input id="passwordBeforeLogin" name="userEmail" type="password" placeholder="Password" class="textbox"></span>
-													</div>						   				
-                                                    
-                                                    
-                                                    <div class="socialButtonRightAlign">
-                                                        <span class="twitterRightAlign">
-                                                            <div class="twitter clearfix ">
-                                                             <img class="layer_3" src="../../Content/css/SocialButtons/images/layer_3.png" alt="" width="16" height="12" />
-                                                             <div class="sap"></div>
-                                                             <div class="sap_2"></div>
-                                                             <a href="#"><p class="sign_in_with_twitter">Sign in with Twitter</p></a>
-                                                            </div>
-                                                        </span>
-                                                        
-                                                        <span class="facebookRightAlign" ng-controller="signInController">														
-                                                            <div class="facebook clearfix">
-                                                             <img class="layer_7" src="../../Content/css/SocialButtons/images/layer_7.png" alt="" width="8" height="17" />
-                                                             <div class="sap_3"></div>
-                                                             <div class="sap_4"></div>
-                                                             <a href="#/facebookLogin" id="signInUsingFacebook"><p class="sign_in_with_facebook">Sign in with Facebook</p></a>
-                                                            </div>
-                                                        </span>
-
-                                                        <span class="linkedinRightAlign">
-                                                            <div class="linkedin clearfix">
-                                                             <img class="layer_11" src="../../Content/css/SocialButtons/images/layer_11.png" alt="" width="14" height="14" />
-                                                             <div class="sep"></div>
-                                                             <div class="sep_2"></div>
-                                                             <a href="#" ><p class="sign_in_with_linkedin">Sign in with Linkedin</p></a>
-                                                            </div>
-                                                        </span>
-
-                                                        <span class="yahooRightAlign">
-                                                            <div class="yahoo clearfix">
-                                                             <img class="layer_15" src="../../Content/css/SocialButtons/images/layer_15.png" alt="" width="20" height="11" />
-                                                             <div class="sep_3"></div>
-                                                             <div class="sep_4"></div>
-                                                             <a href="#"><p class="sign_in_with_yahoo">Sign in with Yahoo</p></a>
-                                                            </div>
-                                                        </span>
-
-                                                        <span class="googleRightAlign">
-                                                            <div class="google clearfix">
-                                                             <img class="layer_19" src="../../Content/css/SocialButtons/images/layer_19.png" alt="" width="11" height="17" />
-                                                             <div class="sep_7"></div>
-                                                             <div class="sep_8"></div>
-                                                             <a href="#"><p class="sign_in_with_google">Sign in with Google</p></a>
-                                                            </div>
-                                                        </span>
-
-                                                        
-
-                                                    </div>
-                                                   								
-												   <div>
-						   								<span><input type="submit" class="mybutton" value="Submit"></span>
-												  </div>
-												</form>
-												<div class="forget">
-													<a href="#"><span>Forgot password?</span></a>
-												</div>
-											</div>
-										</div>
+									<div class="modalboxContent"  ng-include="signInTemplate">
+										
 									</div>
 								</div>
 							</li>

@@ -98,6 +98,7 @@ ZestorkApp.controller('signUpUserController', function ($scope, $http) {
             type: $scope.type
         }
 
+        
         if ($scope.confirmPassword == $scope.password) {
             $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Creating your account...</h1>' });
 

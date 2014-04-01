@@ -71,13 +71,25 @@ ZestorkApp.controller('loginControllerPlaceHolders', function ($scope) {
 ZestorkApp.controller('beforeLoginHeaderController', function ($scope, $route, $routeParams, $location) {
 
 
+    $scope.signInTemplate = '../../Resource/templates/beforeLogin/contentView/ajax/signInTemplate.html';
+   
     $scope.beforeLoginHeaderInfo = {
 
         logoUrl: "#/",
         logoImage: "../../Resource/templates/afterLogin/web/img/logo.png"
     };
 
+    $scope.submitLogintData = function () {
 
+        var LoginRequest = {
+            userName: $scope.userName,
+            password: $scope.Password,
+        }
+        alert("HI.........................");
+        //if ($scope.Password.length != 0 && $scope.userName.length != 0) {
+        //    $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Login Please Wait...</h1>' });
+        //}
+    }
     $scope.showBeforeLoginMenuTab = false;
     $scope.showLoginButton = true;   
     
