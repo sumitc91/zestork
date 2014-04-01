@@ -47,14 +47,14 @@ namespace zestork.Service
                 userData.ReturnUrl = (string.Format(
                     "https://accounts.google.com/o/oauth2/auth?scope={0}&state=%2Fprofile&redirect_uri={1}&response_type=code&client_id={2}&approval_prompt=force",
                     scope, returnUrl, app_id));
-
+                logger.Info(userData.ReturnUrl);
                 return userData;
             }
             else
             {
                 string access_token = getGoogleAuthToken(returnUrl, scope, code, app_id, app_secret);
                 String URI = "https://www.googleapis.com/oauth2/v1/userinfo?access_token=" + access_token;
-
+                logger.Info(URI);
                 WebClient webClient = new WebClient();
                 Stream stream = webClient.OpenRead(URI);
                 string googleUserDetailString;
