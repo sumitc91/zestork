@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 03/28/2014 16:51:04
+-- Date Created: 04/02/2014 16:17:38
 -- Generated from EDMX file: F:\pcongo\tags\zestork\zestork\Models\Zestork.edmx
 -- --------------------------------------------------
 
@@ -71,6 +71,15 @@ CREATE TABLE [dbo].[ThirdPartyLogins] (
 );
 GO
 
+-- Creating table 'LinkedInAuthApiDatas'
+CREATE TABLE [dbo].[LinkedInAuthApiDatas] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [oauth_Token] nvarchar(max)  NOT NULL,
+    [oauth_TokenSecret] nvarchar(max)  NOT NULL,
+    [oauth_verifier] nvarchar(max)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -90,6 +99,12 @@ GO
 -- Creating primary key on [Id] in table 'ThirdPartyLogins'
 ALTER TABLE [dbo].[ThirdPartyLogins]
 ADD CONSTRAINT [PK_ThirdPartyLogins]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'LinkedInAuthApiDatas'
+ALTER TABLE [dbo].[LinkedInAuthApiDatas]
+ADD CONSTRAINT [PK_LinkedInAuthApiDatas]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 

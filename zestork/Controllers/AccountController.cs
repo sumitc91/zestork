@@ -11,6 +11,7 @@ using zestork.Models;
 using System.Data.Entity.Validation;
 using zestork.CommonMethods;
 using zestork.Service;
+using ASPSnippets.LinkedInAPI;
 
 namespace zestork.Controllers
 {
@@ -54,7 +55,12 @@ namespace zestork.Controllers
             else if (id == "linkedin")
             {
                 String AbsoluteUri = Request.Url.AbsoluteUri;
-                userData = LoginService.linkedinLogin("http://" + Request.Url.Authority + "/Account/Login/linkedin", AbsoluteUri);
+
+                string oauth_token = Request.QueryString["oauth_token"];
+                string oauth_verifier = Request.QueryString["oauth_verifier"];
+
+                userData = LoginService.linkedinLogin("http://" + Request.Url.Authority + "/Account/Login/linkedin", AbsoluteUri, oauth_token, oauth_verifier);
+                
             }
 
             //check for specific status code

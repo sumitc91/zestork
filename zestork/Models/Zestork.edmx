@@ -9,6 +9,7 @@
     <EntitySet Name="Users" EntityType="Zestork.Store.Users" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ValidateUserKeys" EntityType="Zestork.Store.ValidateUserKeys" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ThirdPartyLogins" EntityType="Zestork.Store.ThirdPartyLogins" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LinkedInAuthApiDatas" EntityType="Zestork.Store.LinkedInAuthApiDatas" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="Users">
     <Key>
@@ -45,6 +46,15 @@
     <Property Name="GoogleId" Type="nvarchar(max)" Nullable="false" />
     <Property Name="GoogleAccessToken" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="LinkedInAuthApiDatas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="oauth_Token" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="oauth_TokenSecret" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="oauth_verifier" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -53,6 +63,7 @@
           <EntitySet Name="Users" EntityType="Zestork.Users" />
           <EntitySet Name="ValidateUserKeys" EntityType="Zestork.ValidateUserKey" />
           <EntitySet Name="ThirdPartyLogins" EntityType="Zestork.ThirdPartyLogin" />
+          <EntitySet Name="LinkedInAuthApiDatas" EntityType="Zestork.LinkedInAuthApiData" />
         </EntityContainer>
         <EntityType Name="Users">
           <Key>
@@ -88,6 +99,15 @@
           <Property Type="String" Name="FacebookAccessToken" Nullable="false" />
           <Property Type="String" Name="GoogleId" Nullable="false" />
           <Property Type="String" Name="GoogleAccessToken" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LinkedInAuthApiData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="oauth_Token" Nullable="false" />
+          <Property Type="String" Name="oauth_TokenSecret" Nullable="false" />
+          <Property Type="String" Name="oauth_verifier" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -133,6 +153,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="LinkedInAuthApiDatas">
+      <EntityTypeMapping TypeName="IsTypeOf(Zestork.LinkedInAuthApiData)">
+        <MappingFragment StoreEntitySet="LinkedInAuthApiDatas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="oauth_Token" ColumnName="oauth_Token" />
+          <ScalarProperty Name="oauth_TokenSecret" ColumnName="oauth_TokenSecret" />
+          <ScalarProperty Name="oauth_verifier" ColumnName="oauth_verifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
@@ -156,6 +186,7 @@
         <EntityTypeShape EntityType="Zestork.Users" Width="1.5" PointX="3.875" PointY="1.25" Height="3.1340950520833326" />
         <EntityTypeShape EntityType="Zestork.ValidateUserKey" Width="1.5" PointX="1.625" PointY="1.25" Height="1.59568359375" />
         <EntityTypeShape EntityType="Zestork.ThirdPartyLogin" Width="1.5" PointX="6" PointY="1.25" Height="2.172587890625" />
+        <EntityTypeShape EntityType="Zestork.LinkedInAuthApiData" Width="1.5" PointX="7.75" PointY="1.375" Height="1.787985026041667" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
