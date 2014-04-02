@@ -29,16 +29,18 @@ namespace zestork.Service
             var userData = new LogOnModel();
             string app_id = "";
             string app_secret = "";
-            if (returnUrl.Contains("zestork.pcongo"))
-            {
-                app_id = ConfigurationManager.AppSettings["googleAppIDZestork"].ToString();
-                app_secret = ConfigurationManager.AppSettings["googleAppSecretZestork"].ToString();
-            }
-            else
-            {
-                app_id = ConfigurationManager.AppSettings["googleAppID"].ToString();
-                app_secret = ConfigurationManager.AppSettings["googleAppSecret"].ToString();
-            }
+            app_id = ConfigurationManager.AppSettings["googleAppID"].ToString();
+            app_secret = ConfigurationManager.AppSettings["googleAppSecret"].ToString();
+            //if (returnUrl.Contains("zestork.pcongo"))
+            //{
+            //    app_id = ConfigurationManager.AppSettings["googleAppIDZestork"].ToString();
+            //    app_secret = ConfigurationManager.AppSettings["googleAppSecretZestork"].ToString();
+            //}
+            //else
+            //{
+            //    app_id = ConfigurationManager.AppSettings["googleAppID"].ToString();
+            //    app_secret = ConfigurationManager.AppSettings["googleAppSecret"].ToString();
+            //}
            
             string scope = "email%20profile";            
             

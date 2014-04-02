@@ -30,8 +30,8 @@ namespace zestork.Controllers
         
         public JsonResult Login(string id)
         {
-            ServicePointManager.ServerCertificateValidationCallback = delegate
-            { return true; };
+            //ServicePointManager.ServerCertificateValidationCallback = delegate
+            //{ return true; };
             
             String returnUrl = "";
             var userData = new LogOnModel();

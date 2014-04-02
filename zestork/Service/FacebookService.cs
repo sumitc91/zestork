@@ -35,16 +35,20 @@ namespace zestork.Service
 
                 string app_id = string.Empty;
                 string app_secret = string.Empty;
-                if (returnUrl.Contains("zestork.pcongo"))
-                {
-                    app_id = ConfigurationManager.AppSettings["FacebookAppIDZestork"].ToString();
-                    app_secret = ConfigurationManager.AppSettings["FacebookAppSecretZestork"].ToString();
-                }
-                else
-                {
-                    app_id = ConfigurationManager.AppSettings["FacebookAppID"].ToString();
-                    app_secret = ConfigurationManager.AppSettings["FacebookAppSecret"].ToString();
-                }
+
+                app_id = ConfigurationManager.AppSettings["FacebookAppID"].ToString();
+                app_secret = ConfigurationManager.AppSettings["FacebookAppSecret"].ToString();
+                
+                //if (returnUrl.Contains("zestork.pcongo"))
+                //{
+                //    app_id = ConfigurationManager.AppSettings["FacebookAppIDZestork"].ToString();
+                //    app_secret = ConfigurationManager.AppSettings["FacebookAppSecretZestork"].ToString();
+                //}
+                //else
+                //{
+                //    app_id = ConfigurationManager.AppSettings["FacebookAppID"].ToString();
+                //    app_secret = ConfigurationManager.AppSettings["FacebookAppSecret"].ToString();
+                //}
                
                 string scope = "email";
                 if (code == null)
