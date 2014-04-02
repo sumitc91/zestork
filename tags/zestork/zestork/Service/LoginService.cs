@@ -20,6 +20,13 @@ namespace zestork.Service
                     
             return model;
         }
+        public LogOnModel linkedinLogin(string returnUrl, string AbsoluteUri)
+        {
+            var model = new LogOnModel();
+            linkedinService linkedinService = new linkedinService();
+            model = linkedinService.Login(returnUrl, AbsoluteUri);
+            return model;
+        }
         public LogOnModel googleLogin(string returnUrl,string code)
         {
             var model = new LogOnModel();

@@ -49,7 +49,12 @@ namespace zestork.Controllers
                     string access_token = Request.QueryString["access_token"];
                 }
                 String code = Request.QueryString["code"];
-                userData = LoginService.googleLogin(returnUrl,code);
+                userData = LoginService.googleLogin("http://" + Request.Url.Authority + "/Account/Login/google", code);
+            }
+            else if (id == "linkedin")
+            {
+                String AbsoluteUri = Request.Url.AbsoluteUri;
+                userData = LoginService.linkedinLogin("http://" + Request.Url.Authority + "/Account/Login/linkedin", AbsoluteUri);
             }
 
             //check for specific status code

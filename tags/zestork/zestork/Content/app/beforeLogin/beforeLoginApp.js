@@ -8,6 +8,7 @@ ZestorkApp.config(function ($routeProvider) {
                    when("/login/:code", { templateUrl: "../../Resource/templates/beforeLogin/contentView/ajax/signInTemplate.html" }).
                    when("/facebookLogin", { templateUrl: "../../Resource/templates/beforeLogin/contentView/facebookLogin.html" }).
                    when("/googleLogin", { templateUrl: "../../Resource/templates/beforeLogin/contentView/googleLogin.html" }).
+                   when("/linkedinLogin", { templateUrl: "../../Resource/templates/beforeLogin/contentView/linkedinLogin.html" }).
                    when("/validate/:userName/:guid", { templateUrl: "../../Resource/templates/beforeLogin/contentView/validateAccount.html" }).
                    when("/about", { templateUrl: "../../Resource/templates/beforeLogin/contentView/about.html" }).
                    when("/404", { templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" }).

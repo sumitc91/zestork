@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ASPSnippets.LinkedInAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\ASPSnippets.LinkedInAPI.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
@@ -217,6 +221,7 @@
     <Compile Include="ServerCache\ServerCacheItem.cs" />
     <Compile Include="Service\FacebookService.cs" />
     <Compile Include="Service\googleService.cs" />
+    <Compile Include="Service\linkedinService.cs" />
     <Compile Include="Service\LoginService.cs" />
     <Compile Include="Service\webLoginService.cs" />
     <Compile Include="Session\CPSession.cs" />
@@ -319,6 +324,7 @@
     <Content Include="Content\third-party\jquery.modalbox-1.5.0\index.html" />
     <Content Include="Content\third-party\jquery.modalbox-1.5.0\js\jquery.modalbox-1.5.0-min.js" />
     <Content Include="Content\third-party\jquery.modalbox-1.5.0\js\jquery.modalbox-1.5.0.js" />
+    <Content Include="dll\ASPSnippets.LinkedInAPI.dll" />
     <Content Include="dll\log4net.dll" />
     <Content Include="Global.asax" />
     <Content Include="Models\Zestork.edmx.sql" />
@@ -1391,10 +1397,11 @@
     <Content Include="Resource\templates\afterLogin\web\tables-dynamic.html" />
     <Content Include="Resource\templates\afterLogin\web\tables-large.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\404.html" />
-    <Content Include="Resource\templates\beforeLogin\contentView\about.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\linkedinLogin.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\ajax\signInTemplate.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\googleLogin.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\facebookLogin.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\termsAndConditions.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\validateAccount.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\signup.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\home.html" />
