@@ -78,8 +78,7 @@ namespace zestork.Service
                     {
                         // add user in database
                         String ID = Guid.NewGuid().ToString();
-                        String ImageUrl = FacebookService.GetPictureUrl(userName);
-
+                        String ImageUrl = FacebookService.GetPictureUrl(userName);                        
                         userData.User.FirstName = me.first_name;
                         userData.User.LastName = me.last_name;
                         userData.User.Username = me.username;
@@ -95,6 +94,7 @@ namespace zestork.Service
                         
                         userData.User.Gender = me.gender;
                         userData.User.ImageUrl = ImageUrl;
+                        userData.User.Username = userName + "@facebook.com";
                         var user = new Users
                         {
                             Username = userName + "@facebook.com",
