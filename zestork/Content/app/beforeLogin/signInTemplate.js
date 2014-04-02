@@ -45,13 +45,18 @@ ZestorkApp.controller('googleLoginController', function ($scope, $http) {
             window.location.href = data.ReturnUrl;
         }
         else {
-            alert("successfully Logged in using facebook");
+            alert("successfully Logged in using google");
             console.log(data);
         }
         console.log(data);
     }).error(function (data, status, headers, config) {
         $scope.status = status;
     });
+});
+
+ZestorkApp.controller('linkedinLoginController', function ($scope, $http) {
+    $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Loggin in via Facebook..</h1>' });
+    window.location.href = "/Account/Login/linkedin";    
 });
 
 ZestorkApp.controller('webLoginController', function ($scope) {
