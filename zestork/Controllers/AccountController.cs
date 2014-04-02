@@ -12,6 +12,7 @@ using System.Data.Entity.Validation;
 using zestork.CommonMethods;
 using zestork.Service;
 using ASPSnippets.LinkedInAPI;
+using System.Net;
 
 namespace zestork.Controllers
 {
@@ -28,7 +29,10 @@ namespace zestork.Controllers
         }
         
         public JsonResult Login(string id)
-        {                        
+        {
+            ServicePointManager.ServerCertificateValidationCallback = delegate
+            { return true; };
+            
             String returnUrl = "";
             var userData = new LogOnModel();
             LoginService LoginService = new LoginService();
