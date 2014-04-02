@@ -191,6 +191,10 @@
     <Compile Include="Models\DataContract\User.cs" />
     <Compile Include="Models\DataContract\ValidateAccountRequest.cs" />
     <Compile Include="Models\DataWrapper\googleAccessTokenWrapper.cs" />
+    <Compile Include="Models\DataWrapper\linkedinUserDataWrapper.cs" />
+    <Compile Include="Models\LinkedInAuthApiData.cs">
+      <DependentUpon>ZestorkModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ThirdPartyLogin.cs">
       <DependentUpon>ZestorkModel.tt</DependentUpon>
     </Compile>
@@ -222,7 +226,9 @@
     <Compile Include="Service\FacebookService.cs" />
     <Compile Include="Service\googleService.cs" />
     <Compile Include="Service\linkedinService.cs" />
+    <Compile Include="Service\linkedin\oAuthBase2.cs" />
     <Compile Include="Service\LoginService.cs" />
+    <Compile Include="Service\linkedin\oAuthLinkedIn.cs" />
     <Compile Include="Service\webLoginService.cs" />
     <Compile Include="Session\CPSession.cs" />
     <Compile Include="Session\TokenManager.cs" />
@@ -1451,6 +1457,7 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Code\" />
     <Folder Include="DAO\" />
     <Folder Include="logs\" />
     <Folder Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\.quarantine\" />
