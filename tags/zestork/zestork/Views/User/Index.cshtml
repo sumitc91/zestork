@@ -21,6 +21,31 @@
 	<!-- jQuery UI -->
 	<link rel="stylesheet" href="../../Resource/templates/afterLogin/web/css/plugins/jquery-ui/smoothness/jquery-ui.css">
 	<link rel="stylesheet" href="../../Resource/templates/afterLogin/web/css/plugins/jquery-ui/smoothness/jquery.ui.theme.css">
+	<!-- PageGuide -->
+	<link rel="stylesheet" href="../../Resource/templates/afterLogin/web/css/plugins/pageguide/pageguide.css">
+	<!-- Fullcalendar -->
+	<link rel="stylesheet" href="../../Resource/templates/afterLogin/web/css/plugins/fullcalendar/fullcalendar.css">
+	<link rel="stylesheet" href="../../Resource/templates/afterLogin/web/css/plugins/fullcalendar/fullcalendar.print.css" media="print">
+	<!-- Tagsinput -->
+	<link rel="stylesheet" href="../../Resource/templates/afterLogin/web/css/plugins/tagsinput/jquery.tagsinput.css">
+	<!-- chosen -->
+	<link rel="stylesheet" href="../../Resource/templates/afterLogin/web/css/plugins/chosen/chosen.css">
+	<!-- multi select -->
+	<link rel="stylesheet" href="../../Resource/templates/afterLogin/web/css/plugins/multiselect/multi-select.css">
+	<!-- timepicker -->
+	<link rel="stylesheet" href="../../Resource/templates/afterLogin/web/css/plugins/timepicker/bootstrap-timepicker.min.css">
+	<!-- colorpicker -->
+	<link rel="stylesheet" href="../../Resource/templates/afterLogin/web/css/plugins/colorpicker/colorpicker.css">
+	<!-- Datepicker -->
+	<link rel="stylesheet" href="../../Resource/templates/afterLogin/web/css/plugins/datepicker/datepicker.css">
+	<!-- Daterangepicker -->
+	<link rel="stylesheet" href="../../Resource/templates/afterLogin/web/css/plugins/daterangepicker/daterangepicker.css">
+	<!-- Plupload -->
+	<link rel="stylesheet" href="../../Resource/templates/afterLogin/web/css/plugins/plupload/jquery.plupload.queue.css">
+	<!-- select2 -->
+	<link rel="stylesheet" href="../../Resource/templates/afterLogin/web/css/plugins/select2/select2.css">
+	<!-- icheck -->
+	<link rel="stylesheet" href="../../Resource/templates/afterLogin/web/css/plugins/icheck/all.css">
 	<!-- Theme CSS -->
 	<link rel="stylesheet" href="../../Resource/templates/afterLogin/web/css/style.css">
 	<!-- Color CSS -->
@@ -43,17 +68,47 @@
 	<script src="../../Resource/templates/afterLogin/web/js/plugins/jquery-ui/jquery.ui.mouse.min.js"></script>
 	<script src="../../Resource/templates/afterLogin/web/js/plugins/jquery-ui/jquery.ui.resizable.min.js"></script>
 	<script src="../../Resource/templates/afterLogin/web/js/plugins/jquery-ui/jquery.ui.sortable.min.js"></script>
-	<!-- slimScroll -->
-	<script src="../../Resource/templates/afterLogin/web/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/jquery-ui/jquery.ui.spinner.js"></script>
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/jquery-ui/jquery.ui.slider.js"></script>
 	<!-- Bootstrap -->
 	<script src="../../Resource/templates/afterLogin/web/js/bootstrap.min.js"></script>
 	<!-- Bootbox -->
 	<script src="../../Resource/templates/afterLogin/web/js/plugins/bootbox/jquery.bootbox.js"></script>
-	<!-- Bootbox -->
-	<script src="../../Resource/templates/afterLogin/web/js/plugins/form/jquery.form.min.js"></script>
-	<!-- Validation -->
-	<script src="../../Resource/templates/afterLogin/web/js/plugins/validation/jquery.validate.min.js"></script>
-	<script src="../../Resource/templates/afterLogin/web/js/plugins/validation/additional-methods.min.js"></script>
+	<!-- Masked inputs -->
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/maskedinput/jquery.maskedinput.min.js"></script>
+	<!-- TagsInput -->
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
+	<!-- Datepicker -->
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/datepicker/bootstrap-datepicker.js"></script>
+	<!-- Daterangepicker -->
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/daterangepicker/daterangepicker.js"></script>
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/daterangepicker/moment.min.js"></script>
+	<!-- Timepicker -->
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+	<!-- Colorpicker -->
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/colorpicker/bootstrap-colorpicker.js"></script>
+	<!-- Chosen -->
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/chosen/chosen.jquery.min.js"></script>
+	<!-- MultiSelect -->
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/multiselect/jquery.multi-select.js"></script>
+	<!-- CKEditor -->
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/ckeditor/ckeditor.js"></script>
+	<!-- PLUpload -->
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/plupload/plupload.full.js"></script>
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/plupload/jquery.plupload.queue.js"></script>
+	<!-- Custom file upload -->
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/fileupload/bootstrap-fileupload.min.js"></script>
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/mockjax/jquery.mockjax.js"></script>
+	<!-- select2 -->
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/select2/select2.min.js"></script>
+	<!-- icheck -->
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/icheck/jquery.icheck.min.js"></script>
+	<!-- complexify -->
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/complexify/jquery.complexify-banlist.min.js"></script>
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/complexify/jquery.complexify.min.js"></script>
+	<!-- Mockjax -->
+	<script src="../../Resource/templates/afterLogin/web/js/plugins/mockjax/jquery.mockjax.js"></script>
+
 
 	<!-- Theme framework -->
 	<script src="../../Resource/templates/afterLogin/web/js/eakroko.min.js"></script>
@@ -69,16 +124,21 @@
 				$('input, textarea').placeholder();
 			});
 		</script>
-	<![endif]-->
-	
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="../../Resource/templates/afterLogin/web/img/favicon.ico" />
-	<!-- Apple devices Homescreen icon -->
-	<link rel="apple-touch-icon-precomposed" href="../../Resource/templates/afterLogin/web/img/apple-touch-icon-precomposed.png" />
+		<![endif]-->
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="../../Resource/templates/afterLogin/web/img/favicon.ico" />
+		<!-- Apple devices Homescreen icon -->
+		<link rel="apple-touch-icon-precomposed" href="../../Resource/templates/afterLogin/web/img/apple-touch-icon-precomposed.png" />
 
 </head>
 
-<body ng-controller="myController">
+<body ng-controller="masterPageController">
+		
+		<div id="modal-firstTimeUserLoginViaSocialLinkPopUp" ng-include="firstTimeUserLoginViaSocialLinkPopUpTemplate"  class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			
+		</div>
+
 	<div id="navigation">
 		<div class="container-fluid">
 			<a href="#" id="brand">FLAT</a>
@@ -298,6 +358,9 @@
 					</ul>
 				</li>
 			</ul>
+			
+			<a href="#modal-firstTimeUserLoginViaSocialLinkPopUp" id="firstTimeUserLoginViaSocialLinkPopUp" style="display: none;" role="button" class="btn" data-toggle="modal">Modal with animation</a>
+			
 			<div class="user">
 				<ul class="icon-nav">
 					<li class='dropdown'>

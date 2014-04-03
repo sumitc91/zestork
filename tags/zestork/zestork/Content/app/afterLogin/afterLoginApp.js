@@ -12,8 +12,24 @@ ZestorkAppAfterLogin.config(function ($routeProvider) {
 
 });
 
-ZestorkAppAfterLogin.controller('myController', function ($scope) {
+ZestorkAppAfterLogin.controller('masterPageController', function ($scope) {
 
+    $scope.firstTimeUserLoginViaSocialLinkPopUpTemplate = '../../Resource/templates/afterLogin/contentView/index/firstTimeLoginViaSocialLinkePopUpModal.html';
+    
+    $scope.classRadioButtonClient = "iradio_square-blue checked";
+    $scope.classRadioButtonUser = "iradio_square-blue";
+    
+    $scope.infoClicked = function (message) {
+        if (message == "user") {
+            $scope.classRadioButtonUser = "iradio_square-blue checked";
+            $scope.classRadioButtonClient = "iradio_square-blue";
+        }
+        else if (message == "client") {
+            $scope.classRadioButtonClient = "iradio_square-blue checked";
+            $scope.classRadioButtonUser = "iradio_square-blue";
+        }        
+    }
+    $('#firstTimeUserLoginViaSocialLinkPopUp').click();
     $scope.person = {
         name: "Controller Sumit Chourasia after login"
     };

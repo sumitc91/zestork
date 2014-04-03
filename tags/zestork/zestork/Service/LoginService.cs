@@ -27,6 +27,13 @@ namespace zestork.Service
             model = linkedinService.Login(returnUrl, AbsoluteUri, oauth_token, oauth_verifier);
             return model;
         }
+        public LogOnModel twitterinLogin(string returnUrl, string AbsoluteUri, string oauth_token, string oauth_verifier)
+        {
+            var model = new LogOnModel();
+            twitterService twitterService = new twitterService();
+            model = twitterService.Login(returnUrl, AbsoluteUri, oauth_token, oauth_verifier);
+            return model;
+        }
         public LogOnModel googleLogin(string returnUrl,string code)
         {
             var model = new LogOnModel();

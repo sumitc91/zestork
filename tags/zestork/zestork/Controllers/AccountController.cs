@@ -66,7 +66,16 @@ namespace zestork.Controllers
                 userData = LoginService.linkedinLogin("http://" + Request.Url.Authority + "/Account/Login/linkedin", AbsoluteUri, oauth_token, oauth_verifier);
                 
             }
+            else if (id == "twitter")
+            {
+                String AbsoluteUri = Request.Url.AbsoluteUri;
 
+                string oauth_token = Request.QueryString["oauth_token"];
+                string oauth_verifier = Request.QueryString["oauth_verifier"];
+
+                userData = LoginService.twitterinLogin("http://" + Request.Url.Authority + "/Account/Login/twitter", AbsoluteUri, oauth_token, oauth_verifier);
+
+            }
             //check for specific status code
             if (userData.statusCode != null)
             {
