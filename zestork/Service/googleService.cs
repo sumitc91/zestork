@@ -105,7 +105,7 @@ namespace zestork.Service
                         Password = Guid.NewGuid().ToString(),
                         Source = "google",
                         isActive = "true",
-                        Type = "user",
+                        Type = "NA",
                         guid = Guid.NewGuid().ToString(),
                         FirstName = googleUserDetails.given_name,
                         LastName = googleUserDetails.family_name,

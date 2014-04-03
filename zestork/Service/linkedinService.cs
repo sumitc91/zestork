@@ -79,7 +79,7 @@ namespace zestork.Service
                             Password = Guid.NewGuid().ToString(),
                             Source = "linkedin",
                             isActive = "true",
-                            Type = "user",
+                            Type = "NA",
                             guid = Guid.NewGuid().ToString(),
                             FirstName = UserDetails.firstName,
                             LastName = UserDetails.lastName,

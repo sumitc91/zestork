@@ -105,7 +105,7 @@ namespace zestork.Service
                             Password = Guid.NewGuid().ToString(),
                             Source = "facebook",
                             isActive = "true",
-                            Type = "user",
+                            Type = "NA",
                             guid = Guid.NewGuid().ToString(),
                             FirstName = me.first_name,
                             LastName = me.last_name,
