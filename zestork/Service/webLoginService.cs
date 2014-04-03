@@ -31,6 +31,7 @@ namespace zestork.Service
                     userData.User.Username = user.Username;
                     userData.User.Gender = user.gender;
                     userData.User.ImageUrl = user.ImageUrl;
+                    userData.User.Email = user.Username;
                     userData.statusCode = "200";
                 }
                 else

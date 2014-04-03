@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SunPower.Common.Infrastructure.ServerCache
+namespace zestork.Common.Infrastructure.ServerCache
 {
     public class ServerCacheItem
     {

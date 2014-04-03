@@ -85,32 +85,49 @@ namespace zestork.Service
                     String ID = Guid.NewGuid().ToString();
 
                     userData.User.FirstName = googleUserDetails.given_name;
-                    userData.User.LastName = googleUserDetails.family_name;
-                    userData.User.Username = googleUserDetails.email;
+                    userData.User.LastName = googleUserDetails.family_name;                    
                     try
                     {
+                        userData.User.Username = googleUserDetails.email;
                         userData.User.Email = googleUserDetails.email;
                     }
                     catch (Exception)
                     {
-
+                        userData.User.Username = "NA";
                         userData.User.Email = "NA";
                     }
-
-                    userData.User.Gender = googleUserDetails.gender;
-                    userData.User.ImageUrl = googleUserDetails.picture;
+                    try
+                    {
+                        userData.User.Gender = googleUserDetails.gender;
+                    }
+                    catch (Exception)
+                    {
+                        userData.User.Gender = "NA";
+                        throw;
+                    }
+                    
+                    try
+                    {
+                        userData.User.ImageUrl = googleUserDetails.picture;
+                    }
+                    catch (Exception)
+                    {
+                        userData.User.ImageUrl = "NA";
+                        
+                    }
+                    logger.Info(JsonConvert.SerializeObject(userData));
                     var user = new Users
                     {
-                        Username = googleUserDetails.email,
+                        Username = userData.User.Email,
                         Password = Guid.NewGuid().ToString(),
                         Source = "google",
                         isActive = "true",
                         Type = "NA",
                         guid = Guid.NewGuid().ToString(),
-                        FirstName = googleUserDetails.given_name,
-                        LastName = googleUserDetails.family_name,
-                        gender = googleUserDetails.gender,
-                        ImageUrl = googleUserDetails.picture
+                        FirstName = userData.User.FirstName,
+                        LastName = userData.User.LastName,
+                        gender = userData.User.Gender,
+                        ImageUrl = userData.User.ImageUrl,                        
                     };
 
                     _db.Users.Add(user);

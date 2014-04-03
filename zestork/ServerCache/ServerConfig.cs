@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Configuration;
 
-namespace SunPower.Common.Infrastructure.ServerCache
+namespace zestork.Common.Infrastructure.ServerCache
 {
     public static class ServerConfig
     {
