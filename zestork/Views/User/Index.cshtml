@@ -131,6 +131,11 @@
 		<!-- Apple devices Homescreen icon -->
 		<link rel="apple-touch-icon-precomposed" href="../../Resource/templates/afterLogin/web/img/apple-touch-icon-precomposed.png" />
 
+		<link href="../../Content/css/responsiveTransparentButton.css" rel='stylesheet' />
+		<link href="../../Content/css/nprogress.css" rel='stylesheet' />
+		<script src='../../Content/js/nprogress.js'></script>
+		<script src="../../Content/js/jquery.blockUI.js"></script>	
+
 </head>
 
 <body ng-controller="masterPageController">
@@ -361,7 +366,7 @@
 			
 			<a href="#modal-firstTimeUserLoginViaSocialLinkPopUp" id="firstTimeUserLoginViaSocialLinkPopUp" style="display: none;" role="button" class="btn" data-toggle="modal">Modal with animation</a>
 			
-			<div class="user">
+			<div class="user" ng-controller="getUserInfoController">
 				<ul class="icon-nav">
 					<li class='dropdown'>
 						<a href="#" class='dropdown-toggle' data-toggle="dropdown"><i class="icon-envelope"></i><span class="label label-lightred">4</span></a>
@@ -480,7 +485,7 @@
 					</li>
 				</ul>
 				<div class="dropdown">
-					<a href="#" class='dropdown-toggle' data-toggle="dropdown">John Doe <img src="../../Resource/templates/afterLogin/web/img/demo/user-avatar.jpg" alt=""></a>
+					<a href="#" class='dropdown-toggle' data-toggle="dropdown"> {{details.FirstName}} {{details.LastName}} <img src="../../Resource/templates/afterLogin/web/img/demo/user-avatar.jpg" alt=""></a>
 					<ul class="dropdown-menu pull-right">
 						<li>
 							<a href="more-userprofile.html">Edit profile</a>

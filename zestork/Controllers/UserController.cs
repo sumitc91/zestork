@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using zestork.Models.DataContract;
 using SunPower.Common.Infrastructure.Logger;
 using System.Reflection;
+using zestork.Models;
 
 namespace zestork.Controllers
 {
@@ -21,6 +22,13 @@ namespace zestork.Controllers
             
             return View();
         }
-        
+
+        public JsonResult details(string id)
+        {                                   
+            var _db = new ZestorkContainer();            
+            Users user = _db.Users.SingleOrDefault(x => x.Username == id && x.isActive == "true");
+            return Json(user, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
