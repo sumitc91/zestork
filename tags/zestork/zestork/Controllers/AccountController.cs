@@ -85,14 +85,13 @@ namespace zestork.Controllers
                 }
                 else
                 {
-                    Response.Redirect("/" + userData.User.Username + "/#/");
+                    Response.Redirect("/" + userData.User.Username + "?uid="+userData.User.Username+"/#/" );
                 }
             }
             
             return Json(userData, JsonRequestBehavior.AllowGet);
         }
         
-
         [HttpPost]
         public ActionResult CreateAccount(CreateAccountRequest req)
         {                       
@@ -194,6 +193,18 @@ namespace zestork.Controllers
 
             var _db = new ZestorkContainer();
             Users User = _db.Users.SingleOrDefault(x=>x.Username== "sumitchourasia91@gmail.com");
+            ValidateUserKey key = _db.ValidateUserKeys.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
+            return Json(User, JsonRequestBehavior.AllowGet);
+
+        }
+
+        public JsonResult getUserInfo()
+        {
+            String path = Request.Url.AbsolutePath;
+            String code = Request.QueryString["code"];
+
+            var _db = new ZestorkContainer();
+            Users User = _db.Users.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
             ValidateUserKey key = _db.ValidateUserKeys.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
             return Json(User, JsonRequestBehavior.AllowGet);
 
