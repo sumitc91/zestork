@@ -7,6 +7,7 @@ using zestork.Models.DataContract;
 using SunPower.Common.Infrastructure.Logger;
 using System.Reflection;
 using zestork.Models;
+using zestork.Common.Infrastructure;
 
 namespace zestork.Controllers
 {
@@ -24,9 +25,15 @@ namespace zestork.Controllers
         }
 
         public JsonResult details(string id)
-        {                                   
-            var _db = new ZestorkContainer();            
-            Users user = _db.Users.SingleOrDefault(x => x.Username == id && x.isActive == "true");
+        {
+            IEnumerable<string> headerValues = Request.Headers.GetValues("Authorization");
+            String guid = headerValues.FirstOrDefault();
+            guid = guid.Replace("/","");
+            CPSession retVal = TokenManager.getSessionInfo(guid);
+            string userName = retVal.getAttributeValue("userName");
+
+            var _db = new ZestorkContainer();
+            Users user = _db.Users.SingleOrDefault(x => x.Username == userName && x.isActive == "true");
             return Json(user, JsonRequestBehavior.AllowGet);
         }
 

@@ -13,6 +13,7 @@ using zestork.CommonMethods;
 using zestork.Service;
 using ASPSnippets.LinkedInAPI;
 using System.Net;
+using zestork.Common.Infrastructure;
 
 namespace zestork.Controllers
 {
@@ -85,7 +86,16 @@ namespace zestork.Controllers
                 }
                 else
                 {
-                    Response.Redirect("/" + userData.User.Username + "?uid="+userData.User.Username+"/#/" );
+
+                    #region Session                    
+                    CPSession session = new CPSession();
+                    session.addAttribute("userName", userData.User.Username);
+                    bool isPersistent = false; // as of now we have only 1 type of login
+                    TokenManager.CreateSession(session, isPersistent);
+                    userData.User.guid = session.getID();                    
+                    #endregion
+
+                    Response.Redirect("/" + userData.User.FirstName +"-"+userData.User.LastName + "?guid=" + userData.User.guid + "/#/");
                 }
             }
             

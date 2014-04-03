@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SunPower.Common.Infrastructure
+namespace zestork.Common.Infrastructure
 {
     public class CPSession
     {

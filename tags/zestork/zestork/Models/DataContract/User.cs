@@ -21,5 +21,6 @@ namespace zestork.Models.DataContract
         public System.DateTime LastLogin { get; set; }
         public System.DateTime Created { get; set; }
         public Nullable<System.DateTime> Changed { get; set; }
+        public string guid { get; set; }
     }
 }

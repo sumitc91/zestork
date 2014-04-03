@@ -63,10 +63,15 @@ ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootS
 //getting user info..
 ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http, $rootScope) {
     $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Profile Loading...</h1>' });
+    var headers = { 'Content-Type': 'application/json',
+        'Authorization': getParameterByName('guid')
+    };
+
     $http({
-        url: '/' + getParameterByName('uid') + 'User/details',
+        url: '/' + 'secure/' + 'User/details',
         method: "GET",
-        headers: { 'Content-Type': 'application/json' }
+        //headers: { 'Content-Type': 'application/json' }
+        headers: headers,
     }).success(function (data, status, headers, config) {
         //$scope.persons = data; // assign  $scope.persons here as promise is resolved here
         $.unblockUI();
