@@ -34,6 +34,8 @@ namespace zestork.Controllers
 
             var _db = new ZestorkContainer();
             Users user = _db.Users.SingleOrDefault(x => x.Username == userName && x.isActive == "true");
+            if (user.ImageUrl == "NA")
+                user.ImageUrl = "../../Resource/templates/afterLogin/web/img/demo/user-avatar.jpg";
             return Json(user, JsonRequestBehavior.AllowGet);
         }
 
