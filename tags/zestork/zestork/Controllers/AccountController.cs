@@ -29,7 +29,7 @@ namespace zestork.Controllers
             return View();
         }
         
-        public JsonResult Login(string id)
+        public ViewResult Login(string id)
         {
             //ServicePointManager.ServerCertificateValidationCallback = delegate
             //{ return true; };
@@ -96,10 +96,12 @@ namespace zestork.Controllers
                     #endregion
 
                     Response.Redirect("/" + userData.User.FirstName +"-"+userData.User.LastName + "?guid=" + userData.User.guid + "/#/");
+                    return View("Index", "User" , userData);
+                    //HttpContext.Response.AppendHeader("Authorization", userData.User.guid);                    
                 }
             }
-            
-            return Json(userData, JsonRequestBehavior.AllowGet);
+
+            return View("Index",userData);
         }
         
         [HttpPost]
@@ -203,6 +205,18 @@ namespace zestork.Controllers
 
             var _db = new ZestorkContainer();
             Users User = _db.Users.SingleOrDefault(x=>x.Username== "sumitchourasia91@gmail.com");
+            ValidateUserKey key = _db.ValidateUserKeys.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
+            return Json(User, JsonRequestBehavior.AllowGet);
+
+        }
+
+        public JsonResult getUserGuid(string email)
+        {
+            String path = Request.Url.AbsolutePath;
+            String code = Request.QueryString["code"];
+
+            var _db = new ZestorkContainer();
+            Users User = _db.Users.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
             ValidateUserKey key = _db.ValidateUserKeys.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
             return Json(User, JsonRequestBehavior.AllowGet);
 
