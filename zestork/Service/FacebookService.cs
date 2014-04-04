@@ -50,7 +50,7 @@ namespace zestork.Service
                 //    app_secret = ConfigurationManager.AppSettings["FacebookAppSecret"].ToString();
                 //}
                
-                string scope = "email";
+                string scope = "";
                 if (code == null)
                 {
                     userData.ReturnUrl = (string.Format(
@@ -85,18 +85,7 @@ namespace zestork.Service
                         String ImageUrl = FacebookService.GetPictureUrl(userName);                        
                         userData.User.FirstName = me.first_name;
                         userData.User.LastName = me.last_name;
-                        userData.User.Username = me.username;
-                        try
-                        {
-                            userData.User.Email = me.email;
-                        }
-                        catch (Exception)
-                        {
-
-                            userData.User.Email = "NA";
-                        }
-                        
-                        userData.User.Gender = me.gender;
+                        userData.User.Username = me.username;                        
                         userData.User.ImageUrl = ImageUrl;
                         userData.User.Username = userName + "@facebook.com";
                         var user = new Users
@@ -109,7 +98,7 @@ namespace zestork.Service
                             guid = Guid.NewGuid().ToString(),
                             FirstName = me.first_name,
                             LastName = me.last_name,
-                            gender = me.gender,
+                            gender = "NA",
                             ImageUrl = ImageUrl
                         };
 
