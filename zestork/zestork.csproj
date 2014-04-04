@@ -289,6 +289,8 @@
     <Content Include="Content\css\responsiveTransparentButton.css" />
     <Content Include="Content\js\jquery.blockUI.js" />
     <Content Include="Content\js\nprogress.js" />
+    <Content Include="Content\lib\angular-cookies.js" />
+    <Content Include="Content\lib\angular-cookies.min.js" />
     <Content Include="Content\lib\angular.js" />
     <Content Include="Content\lib\angular.min.js" />
     <Content Include="Content\Site.css" />

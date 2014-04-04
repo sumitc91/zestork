@@ -1,5 +1,5 @@
 
-var ZestorkAppAfterLogin = angular.module('ZestorkAppAfterLogin', []);
+var ZestorkAppAfterLogin = angular.module('ZestorkAppAfterLogin', ['ngCookies']);
 
 ZestorkAppAfterLogin.config(function ($routeProvider) {
 
@@ -12,15 +12,34 @@ ZestorkAppAfterLogin.config(function ($routeProvider) {
 
 });
 
+ZestorkAppAfterLogin.factory('CookieUtil',function($rootScope, $location, $cookies){
+   
+   return {
+        CookieValue: function() {
+
+            $rootScope.Authentication = null;
+            var guidParam = getParameterByName('guid');
+        
+            if(guidParam != null && guidParam != '')                
+                $rootScope.Authentication = guidParam; //global variable
+
+                if($rootScope.Authentication !=null)
+                    $cookies.Authentication = $rootScope.Authentication;
+                    //$cookieStore.put("Authentication",$rootScope.Authentication)  
+
+            return $cookies.Authentication;
+        }
+    };
+
+});
+
 ZestorkAppAfterLogin.run(function ($rootScope, $location) { //Insert in the function definition the dependencies you need.
     //Do your $on in here, like this:  
 
     $rootScope.$on("$locationChangeStart", function (event, next, current) {
-        //Do your things        
-        //var path2 = $location.path();
-
-        var searc = $location.search()
-
+    
+        
+        //getParameterByName('guid')
         //alert(getParameterByName('uid'));
         //getParameterByName('uid'); //global variable
         //        if (contextPath == "/signup" || contextPath == "/signup/user") {
@@ -61,12 +80,26 @@ ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootS
 });
 
 //getting user info..
-ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http, $rootScope) {
-    $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Profile Loading...</h1>' });
-    var headers = { 'Content-Type': 'application/json',
-        'Authorization': getParameterByName('guid')
-    };
+ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http, $rootScope,CookieUtil) {
 
+        //CookieUtil.storeAuthCookie();            
+        if(CookieUtil.CookieValue() != null)
+        {            
+            $rootScope.Authentication =  CookieUtil.CookieValue();
+            //alert($rootScope.Authentication);
+            //$cookieStore.Authentication = getParameterByName('guid');
+        }
+        else
+        {          
+                alert('authentication cookie is null'); 
+                //window.location.href = "/?mssg=your session expired";
+        }
+    $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Profile Loading...</h1>' });
+    $rootScope.Authentication=CookieUtil.CookieValue();
+    var headers = { 'Content-Type': 'application/json',
+        'Authorization': $rootScope.Authentication
+    };
+    
     $http({
         url: '/' + 'secure/' + 'User/details',
         method: "GET",
@@ -85,7 +118,8 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
         }
         //console.log(data);
     }).error(function (data, status, headers, config) {
-        $scope.status = status;
+        $.unblockUI();
+        alert('Internal Server Error Occured !!');
     });
 });
 
@@ -95,3 +129,4 @@ function getParameterByName(name) {
         results = regex.exec(location.search);
     return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
+
