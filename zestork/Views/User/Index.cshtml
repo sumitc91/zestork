@@ -487,10 +487,10 @@
 					</li>
 				</ul>
 				<div class="dropdown" ng-cloak>
-					<a href="#" class='dropdown-toggle' data-toggle="dropdown"> {{details.FirstName}} {{details.LastName}} <img src="../../Resource/templates/afterLogin/web/img/demo/user-avatar.jpg" alt=""></a>
+					<a href="#" class='dropdown-toggle' data-toggle="dropdown"> {{details.FirstName}} {{details.LastName}} <img src="{{details.ImageUrl}}" height="27" width="27" alt=""></a>
 					<ul class="dropdown-menu pull-right">
 						<li>
-							<a href="more-userprofile.html">Edit profile</a>
+							<a href="{{masterPageUserDetailImageLink}}">Edit profile</a>
 						</li>
 						<li>
 							<a href="#">Account settings</a>

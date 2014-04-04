@@ -29,7 +29,7 @@ namespace zestork.Controllers
             return View();
         }
         
-        public ViewResult Login(string id)
+        public JsonResult Login(string id)
         {
             //ServicePointManager.ServerCertificateValidationCallback = delegate
             //{ return true; };
@@ -94,14 +94,16 @@ namespace zestork.Controllers
                     TokenManager.CreateSession(session, isPersistent);
                     userData.User.guid = session.getID();                    
                     #endregion
-
+                    
+                    if (userData.User.ImageUrl == "NA")
+                        userData.User.ImageUrl = "../../Resource/templates/afterLogin/web/img/demo/user-avatar.jpg";
                     Response.Redirect("/" + userData.User.FirstName +"-"+userData.User.LastName + "?guid=" + userData.User.guid + "/#/");
-                    return View("Index", "User" , userData);
+                    //return View("Index", "User" , userData);
                     //HttpContext.Response.AppendHeader("Authorization", userData.User.guid);                    
                 }
             }
 
-            return View("Index",userData);
+            return Json(userData, JsonRequestBehavior.AllowGet);
         }
         
         [HttpPost]

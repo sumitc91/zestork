@@ -5,7 +5,7 @@ ZestorkAppAfterLogin.config(function ($routeProvider) {
 
     $routeProvider.when("/", { templateUrl: "../../Resource/templates/afterLogin/contentView/initializing.html" }).
                    when("/search", { templateUrl: "../../Resource/templates/afterLogin/contentView/searchJob.html" }).
-                   when("/about", { templateUrl: "../../Resource/templates/beforeLogin/contentView/about.html" }).
+                   when("/edit", { templateUrl: "../../Resource/templates/afterLogin/contentView/edit.html" }).
                    when("/404", { templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" }).
                    when("/signup", { templateUrl: "../../Resource/templates/beforeLogin/contentView/signup.html" }).
                    otherwise({ templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" });
@@ -96,6 +96,8 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
         }
     $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Profile Loading...</h1>' });
     $rootScope.Authentication=CookieUtil.CookieValue();
+    $scope.masterPageUserDetailImageLink = "#/edit";
+
     var headers = { 'Content-Type': 'application/json',
         'Authorization': $rootScope.Authentication
     };
