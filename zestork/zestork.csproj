@@ -340,6 +340,7 @@
     <Content Include="dll\log4net.dll" />
     <Content Include="Global.asax" />
     <Content Include="Models\Zestork.edmx.sql" />
+    <Content Include="Resource\templates\afterLogin\contentView\initializing.html" />
     <Content Include="Resource\templates\afterLogin\contentView\index\firstTimeLoginViaSocialLinkePopUpModal.html" />
     <Content Include="Resource\templates\afterLogin\contentView\searchJob.html" />
     <Content Include="Resource\templates\afterLogin\web\components-bootstrap.html" />
@@ -1609,7 +1610,7 @@
     <None Include="Resource\templates\beforeLogin\web\fonts\Amble-Regular-webfont.ttf" />
     <None Include="Resource\templates\beforeLogin\web\images\Thumbs.db" />
     <None Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
+    <None Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
