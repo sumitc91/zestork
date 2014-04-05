@@ -12,7 +12,7 @@ ZestorkAppAfterLogin.config(function ($routeProvider) {
 
 });
 
-ZestorkAppAfterLogin.factory('CookieUtil',function($rootScope, $location, $cookies){
+ZestorkAppAfterLogin.factory('CookieUtil',function($rootScope, $location, $cookieStore){
    
    return {
         CookieValue: function() {
@@ -23,11 +23,13 @@ ZestorkAppAfterLogin.factory('CookieUtil',function($rootScope, $location, $cooki
             if(guidParam != null && guidParam != '')                
                 $rootScope.Authentication = guidParam; //global variable
 
-                if($rootScope.Authentication !=null)
-                    $cookies.Authentication = $rootScope.Authentication;
+            if ($rootScope.Authentication != null) {
+                //$cookies.Authentication = $rootScope.Authentication;
+                    $cookieStore.put("Authentication", $rootScope.Authentication);
+            }
                     //$cookieStore.put("Authentication",$rootScope.Authentication)  
 
-            return $cookies.Authentication;
+            return $cookieStore.get('Authentication');
         }
     };
 
