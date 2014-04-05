@@ -247,6 +247,7 @@
     <Content Include="Content\app\afterLogin\afterLoginApp.js" />
     <Content Include="Content\app\afterLogin\searchJobTemplate.js" />
     <Content Include="Content\app\beforeLogin\signInTemplate.js" />
+    <Content Include="Content\app\beforeLogin\signUpClientTemplate.js" />
     <Content Include="Content\app\beforeLogin\validateAccountTemplate.js" />
     <Content Include="Content\app\beforeLogin\signUpUserTemplate.js" />
     <Content Include="Content\app\beforeLogin\signUpTemplate.js" />
@@ -1416,6 +1417,7 @@
     <Content Include="Resource\templates\beforeLogin\contentView\ajax\signInTemplate.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\googleLogin.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\facebookLogin.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\signupclient.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\termsAndConditions.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\validateAccount.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\signup.html" />

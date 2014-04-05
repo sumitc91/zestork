@@ -5,12 +5,13 @@ ZestorkApp.config(function ($routeProvider) {
 
     $routeProvider.when("/", { templateUrl: "../../Resource/templates/beforeLogin/contentView/home.html" }).
                    when("/signup/user", { templateUrl: "../../Resource/templates/beforeLogin/contentView/signupuser.html" }).
+                   when("/signup/client", { templateUrl: "../../Resource/templates/beforeLogin/contentView/signupclient.html" }).
                    when("/login/:code", { templateUrl: "../../Resource/templates/beforeLogin/contentView/ajax/signInTemplate.html" }).
                    when("/facebookLogin", { templateUrl: "../../Resource/templates/beforeLogin/contentView/facebookLogin.html" }).
                    when("/googleLogin", { templateUrl: "../../Resource/templates/beforeLogin/contentView/googleLogin.html" }).
                    when("/linkedinLogin", { templateUrl: "../../Resource/templates/beforeLogin/contentView/linkedinLogin.html" }).
                    when("/validate/:userName/:guid", { templateUrl: "../../Resource/templates/beforeLogin/contentView/validateAccount.html" }).
-                   when("/about", { templateUrl: "../../Resource/templates/beforeLogin/contentView/about.html" }).
+                   when("/tnc", { templateUrl: "../../Resource/templates/beforeLogin/contentView/termsAndConditions.html" }).
                    when("/404", { templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" }).
                    when("/signup", { templateUrl: "../../Resource/templates/beforeLogin/contentView/signup.html" }).
                    otherwise({ templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" });

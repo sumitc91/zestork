@@ -28,7 +28,7 @@
 	<!-- Just for demonstration -->
 	<script src="../../Resource/templates/afterLogin/web/js/demonstration.min.js"></script>
 
-  <div class="container-fluid" ng-controller="signUpUserController">
+  <div class="container-fluid" ng-controller="signUpClientController">
 				
 				<div class="row-fluid">
 					<div class="span12">
@@ -36,7 +36,7 @@
 							<div class="box-title">
 								<h3>
 									<i class="icon-ok"></i>
-									Create a Free Freelancer User Account
+									Create a Free Freelancer Client Account
 								</h3>
 							</div>
 							<div class="box-content">
@@ -52,10 +52,29 @@
                                             </div>                                            
 										</div>
 									</div>
+
+
+                                    <div class="control-group">
+										<label for="company" class="control-label"></label>
+										<div class="controls">
+											<label class="checkbox">
+												<input type="checkbox" name="companyCheckbox" ng-model="companyNameText" value="agree"> Sign up as a company {{companyNameText}}
+											</label>
+										</div>
+									</div>
+
+                                    <div class="control-group" ng-hide="!companyNameText" ng-cloak>
+										<label for="textfield" class="control-label">Company Name</label>
+										<div class="controls">
+											<input type="text" ng-model="companyName" name="textfield" id="text2" class="input-xlarge" data-rule-required="true" data-rule-minlength="6">
+                                            <!--<div ng-cloak>{{firstName}}</div>-->
+										</div>
+									</div>
+
                                     <div class="control-group">
 										<label for="pwfield" class="control-label">Password</label>
 										<div class="controls">
-											<input type="password" ng-model="password" name="pwfield" id="pwfield" class="input-xlarge" data-rule-required="true">
+											<input type="password" ng-model="password" name="pwfield" id="pwfield" class="input-xlarge" data-rule-required="true" data-rule-minlength="6" data-rule-maxlength="15">
                                             <!--<div ng-cloak>{{password}}</div>-->
 										</div>
 									</div>
@@ -85,7 +104,7 @@
 										<label for="policy" class="control-label">Agree our policy</label>
 										<div class="controls">
 											<label class="checkbox">
-												<input type="checkbox" name="policy" ng-model="tncModel" value="agree" data-rule-required="true"> I agree the <a href="#/tnc">policy.</a>
+												<input type="checkbox" name="policy" value="agree" data-rule-required="true"> I agree the <a href="#/tnc">policy.</a>
 											</label>
 										</div>
 									</div>
