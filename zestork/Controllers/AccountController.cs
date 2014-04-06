@@ -132,7 +132,16 @@ namespace zestork.Controllers
             };
 
             _db.Users.Add(user);
-            
+
+            if (req.type == "client")
+            {
+                var clientDetails = new ClientDetails
+                {
+                    Username = req.userName,
+                    CompanyName = req.CompanyName
+                };
+                _db.ClientDetails.Add(clientDetails);
+            }
             var ValidateUserKey = new ValidateUserKey
             {
                  Username = req.userName,

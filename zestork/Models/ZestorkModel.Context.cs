@@ -29,5 +29,6 @@ namespace zestork.Models
         public DbSet<ValidateUserKey> ValidateUserKeys { get; set; }
         public DbSet<ThirdPartyLogin> ThirdPartyLogins { get; set; }
         public DbSet<LinkedInAuthApiData> LinkedInAuthApiDatas { get; set; }
+        public DbSet<ClientDetails> ClientDetails { get; set; }
     }
 }

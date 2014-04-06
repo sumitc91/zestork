@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 04/02/2014 16:17:38
--- Generated from EDMX file: F:\pcongo\tags\zestork\zestork\Models\Zestork.edmx
+-- Date Created: 04/06/2014 16:46:17
+-- Generated from EDMX file: E:\pcongo_svn\tags\zestork\zestork\Models\Zestork.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -30,6 +30,12 @@ IF OBJECT_ID(N'[dbo].[ValidateUserKeys]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[ThirdPartyLogins]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ThirdPartyLogins];
+GO
+IF OBJECT_ID(N'[dbo].[LinkedInAuthApiDatas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[LinkedInAuthApiDatas];
+GO
+IF OBJECT_ID(N'[dbo].[ClientDetails]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ClientDetails];
 GO
 
 -- --------------------------------------------------
@@ -80,6 +86,14 @@ CREATE TABLE [dbo].[LinkedInAuthApiDatas] (
 );
 GO
 
+-- Creating table 'ClientDetails'
+CREATE TABLE [dbo].[ClientDetails] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [CompanyName] nvarchar(max)  NULL,
+    [Username] nvarchar(max)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -105,6 +119,12 @@ GO
 -- Creating primary key on [Id] in table 'LinkedInAuthApiDatas'
 ALTER TABLE [dbo].[LinkedInAuthApiDatas]
 ADD CONSTRAINT [PK_LinkedInAuthApiDatas]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'ClientDetails'
+ALTER TABLE [dbo].[ClientDetails]
+ADD CONSTRAINT [PK_ClientDetails]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
