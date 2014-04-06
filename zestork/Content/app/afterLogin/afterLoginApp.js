@@ -35,6 +35,7 @@ ZestorkAppAfterLogin.factory('CookieUtil',function($rootScope, $location, $cooki
 
 });
 
+
 ZestorkAppAfterLogin.run(function ($rootScope, $location) { //Insert in the function definition the dependencies you need.
     //Do your $on in here, like this:  
 
@@ -79,6 +80,13 @@ ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootS
         name: "Controller Sumit Chourasia after login"
     };
 
+});
+
+ZestorkAppAfterLogin.controller('submitUserTypeDetailController', function ($scope, $http, $rootScope, CookieUtil) {
+    $scope.testing = "Controller";
+    $scope.submitUserTypeDetails = function () {
+        alert("clicked");
+    }
 });
 
 //getting user info..
