@@ -15,5 +15,6 @@ namespace zestork.Models.DataContract
         public string source { get; set; }
         public string uid { get; set; }
         public string type { get; set; }
+        public string CompanyName { get; set; }
     }
 }

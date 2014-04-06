@@ -10,7 +10,7 @@ ZestorkApp.controller('signUpClientController', function ($scope, $http) {
     $scope.password = "";
     $scope.confirmPassword = "";
     $scope.source = "web";
-    $scope.type = "user";
+    $scope.type = "client";
     $scope.showEmailMessage = false;
 
     $scope.$watch('[companyCheckbox]', function () {
@@ -100,6 +100,7 @@ ZestorkApp.controller('signUpClientController', function ($scope, $http) {
             lastName: $scope.lastName,
             password: $scope.confirmPassword,
             source: $scope.source,
+            CompanyName:$scope.CompanyName,
             type: $scope.type
         }
         

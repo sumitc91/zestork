@@ -66,7 +66,7 @@
                                     <div class="control-group" ng-hide="!companyNameText" ng-cloak>
 										<label for="textfield" class="control-label">Company Name</label>
 										<div class="controls">
-											<input type="text" ng-model="companyName" name="textfield" id="text2" class="input-xlarge" data-rule-required="true" data-rule-minlength="3">
+											<input type="text" ng-model="CompanyName" name="textfield" id="text2" class="input-xlarge" data-rule-required="true" data-rule-minlength="3">
                                             <!--<div ng-cloak>{{firstName}}</div>-->
 										</div>
 									</div>
@@ -104,7 +104,7 @@
 										<label for="policy" class="control-label">Agree our policy</label>
 										<div class="controls">
 											<label class="checkbox">
-												<input type="checkbox" name="policy" value="agree" data-rule-required="true"> I agree the <a href="#/tnc">policy.</a>
+												<input type="checkbox" name="policy" ng-model="tncModel" data-rule-required="true"> I agree the <a href="#/tnc">policy.</a>
 											</label>
 										</div>
 									</div>
