@@ -13,5 +13,6 @@ namespace zestork.Models.DataContract
         public string message { get; set; }
         public string guid { get; set; }
         public string postUrl { get; set; }
+        public string userName { get; set; }
     }
 }

@@ -36,6 +36,7 @@ namespace zestork.Controllers
             }
             userInfo.message = "Enter Your Password to Unlock !!";
             userInfo.guid = id;
+            userInfo.userName = User.Username;
             userInfo.postUrl = "http://" + Request.Url.Authority + "Locked/unlock/" + id;
             User.Locked = "true";
             try
@@ -54,9 +55,8 @@ namespace zestork.Controllers
         public ActionResult unlock()
         {
             var _db = new ZestorkContainer();
-            String id = Request.QueryString["id"].ToString();
-            CPSession retVal = TokenManager.getSessionInfo(id);
-            string userName = retVal.getAttributeValue("userName");
+            
+            string userName = Request.QueryString["username"].ToString();
             String password = Request.QueryString["password"].ToString();
             if (_db.Users.Any(x => x.Username == userName && x.Password == password))
             {
@@ -68,7 +68,17 @@ namespace zestork.Controllers
                     try
                     {
                         _db.SaveChanges();
-                        TokenManager.removeSession(id);
+                        try
+                        {
+                            String id = Request.QueryString["id"].ToString();
+                            CPSession retVal = TokenManager.getSessionInfo(id);
+                            TokenManager.removeSession(id);// remove session if available.
+                        }
+                        catch (Exception)
+                        {
+                            //if session is not available.. leave it.                            
+                        }
+                        
                         #region Session
                         CPSession session = new CPSession();
                         session.addAttribute("userName", userName);
