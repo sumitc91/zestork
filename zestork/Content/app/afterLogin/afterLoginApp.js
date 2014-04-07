@@ -130,7 +130,7 @@ ZestorkAppAfterLogin.controller('submitUserTypeDetailController', function ($sco
             //$scope.persons = data; // assign  $scope.persons here as promise is resolved here
             $.unblockUI();
             if (data == "200") {
-                $location.path("search");
+                $location.path("search");                
             }
             else {
                 alert("some error occured while submitting your data.");
