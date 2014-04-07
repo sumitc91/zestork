@@ -25,5 +25,6 @@ namespace zestork.Models
         public string LastName { get; set; }
         public string ImageUrl { get; set; }
         public string gender { get; set; }
+        public string Locked { get; set; }
     }
 }
