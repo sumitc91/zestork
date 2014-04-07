@@ -1,4 +1,6 @@
-﻿@{
+﻿@model zestork.Models.DataContract.LockedScreenModel
+
+@{
     Layout = null;
 }
 
@@ -12,10 +14,10 @@
 	<!-- Apple devices fullscreen -->
 	<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 	
-	<title>FLAT - Locked screen</title>
+	<title>@Model.firstName @Model.lastName - Locked screen</title>
 
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="../../../../Resource/templates/afterLogin/web/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../../Resource/templates/afterLogin/web/css/bootstrap.min.css">
 	<!-- Bootstrap responsive -->
 	<link rel="stylesheet" href="../../../Resource/templates/afterLogin/web/css/bootstrap-responsive.min.css">
 	<!-- Theme CSS -->
@@ -53,16 +55,17 @@
 <body class='locked' ng-app="LockedScreenApp">
 	<div class="wrapper">
 		<div class="pull-left">
-			<img src="../../../Resource/templates/afterLogin/web/img/demo/locked.jpg" alt="" width="200" height="200">
-			<a href="more-login.html">Not John Doe?</a>
+			<img src="@Model.imageUrl" alt="" width="200" height="200">
+			<a href="more-login.html">Not @Model.firstName @Model.lastName?</a>
 		</div>
 		<div class="right">
 			<div class="upper">
-				<h2>John Doe</h2>
+				<h2>@Model.firstName @Model.lastName</h2>
 				<span>Locked</span>
 			</div>
-			<form action="index.html" method='get'>
-				<input type="password" placeholder="Password">
+			<form action='@Url.Action("unlock", "Locked")' method='get'>
+				<input type="password" placeholder="Password" name="password">
+                <input type="password" placeholder="id" name="id" value="@Model.guid" style="display: none">
 				<div>
 					<input type="submit" value="Unlock" class='btn btn-inverse'>
 				</div>
@@ -73,4 +76,5 @@
 </body>
 
 </html>
+
 

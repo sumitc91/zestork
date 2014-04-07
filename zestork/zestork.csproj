@@ -193,6 +193,7 @@
     <Compile Include="Models\DataContract\CreateAccountRequest.cs" />
     <Compile Include="Models\DataContract\detailsEditUserPage.cs" />
     <Compile Include="Models\DataContract\googleUserDetails.cs" />
+    <Compile Include="Models\DataContract\LockedScreenModel.cs" />
     <Compile Include="Models\DataContract\LogOnModel.cs" />
     <Compile Include="Models\DataContract\User.cs" />
     <Compile Include="Models\DataContract\ValidateAccountRequest.cs" />
@@ -1637,7 +1638,7 @@
     <None Include="Resource\templates\beforeLogin\web\fonts\Amble-Regular-webfont.ttf" />
     <None Include="Resource\templates\beforeLogin\web\images\Thumbs.db" />
     <None Include="Views\Home\Index.cshtml" />
-    <None Include="Views\Locked\Index.cshtml" />
+    <Content Include="Views\Locked\Index.cshtml" />
     <None Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
