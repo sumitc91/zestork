@@ -1,3 +1,4 @@
+<div ng-controller="editUserDetailsController">
 <div class="page-header">
 				<div class="pull-left">
 					<h1>User profile</h1>
@@ -74,7 +75,7 @@
 										<div class="row-fluid">
 											<div class="span2">
 												<div data-provides="fileupload" class="fileupload fileupload-new"><input type="hidden">
-													<div style="max-width: 200px; max-height: 150px;" class="fileupload-new thumbnail"><img src="img/demo/user-1.jpg"></div>
+													<div style="max-width: 200px; max-height: 150px;" class="fileupload-new thumbnail"><img src={{details.ImageUrl}}></div>
 													<div style="max-width: 200px; max-height: 150px; line-height: 20px;" class="fileupload-preview fileupload-exists thumbnail"></div>
 													<div>
 														<span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" name="imagefile"></span>
@@ -84,9 +85,15 @@
 											</div>
 											<div class="span10">
 												<div class="control-group">
-													<label class="control-label right" for="name">Name:</label>
+													<label class="control-label right" for="name">First Name:</label>
 													<div class="controls">
-														<input type="text" value="John Doe" class="input-xlarge" name="name">
+														<input type="text" ng-model="details.FirstName" class="input-xlarge" name="name">
+													</div>
+												</div>
+                                                <div class="control-group">
+													<label class="control-label right" for="name">Last Name:</label>
+													<div class="controls">
+														<input type="text" ng-model="details.LastName" class="input-xlarge" name="name">
 													</div>
 												</div>
 												<div class="control-group">
@@ -340,7 +347,7 @@
 												<div class="control-group">
 													<label class="control-label right" for="email">Email:</label>
 													<div class="controls">
-														<input type="text" value="j.doe@johndoeemail.com" class="input-xlarge" name="email"><div class="form-button"><input type="text" value="j.doe@johndoeemail.com" class="input-xlarge" name="email"></div>
+														<input type="text" ng-model="details.Username" class="input-xlarge" name="email"><div class="form-button"><input type="text" ng-model="newUsername" class="input-xlarge" name="email"></div>
 														<div class="form-button">
 															<a class="btn btn-satgreen update-input" href="#">Update</a>
 														</div>
@@ -419,3 +426,4 @@
 					</div>
 				</div>
 			</div>
+            </div>
