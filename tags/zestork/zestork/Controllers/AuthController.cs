@@ -32,6 +32,10 @@ namespace zestork.Controllers
             var _db = new ZestorkContainer();
             detailsEditUserPage detailsEditUserPage = new detailsEditUserPage();
             Users user = _db.Users.SingleOrDefault(x => x.Username == userName && x.isActive == "true");
+            if (user.Locked == "true")
+            {
+                //Response.Redirect("/Locked/index/"+guid);
+            }
             detailsEditUserPage.Username = user.Username;
             detailsEditUserPage.isActive = user.isActive;
             detailsEditUserPage.Type = user.Type;
@@ -41,6 +45,7 @@ namespace zestork.Controllers
             detailsEditUserPage.LastName = user.LastName;
             detailsEditUserPage.ImageUrl = user.ImageUrl;
             detailsEditUserPage.gender = user.gender;
+            detailsEditUserPage.Locked = Convert.ToBoolean(user.Locked);
 
             detailsEditUserPage.skillTags = _db.UserSkills.Where(x => x.Username == userName).Select(x => x.Skill).ToList();
             if (detailsEditUserPage.ImageUrl == "NA")

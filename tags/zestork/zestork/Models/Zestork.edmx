@@ -29,6 +29,7 @@
     <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ImageUrl" Type="nvarchar(max)" Nullable="false" />
     <Property Name="gender" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Locked" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="ValidateUserKeys">
     <Key>
@@ -111,6 +112,7 @@
           <Property Type="String" Name="LastName" Nullable="false" />
           <Property Type="String" Name="ImageUrl" Nullable="false" />
           <Property Type="String" Name="gender" Nullable="false" />
+          <Property Type="String" Name="Locked" Nullable="true" />
         </EntityType>
         <EntityType Name="ValidateUserKey">
           <Key>
@@ -185,6 +187,7 @@
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
           <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -266,8 +269,8 @@
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram Name="Zestork" >
-        <EntityTypeShape EntityType="Zestork.Users" Width="1.5" PointX="0.5" PointY="0.5" Height="3.1340950520833326" />
+      <Diagram Name="Zestork" ZoomLevel="98" >
+        <EntityTypeShape EntityType="Zestork.Users" Width="1.5" PointX="0.5" PointY="0.5" Height="3.326396484375" />
         <EntityTypeShape EntityType="Zestork.ValidateUserKey" Width="1.5" PointX="7.875" PointY="4" Height="1.59568359375" />
         <EntityTypeShape EntityType="Zestork.ThirdPartyLogin" Width="1.5" PointX="9.5" PointY="3.875" Height="2.172587890625" />
         <EntityTypeShape EntityType="Zestork.LinkedInAuthApiData" Width="1.5" PointX="11.125" PointY="3.875" Height="1.787985026041667" />

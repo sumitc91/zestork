@@ -145,28 +145,26 @@ ZestorkAppAfterLogin.controller('submitUserTypeDetailController', function ($sco
 });
 
 //getting user info..
-ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http, $rootScope,CookieUtil) {
+ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http, $rootScope, CookieUtil) {
 
-        //CookieUtil.storeAuthCookie();            
-        if(CookieUtil.CookieValue() != null)
-        {            
-            $rootScope.Authentication =  CookieUtil.CookieValue();
-            //alert($rootScope.Authentication);
-            //$cookieStore.Authentication = getParameterByName('guid');
-        }
-        else
-        {          
-                alert('authentication cookie is null'); 
-                //window.location.href = "/?mssg=your session expired";
-        }
+    //CookieUtil.storeAuthCookie();            
+    if (CookieUtil.CookieValue() != null) {
+        $rootScope.Authentication = CookieUtil.CookieValue();
+        //alert($rootScope.Authentication);
+        //$cookieStore.Authentication = getParameterByName('guid');
+    }
+    else {
+        alert('authentication cookie is null');
+        //window.location.href = "/?mssg=your session expired";
+    }
     $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Profile Loading...</h1>' });
-    $rootScope.Authentication=CookieUtil.CookieValue();
+    $rootScope.Authentication = CookieUtil.CookieValue();
     $scope.masterPageUserDetailImageLink = "#/edit";
 
     var headers = { 'Content-Type': 'application/json',
         'Authorization': $rootScope.Authentication
     };
-    
+
     $http({
         url: '/Auth/details',
         method: "GET",
@@ -176,6 +174,9 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
         //$scope.persons = data; // assign  $scope.persons here as promise is resolved here
         $.unblockUI();
         if (data != null) {
+            if (data.Locked == true) {
+                location.href = "/Locked/index/" + $rootScope.Authentication;
+            }
             $scope.details = data;
             //console.log(data);
             //alert($scope.details.FirstName);
