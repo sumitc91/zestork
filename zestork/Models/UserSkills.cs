@@ -12,19 +12,11 @@ namespace zestork.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class UserSkills
     {
         public int Id { get; set; }
         public string Username { get; set; }
-        public string Password { get; set; }
-        public string isActive { get; set; }
-        public string Type { get; set; }
-        public string Source { get; set; }
-        public string guid { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string ImageUrl { get; set; }
-        public string gender { get; set; }
-        public List<string> skillTags { get; set; }
+        public string Skill { get; set; }
+        public string Rating { get; set; }
     }
 }

@@ -1,8 +1,7 @@
 //getting user info..
 ZestorkAppAfterLogin.controller('editUserDetailsController', function ($scope, $http, $rootScope, CookieUtil) {
     //alert("inside edit user controller");
-    //CookieUtil.storeAuthCookie();
-    $scope.skillTags = ['php', 'laravel', 'java', 'testing'];
+    //CookieUtil.storeAuthCookie();    
     if (CookieUtil.CookieValue() != null) {
         $rootScope.Authentication = CookieUtil.CookieValue();
     }
@@ -36,21 +35,64 @@ ZestorkAppAfterLogin.controller('editUserDetailsController', function ($scope, $
         alert('Internal Server Error Occured !!');
     });
 
+
     $scope.addTagInputButtonClick = function () {
-        if ($scope.skillTags.some(function (skill) { return skill === $scope.newTagModel })) {
+        if ($scope.details.skillTags.some(function (skill) { return skill === $scope.newTagModel })) {
             alert("already exists");
         }
         else {
-            $scope.skillTags.push($scope.newTagModel);
+            $scope.details.skillTags.push($scope.newTagModel);
+
+            $rootScope.Authentication = CookieUtil.CookieValue();
+            var headers = { 'Content-Type': 'application/json',
+                'Authorization': $rootScope.Authentication
+            };
+
+            $http({
+                url: '/Auth/addUsersTag/' + $scope.newTagModel,
+                method: "GET",
+                headers: headers
+            }).success(function (data, status, headers, config) {
+
+                if (data == "200") {
+                    //successfully added.
+                }
+                else {
+                    alert("user type info data not available");
+                }
+                //console.log(data);
+            }).error(function (data, status, headers, config) {
+                alert('Internal Server Error Occured !!');
+            });
+
             $scope.newTagModel = "";
         }
-        
+
     }
 
     $scope.RemoveTagInputButtonClick = function (index) {
-        //alert('inside remove tag');
-        //alert(index);
-        $scope.skillTags.splice(index, 1);
-        //$scope.skillTags.push($scope.newTagModel);        
+        
+        $rootScope.Authentication = CookieUtil.CookieValue();
+        var headers = { 'Content-Type': 'application/json',
+            'Authorization': $rootScope.Authentication
+        };
+
+        $http({
+            url: '/Auth/deleteUsersTag/' + $scope.details.skillTags[index],
+            method: "GET",
+            headers: headers
+        }).success(function (data, status, headers, config) {
+
+            if (data == "200") {
+                $scope.details.skillTags.splice(index, 1);//successfully removed.
+            }
+            else {
+                alert("user type info data not available");
+            }
+            //console.log(data);
+        }).error(function (data, status, headers, config) {
+            alert('Internal Server Error Occured !!');
+        });
+
     }
 });

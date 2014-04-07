@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 04/06/2014 16:46:17
--- Generated from EDMX file: E:\pcongo_svn\tags\zestork\zestork\Models\Zestork.edmx
+-- Date Created: 04/07/2014 15:12:41
+-- Generated from EDMX file: F:\pcongo\tags\zestork\zestork\Models\Zestork.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -36,6 +36,9 @@ IF OBJECT_ID(N'[dbo].[LinkedInAuthApiDatas]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[ClientDetails]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ClientDetails];
+GO
+IF OBJECT_ID(N'[dbo].[UserSkills]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserSkills];
 GO
 
 -- --------------------------------------------------
@@ -94,6 +97,15 @@ CREATE TABLE [dbo].[ClientDetails] (
 );
 GO
 
+-- Creating table 'UserSkills'
+CREATE TABLE [dbo].[UserSkills] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Username] nvarchar(max)  NOT NULL,
+    [Skill] nvarchar(max)  NOT NULL,
+    [Rating] nvarchar(max)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -125,6 +137,12 @@ GO
 -- Creating primary key on [Id] in table 'ClientDetails'
 ALTER TABLE [dbo].[ClientDetails]
 ADD CONSTRAINT [PK_ClientDetails]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'UserSkills'
+ALTER TABLE [dbo].[UserSkills]
+ADD CONSTRAINT [PK_UserSkills]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 

@@ -11,6 +11,7 @@
     <EntitySet Name="ThirdPartyLogins" EntityType="Zestork.Store.ThirdPartyLogins" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="LinkedInAuthApiDatas" EntityType="Zestork.Store.LinkedInAuthApiDatas" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ClientDetails" EntityType="Zestork.Store.ClientDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserSkills" EntityType="Zestork.Store.UserSkills" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="Users">
     <Key>
@@ -64,6 +65,15 @@
     <Property Name="CompanyName" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="UserSkills">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Skill" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Rating" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -74,6 +84,7 @@
           <EntitySet Name="ThirdPartyLogins" EntityType="Zestork.ThirdPartyLogin" />
           <EntitySet Name="LinkedInAuthApiDatas" EntityType="Zestork.LinkedInAuthApiData" />
           <EntitySet Name="ClientDetails" EntityType="Zestork.ClientDetails" />
+          <EntitySet Name="UserSkills" EntityType="Zestork.UserSkills" />
         </EntityContainer>
         <EntityType Name="Users">
           <Key>
@@ -126,6 +137,15 @@
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="CompanyName" Nullable="true" />
           <Property Type="String" Name="Username" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserSkills">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Username" Nullable="false" />
+          <Property Type="String" Name="Skill" Nullable="false" />
+          <Property Type="String" Name="Rating" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -190,6 +210,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="UserSkills">
+      <EntityTypeMapping TypeName="IsTypeOf(Zestork.UserSkills)">
+        <MappingFragment StoreEntitySet="UserSkills">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Skill" ColumnName="Skill" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
@@ -215,6 +245,7 @@
         <EntityTypeShape EntityType="Zestork.ThirdPartyLogin" Width="1.5" PointX="6" PointY="1.25" Height="2.172587890625" />
         <EntityTypeShape EntityType="Zestork.LinkedInAuthApiData" Width="1.5" PointX="7.75" PointY="1.375" Height="1.787985026041667" />
         <EntityTypeShape EntityType="Zestork.ClientDetails" Width="1.5" PointX="9.625" PointY="1.5" />
+        <EntityTypeShape EntityType="Zestork.UserSkills" Width="1.5" PointX="5.875" PointY="4.125" Height="1.7879850260416665" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

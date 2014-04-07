@@ -86,7 +86,7 @@
                                     <div class="control-group">
                                         <label class="control-label right" for="country">
                                             Country:</label>
-                                        <div class="controls">
+                                        <div class="controls">                                            
                                             <select name="countries" id="countries" style="width: 300px;">
                                                 <option value="AF" data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag af">
                                                     Afghanistan</option>
@@ -566,7 +566,7 @@
                                             Skills:</label>
                                         <div class="controls">
                                             <div class="tagsinput" id="textfield_tagsinput" style="width: auto; height: auto;">
-                                                <span ng-repeat="skill in skillTags" class="tag"><span>{{skill}}&nbsp;</span><a href="" ng-click="RemoveTagInputButtonClick($index)"
+                                                <span ng-repeat="skill in details.skillTags" class="tag"><span>{{skill}}&nbsp;</span><a href="" ng-click="RemoveTagInputButtonClick($index)"
                                                     title="Removing tag">x</a></span>
                                                 <div id="textfield_addTag">
                                                     <input data-default="add a tag" ng-model="newTagModel" id="addTagInputTextBox" value="" style="color: rgb(102, 102, 102);
@@ -576,100 +576,101 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label right" for="email">
-                                        Email:</label>
-                                    <div class="controls">
-                                        <input type="text" ng-model="details.Username" class="input-xlarge" name="email">
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label right" for="pw">
-                                        Password:</label>
-                                    <div class="controls">
-                                        <input type="password" value="********" class="input-xlarge" name="pw">
-                                        <div class="form-button">
-                                            <a class="btn btn-grey-4 change-input" href="#">Change</a>
+                                    <div class="control-group">
+                                        <label class="control-label right" for="email">
+                                            Email:</label>
+                                        <div class="controls">
+                                            <input type="text" ng-model="details.Username" class="input-xlarge" name="email">                                         
                                         </div>
                                     </div>
+                                    <div class="control-group">
+                                        <label class="control-label right" for="pw">
+                                            Password:</label>
+                                        <div class="controls">
+                                            <input type="password" value="********" class="input-xlarge" name="pw">
+                                            <div class="form-button">
+                                                <a class="btn btn-grey-4 change-input" href="#">Change</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <input type="submit" value="Save" class="btn btn-primary">
+                                        <input type="reset" value="Discard changes" class="btn">
+                                    </div>
                                 </div>
-                                <div class="form-actions">
-                                    <input type="submit" value="Save" class="btn btn-primary">
-                                    <input type="reset" value="Discard changes" class="btn">
+                            </div>
+                            </form>
+                        </div>
+                        <div id="notifications" class="tab-pane">
+                            <form class="form-horizontal" action="#">
+                            <div class="control-group">
+                                <label class="control-label" for="asdf">
+                                    Email notifications</label>
+                                <div class="controls">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="asdf">
+                                        Send me security emails</label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="asdf">
+                                        Send system emails</label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="asdf">
+                                        Lorem ipsum dolor</label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="asdf">
+                                        Minim veli</label>
                                 </div>
                             </div>
-                        </div>
-                        </form>
-                    </div>
-                    <div id="notifications" class="tab-pane">
-                        <form class="form-horizontal" action="#">
-                        <div class="control-group">
-                            <label class="control-label" for="asdf">
-                                Email notifications</label>
-                            <div class="controls">
-                                <label class="checkbox">
-                                    <input type="checkbox" name="asdf">
-                                    Send me security emails</label>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="asdf">
-                                    Send system emails</label>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="asdf">
-                                    Lorem ipsum dolor</label>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="asdf">
-                                    Minim veli</label>
+                            <div class="control-group">
+                                <label class="control-label" for="asdf">
+                                    Email for notifications</label>
+                                <div class="controls">
+                                    <select id="email" name="email">
+                                        <option value="1">asdf@blasdas.com</option>
+                                        <option value="2">johnDoe@asdasf.de</option>
+                                        <option value="3">janeDoe@janejanejane.net</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="asdf">
-                                Email for notifications</label>
-                            <div class="controls">
-                                <select id="email" name="email">
-                                    <option value="1">asdf@blasdas.com</option>
-                                    <option value="2">johnDoe@asdasf.de</option>
-                                    <option value="3">janeDoe@janejanejane.net</option>
-                                </select>
+                            <div class="form-actions">
+                                <input type="submit" value="Save" class="btn btn-primary">
+                                <input type="reset" value="Discard changes" class="btn">
                             </div>
+                            </form>
                         </div>
-                        <div class="form-actions">
-                            <input type="submit" value="Save" class="btn btn-primary">
-                            <input type="reset" value="Discard changes" class="btn">
-                        </div>
-                        </form>
-                    </div>
-                    <div id="security" class="tab-pane">
-                        <form class="form-horizontal" action="#">
-                        <div class="control-group">
-                            <label class="control-label" for="asdf">
-                                Disable account for</label>
-                            <div class="controls">
-                                <select id="email" name="email">
-                                    <option value="1">1 week</option>
-                                    <option value="2">2 weeks</option>
-                                    <option value="3">3 weeks</option>
-                                </select>
+                        <div id="security" class="tab-pane">
+                            <form class="form-horizontal" action="#">
+                            <div class="control-group">
+                                <label class="control-label" for="asdf">
+                                    Disable account for</label>
+                                <div class="controls">
+                                    <select id="email" name="email">
+                                        <option value="1">1 week</option>
+                                        <option value="2">2 weeks</option>
+                                        <option value="3">3 weeks</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="asdf">
-                                Lock account?</label>
-                            <div class="controls">
-                                <a class="btn btn-danger" href="more-locked.html">Lock account now</a>
+                            <div class="control-group">
+                                <label class="control-label" for="asdf">
+                                    Lock account?</label>
+                                <div class="controls">
+                                    <a class="btn btn-danger" href="more-locked.html">Lock account now</a>
+                                </div>
                             </div>
+                            <div class="form-actions">
+                                <input type="submit" value="Save" class="btn btn-primary">
+                                <input type="reset" value="Discard changes" class="btn">
+                            </div>
+                            </form>
                         </div>
-                        <div class="form-actions">
-                            <input type="submit" value="Save" class="btn btn-primary">
-                            <input type="reset" value="Discard changes" class="btn">
-                        </div>
-                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <script>
     $(document).ready(function () {
         $("#countries").msDropdown();

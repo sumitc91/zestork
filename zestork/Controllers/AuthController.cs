@@ -30,6 +30,7 @@ namespace zestork.Controllers
 
             var _db = new ZestorkContainer();
             Users user = _db.Users.SingleOrDefault(x => x.Username == userName && x.isActive == "true");
+            user.skillTags = _db.UserSkills.Where(x => x.Username == userName).Select(x => x.Skill).ToList();
             if (user.ImageUrl == "NA")
                 user.ImageUrl = "../../Resource/templates/afterLogin/web/img/demo/user-avatar.jpg";
             return Json(user, JsonRequestBehavior.AllowGet);
@@ -74,6 +75,64 @@ namespace zestork.Controllers
                     dbContextException.logDbContextException(e);
                     return Json(500, JsonRequestBehavior.AllowGet);
                 }
+            return Json(200, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult addUsersTag(string id)
+        {
+            IEnumerable<string> headerValues = Request.Headers.GetValues("Authorization");
+            String guid = headerValues.FirstOrDefault();
+            guid = guid.Replace("/", "");
+            CPSession retVal = TokenManager.getSessionInfo(guid);
+            string userName = retVal.getAttributeValue("userName");
+
+            var _db = new ZestorkContainer();
+            var userSkillTag = new UserSkills
+            {
+                Username = userName,
+                Skill = id,
+                Rating = "0"
+            };
+            _db.UserSkills.Add(userSkillTag);
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                dbContextException dbContextException = new CommonMethods.dbContextException();
+                dbContextException.logDbContextException(e);
+                return Json(500, JsonRequestBehavior.AllowGet);
+            }
+            return Json(200, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult deleteUsersTag(string id)
+        {
+            IEnumerable<string> headerValues = Request.Headers.GetValues("Authorization");
+            String guid = headerValues.FirstOrDefault();
+            guid = guid.Replace("/", "");
+            CPSession retVal = TokenManager.getSessionInfo(guid);
+            string userName = retVal.getAttributeValue("userName");
+
+            var _db = new ZestorkContainer();
+            //var userSkillTag = new UserSkills
+            //{
+            //    Username = userName,
+            //    Skill = id,
+            //    Rating = "0"
+            //};
+            //_db.UserSkills.Add(userSkillTag);
+            //try
+            //{
+            //    _db.SaveChanges();
+            //}
+            //catch (DbEntityValidationException e)
+            //{
+            //    dbContextException dbContextException = new CommonMethods.dbContextException();
+            //    dbContextException.logDbContextException(e);
+            //    return Json(500, JsonRequestBehavior.AllowGet);
+            //}
             return Json(200, JsonRequestBehavior.AllowGet);
         }
 
