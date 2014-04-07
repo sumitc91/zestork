@@ -57,24 +57,49 @@ ZestorkAppAfterLogin.run(function ($rootScope, $location) { //Insert in the func
     });
 });
 
-ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootScope) {
+ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootScope, $http,$location,CookieUtil) {
 
     $scope.firstTimeUserLoginViaSocialLinkPopUpTemplate = '../../Resource/templates/afterLogin/contentView/index/firstTimeLoginViaSocialLinkePopUpModal.html';
 
-    $scope.classRadioButtonClient = "iradio_square-blue checked";
-    $scope.classRadioButtonUser = "iradio_square-blue";
+    $rootScope.classRadioButtonClient = "iradio_square-blue checked";
+    $rootScope.classRadioButtonUser = "iradio_square-blue";
 
     $scope.infoClicked = function (message) {
         if (message == "user") {
-            $scope.classRadioButtonUser = "iradio_square-blue checked";
-            $scope.classRadioButtonClient = "iradio_square-blue";
+            $rootScope.classRadioButtonUser = "iradio_square-blue checked";
+            $rootScope.classRadioButtonClient = "iradio_square-blue";
         }
         else if (message == "client") {
-            $scope.classRadioButtonClient = "iradio_square-blue checked";
-            $scope.classRadioButtonUser = "iradio_square-blue";
+            $rootScope.classRadioButtonClient = "iradio_square-blue checked";
+            $rootScope.classRadioButtonUser = "iradio_square-blue";
         }
     }
-    $('#firstTimeUserLoginViaSocialLinkPopUp').click();
+    
+    $rootScope.Authentication=CookieUtil.CookieValue();
+    var headers = { 'Content-Type': 'application/json',
+        'Authorization': $rootScope.Authentication
+    };
+    
+    $http({
+        url: '/Auth/userTypeInfoAvailable',
+        method: "GET",        
+        headers: headers
+    }).success(function (data, status, headers, config) {    
+                    
+        if (data != null) {
+            //alert(data);
+            if(data == "false")
+                $('#firstTimeUserLoginViaSocialLinkPopUp').click();
+            else
+                $location.path("search");
+        }
+        else {
+            alert("user type info data not available");
+        }
+        //console.log(data);
+    }).error(function (data, status, headers, config) {        
+        alert('Internal Server Error Occured !!');
+    });
 
     $scope.person = {
         name: "Controller Sumit Chourasia after login"
@@ -82,10 +107,39 @@ ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootS
 
 });
 
-ZestorkAppAfterLogin.controller('submitUserTypeDetailController', function ($scope, $http, $rootScope, CookieUtil) {
-    $scope.testing = "Controller";
+ZestorkAppAfterLogin.controller('submitUserTypeDetailController', function ($scope, $http, $rootScope,$location, CookieUtil) {
+    $scope.userType = "NA";
     $scope.submitUserTypeDetails = function () {
-        alert("clicked");
+        //alert("clicked");
+        $rootScope.Authentication = CookieUtil.CookieValue();
+        if ($rootScope.classRadioButtonUser.indexOf("checked") >= 0)
+            $scope.userType = "user";
+        else
+            $scope.userType = "client";
+        var headers = { 'Content-Type': 'application/json',
+            'Authorization': $rootScope.Authentication
+        };
+
+        $http({
+            url: '/Auth/submitUserTypeInfo/' + $scope.userType,
+            method: "GET",
+            //headers: { 'Content-Type': 'application/json' }
+            headers: headers
+        }).success(function (data, status, headers, config) {
+            //$scope.persons = data; // assign  $scope.persons here as promise is resolved here
+            $.unblockUI();
+            if (data == "200") {
+                $location.path("search");
+            }
+            else {
+                alert("some error occured while submitting your data.");
+            }
+            //console.log(data);
+        }).error(function (data, status, headers, config) {
+            $.unblockUI();
+            alert('Internal Server Error Occured !!');
+        });
+
     }
 });
 
@@ -113,10 +167,10 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
     };
     
     $http({
-        url: '/' + 'secure/' + 'User/details',
+        url: '/Auth/details',
         method: "GET",
         //headers: { 'Content-Type': 'application/json' }
-        headers: headers,
+        headers: headers
     }).success(function (data, status, headers, config) {
         //$scope.persons = data; // assign  $scope.persons here as promise is resolved here
         $.unblockUI();

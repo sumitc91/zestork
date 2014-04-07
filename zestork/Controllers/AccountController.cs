@@ -128,7 +128,7 @@ namespace zestork.Controllers
                 FirstName = req.firstName,
                 LastName = req.lastName,
                 gender = "NA",
-                ImageUrl = "imageLink"
+                ImageUrl = "NA"
             };
 
             _db.Users.Add(user);

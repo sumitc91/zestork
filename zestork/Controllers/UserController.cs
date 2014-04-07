@@ -24,20 +24,5 @@ namespace zestork.Controllers
             return View();
         }
 
-        public JsonResult details(string id)
-        {
-            IEnumerable<string> headerValues = Request.Headers.GetValues("Authorization");
-            String guid = headerValues.FirstOrDefault();
-            guid = guid.Replace("/","");
-            CPSession retVal = TokenManager.getSessionInfo(guid);
-            string userName = retVal.getAttributeValue("userName");
-
-            var _db = new ZestorkContainer();
-            Users user = _db.Users.SingleOrDefault(x => x.Username == userName && x.isActive == "true");
-            if (user.ImageUrl == "NA")
-                user.ImageUrl = "../../Resource/templates/afterLogin/web/img/demo/user-avatar.jpg";
-            return Json(user, JsonRequestBehavior.AllowGet);
-        }
-
     }
 }
