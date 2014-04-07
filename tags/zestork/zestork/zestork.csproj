@@ -249,6 +249,7 @@
       <DependentUpon>Zestork.mdf</DependentUpon>
     </Content>
     <Content Include="Content\app\afterLogin\afterLoginApp.js" />
+    <Content Include="Content\app\afterLogin\editUserTemplate.js" />
     <Content Include="Content\app\afterLogin\searchJobTemplate.js" />
     <Content Include="Content\app\beforeLogin\signInTemplate.js" />
     <Content Include="Content\app\beforeLogin\signUpClientTemplate.js" />
