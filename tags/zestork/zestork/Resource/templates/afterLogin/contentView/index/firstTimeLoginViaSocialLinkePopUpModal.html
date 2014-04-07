@@ -1,3 +1,4 @@
+<div ng-controller="submitUserTypeDetailController">
 <div class="modal-header">
 				<!--<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>-->
 				<h3 id="myModalLabel">I want to..</h3>
@@ -18,5 +19,6 @@
 			</div>
 			<div class="modal-footer">
 				<!--<button aria-hidden="true" data-dismiss="modal" class="btn">Close</button>-->
-				<button data-dismiss="modal" class="btn btn-primary">Save changes</button>
+				<button data-dismiss="modal" ng-click="submitUserTypeDetails()" ng-model="a" class="btn btn-primary">Save changes</button>               
 			</div>
+    </div>
