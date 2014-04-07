@@ -190,6 +190,7 @@
     </Compile>
     <Compile Include="Models\DataContract\checkUsernameExistsRequest.cs" />
     <Compile Include="Models\DataContract\CreateAccountRequest.cs" />
+    <Compile Include="Models\DataContract\detailsEditUserPage.cs" />
     <Compile Include="Models\DataContract\googleUserDetails.cs" />
     <Compile Include="Models\DataContract\LogOnModel.cs" />
     <Compile Include="Models\DataContract\User.cs" />
@@ -200,6 +201,9 @@
       <DependentUpon>ZestorkModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ThirdPartyLogin.cs">
+      <DependentUpon>ZestorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserDetails.cs">
       <DependentUpon>ZestorkModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Users.cs">

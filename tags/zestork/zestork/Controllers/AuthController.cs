@@ -7,6 +7,7 @@ using zestork.Common.Infrastructure;
 using zestork.Models;
 using zestork.CommonMethods;
 using System.Data.Entity.Validation;
+using zestork.Models.DataContract;
 
 namespace zestork.Controllers
 {
@@ -29,11 +30,22 @@ namespace zestork.Controllers
             string userName = retVal.getAttributeValue("userName");
 
             var _db = new ZestorkContainer();
+            detailsEditUserPage detailsEditUserPage = new detailsEditUserPage();
             Users user = _db.Users.SingleOrDefault(x => x.Username == userName && x.isActive == "true");
-            user.skillTags = _db.UserSkills.Where(x => x.Username == userName).Select(x => x.Skill).ToList();
-            if (user.ImageUrl == "NA")
-                user.ImageUrl = "../../Resource/templates/afterLogin/web/img/demo/user-avatar.jpg";
-            return Json(user, JsonRequestBehavior.AllowGet);
+            detailsEditUserPage.Username = user.Username;
+            detailsEditUserPage.isActive = user.isActive;
+            detailsEditUserPage.Type = user.Type;
+            detailsEditUserPage.Source = user.Source;
+            detailsEditUserPage.guid = user.guid;
+            detailsEditUserPage.FirstName = user.FirstName;
+            detailsEditUserPage.LastName = user.LastName;
+            detailsEditUserPage.ImageUrl = user.ImageUrl;
+            detailsEditUserPage.gender = user.gender;
+
+            detailsEditUserPage.skillTags = _db.UserSkills.Where(x => x.Username == userName).Select(x => x.Skill).ToList();
+            if (detailsEditUserPage.ImageUrl == "NA")
+                detailsEditUserPage.ImageUrl = "../../Resource/templates/afterLogin/web/img/demo/user-avatar.jpg";
+            return Json(detailsEditUserPage, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult userTypeInfoAvailable()

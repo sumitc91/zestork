@@ -209,40 +209,56 @@ namespace zestork.Controllers
 
         }
 
-        public JsonResult showData()
-        {
-            String path = Request.Url.AbsolutePath;
-            String code = Request.QueryString["code"];
-
-            var _db = new ZestorkContainer();
-            Users User = _db.Users.SingleOrDefault(x=>x.Username== "sumitchourasia91@gmail.com");
-            ValidateUserKey key = _db.ValidateUserKeys.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
-            return Json(User, JsonRequestBehavior.AllowGet);
-
+        public JsonResult logout(string id)
+        {            
+            try
+            {
+                TokenManager.removeSession(id);
+                Response.Redirect("/");
+                return Json(200, JsonRequestBehavior.AllowGet); // unreachable code
+            }
+            catch (DbEntityValidationException e)
+            {
+                dbContextException dbContextException = new CommonMethods.dbContextException();
+                dbContextException.logDbContextException(e);
+                Response.Redirect("/");
+                return Json(500, JsonRequestBehavior.AllowGet); // unreachable code
+            }                        
         }
+        //public JsonResult showData()
+        //{
+        //    String path = Request.Url.AbsolutePath;
+        //    String code = Request.QueryString["code"];
 
-        public JsonResult getUserGuid(string email)
-        {
-            String path = Request.Url.AbsolutePath;
-            String code = Request.QueryString["code"];
+        //    var _db = new ZestorkContainer();
+        //    Users User = _db.Users.SingleOrDefault(x=>x.Username== "sumitchourasia91@gmail.com");
+        //    ValidateUserKey key = _db.ValidateUserKeys.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
+        //    return Json(User, JsonRequestBehavior.AllowGet);
 
-            var _db = new ZestorkContainer();
-            Users User = _db.Users.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
-            ValidateUserKey key = _db.ValidateUserKeys.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
-            return Json(User, JsonRequestBehavior.AllowGet);
+        //}
 
-        }
+        //public JsonResult getUserGuid(string email)
+        //{
+        //    String path = Request.Url.AbsolutePath;
+        //    String code = Request.QueryString["code"];
 
-        public JsonResult getUserInfo()
-        {
-            String path = Request.Url.AbsolutePath;
-            String code = Request.QueryString["code"];
+        //    var _db = new ZestorkContainer();
+        //    Users User = _db.Users.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
+        //    ValidateUserKey key = _db.ValidateUserKeys.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
+        //    return Json(User, JsonRequestBehavior.AllowGet);
 
-            var _db = new ZestorkContainer();
-            Users User = _db.Users.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
-            ValidateUserKey key = _db.ValidateUserKeys.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
-            return Json(User, JsonRequestBehavior.AllowGet);
+        //}
 
-        }
+        //public JsonResult getUserInfo()
+        //{
+        //    String path = Request.Url.AbsolutePath;
+        //    String code = Request.QueryString["code"];
+
+        //    var _db = new ZestorkContainer();
+        //    Users User = _db.Users.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
+        //    ValidateUserKey key = _db.ValidateUserKeys.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
+        //    return Json(User, JsonRequestBehavior.AllowGet);
+
+        //}
     }
 }
