@@ -48,7 +48,7 @@ namespace zestork.Controllers
             detailsEditUserPage.Locked = Convert.ToBoolean(user.Locked);
 
             detailsEditUserPage.skillTags = _db.UserSkills.Where(x => x.Username == userName).Select(x => x.Skill).ToList();
-            if (detailsEditUserPage.ImageUrl == "NA")
+            if (detailsEditUserPage.ImageUrl == "NA" || detailsEditUserPage.ImageUrl == null)
                 detailsEditUserPage.ImageUrl = "../../Resource/templates/afterLogin/web/img/demo/user-avatar.jpg";
             return Json(detailsEditUserPage, JsonRequestBehavior.AllowGet);
         }
