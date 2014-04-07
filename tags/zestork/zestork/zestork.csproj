@@ -309,6 +309,16 @@
     <Content Include="Content\third-party\bootstrap-modal-master\js\bootstrap-modal.js" />
     <Content Include="Content\third-party\bootstrap-modal-master\js\bootstrap-modalmanager.js" />
     <Content Include="Content\third-party\bootstrap-modal-master\modal_ajax_test.html" />
+    <Content Include="Content\third-party\country-dropdown\css\msdropdown\dd.css" />
+    <Content Include="Content\third-party\country-dropdown\css\msdropdown\flags.css" />
+    <Content Include="Content\third-party\country-dropdown\images\msdropdown\icons\blank.gif" />
+    <Content Include="Content\third-party\country-dropdown\images\msdropdown\icons\flagssprite_small.png" />
+    <Content Include="Content\third-party\country-dropdown\images\msdropdown\skin1\dd_arrow.gif" />
+    <Content Include="Content\third-party\country-dropdown\images\msdropdown\skin1\title-bg.gif" />
+    <Content Include="Content\third-party\country-dropdown\index.html" />
+    <Content Include="Content\third-party\country-dropdown\js\jquery\jquery-1.8.2.min.js" />
+    <Content Include="Content\third-party\country-dropdown\js\msdropdown\jquery.dd.js" />
+    <Content Include="Content\third-party\country-dropdown\js\msdropdown\jquery.dd.min.js" />
     <Content Include="Content\third-party\humane-js-master\humane.js" />
     <Content Include="Content\third-party\humane-js-master\humane.min.js" />
     <Content Include="Content\third-party\humane-js-master\index.html" />

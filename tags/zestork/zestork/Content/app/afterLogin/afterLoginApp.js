@@ -57,7 +57,7 @@ ZestorkAppAfterLogin.run(function ($rootScope, $location) { //Insert in the func
     });
 });
 
-ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootScope, $http,$location,CookieUtil) {
+ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootScope, $http, $location, CookieUtil) {
 
     $scope.firstTimeUserLoginViaSocialLinkPopUpTemplate = '../../Resource/templates/afterLogin/contentView/index/firstTimeLoginViaSocialLinkePopUpModal.html';
 
@@ -74,30 +74,31 @@ ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootS
             $rootScope.classRadioButtonUser = "iradio_square-blue";
         }
     }
-    
-    $rootScope.Authentication=CookieUtil.CookieValue();
+
+    $rootScope.Authentication = CookieUtil.CookieValue();
     var headers = { 'Content-Type': 'application/json',
         'Authorization': $rootScope.Authentication
     };
-    
+
     $http({
         url: '/Auth/userTypeInfoAvailable',
-        method: "GET",        
+        method: "GET",
         headers: headers
-    }).success(function (data, status, headers, config) {    
-                    
+    }).success(function (data, status, headers, config) {
+
         if (data != null) {
             //alert(data);
-            if(data == "false")
+            if (data == "false")
                 $('#firstTimeUserLoginViaSocialLinkPopUp').click();
-            else
-                $location.path("search");
+            else {
+                //$location.path("search");
+            }
         }
         else {
             alert("user type info data not available");
         }
         //console.log(data);
-    }).error(function (data, status, headers, config) {        
+    }).error(function (data, status, headers, config) {
         alert('Internal Server Error Occured !!');
     });
 
