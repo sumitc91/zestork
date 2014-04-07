@@ -25,6 +25,12 @@ namespace zestork
 
                 );
 
+            routes.MapRoute("Auth",
+                "Auth/{action}/{id}",
+                new { controller = "Auth", id = UrlParameter.Optional }
+
+                );
+
             routes.MapRoute("UserDetails",
                 "{id}/{controller}/{action}",
                 new { controller = "User", action = "index" }
