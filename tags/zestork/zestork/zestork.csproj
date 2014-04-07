@@ -179,6 +179,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LockedController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1636,6 +1637,7 @@
     <None Include="Resource\templates\beforeLogin\web\fonts\Amble-Regular-webfont.ttf" />
     <None Include="Resource\templates\beforeLogin\web\images\Thumbs.db" />
     <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Locked\Index.cshtml" />
     <None Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

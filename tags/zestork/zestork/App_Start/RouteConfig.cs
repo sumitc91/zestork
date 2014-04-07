@@ -31,6 +31,12 @@ namespace zestork
 
                 );
 
+            routes.MapRoute("Locked",
+                "Locked/{action}/{id}",
+                new { controller = "Locked",action = "Index", id = UrlParameter.Optional }
+
+                );
+
             routes.MapRoute("UserDetails",
                 "{id}/{controller}/{action}",
                 new { controller = "User", action = "index" }
