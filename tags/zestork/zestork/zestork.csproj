@@ -364,6 +364,7 @@
     <Content Include="Global.asax" />
     <Content Include="Models\Zestork.edmx.sql" />
     <Content Include="Resource\templates\afterLogin\contentView\edit.html" />
+    <Content Include="Resource\templates\afterLogin\contentView\index\firstTimeLoginViaSocialLinkePopUpModalChangePassword.html" />
     <Content Include="Resource\templates\afterLogin\contentView\initializing.html" />
     <Content Include="Resource\templates\afterLogin\contentView\index\firstTimeLoginViaSocialLinkePopUpModal.html" />
     <Content Include="Resource\templates\afterLogin\contentView\searchJob.html" />
