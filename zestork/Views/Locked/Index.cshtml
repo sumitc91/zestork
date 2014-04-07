@@ -66,6 +66,7 @@
 			<form action='@Url.Action("unlock", "Locked")' method='get'>
 				<input type="password" placeholder="Password" name="password">
                 <input type="password" placeholder="id" name="id" value="@Model.guid" style="display: none">
+                <input type="password" placeholder="username" name="username" value="@Model.userName" style="display: none">
 				<div>
 					<input type="submit" value="Unlock" class='btn btn-inverse'>
 				</div>
