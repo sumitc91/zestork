@@ -205,6 +205,9 @@
     <Compile Include="Models\Users.cs">
       <DependentUpon>ZestorkModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserSkills.cs">
+      <DependentUpon>ZestorkModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ValidateUserKey.cs">
       <DependentUpon>ZestorkModel.tt</DependentUpon>
     </Compile>
