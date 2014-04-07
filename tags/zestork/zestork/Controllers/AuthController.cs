@@ -114,25 +114,19 @@ namespace zestork.Controllers
             guid = guid.Replace("/", "");
             CPSession retVal = TokenManager.getSessionInfo(guid);
             string userName = retVal.getAttributeValue("userName");
-
             var _db = new ZestorkContainer();
-            //var userSkillTag = new UserSkills
-            //{
-            //    Username = userName,
-            //    Skill = id,
-            //    Rating = "0"
-            //};
-            //_db.UserSkills.Add(userSkillTag);
-            //try
-            //{
-            //    _db.SaveChanges();
-            //}
-            //catch (DbEntityValidationException e)
-            //{
-            //    dbContextException dbContextException = new CommonMethods.dbContextException();
-            //    dbContextException.logDbContextException(e);
-            //    return Json(500, JsonRequestBehavior.AllowGet);
-            //}
+            var userTagToBeRemoved = _db.UserSkills.SingleOrDefault(x => x.Username == userName && x.Skill == id);
+            _db.UserSkills.Remove(userTagToBeRemoved);
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                dbContextException dbContextException = new CommonMethods.dbContextException();
+                dbContextException.logDbContextException(e);
+                return Json(500, JsonRequestBehavior.AllowGet);
+            }
             return Json(200, JsonRequestBehavior.AllowGet);
         }
 
