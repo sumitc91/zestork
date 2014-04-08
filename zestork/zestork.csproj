@@ -259,6 +259,7 @@
       <DependentUpon>Zestork.mdf</DependentUpon>
     </Content>
     <Content Include="Content\app\afterLogin\afterLoginApp.js" />
+    <Content Include="Content\app\afterLogin\welcomePageAfterLoginTemplate.js" />
     <Content Include="Content\app\afterLogin\searchJobTemplate.js" />
     <Content Include="Content\app\afterLogin\editUserTemplate.js" />
     <Content Include="Content\app\afterLogin\LockedScreenTemplate.js" />
@@ -1642,6 +1643,7 @@
     </None>
     <None Include="Resource\templates\beforeLogin\web\fonts\Amble-Regular-webfont.ttf" />
     <None Include="Resource\templates\beforeLogin\web\images\Thumbs.db" />
+    <None Include="Views\Account\welcome.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Locked\Index.cshtml" />
     <None Include="Views\User\Index.cshtml" />

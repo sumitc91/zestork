@@ -73,7 +73,8 @@ ZestorkApp.controller('loginControllerPlaceHolders', function ($scope) {
 });
 
 ZestorkApp.controller('beforeLoginHeaderController', function ($scope, $route, $routeParams,$http, $location,CookieUtil) {    
-
+    
+    $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Loading...</h1>' });
     $http({
             url: '/Account/isValidToken/' + CookieUtil.getGuid(),
             method: "GET"
@@ -86,6 +87,7 @@ ZestorkApp.controller('beforeLoginHeaderController', function ($scope, $route, $
             else {
                 CookieUtil.removeGuid();
                 CookieUtil.removeUsername();
+                $.unblockUI();
             }
             //console.log(data);
         }).error(function (data, status, headers, config) {
