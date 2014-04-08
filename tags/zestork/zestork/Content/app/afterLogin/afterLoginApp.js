@@ -177,7 +177,7 @@ ZestorkAppAfterLogin.controller('submitUserPasswordDetailController', function (
                     $('#firstTimeUserLoginViaSocialLinkChangePasswordPopUpClose').click();
                 }
                 else {
-                    alert("some error occured while submitting your data.");
+                    //alert("some error occured while submitting your data.");
                     $('#firstTimeUserLoginViaSocialLinkChangePasswordPopUpClose').click();
                 }
                 //console.log(data);
