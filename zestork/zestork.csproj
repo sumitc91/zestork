@@ -271,6 +271,7 @@
     <Content Include="Content\app\beforeLogin\homeTemplate.js" />
     <Content Include="Content\app\beforeLogin\beforeLoginApp.js" />
     <Content Include="Content\app\common\CookieService.js" />
+    <Content Include="Content\app\common\CookieServiceAfterLogin.js" />
     <Content Include="Content\css\nprogress.css" />
     <Content Include="Content\css\SocialButtons\images\layer_1.jpg" />
     <Content Include="Content\css\SocialButtons\images\layer_11.png" />

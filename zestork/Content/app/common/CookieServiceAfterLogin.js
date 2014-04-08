@@ -1,4 +1,4 @@
-ZestorkApp.factory('CookieUtil', function ($rootScope, $location, $cookieStore) {
+ZestorkAppAfterLogin.factory('CookieUtil', function ($rootScope, $location, $cookieStore) {
 
     return {
         CookieValue: function () {
