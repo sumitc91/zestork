@@ -270,6 +270,7 @@
     <Content Include="Content\app\beforeLogin\serviceTemplate.js" />
     <Content Include="Content\app\beforeLogin\homeTemplate.js" />
     <Content Include="Content\app\beforeLogin\beforeLoginApp.js" />
+    <Content Include="Content\app\common\CookieService.js" />
     <Content Include="Content\css\nprogress.css" />
     <Content Include="Content\css\SocialButtons\images\layer_1.jpg" />
     <Content Include="Content\css\SocialButtons\images\layer_11.png" />
@@ -305,6 +306,7 @@
     <Content Include="Content\css\SocialButtons\unused_images\sign_in_with_yahoo.png" />
     <Content Include="Content\css\responsiveTransparentButton.css" />
     <Content Include="Content\js\jquery.blockUI.js" />
+    <Content Include="Content\js\jquery.cookie.js" />
     <Content Include="Content\js\nprogress.js" />
     <Content Include="Content\lib\angular-cookies.js" />
     <Content Include="Content\lib\angular-cookies.min.js" />

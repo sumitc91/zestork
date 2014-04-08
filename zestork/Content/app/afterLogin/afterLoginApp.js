@@ -13,29 +13,6 @@ ZestorkAppAfterLogin.config(function ($routeProvider) {
 
 });
 
-ZestorkAppAfterLogin.factory('CookieUtil',function($rootScope, $location, $cookieStore){
-   
-   return {
-        CookieValue: function() {
-
-            $rootScope.Authentication = null;
-            var guidParam = getParameterByName('guid');
-        
-            if(guidParam != null && guidParam != '')                
-                $rootScope.Authentication = guidParam; //global variable
-
-            if ($rootScope.Authentication != null) {
-                //$cookies.Authentication = $rootScope.Authentication;
-                    $cookieStore.put("Authentication", $rootScope.Authentication);
-            }
-                    //$cookieStore.put("Authentication",$rootScope.Authentication)  
-
-            return $cookieStore.get('Authentication');
-        }
-    };
-
-});
-
 
 ZestorkAppAfterLogin.run(function ($rootScope, $location) { //Insert in the function definition the dependencies you need.
     //Do your $on in here, like this:  
