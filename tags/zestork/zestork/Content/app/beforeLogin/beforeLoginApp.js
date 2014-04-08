@@ -1,5 +1,5 @@
 
-var ZestorkApp = angular.module('ZestorkApp', []);
+var ZestorkApp = angular.module('ZestorkApp', ['ngCookies']);
 
 ZestorkApp.config(function ($routeProvider) {
 
@@ -72,8 +72,26 @@ ZestorkApp.controller('loginControllerPlaceHolders', function ($scope) {
 
 });
 
-ZestorkApp.controller('beforeLoginHeaderController', function ($scope, $route, $routeParams, $location) {
+ZestorkApp.controller('beforeLoginHeaderController', function ($scope, $route, $routeParams,$http, $location,CookieUtil) {    
 
+    $http({
+            url: '/Account/isValidToken/' + CookieUtil.getGuid(),
+            method: "GET"
+            //headers: { 'Content-Type': 'application/json' }            
+        }).success(function (data, status, headers, config) {
+            //$scope.persons = data; // assign  $scope.persons here as promise is resolved here                        
+            if (data.isValid == true) {
+                window.location.href = data.url;                             
+            }
+            else {
+                CookieUtil.removeGuid();
+                CookieUtil.removeUsername();
+            }
+            //console.log(data);
+        }).error(function (data, status, headers, config) {
+            $.unblockUI();
+            alert('Internal Server Error Occured !!');
+        });
 
     $scope.signInTemplate = '../../Resource/templates/beforeLogin/contentView/ajax/signInTemplate.html';
    

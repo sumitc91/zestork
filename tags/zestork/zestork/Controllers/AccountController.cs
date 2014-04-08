@@ -225,40 +225,18 @@ namespace zestork.Controllers
                 return Json(500, JsonRequestBehavior.AllowGet); // unreachable code
             }                        
         }
-        //public JsonResult showData()
-        //{
-        //    String path = Request.Url.AbsolutePath;
-        //    String code = Request.QueryString["code"];
 
-        //    var _db = new ZestorkContainer();
-        //    Users User = _db.Users.SingleOrDefault(x=>x.Username== "sumitchourasia91@gmail.com");
-        //    ValidateUserKey key = _db.ValidateUserKeys.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
-        //    return Json(User, JsonRequestBehavior.AllowGet);
-
-        //}
-
-        //public JsonResult getUserGuid(string email)
-        //{
-        //    String path = Request.Url.AbsolutePath;
-        //    String code = Request.QueryString["code"];
-
-        //    var _db = new ZestorkContainer();
-        //    Users User = _db.Users.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
-        //    ValidateUserKey key = _db.ValidateUserKeys.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
-        //    return Json(User, JsonRequestBehavior.AllowGet);
-
-        //}
-
-        //public JsonResult getUserInfo()
-        //{
-        //    String path = Request.Url.AbsolutePath;
-        //    String code = Request.QueryString["code"];
-
-        //    var _db = new ZestorkContainer();
-        //    Users User = _db.Users.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
-        //    ValidateUserKey key = _db.ValidateUserKeys.SingleOrDefault(x => x.Username == "sumitchourasia91@gmail.com");
-        //    return Json(User, JsonRequestBehavior.AllowGet);
-
-        //}
+        public JsonResult isValidToken(string id)
+        {
+            if (TokenManager.isValidSession(id))
+            {
+                return Json(new { isValid = true, url = "http://" + Request.Url.Authority + "/secure" }, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(new { isValid = false, url = "http://" + Request.Url.Authority + "/secure" }, JsonRequestBehavior.AllowGet);
+            }
+            
+        }
     }
 }
