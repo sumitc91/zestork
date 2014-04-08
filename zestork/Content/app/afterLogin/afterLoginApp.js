@@ -177,7 +177,7 @@ ZestorkAppAfterLogin.controller('submitUserPasswordDetailController', function (
                     $('#firstTimeUserLoginViaSocialLinkChangePasswordPopUpClose').click();
                 }
                 else {
-                    //alert("some error occured while submitting your data.");
+                    alert("some error occured while submitting your data.");
                     $('#firstTimeUserLoginViaSocialLinkChangePasswordPopUpClose').click();
                 }
                 //console.log(data);
@@ -225,10 +225,11 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
         //$scope.persons = data; // assign  $scope.persons here as promise is resolved here
         $.unblockUI();
         if (data != null) {
+            $rootScope.Username = data.Username;
             if (data.Locked == true) {
                 location.href = "/Locked/index/" + $rootScope.Authentication;
             }
-            $scope.details = data;
+            $scope.details = data;           
             //console.log(data);
             //alert($scope.details.FirstName);
         }
