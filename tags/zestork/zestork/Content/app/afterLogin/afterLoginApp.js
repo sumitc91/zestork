@@ -3,8 +3,9 @@ var ZestorkAppAfterLogin = angular.module('ZestorkAppAfterLogin', ['ngCookies'])
 
 ZestorkAppAfterLogin.config(function ($routeProvider) {
 
-    $routeProvider.when("/", { templateUrl: "../../Resource/templates/afterLogin/contentView/initializing.html" }).
+    $routeProvider.when("/", { templateUrl: "../../Resource/templates/afterLogin/contentView/searchJob.html" }).
                    when("/search", { templateUrl: "../../Resource/templates/afterLogin/contentView/searchJob.html" }).
+                   when("/initialize", { templateUrl: "../../Resource/templates/afterLogin/contentView/initializing.html" }).
                    when("/edit", { templateUrl: "../../Resource/templates/afterLogin/contentView/edit.html" }).
                    when("/404", { templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" }).
                    when("/signup", { templateUrl: "../../Resource/templates/beforeLogin/contentView/signup.html" }).
@@ -88,9 +89,12 @@ ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootS
 
         if (data != null) {
             //alert(data);
-            if (data == "false")
+            if (data == "false") {
                 $('#firstTimeUserLoginViaSocialLinkPopUp').click();
+                $rootScope.firstTimeUserLoginViaSocialLinkPopUpOpened = true;
+            }
             else {
+                $rootScope.firstTimeUserLoginViaSocialLinkPopUpOpened = false;
                 //$location.path("search");
             }
         }
@@ -108,7 +112,7 @@ ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootS
 
 });
 
-ZestorkAppAfterLogin.controller('submitUserTypeDetailController', function ($scope, $http, $rootScope,$location, CookieUtil) {
+ZestorkAppAfterLogin.controller('submitUserTypeDetailController', function ($scope,$route, $http, $rootScope,$location, CookieUtil) {
     $scope.userType = "NA";
     $scope.submitUserTypeDetails = function () {
         //alert("clicked");
@@ -127,10 +131,10 @@ ZestorkAppAfterLogin.controller('submitUserTypeDetailController', function ($sco
             //headers: { 'Content-Type': 'application/json' }
             headers: headers
         }).success(function (data, status, headers, config) {
-            //$scope.persons = data; // assign  $scope.persons here as promise is resolved here
-            $.unblockUI();
+            //$scope.persons = data; // assign  $scope.persons here as promise is resolved here            
             if (data == "200") {
-                $location.path("search");                
+                //$route.reload();
+                location.reload();                             
             }
             else {
                 alert("some error occured while submitting your data.");
@@ -140,6 +144,53 @@ ZestorkAppAfterLogin.controller('submitUserTypeDetailController', function ($sco
             $.unblockUI();
             alert('Internal Server Error Occured !!');
         });
+
+    }
+});
+
+ZestorkAppAfterLogin.controller('submitUserPasswordDetailController', function ($scope, $http, $rootScope, $location, CookieUtil) {
+    $scope.userType = "NA";
+
+    $scope.submitUserPasswordDetails = function () {
+        //alert("clicked");
+        if ($scope.password == $scope.confirmPassword) {
+            $rootScope.Authentication = CookieUtil.CookieValue();
+
+            var headers = { 'Content-Type': 'application/json',
+                'Authorization': $rootScope.Authentication
+            };
+
+            var changePasswordRequestData = {
+                password: $scope.password
+            }
+
+            $http({
+                url: '/Auth/changeUserPassword',
+                method: "POST",
+                //headers: { 'Content-Type': 'application/json' }
+                headers: headers,
+                data: changePasswordRequestData
+            }).success(function (data, status, headers, config) {
+                //$scope.persons = data; // assign  $scope.persons here as promise is resolved here           
+                if (data == "200") {
+                    //alert("password successfully changed !!!");
+                    $('#firstTimeUserLoginViaSocialLinkChangePasswordPopUpClose').click();
+                }
+                else {
+                    //alert("some error occured while submitting your data.");
+                    $('#firstTimeUserLoginViaSocialLinkChangePasswordPopUpClose').click();
+                }
+                //console.log(data);
+            }).error(function (data, status, headers, config) {
+                alert('Internal Server Error Occured !!');
+                $('#firstTimeUserLoginViaSocialLinkChangePasswordPopUpClose').click();
+            });
+        }
+        else {
+            alert("password didn't match");
+        }
+
+
 
     }
 });

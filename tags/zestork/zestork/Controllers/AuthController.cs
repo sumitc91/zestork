@@ -147,5 +147,44 @@ namespace zestork.Controllers
             return Json(200, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult CheckIfUserNewPasswordIsSet()
+        {
+            IEnumerable<string> headerValues = Request.Headers.GetValues("Authorization");
+            String guid = headerValues.FirstOrDefault();
+            guid = guid.Replace("/", "");
+            CPSession retVal = TokenManager.getSessionInfo(guid);
+            string userName = retVal.getAttributeValue("userName");
+            var _db = new ZestorkContainer();
+            var Users = _db.Users.SingleOrDefault(x => x.Username == userName);
+            if(Users.Password.Length == 36)
+                return Json(false, JsonRequestBehavior.AllowGet);
+            else
+                return Json(true, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult changeUserPassword(changePasswordRequest req)
+        {
+            IEnumerable<string> headerValues = Request.Headers.GetValues("Authorization");
+            String guid = headerValues.FirstOrDefault();
+            guid = guid.Replace("/", "");
+            CPSession retVal = TokenManager.getSessionInfo(guid);
+            string userName = retVal.getAttributeValue("userName");
+
+            var _db = new ZestorkContainer();
+            Users User = _db.Users.SingleOrDefault(x => x.Username == userName);
+            User.Password = req.password;
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                dbContextException dbContextException = new CommonMethods.dbContextException();
+                dbContextException.logDbContextException(e);
+                return Json("500");
+            }
+            return Json("200");
+        }
     }
 }

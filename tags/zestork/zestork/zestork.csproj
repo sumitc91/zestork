@@ -189,6 +189,7 @@
     <Compile Include="Models\ClientDetails.cs">
       <DependentUpon>ZestorkModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DataContract\changePasswordRequest.cs" />
     <Compile Include="Models\DataContract\checkUsernameExistsRequest.cs" />
     <Compile Include="Models\DataContract\CreateAccountRequest.cs" />
     <Compile Include="Models\DataContract\detailsEditUserPage.cs" />
@@ -258,6 +259,7 @@
       <DependentUpon>Zestork.mdf</DependentUpon>
     </Content>
     <Content Include="Content\app\afterLogin\afterLoginApp.js" />
+    <Content Include="Content\app\afterLogin\searchJobTemplate.js" />
     <Content Include="Content\app\afterLogin\editUserTemplate.js" />
     <Content Include="Content\app\afterLogin\LockedScreenTemplate.js" />
     <Content Include="Content\app\beforeLogin\signInTemplate.js" />
