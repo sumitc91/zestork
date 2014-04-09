@@ -14,6 +14,7 @@ ZestorkApp.config(function ($routeProvider) {
                    when("/tnc", { templateUrl: "../../Resource/templates/beforeLogin/contentView/termsAndConditions.html" }).
                    when("/404", { templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" }).
                    when("/signup", { templateUrl: "../../Resource/templates/beforeLogin/contentView/signup.html" }).
+                   when("/forgetpassword", { templateUrl: "../../Resource/templates/beforeLogin/contentView/forgetPassword.html" }).
                    otherwise({ templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" });
 
 });

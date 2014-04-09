@@ -274,6 +274,7 @@
     <Content Include="Content\app\beforeLogin\serviceTemplate.js" />
     <Content Include="Content\app\beforeLogin\homeTemplate.js" />
     <Content Include="Content\app\beforeLogin\beforeLoginApp.js" />
+    <Content Include="Content\app\beforeLogin\forgetPasswordTemplate.js" />
     <Content Include="Content\app\common\CookieService.js" />
     <Content Include="Content\app\common\CookieServiceAfterLogin.js" />
     <Content Include="Content\app\services\afterLoginServices.js" />
@@ -1459,6 +1460,7 @@
     <Content Include="Resource\templates\afterLogin\web\tables-dynamic.html" />
     <Content Include="Resource\templates\afterLogin\web\tables-large.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\404.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\forgetPassword.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\linkedinLogin.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\ajax\signInTemplate.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\googleLogin.html" />
