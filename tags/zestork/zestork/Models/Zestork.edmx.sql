@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 04/07/2014 19:55:42
+-- Date Created: 04/09/2014 13:33:08
 -- Generated from EDMX file: F:\pcongo\tags\zestork\zestork\Models\Zestork.edmx
 -- --------------------------------------------------
 
@@ -118,6 +118,17 @@ CREATE TABLE [dbo].[UserDetails] (
 );
 GO
 
+-- Creating table 'UserPageSettings'
+CREATE TABLE [dbo].[UserPageSettings] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Username] nvarchar(max)  NOT NULL,
+    [PageThemeColor] nvarchar(max)  NULL,
+    [LayoutWidth] nvarchar(max)  NULL,
+    [TopBar] nvarchar(max)  NULL,
+    [SideBar] nvarchar(max)  NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -161,6 +172,12 @@ GO
 -- Creating primary key on [Id] in table 'UserDetails'
 ALTER TABLE [dbo].[UserDetails]
 ADD CONSTRAINT [PK_UserDetails]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'UserPageSettings'
+ALTER TABLE [dbo].[UserPageSettings]
+ADD CONSTRAINT [PK_UserPageSettings]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 

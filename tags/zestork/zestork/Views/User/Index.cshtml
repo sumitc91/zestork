@@ -62,6 +62,7 @@
 	<script src="../../Content/app/afterLogin/editUserTemplate.js" type="text/javascript"></script>
 	<script src="../../Content/app/afterLogin/searchJobTemplate.js" type="text/javascript"></script>
 	<script src="../../Content/app/common/CookieServiceAfterLogin.js" type="text/javascript"></script>
+	<script src="../../Content/app/services/afterLoginServices.js" type="text/javascript"></script>
 	
 	<!-- Nice Scroll -->
 	<script src="../../Resource/templates/afterLogin/web/js/plugins/nicescroll/jquery.nicescroll.min.js"></script>
@@ -148,7 +149,7 @@
 
 </head>
 
-<body ng-controller="masterPageController">
+<body ng-class="pageThemeColor" ng-controller="masterPageController">
 		
 		<div id="modal-firstTimeUserLoginViaSocialLinkPopUp" ng-include="firstTimeUserLoginViaSocialLinkPopUpTemplate"  class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			

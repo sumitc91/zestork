@@ -35,10 +35,11 @@ ZestorkAppAfterLogin.run(function ($rootScope, $location) { //Insert in the func
     });
 });
 
-ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootScope, $http, $location, CookieUtil) {
+ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootScope, $http, $location, CookieUtil,afterLoginServices) {
 
     $scope.firstTimeUserLoginViaSocialLinkPopUpTemplate = '../../Resource/templates/afterLogin/contentView/index/firstTimeLoginViaSocialLinkePopUpModal.html';
     //alert(CookieUtil.getUsername());
+    $rootScope.pageThemeColor = afterLoginServices.pageThemeColor();
     $rootScope.classRadioButtonClient = "iradio_square-blue checked";
     $rootScope.classRadioButtonUser = "iradio_square-blue";
 
