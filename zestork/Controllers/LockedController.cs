@@ -85,8 +85,7 @@ namespace zestork.Controllers
                         bool isPersistent = false; // as of now we have only 1 type of login
                         TokenManager.CreateSession(session, isPersistent);                         
                         #endregion
-
-                         Response.Redirect("/" + user.FirstName + "-" + user.LastName + "?guid=" + session.getID() + "/#/");
+                         
                          Response.Redirect("/Account/welcome?guid=" + session.getID() + "&username=" + userName + "/#/");
                     }
                     catch (DbEntityValidationException e)
