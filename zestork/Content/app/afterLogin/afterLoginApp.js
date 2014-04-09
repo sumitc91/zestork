@@ -18,8 +18,8 @@ ZestorkAppAfterLogin.run(function ($rootScope, $location) { //Insert in the func
     //Do your $on in here, like this:  
 
     $rootScope.$on("$locationChangeStart", function (event, next, current) {
-    
-        
+
+
         //getParameterByName('guid')
         //alert(getParameterByName('uid'));
         //getParameterByName('uid'); //global variable
@@ -35,7 +35,7 @@ ZestorkAppAfterLogin.run(function ($rootScope, $location) { //Insert in the func
     });
 });
 
-ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootScope, $http, $location, CookieUtil,afterLoginServices) {
+ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootScope, $http, $location, CookieUtil, afterLoginServices) {
 
     $scope.firstTimeUserLoginViaSocialLinkPopUpTemplate = '../../Resource/templates/afterLogin/contentView/index/firstTimeLoginViaSocialLinkePopUpModal.html';
     //alert(CookieUtil.getUsername());
@@ -55,7 +55,8 @@ ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootS
     }
 
     $rootScope.Authentication = CookieUtil.CookieValue();
-    var headers = { 'Content-Type': 'application/json',
+    var headers = {
+        'Content-Type': 'application/json',
         'Authorization': $rootScope.Authentication
     };
 
@@ -90,7 +91,7 @@ ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootS
 
 });
 
-ZestorkAppAfterLogin.controller('submitUserTypeDetailController', function ($scope,$route, $http, $rootScope,$location, CookieUtil) {
+ZestorkAppAfterLogin.controller('submitUserTypeDetailController', function ($scope, $route, $http, $rootScope, $location, CookieUtil) {
     $scope.userType = "NA";
     $scope.submitUserTypeDetails = function () {
         //alert("clicked");
@@ -99,7 +100,8 @@ ZestorkAppAfterLogin.controller('submitUserTypeDetailController', function ($sco
             $scope.userType = "user";
         else
             $scope.userType = "client";
-        var headers = { 'Content-Type': 'application/json',
+        var headers = {
+            'Content-Type': 'application/json',
             'Authorization': $rootScope.Authentication
         };
 
@@ -112,7 +114,7 @@ ZestorkAppAfterLogin.controller('submitUserTypeDetailController', function ($sco
             //$scope.persons = data; // assign  $scope.persons here as promise is resolved here            
             if (data == "200") {
                 //$route.reload();
-                location.reload();                             
+                location.reload();
             }
             else {
                 alert("some error occured while submitting your data.");
@@ -127,13 +129,14 @@ ZestorkAppAfterLogin.controller('submitUserTypeDetailController', function ($sco
 });
 
 ZestorkAppAfterLogin.controller('submitUserPasswordDetailController', function ($scope, $http, $rootScope, $location, CookieUtil) {
-    $scope.userType = "NA";   
+    $scope.userType = "NA";
     $scope.submitUserPasswordDetails = function () {
         //alert("clicked");
         if ($scope.password == $scope.confirmPassword) {
             $rootScope.Authentication = CookieUtil.CookieValue();
             $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Changing Password...</h1>' });
-            var headers = { 'Content-Type': 'application/json',
+            var headers = {
+                'Content-Type': 'application/json',
                 'Authorization': $rootScope.Authentication
             };
 
@@ -191,7 +194,8 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
     $rootScope.Authentication = CookieUtil.CookieValue();
     $scope.masterPageUserDetailImageLink = "#/edit";
 
-    var headers = { 'Content-Type': 'application/json',
+    var headers = {
+        'Content-Type': 'application/json',
         'Authorization': $rootScope.Authentication
     };
 
@@ -208,7 +212,7 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
             if (data.Locked == true) {
                 location.href = "/Locked/index/" + $rootScope.Authentication;
             }
-            $scope.details = data;           
+            $scope.details = data;
             //console.log(data);
             //alert($scope.details.FirstName);
         }

@@ -103,5 +103,6 @@ ZestorkApp.controller('LoginViewController', function ($scope, $routeParams) {
         $scope.content = "either username or password is wrong ! try again.";
     }
 
-
+    $scope.test = "testing";
+    
 });
