@@ -37,10 +37,16 @@ ZestorkAppAfterLogin.controller('editUserDetailsController', function ($scope, $
 
 
     $scope.addTagInputButtonClick = function () {
+        $scope.newTagModel = ($scope.newTagModel).toLowerCase();
+
+        if ($scope.newTagModel == "c++")// c++ gives error while passing through url
+            $scope.newTagModel = "cpp";
+
         if ($scope.details.skillTags.some(function (skill) { return skill === $scope.newTagModel })) {
             alert("already exists");
         }
         else {
+
             $scope.details.skillTags.push($scope.newTagModel);
 
             $rootScope.Authentication = CookieUtil.CookieValue();
@@ -71,7 +77,7 @@ ZestorkAppAfterLogin.controller('editUserDetailsController', function ($scope, $
     }
 
     $scope.RemoveTagInputButtonClick = function (index) {
-        
+
         $rootScope.Authentication = CookieUtil.CookieValue();
         var headers = { 'Content-Type': 'application/json',
             'Authorization': $rootScope.Authentication
@@ -84,7 +90,7 @@ ZestorkAppAfterLogin.controller('editUserDetailsController', function ($scope, $
         }).success(function (data, status, headers, config) {
 
             if (data == "200") {
-                $scope.details.skillTags.splice(index, 1);//successfully removed.
+                $scope.details.skillTags.splice(index, 1); //successfully removed.
             }
             else {
                 alert("user type info data not available");

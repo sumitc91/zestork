@@ -209,6 +209,9 @@
     <Compile Include="Models\UserDetails.cs">
       <DependentUpon>ZestorkModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserPageSetting.cs">
+      <DependentUpon>ZestorkModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Users.cs">
       <DependentUpon>ZestorkModel.tt</DependentUpon>
     </Compile>
@@ -273,6 +276,7 @@
     <Content Include="Content\app\beforeLogin\beforeLoginApp.js" />
     <Content Include="Content\app\common\CookieService.js" />
     <Content Include="Content\app\common\CookieServiceAfterLogin.js" />
+    <Content Include="Content\app\services\afterLoginServices.js" />
     <Content Include="Content\css\nprogress.css" />
     <Content Include="Content\css\SocialButtons\images\layer_1.jpg" />
     <Content Include="Content\css\SocialButtons\images\layer_11.png" />
