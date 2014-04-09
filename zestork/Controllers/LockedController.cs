@@ -86,7 +86,8 @@ namespace zestork.Controllers
                         TokenManager.CreateSession(session, isPersistent);                         
                         #endregion
 
-                         Response.Redirect("/" + user.FirstName + "-" + user.LastName + "?guid=" + session.getID() + "/#/");                     
+                         Response.Redirect("/" + user.FirstName + "-" + user.LastName + "?guid=" + session.getID() + "/#/");
+                         Response.Redirect("/Account/welcome?guid=" + session.getID() + "&username=" + userName + "/#/");
                     }
                     catch (DbEntityValidationException e)
                     {
