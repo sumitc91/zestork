@@ -126,13 +126,12 @@ ZestorkAppAfterLogin.controller('submitUserTypeDetailController', function ($sco
 });
 
 ZestorkAppAfterLogin.controller('submitUserPasswordDetailController', function ($scope, $http, $rootScope, $location, CookieUtil) {
-    $scope.userType = "NA";
-
+    $scope.userType = "NA";   
     $scope.submitUserPasswordDetails = function () {
         //alert("clicked");
         if ($scope.password == $scope.confirmPassword) {
             $rootScope.Authentication = CookieUtil.CookieValue();
-
+            $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Changing Password...</h1>' });
             var headers = { 'Content-Type': 'application/json',
                 'Authorization': $rootScope.Authentication
             };
@@ -151,11 +150,13 @@ ZestorkAppAfterLogin.controller('submitUserPasswordDetailController', function (
                 //$scope.persons = data; // assign  $scope.persons here as promise is resolved here           
                 if (data == "200") {
                     //alert("password successfully changed !!!");
+                    $.unblockUI();
                     $('#firstTimeUserLoginViaSocialLinkChangePasswordPopUpClose').click();
                 }
                 else {
                     //alert("some error occured while submitting your data.");
                     $('#firstTimeUserLoginViaSocialLinkChangePasswordPopUpClose').click();
+                    $.unblockUI();
                 }
                 //console.log(data);
             }).error(function (data, status, headers, config) {
