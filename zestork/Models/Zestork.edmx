@@ -13,6 +13,7 @@
     <EntitySet Name="ClientDetails" EntityType="Zestork.Store.ClientDetails" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserSkills" EntityType="Zestork.Store.UserSkills" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserDetails" EntityType="Zestork.Store.UserDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserPageSettings" EntityType="Zestork.Store.UserPageSettings" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="Users">
     <Key>
@@ -84,6 +85,17 @@
     <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="UserPageSettings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PageThemeColor" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="LayoutWidth" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TopBar" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SideBar" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -96,6 +108,7 @@
           <EntitySet Name="ClientDetails" EntityType="Zestork.ClientDetails" />
           <EntitySet Name="UserSkills" EntityType="Zestork.UserSkills" />
           <EntitySet Name="UserDetails" EntityType="Zestork.UserDetails" />
+          <EntitySet Name="UserPageSettings" EntityType="Zestork.UserPageSetting" />
         </EntityContainer>
         <EntityType Name="Users">
           <Key>
@@ -166,6 +179,17 @@
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Username" Nullable="false" />
           <Property Type="String" Name="Country" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserPageSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Username" Nullable="false" />
+          <Property Type="String" Name="PageThemeColor" Nullable="true" />
+          <Property Type="String" Name="LayoutWidth" Nullable="true" />
+          <Property Type="String" Name="TopBar" Nullable="true" />
+          <Property Type="String" Name="SideBar" Nullable="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -250,6 +274,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="UserPageSettings">
+      <EntityTypeMapping TypeName="IsTypeOf(Zestork.UserPageSetting)">
+        <MappingFragment StoreEntitySet="UserPageSettings">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="PageThemeColor" ColumnName="PageThemeColor" />
+          <ScalarProperty Name="LayoutWidth" ColumnName="LayoutWidth" />
+          <ScalarProperty Name="TopBar" ColumnName="TopBar" />
+          <ScalarProperty Name="SideBar" ColumnName="SideBar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
@@ -277,6 +313,7 @@
         <EntityTypeShape EntityType="Zestork.ClientDetails" Width="1.5" PointX="10.75" PointY="0.5" Height="1.59568359375" />
         <EntityTypeShape EntityType="Zestork.UserSkills" Width="1.5" PointX="0.5" PointY="3.875" Height="1.7879850260416665" />
         <EntityTypeShape EntityType="Zestork.UserDetails" Width="1.5" PointX="2.25" PointY="0.5" Height="1.59568359375" />
+        <EntityTypeShape EntityType="Zestork.UserPageSetting" Width="1.5" PointX="4.875" PointY="1.75" Height="2.172587890625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
