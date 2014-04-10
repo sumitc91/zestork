@@ -166,7 +166,7 @@
         </script>
 </head>
 
-<body ng-class="pageThemeColor" ng-controller="masterPageController">
+<body ng-class="pageThemeColor" ng-controller="masterPageController" ng-cloak>
 		
 		<div id="modal-firstTimeUserLoginViaSocialLinkPopUp" ng-include="firstTimeUserLoginViaSocialLinkPopUpTemplate"  class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			
@@ -475,22 +475,22 @@
 								Predefined colors
 							</li>
 							<li>
-								<span class='red'></span>
-								<span class='orange'></span>
-								<span class='green'></span>
-								<span class="brown"></span>
-								<span class="blue"></span>
-								<span class='lime'></span>
-								<span class="teal"></span>
-								<span class="purple"></span>
-								<span class="pink"></span>
-								<span class="magenta"></span>
-								<span class="grey"></span>
-								<span class="darkblue"></span>
-								<span class="lightred"></span>
-								<span class="lightgrey"></span>
-								<span class="satblue"></span>
-								<span class="satgreen"></span>
+								<span ng-click="submitUserTemplateColordDetails('red')" class='red'></span>
+								<span ng-click="submitUserTemplateColordDetails('orange')" class='orange'></span>
+								<span ng-click="submitUserTemplateColordDetails('green')" class='green'></span>
+								<span ng-click="submitUserTemplateColordDetails('brown')" class="brown"></span>
+								<span ng-click="submitUserTemplateColordDetails('blue')" class="blue"></span>
+								<span ng-click="submitUserTemplateColordDetails('lime')" class='lime'></span>
+								<span ng-click="submitUserTemplateColordDetails('teal')" class="teal"></span>
+								<span ng-click="submitUserTemplateColordDetails('purple')" class="purple"></span>
+								<span ng-click="submitUserTemplateColordDetails('pink')" class="pink"></span>
+								<span ng-click="submitUserTemplateColordDetails('magenta')" class="magenta"></span>
+								<span ng-click="submitUserTemplateColordDetails('grey')" class="grey"></span>
+								<span ng-click="submitUserTemplateColordDetails('darkblue')" class="darkblue"></span>
+								<span ng-click="submitUserTemplateColordDetails('lightred')" class="lightred"></span>
+								<span ng-click="submitUserTemplateColordDetails('lightgrey')" class="lightgrey"></span>
+								<span ng-click="submitUserTemplateColordDetails('satblue')" class="satblue"></span>
+								<span ng-click="submitUserTemplateColordDetails('satgreen')" class="satgreen"></span>
 							</li>
 						</ul>
 					</li>

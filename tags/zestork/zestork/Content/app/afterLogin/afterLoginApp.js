@@ -39,9 +39,14 @@ ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootS
 
     $scope.firstTimeUserLoginViaSocialLinkPopUpTemplate = '../../Resource/templates/afterLogin/contentView/index/firstTimeLoginViaSocialLinkePopUpModal.html';
     //alert(CookieUtil.getUsername());
-    $rootScope.pageThemeColor = afterLoginServices.pageThemeColor();
+    
+    //$rootScope.pageThemeColor = afterLoginServices.pageThemeColor();
     $rootScope.classRadioButtonClient = "iradio_square-blue checked";
     $rootScope.classRadioButtonUser = "iradio_square-blue";
+
+    $scope.submitUserTemplateColordDetails = function (color) {
+        afterLoginServices.setPageThemeColor(color);
+    }
 
     $scope.infoClicked = function (message) {
         if (message == "user") {
@@ -82,7 +87,7 @@ ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootS
         }
         //console.log(data);
     }).error(function (data, status, headers, config) {
-        
+
         //alert('Internal Server Error Occured !!');
     });
 
@@ -214,6 +219,7 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
                 location.href = "/Locked/index/" + $rootScope.Authentication;
             }
             $scope.details = data;
+            $rootScope.pageThemeColor = data.PageThemeColor;
             //console.log(data);
             //alert($scope.details.FirstName);
         }
@@ -225,7 +231,7 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
         $.unblockUI();
         //alert('Internal Server Error Occured !!');
         window.location.href = "/";
-        
+
     });
 });
 

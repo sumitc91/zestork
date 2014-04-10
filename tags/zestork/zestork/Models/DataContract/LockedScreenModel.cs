@@ -14,5 +14,6 @@ namespace zestork.Models.DataContract
         public string guid { get; set; }
         public string postUrl { get; set; }
         public string userName { get; set; }
+        public string PageThemeColor { get; set; }
     }
 }
