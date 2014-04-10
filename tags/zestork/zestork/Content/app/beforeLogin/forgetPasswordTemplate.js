@@ -12,9 +12,16 @@ ZestorkApp.controller('forgetPasswordController', function ($scope, $http, $root
             method: "GET"
             //headers: { 'Content-Type': 'application/json' }           
         }).success(function (data, status, headers, config) {
-                                
-            $.unblockUI();
-            alert("Your Password resetted successfully. Check your Mail for details.");
+            //$scope.persons = data; // assign  $scope.persons here as promise is resolved here                               
+            if (data == "200") {
+                $.unblockUI();
+                alert("Your Password resetted successfully. Check your Mail for details.");
+            }
+            else if(data =="404") {
+                alert("This user is not registered yet !!!");
+                $.unblockUI();
+            }
+
             //console.log(data);
         }).error(function (data, status, headers, config) {
             $.unblockUI();
