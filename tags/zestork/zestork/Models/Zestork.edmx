@@ -14,6 +14,7 @@
     <EntitySet Name="UserSkills" EntityType="Zestork.Store.UserSkills" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserDetails" EntityType="Zestork.Store.UserDetails" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserPageSettings" EntityType="Zestork.Store.UserPageSettings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ForgetPasswords" EntityType="Zestork.Store.ForgetPasswords" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="Users">
     <Key>
@@ -96,6 +97,14 @@
     <Property Name="TopBar" Type="nvarchar(max)" Nullable="true" />
     <Property Name="SideBar" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
+  <EntityType Name="ForgetPasswords">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="guid" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -109,6 +118,7 @@
           <EntitySet Name="UserSkills" EntityType="Zestork.UserSkills" />
           <EntitySet Name="UserDetails" EntityType="Zestork.UserDetails" />
           <EntitySet Name="UserPageSettings" EntityType="Zestork.UserPageSetting" />
+          <EntitySet Name="ForgetPasswords" EntityType="Zestork.ForgetPassword" />
         </EntityContainer>
         <EntityType Name="Users">
           <Key>
@@ -190,6 +200,14 @@
           <Property Type="String" Name="LayoutWidth" Nullable="true" />
           <Property Type="String" Name="TopBar" Nullable="true" />
           <Property Type="String" Name="SideBar" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ForgetPassword">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Username" Nullable="false" />
+          <Property Type="String" Name="guid" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -286,6 +304,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ForgetPasswords">
+      <EntityTypeMapping TypeName="IsTypeOf(Zestork.ForgetPassword)">
+        <MappingFragment StoreEntitySet="ForgetPasswords">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
@@ -313,7 +340,8 @@
         <EntityTypeShape EntityType="Zestork.ClientDetails" Width="1.5" PointX="10.75" PointY="0.5" Height="1.59568359375" />
         <EntityTypeShape EntityType="Zestork.UserSkills" Width="1.5" PointX="0.5" PointY="3.875" Height="1.7879850260416665" />
         <EntityTypeShape EntityType="Zestork.UserDetails" Width="1.5" PointX="2.25" PointY="0.5" Height="1.59568359375" />
-        <EntityTypeShape EntityType="Zestork.UserPageSetting" Width="1.5" PointX="4.875" PointY="1.75" Height="2.172587890625" />
+        <EntityTypeShape EntityType="Zestork.UserPageSetting" Width="1.5" PointX="4.875" PointY="0.5" Height="2.172587890625" />
+        <EntityTypeShape EntityType="Zestork.ForgetPassword" Width="1.5" PointX="6.5" PointY="0.5" Height="1.59568359375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
