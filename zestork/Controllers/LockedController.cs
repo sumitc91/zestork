@@ -34,7 +34,7 @@ namespace zestork.Controllers
             {
                 userInfo.imageUrl = "../" + userInfo.imageUrl;
             }
-            userInfo.message = "Enter Your Password to Unlock !!";
+            userInfo.message = "";
             userInfo.guid = id;
             userInfo.userName = User.Username;
             userInfo.postUrl = "http://" + Request.Url.Authority + "Locked/unlock/" + id;
