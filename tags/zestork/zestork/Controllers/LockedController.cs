@@ -65,19 +65,18 @@ namespace zestork.Controllers
             
             string userName = Request.QueryString["username"].ToString();
             String password = Request.QueryString["password"].ToString();
+            String id = Request.QueryString["id"].ToString();
             if (_db.Users.Any(x => x.Username == userName && x.Password == password))
-            {
+            {                
                 Users user = _db.Users.SingleOrDefault(x => x.Username == userName && x.isActive == "true");
                 if (user != null)
-                {
-                    Users User = _db.Users.SingleOrDefault(x => x.Username == userName);
-                    User.Locked = "false";
+                {                    
+                    user.Locked = "false";
                     try
                     {
                         _db.SaveChanges();
                         try
-                        {
-                            String id = Request.QueryString["id"].ToString();
+                        {                            
                             CPSession retVal = TokenManager.getSessionInfo(id);
                             TokenManager.removeSession(id);// remove session if available.
                         }
@@ -103,21 +102,34 @@ namespace zestork.Controllers
                     }
 
                 }
+
+                Users User = _db.Users.SingleOrDefault(x => x.Username == userName);
                 LockedScreenModel userInfo = new LockedScreenModel();
-                Users UserDetails = _db.Users.SingleOrDefault(x => x.Username == userName);
-                userInfo.firstName = UserDetails.FirstName;
-                userInfo.lastName = UserDetails.LastName;
-                if (UserDetails.ImageUrl == "NA" || UserDetails.ImageUrl == null)
+                userInfo.firstName = User.FirstName;
+                userInfo.lastName = User.LastName;
+                if (User.ImageUrl == "NA" || User.ImageUrl == null)
                     userInfo.imageUrl = "../../Resource/templates/afterLogin/web/img/demo/user-avatar.jpg";
                 else
-                    userInfo.imageUrl = UserDetails.ImageUrl;
+                    userInfo.imageUrl = User.ImageUrl;
 
                 if (userInfo.imageUrl.Contains("../../"))
                 {
                     userInfo.imageUrl = "../" + userInfo.imageUrl;
                 }
-                userInfo.message = "Wrong Username or Password !!";
-                return View("index");
+                userInfo.message = "Enter Your Password to Unlock !!";
+                userInfo.guid = id;
+                userInfo.userName = User.Username;
+                userInfo.postUrl = "http://" + Request.Url.Authority + "Locked/unlock/" + id;
+                User.Locked = "true";
+
+                UserPageSetting pageSetting = _db.UserPageSettings.SingleOrDefault(x => x.Username == userName);
+                if (pageSetting != null)
+                    userInfo.PageThemeColor = "theme-" + pageSetting.PageThemeColor;
+                else
+                    userInfo.PageThemeColor = "";
+
+                userInfo.message = "Inactive Account.";
+                return View("index",userInfo);
             }
             else
             {
@@ -134,8 +146,20 @@ namespace zestork.Controllers
                 {
                     userInfo.imageUrl = "../" + userInfo.imageUrl;
                 }
-                userInfo.message = "Wrong Username or Password !!";
-                return View("index",userInfo);
+                
+                userInfo.guid = id;
+                userInfo.userName = User.Username;
+                userInfo.postUrl = "http://" + Request.Url.Authority + "Locked/unlock/" + id;
+                User.Locked = "true";
+
+                UserPageSetting pageSetting = _db.UserPageSettings.SingleOrDefault(x => x.Username == userName);
+                if (pageSetting != null)
+                    userInfo.PageThemeColor = "theme-" + pageSetting.PageThemeColor;
+                else
+                    userInfo.PageThemeColor = "";
+
+                userInfo.message = "invalid entry !! try again.";
+                return View("index", userInfo);
             }            
         }
     }
