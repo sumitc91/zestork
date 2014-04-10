@@ -243,11 +243,71 @@ namespace zestork.Controllers
             return View();
         }
 
-        public JsonResult testMail()
+        public JsonResult forgetPassword(string id)
         {
-            sendAccountCreationValidationEmail sendAccountCreationValidationEmail = new sendAccountCreationValidationEmail();
-            String res = sendAccountCreationValidationEmail.sendAccountCreationValidationEmailMessageTesting("sumitchourasia91@gmail.com", "ID", Request);
-            return Json("success", JsonRequestBehavior.AllowGet);
+            var _db = new ZestorkContainer();
+            String guid = Guid.NewGuid().ToString();
+            var forgetPasswordDataAlreadyExists = _db.ForgetPasswords.SingleOrDefault(x => x.Username == id);
+            _db.ForgetPasswords.Remove(forgetPasswordDataAlreadyExists);
+
+            var forgetPasswordData = new ForgetPassword
+            {
+                Username = id,
+                guid = guid
+            };
+            _db.ForgetPasswords.Add(forgetPasswordData);
+
+            try
+            {
+                _db.SaveChanges();
+                forgetPasswordValidationEmail forgetPasswordValidationEmail = new forgetPasswordValidationEmail();
+                forgetPasswordValidationEmail.sendForgetPasswordValidationEmailMessage(id, guid, Request);
+            }
+            catch (DbEntityValidationException e)
+            {
+                dbContextException.logDbContextException(e);
+                throw;
+            }            
+            return Json("200", JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult validateForgetPassword()
+        {
+            var _db = new ZestorkContainer();
+            String guid = Request.QueryString["guid"];
+            String username = Request.QueryString["username"];
+
+            if(_db.ForgetPasswords.Any(x=>x.Username == username && x.guid == guid))
+            {                
+                var removeForgetPasswordData = _db.ForgetPasswords.SingleOrDefault(x => x.Username == username);
+                _db.ForgetPasswords.Remove(removeForgetPasswordData);
+
+                var UserData = _db.Users.SingleOrDefault(x => x.Username == username);
+                UserData.Password = Guid.NewGuid().ToString();
+                try
+                {
+                    _db.SaveChanges();
+                }
+                catch (DbEntityValidationException e)
+                {
+                    dbContextException dbContextException = new CommonMethods.dbContextException();
+                    dbContextException.logDbContextException(e);                    
+                }
+
+                #region Session
+                CPSession session = new CPSession();
+                session.addAttribute("userName", username);
+                bool isPersistent = false; // as of now we have only 1 type of login
+                TokenManager.CreateSession(session, isPersistent);                
+                #endregion
+
+                Response.Redirect("/Account/welcome?guid=" + session.getID() + "&username=" + username + "/#/");
+            }
+            else
+            {
+                Response.Redirect("/#/forgetpassword");
+            }
+            return View("Home","Index");
         }
     }
 }

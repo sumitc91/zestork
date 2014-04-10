@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 04/09/2014 13:33:08
+-- Date Created: 04/10/2014 15:32:02
 -- Generated from EDMX file: F:\pcongo\tags\zestork\zestork\Models\Zestork.edmx
 -- --------------------------------------------------
 
@@ -42,6 +42,9 @@ IF OBJECT_ID(N'[dbo].[UserSkills]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[UserDetails]', 'U') IS NOT NULL
     DROP TABLE [dbo].[UserDetails];
+GO
+IF OBJECT_ID(N'[dbo].[UserPageSettings]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserPageSettings];
 GO
 
 -- --------------------------------------------------
@@ -129,6 +132,14 @@ CREATE TABLE [dbo].[UserPageSettings] (
 );
 GO
 
+-- Creating table 'ForgetPasswords'
+CREATE TABLE [dbo].[ForgetPasswords] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Username] nvarchar(max)  NOT NULL,
+    [guid] nvarchar(max)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -178,6 +189,12 @@ GO
 -- Creating primary key on [Id] in table 'UserPageSettings'
 ALTER TABLE [dbo].[UserPageSettings]
 ADD CONSTRAINT [PK_UserPageSettings]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'ForgetPasswords'
+ALTER TABLE [dbo].[ForgetPasswords]
+ADD CONSTRAINT [PK_ForgetPasswords]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
