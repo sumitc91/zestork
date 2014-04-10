@@ -242,5 +242,12 @@ namespace zestork.Controllers
         {
             return View();
         }
+
+        public JsonResult testMail()
+        {
+            sendAccountCreationValidationEmail sendAccountCreationValidationEmail = new sendAccountCreationValidationEmail();
+            String res = sendAccountCreationValidationEmail.sendAccountCreationValidationEmailMessageTesting("sumitchourasia91@gmail.com", "ID", Request);
+            return Json("success", JsonRequestBehavior.AllowGet);
+        }
     }
 }
