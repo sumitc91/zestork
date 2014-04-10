@@ -32,6 +32,8 @@ namespace zestork.Controllers
             var _db = new ZestorkContainer();
             detailsEditUserPage detailsEditUserPage = new detailsEditUserPage();
             Users user = _db.Users.SingleOrDefault(x => x.Username == userName && x.isActive == "true");
+
+            UserPageSetting pageSetting = _db.UserPageSettings.SingleOrDefault(x=>x.Username == userName);
             if (user.Locked == "true")
             {
                 //Response.Redirect("/Locked/index/"+guid);
@@ -47,6 +49,10 @@ namespace zestork.Controllers
             detailsEditUserPage.gender = user.gender;
             detailsEditUserPage.Locked = Convert.ToBoolean(user.Locked);
 
+            if (pageSetting != null)
+                detailsEditUserPage.PageThemeColor = "theme-"+pageSetting.PageThemeColor;
+            else
+                detailsEditUserPage.PageThemeColor = "";
             detailsEditUserPage.skillTags = _db.UserSkills.Where(x => x.Username == userName).Select(x => x.Skill).ToList();
             if (detailsEditUserPage.ImageUrl == "NA" || detailsEditUserPage.ImageUrl == null)
                 detailsEditUserPage.ImageUrl = "../../Resource/templates/afterLogin/web/img/demo/user-avatar.jpg";
@@ -185,6 +191,57 @@ namespace zestork.Controllers
                 return Json("500");
             }
             return Json("200");
+        }
+
+        public JsonResult getUserPageThemeData()
+        {
+            IEnumerable<string> headerValues = Request.Headers.GetValues("Authorization");
+            String guid = headerValues.FirstOrDefault();
+            guid = guid.Replace("/", "");
+            CPSession retVal = TokenManager.getSessionInfo(guid);
+            string userName = retVal.getAttributeValue("userName");
+
+            var _db = new ZestorkContainer();
+            var UserPageTheme = _db.UserPageSettings.SingleOrDefault(x => x.Username == userName);
+            
+            return Json(UserPageTheme, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult submitUserPageThemeColor(string id)
+        {
+            IEnumerable<string> headerValues = Request.Headers.GetValues("Authorization");
+            String guid = headerValues.FirstOrDefault();
+            guid = guid.Replace("/", "");
+            CPSession retVal = TokenManager.getSessionInfo(guid);
+            string userName = retVal.getAttributeValue("userName");
+
+            var _db = new ZestorkContainer();
+            var UserPageTheme = _db.UserPageSettings.SingleOrDefault(x => x.Username == userName);
+            if (UserPageTheme == null)
+            {
+                UserPageTheme = new UserPageSetting
+                {
+                     Username = userName,
+                     PageThemeColor = id
+                };
+                _db.UserPageSettings.Add(UserPageTheme);
+            }
+            else
+            {
+                UserPageTheme.PageThemeColor = id;
+            }
+
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                dbContextException dbContextException = new CommonMethods.dbContextException();
+                dbContextException.logDbContextException(e);
+                return Json(500, JsonRequestBehavior.AllowGet);
+            }
+            return Json(200, JsonRequestBehavior.AllowGet);
         }
     }
 }

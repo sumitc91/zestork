@@ -39,6 +39,13 @@ namespace zestork.Controllers
             userInfo.userName = User.Username;
             userInfo.postUrl = "http://" + Request.Url.Authority + "Locked/unlock/" + id;
             User.Locked = "true";
+
+            UserPageSetting pageSetting = _db.UserPageSettings.SingleOrDefault(x => x.Username == userName);
+            if (pageSetting != null)
+                userInfo.PageThemeColor = "theme-" + pageSetting.PageThemeColor;
+            else
+                userInfo.PageThemeColor = "";
+
             try
             {
                 _db.SaveChanges();                
