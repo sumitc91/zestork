@@ -82,7 +82,8 @@ ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootS
         }
         //console.log(data);
     }).error(function (data, status, headers, config) {
-        alert('Internal Server Error Occured !!');
+        
+        //alert('Internal Server Error Occured !!');
     });
 
     $scope.person = {
@@ -222,7 +223,9 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
         //console.log(data);
     }).error(function (data, status, headers, config) {
         $.unblockUI();
-        alert('Internal Server Error Occured !!');
+        //alert('Internal Server Error Occured !!');
+        window.location.href = "/";
+        
     });
 });
 

@@ -247,28 +247,39 @@ namespace zestork.Controllers
         {
             var _db = new ZestorkContainer();
             String guid = Guid.NewGuid().ToString();
-            var forgetPasswordDataAlreadyExists = _db.ForgetPasswords.SingleOrDefault(x => x.Username == id);
-            _db.ForgetPasswords.Remove(forgetPasswordDataAlreadyExists);
 
-            var forgetPasswordData = new ForgetPassword
+            if (_db.Users.Any(x => x.Username == id))
             {
-                Username = id,
-                guid = guid
-            };
-            _db.ForgetPasswords.Add(forgetPasswordData);
+                var forgetPasswordDataAlreadyExists = _db.ForgetPasswords.SingleOrDefault(x => x.Username == id);
+                if (forgetPasswordDataAlreadyExists != null)
+                    _db.ForgetPasswords.Remove(forgetPasswordDataAlreadyExists);
 
-            try
-            {
-                _db.SaveChanges();
-                forgetPasswordValidationEmail forgetPasswordValidationEmail = new forgetPasswordValidationEmail();
-                forgetPasswordValidationEmail.sendForgetPasswordValidationEmailMessage(id, guid, Request);
+                var forgetPasswordData = new ForgetPassword
+                {
+                    Username = id,
+                    guid = guid
+                };
+                _db.ForgetPasswords.Add(forgetPasswordData);
+
+                try
+                {
+                    _db.SaveChanges();
+                    forgetPasswordValidationEmail forgetPasswordValidationEmail = new forgetPasswordValidationEmail();
+                    forgetPasswordValidationEmail.sendForgetPasswordValidationEmailMessage(id, guid, Request);
+                }
+                catch (DbEntityValidationException e)
+                {
+                    dbContextException.logDbContextException(e);
+                    return Json(500, JsonRequestBehavior.AllowGet);
+                }
             }
-            catch (DbEntityValidationException e)
+            else
             {
-                dbContextException.logDbContextException(e);
-                throw;
-            }            
-            return Json("200", JsonRequestBehavior.AllowGet);
+                return Json(404, JsonRequestBehavior.AllowGet);
+            }
+
+                        
+            return Json(200, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult validateForgetPassword()
@@ -277,6 +288,10 @@ namespace zestork.Controllers
             String guid = Request.QueryString["guid"];
             String username = Request.QueryString["username"];
 
+            if (!_db.Users.Any(x => x.Username == username))
+            {
+                Response.Redirect("/");
+            }
             if(_db.ForgetPasswords.Any(x=>x.Username == username && x.guid == guid))
             {                
                 var removeForgetPasswordData = _db.ForgetPasswords.SingleOrDefault(x => x.Username == username);
