@@ -39,6 +39,7 @@
 	<!-- Bootstrap -->
 	<script src="../../../Resource/templates/afterLogin/web/js/bootstrap.min.js"></script>
 	<script src="../../../Resource/templates/afterLogin/web/js/eakroko.js"></script>
+	<script src="../../Content/js/jquery.blockUI.js"></script>
 
 	<!--[if lte IE 9]>
 		<script src="js/plugins/placeholder/jquery.placeholder.min.js"></script>
@@ -61,7 +62,7 @@
 	<div class="wrapper">
 		<div class="pull-left">
 			<img src="@Model.imageUrl" alt="" width="200" height="200">
-			<a href="more-login.html">Not @Model.firstName @Model.lastName?</a>
+			<a href="/Account/logout/@Model.guid">Not @Model.firstName @Model.lastName?</a>
 		</div>
 		<div class="right">
 			<div class="upper">
@@ -71,12 +72,14 @@
 			<form action='@Url.Action("unlock", "Locked")' method='get'>
 				<input type="password" placeholder="Password" name="password">
                 <input type="password" placeholder="id" name="id" value="@Model.guid" style="display: none">
-                <input type="password" placeholder="username" name="username" value="@Model.userName" style="display: none">
+                <input type="password" id="LockedScreenUsername" placeholder="username" name="username" value="@Model.userName" style="display: none">
 				<div>
 					<input type="submit" value="Unlock" class='btn btn-inverse'>
 				</div>
 			</form>
-            @Model.message            
+            @Model.message
+			<br>
+			<a href="" ng-click="forgetLockedPassword()" style="color:white">forget password </a>          
 		</div>
 	</div>
 	

@@ -299,6 +299,7 @@ namespace zestork.Controllers
 
                 var UserData = _db.Users.SingleOrDefault(x => x.Username == username);
                 UserData.Password = Guid.NewGuid().ToString();
+                UserData.Locked = "false";
                 try
                 {
                     _db.SaveChanges();
