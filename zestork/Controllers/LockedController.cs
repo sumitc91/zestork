@@ -167,6 +167,7 @@ namespace zestork.Controllers
         {
             var _db = new ZestorkContainer();
             String guid = Guid.NewGuid().ToString();
+            String guidSession = Request.QueryString["guidSession"].ToString();
 
             if (_db.Users.Any(x => x.Username == id))
             {
@@ -181,7 +182,7 @@ namespace zestork.Controllers
                         _db.SaveChanges();
                         try
                         {
-                            TokenManager.removeSession(id);
+                            TokenManager.removeSession(guidSession);
                         }
                         catch (Exception)
                         {
