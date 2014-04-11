@@ -15,7 +15,7 @@ ZestorkAppAfterLogin.controller('LockedUserPageController', function ($scope, $r
             //$scope.persons = data; // assign  $scope.persons here as promise is resolved here                               
             if (data == "200") {
                 $.unblockUI();
-                alert("Your Password resetted successfully. Check your Mail for details.");
+                alert("Your Password reset information sent. Check your Mail for further details");
             }
             else if (data == "404") {
                 alert("This user is not registered yet !!!");
