@@ -31,9 +31,15 @@ namespace zestork
 
                 );
 
+            routes.MapRoute("Image",
+                "Image/{action}/{id}",
+                new { controller = "Image", action = "Index", id = UrlParameter.Optional }
+
+                );
+
             routes.MapRoute("Locked",
                 "Locked/{action}/{id}",
-                new { controller = "Locked",action = "Index", id = UrlParameter.Optional }
+                new { controller = "Locked", action = "Index", id = UrlParameter.Optional }
 
                 );
 

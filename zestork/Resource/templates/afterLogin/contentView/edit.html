@@ -52,7 +52,7 @@
                     </ul>
                     <div class="tab-content padding tab-content-inline tab-content-bottom">
                         <div id="profile" class="tab-pane active">
-                            <form class="form-horizontal" action="#">
+                            <form class="form-horizontal" method="post" action="Image/UploadToAlbum/{{Authentication}}" enctype="multipart/form-data">
                             <div class="row-fluid">
                                 <div class="span2">
                                     <div data-provides="fileupload" class="fileupload fileupload-new">
@@ -63,9 +63,9 @@
                                         </div>
                                         <div>
                                             <span class="btn btn-file"><span class="fileupload-new">Select image</span><span
-                                                class="fileupload-exists">Change</span><input type="file" name="imagefile"></span>
+                                                class="fileupload-exists">Change</span><input type="file" name="photo"></span>
                                             <a data-dismiss="fileupload" class="btn fileupload-exists" href="#">Remove</a>
-                                        </div>
+                                        </div>                                       
                                     </div>
                                 </div>
                                 <div class="span10">
