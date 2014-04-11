@@ -20,8 +20,7 @@ ZestorkAppAfterLogin.controller('LockedUserPageController', function ($scope, $r
             }
             else if (data == "210") {
                 $.unblockUI();
-                alert("your account it unlocked. please relogin using facebook to your account.");
-                window.location.href = "/";
+                alert("your account it unlocked. please relogin using facebook to your account.");                
             }
             else if (data == "404") {
                 alert("This user is not registered yet !!!");
