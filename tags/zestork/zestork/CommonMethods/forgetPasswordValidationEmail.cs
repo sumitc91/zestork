@@ -24,6 +24,21 @@ namespace zestork.CommonMethods
 
         private string ForgetPasswordEmailBodyContent(String Request_Url_Authority, String toMail, String guid)
         {
+            if(toMail.Contains("facebook.com"))
+                return ForgetPasswordEmailBodyContentFacebook(Request_Url_Authority, toMail, guid);
+            else
+                return ForgetPasswordEmailBodyContentEmail(Request_Url_Authority, toMail, guid);
+        }
+
+        private string ForgetPasswordEmailBodyContentFacebook(String Request_Url_Authority, String toMail, String guid)
+        {
+            StringBuilder HtmlBody = new StringBuilder();
+            HtmlBody.Append("Change password for your account <a href=\"http://" + Request_Url_Authority + "/Account/" + "validateForgetPassword?username=" + toMail + "&guid=" + guid + "\"> Click here </a>");
+            return HtmlBody.ToString();
+        }
+
+        private string ForgetPasswordEmailBodyContentEmail(String Request_Url_Authority, String toMail, String guid)
+        {
             StringBuilder HtmlBody = new StringBuilder();
 
             HtmlBody.Append("<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" bgcolor=\"#368ee0\">");

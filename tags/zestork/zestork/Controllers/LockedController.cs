@@ -162,5 +162,27 @@ namespace zestork.Controllers
                 return View("index", userInfo);
             }            
         }
+
+        //public JsonResult validateLockedAccount(string id)
+        //{
+        //    var _db = new ZestorkContainer();            
+        //    if (_db.Users.Any(x => x.Username == id))
+        //    {
+        //        AccountController AccountController = new AccountController();
+        //        Users UserDetail = _db.Users.SingleOrDefault(x => x.Username == id);
+        //        if (UserDetail.Source == "facebook")
+        //        {
+        //            return Json(AccountController.forgetPassword(id), JsonRequestBehavior.AllowGet);
+        //        }
+        //        else
+        //        {                    
+        //            return Json(AccountController.forgetPassword(id),JsonRequestBehavior.AllowGet);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        return Json("Username doesn't exists..", JsonRequestBehavior.AllowGet);
+        //    }
+        //}
     }
 }
