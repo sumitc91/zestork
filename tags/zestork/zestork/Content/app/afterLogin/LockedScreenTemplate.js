@@ -8,7 +8,7 @@ ZestorkAppAfterLogin.controller('LockedUserPageController', function ($scope, $r
 
         $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Resetting your Password...</h1>' });
         $http({
-            url: '/Locked/forgetPassword/' + $('#LockedScreenUsername').val(),
+            url: '/Locked/forgetPassword/' + $('#LockedScreenUsername').val() + '?guidSession=' + $('#LockedScreenGuid').val(),
             method: "GET"
             //headers: { 'Content-Type': 'application/json' }           
         }).success(function (data, status, headers, config) {
