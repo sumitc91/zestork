@@ -180,6 +180,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\LockedController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -200,6 +201,7 @@
     <Compile Include="Models\DataContract\User.cs" />
     <Compile Include="Models\DataContract\ValidateAccountRequest.cs" />
     <Compile Include="Models\DataWrapper\googleAccessTokenWrapper.cs" />
+    <Compile Include="Models\DataWrapper\imgurUploadImageResponse.cs" />
     <Compile Include="Models\DataWrapper\linkedinUserDataWrapper.cs" />
     <Compile Include="Models\ForgetPassword.cs">
       <DependentUpon>ZestorkModel.tt</DependentUpon>
@@ -246,6 +248,7 @@
     <Compile Include="ServerCache\ServerCacheItem.cs" />
     <Compile Include="Service\FacebookService.cs" />
     <Compile Include="Service\googleService.cs" />
+    <Compile Include="Service\imageService.cs" />
     <Compile Include="Service\linkedinService.cs" />
     <Compile Include="Service\linkedin\oAuthBase2.cs" />
     <Compile Include="Service\LoginService.cs" />
