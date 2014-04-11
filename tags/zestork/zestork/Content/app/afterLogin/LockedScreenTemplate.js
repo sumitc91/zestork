@@ -15,12 +15,12 @@ ZestorkAppAfterLogin.controller('LockedUserPageController', function ($scope, $r
             //$scope.persons = data; // assign  $scope.persons here as promise is resolved here                               
             if (data == "200") {
                 $.unblockUI();
-                alert("Email Reset information sent the email id. check email for further information.");
-                window.location.href = "/";
+                alert("Email Reset information sent the email id. check email for further information.");                
             }
             else if (data == "210") {
                 $.unblockUI();
-                alert("your account it unlocked. please relogin using facebook to your account.");                
+                alert("your account it unlocked. please relogin using facebook to your account.");
+                window.location.href = "/";
             }
             else if (data == "404") {
                 alert("This user is not registered yet !!!");
