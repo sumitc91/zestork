@@ -37,6 +37,12 @@ namespace zestork.Controllers
                 HttpPostedFileBase photo = Request.Files["photo"];
                 imageService imageService = new Service.imageService();
                 string uploadedImageLink = imageService.imgurUploadImage(photo);
+                //string[] imageUrlSplitted = uploadedImageLink.Split('.');
+                ////http://i.imgur.com/uFxYj82.jpg
+                //string ImgurId = imageUrlSplitted[2];
+                //string uploadedImageLinkMedium = imageUrlSplitted[0] + "." + imageUrlSplitted[1] + "." + imageUrlSplitted[2] + "m." + imageUrlSplitted[3];
+                
+                //saving medium size image url in db..
                 user.ImageUrl = uploadedImageLink;
                 try
                 {

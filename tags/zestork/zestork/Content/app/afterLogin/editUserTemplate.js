@@ -25,6 +25,9 @@ ZestorkAppAfterLogin.controller('editUserDetailsController', function ($scope, $
         $.unblockUI();
         if (data != null) {
             $scope.details = data;
+            var imageUrlSplitted = data.ImageUrl.split(".");
+            var uploadedImageLinkMedium = imageUrlSplitted[0] + "." + imageUrlSplitted[1] + "." + imageUrlSplitted[2] + "m." + imageUrlSplitted[3];
+            $scope.details.ImageUrl = uploadedImageLinkMedium;
         }
         else {
             alert("data is null for this user");
