@@ -220,6 +220,10 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
             }
             $scope.details = data;
             $rootScope.pageThemeColor = data.PageThemeColor;
+            var imageUrlSplitted = data.ImageUrl.split(".");
+            var uploadedImageLinkSmall = imageUrlSplitted[0] + "." + imageUrlSplitted[1] + "." + imageUrlSplitted[2] + "s." + imageUrlSplitted[3];
+            $scope.details.ImageUrl = uploadedImageLinkSmall;
+            
             //console.log(data);
             //alert($scope.details.FirstName);
         }
