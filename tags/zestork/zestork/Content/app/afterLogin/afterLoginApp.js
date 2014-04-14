@@ -48,6 +48,10 @@ ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootS
         afterLoginServices.setPageThemeColor(color);
     }
 
+    $scope.submitUserTemplateLayoutWidth = function (Layout) {
+        afterLoginServices.setPageLayoutWidth(Layout);
+    }
+
     $scope.infoClicked = function (message) {
         if (message == "user") {
             $rootScope.classRadioButtonUser = "iradio_square-blue checked";
@@ -220,10 +224,20 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
             }
             $scope.details = data;
             $rootScope.pageThemeColor = data.PageThemeColor;
+            $rootScope.pageLayoutWidth = data.pageLayoutWidth;
+            if (data.pageLayoutWidth == "container") {
+                $rootScope.pageLayoutWidthFixedActive = "active set-fixed";
+                $rootScope.pageLayoutWidthFluidActive = "set-fluid";
+            }
+            else {
+                $rootScope.pageLayoutWidthFixedActive = "set-fixed";
+                $rootScope.pageLayoutWidthFluidActive = "active set-fluid";                
+            }
+
             var imageUrlSplitted = data.ImageUrl.split(".");
             var uploadedImageLinkSmall = imageUrlSplitted[0] + "." + imageUrlSplitted[1] + "." + imageUrlSplitted[2] + "s." + imageUrlSplitted[3];
             $scope.details.ImageUrl = uploadedImageLinkSmall;
-            
+
             //console.log(data);
             //alert($scope.details.FirstName);
         }

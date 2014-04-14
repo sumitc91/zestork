@@ -448,8 +448,8 @@
 							<li>
 								<span>Layout-width</span>
 								<div class="version-toggle">
-									<a href="#" class='set-fixed'>Fixed</a>
-									<a href="#" class="active set-fluid">Fluid</a>
+									<a href="" ng-click="submitUserTemplateLayoutWidth('container')" ng-class="pageLayoutWidthFixedActive">Fixed</a>
+									<a href="" ng-click="submitUserTemplateLayoutWidth('container-fluid')" ng-class="pageLayoutWidthFluidActive">Fluid</a>
 								</div>
 							</li>
 							<li>
@@ -532,7 +532,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid" id="content">
+	<div class="{{pageLayoutWidth}}" id="content">
 		<div id="left">
 			<form action="search-results.html" method="GET" class='search-form'>
 				<div class="search-pane">

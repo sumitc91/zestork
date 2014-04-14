@@ -20,6 +20,7 @@ namespace zestork.Models.DataContract
         public string gender { get; set; }
         public bool Locked { get; set; }
         public string PageThemeColor { get; set; }
+        public string pageLayoutWidth { get; set; }
         public List<string> skillTags { get; set; }
     }
 }
