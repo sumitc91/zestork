@@ -172,7 +172,7 @@
 			
 		</div>
 
-	<div id="navigation">
+	<div id="navigation" ng-class="pageTopbar">
 		<div class="container-fluid">
 			<a href="#" id="brand">FLAT</a>
 			<a href="#" class="toggle-nav" rel="tooltip" data-placement="bottom" title="Toggle navigation"><i class="icon-reorder"></i></a>
@@ -455,8 +455,8 @@
 							<li>
 								<span>Topbar</span>
 								<div class="topbar-toggle">
-									<a href="#" class='set-topbar-fixed'>Fixed</a>
-									<a href="#" class="active set-topbar-default">Default</a>
+									<a href="" ng-click="submitUserTemplateSetTopBar('navbar-fixed-top')" ng-class="pageLayoutTopBarFixedActive">Fixed</a>
+									<a href="" ng-click="submitUserTemplateSetTopBar('')" ng-class="pageLayoutTopBarDefaultActive">Default</a>
 								</div>
 							</li>
 							<li>
