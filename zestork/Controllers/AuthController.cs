@@ -53,7 +53,7 @@ namespace zestork.Controllers
                 detailsEditUserPage.PageThemeColor = "theme-"+pageSetting.PageThemeColor;
             else
                 detailsEditUserPage.PageThemeColor = "";
-
+            
             if (pageSetting.LayoutWidth != null)
                 detailsEditUserPage.pageLayoutWidth = pageSetting.LayoutWidth;
             else
