@@ -59,10 +59,10 @@ namespace zestork.Controllers
             else
                 detailsEditUserPage.pageLayoutWidth = "container-fluid";
 
-            //if (pageSetting.TopBar != null)
-            //    detailsEditUserPage.pageTopbar = pageSetting.TopBar;
-            //else
-            //    detailsEditUserPage.pageTopbar = "container-fluid";
+            if (pageSetting.TopBar != null)
+                detailsEditUserPage.pageTopbar = pageSetting.TopBar;
+            else
+                detailsEditUserPage.pageTopbar = "";
 
             detailsEditUserPage.skillTags = _db.UserSkills.Where(x => x.Username == userName).Select(x => x.Skill).ToList();
             if (detailsEditUserPage.ImageUrl == "NA" || detailsEditUserPage.ImageUrl == null)

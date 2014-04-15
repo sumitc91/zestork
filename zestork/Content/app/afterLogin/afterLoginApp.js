@@ -52,6 +52,10 @@ ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootS
         afterLoginServices.setPageLayoutWidth(Layout);
     }
 
+    $scope.submitUserTemplateSetTopBar = function (TopbarType) {
+        afterLoginServices.setPageTopBar(TopbarType);
+    }
+
     $scope.infoClicked = function (message) {
         if (message == "user") {
             $rootScope.classRadioButtonUser = "iradio_square-blue checked";
@@ -225,15 +229,26 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
             $scope.details = data;
             $rootScope.pageThemeColor = data.PageThemeColor;
             $rootScope.pageLayoutWidth = data.pageLayoutWidth;
+            $rootScope.pageTopbar = data.pageTopbar;
             if (data.pageLayoutWidth == "container") {
                 $rootScope.pageLayoutWidthFixedActive = "active set-fixed";
                 $rootScope.pageLayoutWidthFluidActive = "set-fluid";
             }
             else {
                 $rootScope.pageLayoutWidthFixedActive = "set-fixed";
-                $rootScope.pageLayoutWidthFluidActive = "active set-fluid";                
+                $rootScope.pageLayoutWidthFluidActive = "active set-fluid";
             }
 
+            if (data.pageTopbar == "navbar-fixed-top") {
+                $rootScope.pageLayoutTopBarFixedActive = "active set-topbar-fixed";
+                $rootScope.pageLayoutTopBarDefaultActive = "set-topbar-default";
+            }
+            else {
+                $rootScope.pageLayoutTopBarFixedActive = "set-topbar-fixed";
+                $rootScope.pageLayoutTopBarDefaultActive = "active set-topbar-default";
+            }
+            //$rootScope..navigationTopBarClass navbar-fixed-top container-fluid nav-fixed
+            //container-fluid  && data.pageTopbar == ""
             var imageUrlSplitted = data.ImageUrl.split(".");
             var uploadedImageLinkSmall = imageUrlSplitted[0] + "." + imageUrlSplitted[1] + "." + imageUrlSplitted[2] + "s." + imageUrlSplitted[3];
             $scope.details.ImageUrl = uploadedImageLinkSmall;
