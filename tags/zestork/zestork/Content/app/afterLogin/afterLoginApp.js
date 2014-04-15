@@ -39,7 +39,7 @@ ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootS
 
     $scope.firstTimeUserLoginViaSocialLinkPopUpTemplate = '../../Resource/templates/afterLogin/contentView/index/firstTimeLoginViaSocialLinkePopUpModal.html';
     //alert(CookieUtil.getUsername());
-    
+
     //$rootScope.pageThemeColor = afterLoginServices.pageThemeColor();
     $rootScope.classRadioButtonClient = "iradio_square-blue checked";
     $rootScope.classRadioButtonUser = "iradio_square-blue";
@@ -56,6 +56,9 @@ ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootS
         afterLoginServices.setPageTopBar(TopbarType);
     }
 
+    $scope.submitUserTemplateSetSideBar = function (SidebarType) {
+        afterLoginServices.setPageSideBar(SidebarType);
+    }
     $scope.infoClicked = function (message) {
         if (message == "user") {
             $rootScope.classRadioButtonUser = "iradio_square-blue checked";
@@ -249,6 +252,14 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
                 $rootScope.pageLayoutTopBarDefaultActive = "active set-topbar-default";
                 $rootScope.pageLayoutTopBarNavFixedValue = "";
             }
+
+            if (data.pageSidebar == "Fixed") {
+                  $('#set_sidebar_fixed_id').click();
+            }
+            else {
+                  $('#set_sidebar_default_id').click();
+            }
+
             //$rootScope..navigationTopBarClass navbar-fixed-top container-fluid nav-fixed
             //container-fluid  && data.pageTopbar == ""
             var imageUrlSplitted = data.ImageUrl.split(".");
