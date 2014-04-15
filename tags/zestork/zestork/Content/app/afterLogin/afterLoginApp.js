@@ -242,10 +242,12 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
             if (data.pageTopbar == "navbar-fixed-top") {
                 $rootScope.pageLayoutTopBarFixedActive = "active set-topbar-fixed";
                 $rootScope.pageLayoutTopBarDefaultActive = "set-topbar-default";
+                $rootScope.pageLayoutTopBarNavFixedValue = "nav-fixed"; //nav-fixed
             }
             else {
                 $rootScope.pageLayoutTopBarFixedActive = "set-topbar-fixed";
                 $rootScope.pageLayoutTopBarDefaultActive = "active set-topbar-default";
+                $rootScope.pageLayoutTopBarNavFixedValue = "";
             }
             //$rootScope..navigationTopBarClass navbar-fixed-top container-fluid nav-fixed
             //container-fluid  && data.pageTopbar == ""
