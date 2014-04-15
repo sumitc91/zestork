@@ -64,6 +64,11 @@ namespace zestork.Controllers
             else
                 detailsEditUserPage.pageTopbar = "";
 
+            if (pageSetting.SideBar != null)
+                detailsEditUserPage.pageSidebar = pageSetting.SideBar;
+            else
+                detailsEditUserPage.pageSidebar = "Default";
+
             detailsEditUserPage.skillTags = _db.UserSkills.Where(x => x.Username == userName).Select(x => x.Skill).ToList();
             if (detailsEditUserPage.ImageUrl == "NA" || detailsEditUserPage.ImageUrl == null)
                 detailsEditUserPage.ImageUrl = "../../Resource/templates/afterLogin/web/img/demo/user-avatar.jpg";
@@ -329,5 +334,41 @@ namespace zestork.Controllers
             return Json(200, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult submitUserPageSidebar(string id)
+        {
+            IEnumerable<string> headerValues = Request.Headers.GetValues("Authorization");
+            String guid = headerValues.FirstOrDefault();
+            guid = guid.Replace("/", "");
+            CPSession retVal = TokenManager.getSessionInfo(guid);
+            string userName = retVal.getAttributeValue("userName");
+
+            var _db = new ZestorkContainer();
+            var UserPageTheme = _db.UserPageSettings.SingleOrDefault(x => x.Username == userName);
+            if (UserPageTheme == null)
+            {
+                UserPageTheme = new UserPageSetting
+                {
+                    Username = userName,
+                    SideBar = id
+                };
+                _db.UserPageSettings.Add(UserPageTheme);
+            }
+            else
+            {
+                UserPageTheme.SideBar = id;
+            }
+
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                dbContextException dbContextException = new CommonMethods.dbContextException();
+                dbContextException.logDbContextException(e);
+                return Json(500, JsonRequestBehavior.AllowGet);
+            }
+            return Json(200, JsonRequestBehavior.AllowGet);
+        }
     }
 }

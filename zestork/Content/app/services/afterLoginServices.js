@@ -68,6 +68,28 @@ ZestorkAppAfterLogin.factory('afterLoginServices', function ($http, $rootScope, 
             });
 
             return "";
+        },
+        setPageSideBar: function (SidebarType) {
+
+            $rootScope.Authentication = CookieUtil.CookieValue();
+            var headers = {
+                'Content-Type': 'application/json',
+                'Authorization': $rootScope.Authentication
+            };
+
+            $http({
+                url: '/Auth/submitUserPageSidebar/' + SidebarType,
+                method: "GET",
+                headers: headers
+            }).success(function (data, status, headers, config) {
+                //$scope.persons = data; // assign  $scope.persons here as promise is resolved here            
+                $rootScope.pageSidebar = SidebarType;
+                //console.log(data);
+            }).error(function (data, status, headers, config) {
+                alert('Internal Server Error Occured !!');
+            });
+
+            return "";
         }
     };
 

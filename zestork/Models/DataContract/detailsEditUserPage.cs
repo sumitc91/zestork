@@ -22,6 +22,7 @@ namespace zestork.Models.DataContract
         public string PageThemeColor { get; set; }
         public string pageLayoutWidth { get; set; }
         public string pageTopbar { get; set; }
+        public string pageSidebar { get; set; }
         public List<string> skillTags { get; set; }
     }
 }
