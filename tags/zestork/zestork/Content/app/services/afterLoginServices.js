@@ -46,6 +46,28 @@ ZestorkAppAfterLogin.factory('afterLoginServices', function ($http, $rootScope, 
             });
 
             return "";
+        },
+        setPageTopBar: function (TopbarType) {
+
+            $rootScope.Authentication = CookieUtil.CookieValue();
+            var headers = {
+                'Content-Type': 'application/json',
+                'Authorization': $rootScope.Authentication
+            };
+
+            $http({
+                url: '/Auth/submitUserPageTopbar/' + TopbarType,
+                method: "GET",
+                headers: headers
+            }).success(function (data, status, headers, config) {
+                //$scope.persons = data; // assign  $scope.persons here as promise is resolved here            
+                $rootScope.pageTopbar = TopbarType;
+                //console.log(data);
+            }).error(function (data, status, headers, config) {
+                alert('Internal Server Error Occured !!');
+            });
+
+            return "";
         }
     };
 
