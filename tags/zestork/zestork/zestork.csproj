@@ -183,6 +183,8 @@
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\LockedController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Encryption\AES.cs" />
+    <Compile Include="Encryption\Encryption.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
