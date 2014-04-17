@@ -15,6 +15,8 @@
     <EntitySet Name="UserDetails" EntityType="Zestork.Store.UserDetails" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserPageSettings" EntityType="Zestork.Store.UserPageSettings" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ForgetPasswords" EntityType="Zestork.Store.ForgetPasswords" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserRecommendations" EntityType="Zestork.Store.UserRecommendations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RecommendedBies" EntityType="Zestork.Store.RecommendedBies" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="Users">
     <Key>
@@ -105,6 +107,23 @@
     <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
     <Property Name="guid" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="UserRecommendations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TotalRecommendation" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UsefulRecommendation" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecommendedBies">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RecommendedTo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RecommendedFrom" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -119,6 +138,8 @@
           <EntitySet Name="UserDetails" EntityType="Zestork.UserDetails" />
           <EntitySet Name="UserPageSettings" EntityType="Zestork.UserPageSetting" />
           <EntitySet Name="ForgetPasswords" EntityType="Zestork.ForgetPassword" />
+          <EntitySet Name="UserRecommendations" EntityType="Zestork.UserRecommendation" />
+          <EntitySet Name="RecommendedBies" EntityType="Zestork.RecommendedBy" />
         </EntityContainer>
         <EntityType Name="Users">
           <Key>
@@ -208,6 +229,23 @@
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Username" Nullable="false" />
           <Property Type="String" Name="guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserRecommendation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Username" Nullable="false" />
+          <Property Type="String" Name="TotalRecommendation" Nullable="false" />
+          <Property Type="String" Name="UsefulRecommendation" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RecommendedBy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RecommendedTo" Nullable="false" />
+          <Property Type="String" Name="RecommendedFrom" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -313,6 +351,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="UserRecommendations">
+      <EntityTypeMapping TypeName="IsTypeOf(Zestork.UserRecommendation)">
+        <MappingFragment StoreEntitySet="UserRecommendations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="TotalRecommendation" ColumnName="TotalRecommendation" />
+          <ScalarProperty Name="UsefulRecommendation" ColumnName="UsefulRecommendation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecommendedBies">
+      <EntityTypeMapping TypeName="IsTypeOf(Zestork.RecommendedBy)">
+        <MappingFragment StoreEntitySet="RecommendedBies">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RecommendedTo" ColumnName="RecommendedTo" />
+          <ScalarProperty Name="RecommendedFrom" ColumnName="RecommendedFrom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
@@ -342,6 +399,8 @@
         <EntityTypeShape EntityType="Zestork.UserDetails" Width="1.5" PointX="2.25" PointY="0.5" Height="1.59568359375" />
         <EntityTypeShape EntityType="Zestork.UserPageSetting" Width="1.5" PointX="4.875" PointY="0.5" Height="2.172587890625" />
         <EntityTypeShape EntityType="Zestork.ForgetPassword" Width="1.5" PointX="6.5" PointY="0.5" Height="1.59568359375" />
+        <EntityTypeShape EntityType="Zestork.UserRecommendation" Width="1.5" PointX="4.875" PointY="2.875" />
+        <EntityTypeShape EntityType="Zestork.RecommendedBy" Width="1.5" PointX="6.5" PointY="2.25" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

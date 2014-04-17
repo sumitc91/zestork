@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 04/10/2014 15:32:02
--- Generated from EDMX file: F:\pcongo\tags\zestork\zestork\Models\Zestork.edmx
+-- Date Created: 04/17/2014 15:06:37
+-- Generated from EDMX file: E:\pcongo_svn\tags\zestork\zestork\Models\Zestork.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -45,6 +45,9 @@ IF OBJECT_ID(N'[dbo].[UserDetails]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[UserPageSettings]', 'U') IS NOT NULL
     DROP TABLE [dbo].[UserPageSettings];
+GO
+IF OBJECT_ID(N'[dbo].[ForgetPasswords]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ForgetPasswords];
 GO
 
 -- --------------------------------------------------
@@ -140,6 +143,23 @@ CREATE TABLE [dbo].[ForgetPasswords] (
 );
 GO
 
+-- Creating table 'UserRecommendations'
+CREATE TABLE [dbo].[UserRecommendations] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Username] nvarchar(max)  NOT NULL,
+    [TotalRecommendation] nvarchar(max)  NOT NULL,
+    [UsefulRecommendation] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'RecommendedBies'
+CREATE TABLE [dbo].[RecommendedBies] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [RecommendedTo] nvarchar(max)  NOT NULL,
+    [RecommendedFrom] nvarchar(max)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -195,6 +215,18 @@ GO
 -- Creating primary key on [Id] in table 'ForgetPasswords'
 ALTER TABLE [dbo].[ForgetPasswords]
 ADD CONSTRAINT [PK_ForgetPasswords]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'UserRecommendations'
+ALTER TABLE [dbo].[UserRecommendations]
+ADD CONSTRAINT [PK_UserRecommendations]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'RecommendedBies'
+ALTER TABLE [dbo].[RecommendedBies]
+ADD CONSTRAINT [PK_RecommendedBies]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
