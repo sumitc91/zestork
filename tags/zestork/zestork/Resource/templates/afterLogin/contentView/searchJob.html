@@ -80,114 +80,22 @@
                     </div>
                     <div class="search-results">
                         <ul>
-                            <li>
+
+                            <li ng-repeat="job in jobDetailList">
                                 <div class="thumbnail">
-                                    <img src="http://www.placehold.it/80" alt="">
+                                    <img src={{job.jobImageLink}} alt="">
                                 </div>
                                 <div class="search-info">
-                                    <a href="#">Lorem ipsum dolor</a>
+                                    <a href={{job.jobLink}}>{{job.heading}}</a>
                                     <p class="url">
-                                        www.loremasdasdd.com/</p>
+                                        {{job.jobLink}}/</p>
                                     <p>
-                                        Lorem ipsum minim quis mollit occaecat consectetur irure. Lorem ipsum officia Excepteur
-                                        ut aliqua cillum est laboris. Lorem ipsum in exercitation enim veniam exercitation
-                                        consectetur. Lorem ipsum cupidatat ea culpa cupidatat sed proident officia consequat
-                                        irure dolore Excepteur consectetur. Lorem ipsum sunt ut aliquip commodo mollit ad
-                                        culpa. Lorem ipsum aliquip sit laborum reprehenderit amet et anim pariatur. Lorem
-                                        ipsum Ut quis irure enim quis commodo ullamco ad qui qui ut id.
+                                        {{job.content}}
                                     </p>
                                 </div>
                             </li>
-                            <li>
-                                <div class="thumbnail">
-                                    <img src="http://www.placehold.it/80" alt="">
-                                </div>
-                                <div class="search-info">
-                                    <a href="#">Lorem ipsum dolor</a>
-                                    <p class="url">
-                                        www.loremasdasdd.com/</p>
-                                    <p>
-                                        Lorem ipsum minim quis mollit occaecat consectetur irure. Lorem ipsum officia Excepteur
-                                        ut aliqua cillum est laboris. Lorem ipsum in exercitation enim veniam exercitation
-                                        consectetur. Lorem ipsum cupidatat ea culpa cupidatat sed proident officia consequat
-                                        irure dolore Excepteur consectetur. Lorem ipsum sunt ut aliquip commodo mollit ad
-                                        culpa. Lorem ipsum aliquip sit laborum reprehenderit amet et anim pariatur. Lorem
-                                        ipsum Ut quis irure enim quis commodo ullamco ad qui qui ut id.
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="thumbnail">
-                                    <img src="http://www.placehold.it/80" alt="">
-                                </div>
-                                <div class="search-info">
-                                    <a href="#">Lorem ipsum dolor</a>
-                                    <p class="url">
-                                        www.loremasdasdd.com/</p>
-                                    <p>
-                                        Lorem ipsum minim quis mollit occaecat consectetur irure. Lorem ipsum officia Excepteur
-                                        ut aliqua cillum est laboris. Lorem ipsum in exercitation enim veniam exercitation
-                                        consectetur. Lorem ipsum cupidatat ea culpa cupidatat sed proident officia consequat
-                                        irure dolore Excepteur consectetur. Lorem ipsum sunt ut aliquip commodo mollit ad
-                                        culpa. Lorem ipsum aliquip sit laborum reprehenderit amet et anim pariatur. Lorem
-                                        ipsum Ut quis irure enim quis commodo ullamco ad qui qui ut id.
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="thumbnail">
-                                    <img src="http://www.placehold.it/80" alt="">
-                                </div>
-                                <div class="search-info">
-                                    <a href="#">Lorem ipsum dolor</a>
-                                    <p class="url">
-                                        www.loremasdasdd.com/</p>
-                                    <p>
-                                        Lorem ipsum minim quis mollit occaecat consectetur irure. Lorem ipsum officia Excepteur
-                                        ut aliqua cillum est laboris. Lorem ipsum in exercitation enim veniam exercitation
-                                        consectetur. Lorem ipsum cupidatat ea culpa cupidatat sed proident officia consequat
-                                        irure dolore Excepteur consectetur. Lorem ipsum sunt ut aliquip commodo mollit ad
-                                        culpa. Lorem ipsum aliquip sit laborum reprehenderit amet et anim pariatur. Lorem
-                                        ipsum Ut quis irure enim quis commodo ullamco ad qui qui ut id.
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="thumbnail">
-                                    <img src="http://www.placehold.it/80" alt="">
-                                </div>
-                                <div class="search-info">
-                                    <a href="#">Lorem ipsum dolor</a>
-                                    <p class="url">
-                                        www.loremasdasdd.com/</p>
-                                    <p>
-                                        Lorem ipsum minim quis mollit occaecat consectetur irure. Lorem ipsum officia Excepteur
-                                        ut aliqua cillum est laboris. Lorem ipsum in exercitation enim veniam exercitation
-                                        consectetur. Lorem ipsum cupidatat ea culpa cupidatat sed proident officia consequat
-                                        irure dolore Excepteur consectetur. Lorem ipsum sunt ut aliquip commodo mollit ad
-                                        culpa. Lorem ipsum aliquip sit laborum reprehenderit amet et anim pariatur. Lorem
-                                        ipsum Ut quis irure enim quis commodo ullamco ad qui qui ut id.
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="thumbnail">
-                                    <img src="http://www.placehold.it/80" alt="">
-                                </div>
-                                <div class="search-info">
-                                    <a href="#">Lorem ipsum dolor</a>
-                                    <p class="url">
-                                        www.loremasdasdd.com/</p>
-                                    <p>
-                                        Lorem ipsum minim quis mollit occaecat consectetur irure. Lorem ipsum officia Excepteur
-                                        ut aliqua cillum est laboris. Lorem ipsum in exercitation enim veniam exercitation
-                                        consectetur. Lorem ipsum cupidatat ea culpa cupidatat sed proident officia consequat
-                                        irure dolore Excepteur consectetur. Lorem ipsum sunt ut aliquip commodo mollit ad
-                                        culpa. Lorem ipsum aliquip sit laborum reprehenderit amet et anim pariatur. Lorem
-                                        ipsum Ut quis irure enim quis commodo ullamco ad qui qui ut id.
-                                    </p>
-                                </div>
-                            </li>
+
+
                         </ul>
                     </div>
                     <div class="highlight-toolbar bottom">

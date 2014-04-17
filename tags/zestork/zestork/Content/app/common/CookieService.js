@@ -33,6 +33,7 @@ ZestorkApp.factory('CookieUtil', function ($rootScope, $location, $cookieStore) 
             $.removeCookie('Authentication', { path: '/' });
             return "removed";
         },
+        
     };
 
 });

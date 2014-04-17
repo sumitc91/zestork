@@ -25,4 +25,17 @@ ZestorkAppAfterLogin.controller('searchJobDetailsController', function ($scope, 
     
     $scope.firstTimeUserLoginViaSocialLinkChangePasswordPopUpTemplate = '../../Resource/templates/afterLogin/contentView/index/firstTimeLoginViaSocialLinkePopUpModalChangePassword.html';
 
+    $scope.jobDetailList = [
+   { jobImageLink: "http://www.placehold.it/80", heading: "Article Writing Job", jobLink: "www.loremasdasdd.com", content: "Hi HEllo" },
+   { jobImageLink: "http://www.placehold.it/80", heading: "Article Writing Job", jobLink: "www.loremasdasdd.com", content: "Hi HEllo" },
+   { jobImageLink: "http://www.placehold.it/80", heading: "Article Writing Job", jobLink: "www.loremasdasdd.com", content: "Hi HEllo" },
+   { jobImageLink: "http://www.placehold.it/80", heading: "Article Writing Job", jobLink: "www.loremasdasdd.com", content: "Hi HEllo" },
+   { jobImageLink: "http://www.placehold.it/80", heading: "Article Writing Job", jobLink: "www.loremasdasdd.com", content: "Hi HEllo" },
+   { jobImageLink: "http://www.placehold.it/80", heading: "Article Writing Job", jobLink: "www.loremasdasdd.com", content: "Hi HEllo" },
+   { jobImageLink: "http://www.placehold.it/80", heading: "Article Writing Job", jobLink: "www.loremasdasdd.com", content: "Hi HEllo" },
+   { jobImageLink: "http://www.placehold.it/80", heading: "Article Writing Job", jobLink: "www.loremasdasdd.com", content: "Hi HEllo" },
+   { jobImageLink: "http://www.placehold.it/80", heading: "Article Writing Job", jobLink: "www.loremasdasdd.com", content: "Hi HEllo" },
+   { jobImageLink: "http://www.placehold.it/80", heading: "Article Writing Job", jobLink: "www.loremasdasdd.com", content: "Hi HEllo" }
+    ];
+
 });
