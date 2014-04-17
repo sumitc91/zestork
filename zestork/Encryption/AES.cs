@@ -10,7 +10,8 @@ namespace zestork.Encryption
 {
     public class AES
     {
-        public string Encrypt(string clearText, string EncryptionKey)
+        
+        public static string Encrypt(string clearText, string EncryptionKey)
         {
             //string EncryptionKey = "9ec2bcea-c692-4ff3-b960-15f67c2de6fe";
             byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
@@ -32,7 +33,7 @@ namespace zestork.Encryption
             return clearText;
         }
 
-        public string Decrypt(string cipherText, string EncryptionKey)
+        public static string Decrypt(string cipherText, string EncryptionKey)
         {
             //string EncryptionKey = "9ec2bcea-c692-4ff3-b960-15f67c2de6fe";
             byte[] cipherBytes = Convert.FromBase64String(cipherText);

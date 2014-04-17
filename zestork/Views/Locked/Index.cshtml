@@ -69,7 +69,7 @@
 				<h2>@Model.firstName @Model.lastName</h2>
 				<span>Locked</span>
 			</div>
-			<form action='@Url.Action("unlock", "Locked")' method='get'>
+			<form action='@Url.Action("unlock", "Locked")' method='post'>
 				<input type="password" placeholder="Password" name="password">
                 <input type="password" id="LockedScreenGuid" placeholder="id" name="id" value="@Model.guid" style="display: none">
                 <input type="password" id="LockedScreenUsername" placeholder="username" name="username" value="@Model.userName" style="display: none">

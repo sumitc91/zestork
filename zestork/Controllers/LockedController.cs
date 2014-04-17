@@ -59,13 +59,14 @@ namespace zestork.Controllers
             return View(userInfo);
         }
 
+        [HttpPost]
         public ActionResult unlock()
         {
             var _db = new ZestorkContainer();
 
-            string userName = Request.QueryString["username"].ToString();
-            String password = Request.QueryString["password"].ToString();
-            String id = Request.QueryString["id"].ToString();
+            string userName = Request.Form["username"].ToString();
+            String password = Request.Form["password"].ToString();
+            String id = Request.Form["id"].ToString();
             if (_db.Users.Any(x => x.Username == userName && x.Password == password))
             {
                 Users user = _db.Users.SingleOrDefault(x => x.Username == userName && x.isActive == "true");

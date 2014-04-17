@@ -8,7 +8,7 @@ using zestork.Models;
 using zestork.CommonMethods;
 using System.Data.Entity.Validation;
 using zestork.Models.DataContract;
-
+using zestork.Encryption;
 namespace zestork.Controllers
 {
     public class AuthController : Controller
@@ -369,6 +369,22 @@ namespace zestork.Controllers
                 return Json(500, JsonRequestBehavior.AllowGet);
             }
             return Json(200, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult getKeyVal()
+        {
+            IEnumerable<string> headerValues = Request.Headers.GetValues("Authorization");
+            String guid = headerValues.FirstOrDefault();
+            guid = guid.Replace("/", "");
+            CPSession retVal = TokenManager.getSessionInfo(guid);
+            string userName = retVal.getAttributeValue("userName");
+
+            var _db = new ZestorkContainer();
+            var UserInfo = _db.Users.SingleOrDefault(x => x.Username == userName);
+            Encryption.Encryption EncryptionObj = new Encryption.Encryption();
+            string cipherKey = EncryptionObj.getEncryptionKey(UserInfo.Password, UserInfo.guid);
+
+            return Json(new { code = "200", key = cipherKey }, JsonRequestBehavior.AllowGet);
         }
     }
 }

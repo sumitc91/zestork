@@ -90,7 +90,43 @@ ZestorkAppAfterLogin.factory('afterLoginServices', function ($http, $rootScope, 
             });
 
             return "";
-        }
+        },
+        setUserPrivateKeyValue: function () {
+
+            $rootScope.Authentication = CookieUtil.CookieValue();
+            var headers = {
+                'Content-Type': 'application/json',
+                'Authorization': $rootScope.Authentication
+            };
+
+            $http({
+                url: '/Auth/getKeyVal',
+                method: "GET",
+                headers: headers
+            }).success(function (data, status, headers, config) {
+                //$scope.persons = data; // assign  $scope.persons here as promise is resolved here            
+                var retVal = setUserPrivateKey(data.key);
+                //alert(retVal);
+                //console.log(data);
+            }).error(function (data, status, headers, config) {
+                alert('Internal Server Error Occured !!');
+            });
+
+            return "";
+        },
+       
     };
 
 });
+
+function setUserPrivateKey (key) {
+    $.cookie('key', key, { expires: 365, path: '/' });
+    return "set";
+}
+function getUserPrivateKey() {    
+    return $.cookie('key');
+}
+function removeUserPrivateKey(key) {
+    $.removeCookie('key', { path: '/' });
+    return "removed";
+}
