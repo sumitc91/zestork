@@ -18,6 +18,7 @@ namespace zestork.Models.DataContract
         public string GoogleId { get; set; }
         public string GoogleAccessToken { get; set; }
         public string ImageUrl { get; set; }
+        public string keepMeSignedIn { get; set; }
         public System.DateTime LastLogin { get; set; }
         public System.DateTime Created { get; set; }
         public Nullable<System.DateTime> Changed { get; set; }

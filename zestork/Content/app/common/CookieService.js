@@ -6,13 +6,22 @@ ZestorkApp.factory('CookieUtil', function ($rootScope, $location, $cookieStore) 
             $rootScope.Authentication = null;
             var guidParam = getParameterByName('guid');
             var username = getParameterByName('username');
+            var keepMeSignedIn = getParameterByName('keepMeSignedIn');
 
             if (guidParam != null && guidParam != '')
                 $rootScope.Authentication = guidParam; //global variable
 
             if ($rootScope.Authentication != null) {
-                $.cookie('Authentication', $rootScope.Authentication, { expires: 365, path: '/' });
-                $.cookie('Username', username, { expires: 365, path: '/' });
+                if(keepMeSignedIn == "true")
+                {
+                    $.cookie('Authentication', $rootScope.Authentication, { expires: 365, path: '/' });
+                    $.cookie('Username', username, { expires: 365, path: '/' });
+                }
+                else
+                {
+                    $.cookie('Authentication', $rootScope.Authentication, { path: '/' });
+                    $.cookie('Username', username, { path: '/' });
+                }
             }
             //$cookieStore.put("Authentication",$rootScope.Authentication)  
 

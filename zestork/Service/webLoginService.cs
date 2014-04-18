@@ -47,8 +47,9 @@ namespace zestork.Service
                         dbContextException dbContextException = new CommonMethods.dbContextException();
                         dbContextException.logDbContextException(e);
                     }
-
+                    userData.User.keepMeSignedIn = user.KeepMeSignedIn;
                     userData.statusCode = "200";
+                    
                 }
                 else
                     userData.statusCode = "403";
