@@ -7,6 +7,7 @@ using SunPower.Common.Infrastructure.Logger;
 using System.Reflection;
 using zestork.CommonMethods;
 using zestork.Models;
+using System.Data.Entity.Validation;
 
 namespace zestork.Service
 {
@@ -15,7 +16,7 @@ namespace zestork.Service
         private ILogger logger = new Logger(Convert.ToString(MethodBase.GetCurrentMethod().DeclaringType));
         private dbContextException dbContextException = new dbContextException();
 
-        public LogOnModel Login(string userName, string passwrod, string returnUrl)
+        public LogOnModel Login(string userName, string passwrod, string returnUrl, string keepMeSignedIn)
         {
             var _db = new ZestorkContainer();
             var userData = new LogOnModel();
@@ -31,7 +32,22 @@ namespace zestork.Service
                     userData.User.Username = user.Username;
                     userData.User.Gender = user.gender;
                     userData.User.ImageUrl = user.ImageUrl;
-                    userData.User.Email = user.Username;
+                    userData.User.Email = user.Username;                    
+                    try
+                    {
+                        if (keepMeSignedIn == "true")                        
+                            user.KeepMeSignedIn = "true";                        
+                        else                        
+                            user.KeepMeSignedIn = "false";
+                        
+                        _db.SaveChanges();
+                    }
+                    catch (DbEntityValidationException e)
+                    {
+                        dbContextException dbContextException = new CommonMethods.dbContextException();
+                        dbContextException.logDbContextException(e);
+                    }
+
                     userData.statusCode = "200";
                 }
                 else

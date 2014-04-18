@@ -34,6 +34,7 @@
     <Property Name="ImageUrl" Type="nvarchar(max)" Nullable="false" />
     <Property Name="gender" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Locked" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="KeepMeSignedIn" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="ValidateUserKeys">
     <Key>
@@ -157,6 +158,7 @@
           <Property Type="String" Name="ImageUrl" Nullable="false" />
           <Property Type="String" Name="gender" Nullable="false" />
           <Property Type="String" Name="Locked" Nullable="true" />
+          <Property Type="String" Name="KeepMeSignedIn" Nullable="true" />
         </EntityType>
         <EntityType Name="ValidateUserKey">
           <Key>
@@ -268,6 +270,7 @@
           <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
           <ScalarProperty Name="gender" ColumnName="gender" />
           <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="KeepMeSignedIn" ColumnName="KeepMeSignedIn" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -390,12 +393,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram Name="Zestork" ZoomLevel="98" >
-        <EntityTypeShape EntityType="Zestork.Users" Width="1.5" PointX="0.5" PointY="0.5" Height="3.326396484375" />
-        <EntityTypeShape EntityType="Zestork.ValidateUserKey" Width="1.5" PointX="7.875" PointY="4" Height="1.59568359375" />
+        <EntityTypeShape EntityType="Zestork.Users" Width="1.5" PointX="0.5" PointY="0.5" Height="3.5186979166666665" />
+        <EntityTypeShape EntityType="Zestork.ValidateUserKey" Width="1.5" PointX="6.5" PointY="4" Height="1.59568359375" />
         <EntityTypeShape EntityType="Zestork.ThirdPartyLogin" Width="1.5" PointX="9.5" PointY="3.875" Height="2.172587890625" />
         <EntityTypeShape EntityType="Zestork.LinkedInAuthApiData" Width="1.5" PointX="11.125" PointY="3.875" Height="1.787985026041667" />
         <EntityTypeShape EntityType="Zestork.ClientDetails" Width="1.5" PointX="10.75" PointY="0.5" Height="1.59568359375" />
-        <EntityTypeShape EntityType="Zestork.UserSkills" Width="1.5" PointX="0.5" PointY="3.875" Height="1.7879850260416665" />
+        <EntityTypeShape EntityType="Zestork.UserSkills" Width="1.5" PointX="0.5" PointY="4.25" Height="1.7879850260416665" />
         <EntityTypeShape EntityType="Zestork.UserDetails" Width="1.5" PointX="2.25" PointY="0.5" Height="1.59568359375" />
         <EntityTypeShape EntityType="Zestork.UserPageSetting" Width="1.5" PointX="4.875" PointY="0.5" Height="2.172587890625" />
         <EntityTypeShape EntityType="Zestork.ForgetPassword" Width="1.5" PointX="6.5" PointY="0.5" Height="1.59568359375" />

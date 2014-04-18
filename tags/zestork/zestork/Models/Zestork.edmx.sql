@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 04/18/2014 11:30:29
+-- Date Created: 04/18/2014 13:22:17
 -- Generated from EDMX file: F:\pcongo\tags\zestork\zestork\Models\Zestork.edmx
 -- --------------------------------------------------
 
@@ -73,7 +73,8 @@ CREATE TABLE [dbo].[Users] (
     [LastName] nvarchar(max)  NOT NULL,
     [ImageUrl] nvarchar(max)  NOT NULL,
     [gender] nvarchar(max)  NOT NULL,
-    [Locked] nvarchar(max)  NULL
+    [Locked] nvarchar(max)  NULL,
+    [KeepMeSignedIn] nvarchar(max)  NULL
 );
 GO
 

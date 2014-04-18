@@ -77,7 +77,7 @@ ZestorkApp.controller('beforeLoginHeaderController', function ($scope, $route, $
     
     $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Loading...</h1>' });
     $http({
-            url: '/Account/isValidToken/' + CookieUtil.getGuid(),
+            url: '/Account/isValidToken/' + CookieUtil.getGuid()+'?username='+CookieUtil.getUsername()+'&key='+CookieUtil.getKey(),
             method: "GET"
             //headers: { 'Content-Type': 'application/json' }            
         }).success(function (data, status, headers, config) {
@@ -88,6 +88,7 @@ ZestorkApp.controller('beforeLoginHeaderController', function ($scope, $route, $
             else {
                 CookieUtil.removeGuid();
                 CookieUtil.removeUsername();
+                CookieUtil.removeKey();
                 $.unblockUI();
             }
             //console.log(data);

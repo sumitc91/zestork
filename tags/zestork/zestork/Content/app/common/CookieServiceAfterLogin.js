@@ -32,7 +32,14 @@ ZestorkAppAfterLogin.factory('CookieUtil', function ($rootScope, $location, $coo
         removeGuid: function () {
             $.removeCookie('Authentication', { path: '/' });
             return "removed";
-        }
+        },
+        getKey: function () {
+            return $.cookie('key');            
+        },
+        removeKey: function () {
+           $.removeCookie('key', { path: '/' });
+            return "removed";
+        },
     };
 
 });

@@ -41,11 +41,11 @@ namespace zestork.Service
             model = googleService.Login(returnUrl, code);
             return model;
         }
-        public LogOnModel webLogin(string userName, string passwrod, string returnUrl)
+        public LogOnModel webLogin(string userName, string passwrod, string returnUrl, string keepMeSignedIn)
         {
             var model = new LogOnModel();
             webLoginService webLoginService = new webLoginService();
-            model = webLoginService.Login(userName, passwrod, returnUrl);
+            model = webLoginService.Login(userName, passwrod, returnUrl, keepMeSignedIn);
             return model;
         }
         public LogOnModel facebookLogin(string returnUrl, string code)

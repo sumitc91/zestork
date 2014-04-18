@@ -11,5 +11,9 @@ namespace zestork.Encryption
         {            
             return AES.Encrypt(plainText, key);
         }
+        public string getDecryptionValue(string cipherText, string key)
+        {
+            return AES.Decrypt(cipherText, key);
+        }
     }
 }

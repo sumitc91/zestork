@@ -89,19 +89,20 @@
             </span>
         </div>
         <div>
+        <div class="control-group">
+            <div class="controls">
+                <label class="checkbox">
+                    <input type="checkbox" data-rule-required="true"
+                        name="keepMeSignedInCheckBox" class="ng-pristine ng-valid">
+                    Keep me signed in
+                </label>
+            </div>
+        </div>
             <span>
                 <input type="submit" class="mybutton" value="Submit"></span>
         </div>
         </form>
-        <div class="control-group">
-            <div class="controls">
-                <label class="checkbox">
-                    <input type="checkbox" data-rule-required="true" value="agree" ng-checked="signedInModel"
-                        name="policy" class="ng-pristine ng-valid">
-                    Keep me signed in {{signedInModel}}
-                </label>
-            </div>
-        </div>
+        
         <div class="forget">
             <a href="#/forgetpassword"><span>Forgot password? </span></a>
         </div>
