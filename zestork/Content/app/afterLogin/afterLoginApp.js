@@ -39,6 +39,18 @@ ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootS
 
     $scope.firstTimeUserLoginViaSocialLinkPopUpTemplate = '../../Resource/templates/afterLogin/contentView/index/firstTimeLoginViaSocialLinkePopUpModal.html';
     //alert(CookieUtil.getUsername());
+    $http({
+        url: '/Account/isValidToken/' + CookieUtil.getGuid() + '?username=' + CookieUtil.getUsername() + '&key=' + CookieUtil.getKey(),
+        method: "GET"
+        //headers: { 'Content-Type': 'application/json' }            
+    }).success(function (data, status, headers, config) {
+        //$scope.persons = data; // assign  $scope.persons here as promise is resolved here                        
+        
+        //console.log(data);
+    }).error(function (data, status, headers, config) {       
+        alert('Internal Server Error Occured !!');
+    });
+
     afterLoginServices.setUserPrivateKeyValue(); // set user private key value;
     //$rootScope.pageThemeColor = afterLoginServices.pageThemeColor();
     $rootScope.classRadioButtonClient = "iradio_square-blue checked";

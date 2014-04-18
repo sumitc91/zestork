@@ -46,7 +46,12 @@ namespace zestork.Controllers
             {
                 String userName = Request.Form["userName"];
                 String password = Request.Form["password"];
-                userData = LoginService.webLogin(userName,password,returnUrl);                
+                String keepMeSignedIn = Request.Form["keepMeSignedInCheckBox"];
+                if (keepMeSignedIn != null)
+                    keepMeSignedIn = "true";
+                else
+                    keepMeSignedIn = "false";
+                userData = LoginService.webLogin(userName, password, returnUrl, keepMeSignedIn);                
             }
             else if (id == "google")
             {
@@ -213,7 +218,23 @@ namespace zestork.Controllers
         {            
             try
             {
+                var _db = new ZestorkContainer();
+
+                CPSession retVal = TokenManager.getSessionInfo(id);
+                string userName = retVal.getAttributeValue("userName");
+                Users user = _db.Users.SingleOrDefault(x => x.Username == userName);
+                try
+                {                    
+                    user.KeepMeSignedIn = "false";
+                    _db.SaveChanges();
+                }
+                catch (DbEntityValidationException e)
+                {
+                    dbContextException dbContextException = new CommonMethods.dbContextException();
+                    dbContextException.logDbContextException(e);
+                }
                 TokenManager.removeSession(id);
+                
                 Response.Redirect("/");
                 return Json(200, JsonRequestBehavior.AllowGet); // unreachable code
             }
@@ -228,12 +249,39 @@ namespace zestork.Controllers
 
         public JsonResult isValidToken(string id)
         {
+            var _db = new ZestorkContainer();
+
+            string username = Request.QueryString["username"].ToString();
+            username = username.Split('/')[0];
+
+            string password = string.Empty;
+            string key = Request.QueryString["key"].ToString();
+            key = key.Replace(' ', '+');
             if (TokenManager.isValidSession(id))
             {
                 return Json(new { isValid = true, url = "http://" + Request.Url.Authority + "/secure" }, JsonRequestBehavior.AllowGet);
             }
             else
             {
+                Users user = _db.Users.SingleOrDefault(x => x.Username == username);
+                if (user != null && user.KeepMeSignedIn != null)
+                {
+                    if (user.KeepMeSignedIn == "true")
+                    {
+                        Encryption.Encryption EncryptionObj = new Encryption.Encryption();
+                        password = EncryptionObj.getDecryptionValue(key, user.guid);
+                        if (password == user.Password)
+                        {
+                            CPSession session = new CPSession();
+                            session.addAttribute("userName", user.Username);
+                            bool isPersistent = false; // as of now we have only 1 type of login
+                            session.setID(id);
+                            TokenManager.CreateSession(session, isPersistent);
+                        }
+                        return Json(new { isValid = true, url = "http://" + Request.Url.Authority + "/secure" }, JsonRequestBehavior.AllowGet);
+                    }
+                }
+                
                 return Json(new { isValid = false, url = "http://" + Request.Url.Authority + "/secure" }, JsonRequestBehavior.AllowGet);
             }
             

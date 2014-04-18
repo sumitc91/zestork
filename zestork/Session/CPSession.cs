@@ -30,6 +30,10 @@ namespace zestork.Common.Infrastructure
             return this.isActive;
         }
 
+        public void setID(string ID)
+        {
+            this.ID = ID;
+        }
         public void addAttribute(String key , String value)
         {
             this.attributes.Add(key,value);
