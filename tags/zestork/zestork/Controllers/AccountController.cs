@@ -102,7 +102,7 @@ namespace zestork.Controllers
                     
                     if (userData.User.ImageUrl == "NA")
                         userData.User.ImageUrl = "../../Resource/templates/afterLogin/web/img/demo/user-avatar.jpg";
-                    Response.Redirect("/Account/welcome?guid=" + userData.User.guid + "&username=" + userData.User.Username + "/#/");
+                    Response.Redirect("/Account/welcome?guid=" + userData.User.guid + "&username=" + userData.User.Username + "&keepMeSignedIn="+userData.User.keepMeSignedIn+"&pass=true/#/");
                     //return View("Index", "User" , userData);
                     //HttpContext.Response.AppendHeader("Authorization", userData.User.guid);                    
                 }
