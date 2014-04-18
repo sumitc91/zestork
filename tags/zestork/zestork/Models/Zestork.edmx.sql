@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 04/17/2014 15:06:37
--- Generated from EDMX file: E:\pcongo_svn\tags\zestork\zestork\Models\Zestork.edmx
+-- Date Created: 04/18/2014 11:30:29
+-- Generated from EDMX file: F:\pcongo\tags\zestork\zestork\Models\Zestork.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -48,6 +48,12 @@ IF OBJECT_ID(N'[dbo].[UserPageSettings]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[ForgetPasswords]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ForgetPasswords];
+GO
+IF OBJECT_ID(N'[dbo].[UserRecommendations]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserRecommendations];
+GO
+IF OBJECT_ID(N'[dbo].[RecommendedBies]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RecommendedBies];
 GO
 
 -- --------------------------------------------------

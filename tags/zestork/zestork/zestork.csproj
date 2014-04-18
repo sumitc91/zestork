@@ -211,6 +211,9 @@
     <Compile Include="Models\LinkedInAuthApiData.cs">
       <DependentUpon>ZestorkModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RecommendedBy.cs">
+      <DependentUpon>ZestorkModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ThirdPartyLogin.cs">
       <DependentUpon>ZestorkModel.tt</DependentUpon>
     </Compile>
@@ -218,6 +221,9 @@
       <DependentUpon>ZestorkModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UserPageSetting.cs">
+      <DependentUpon>ZestorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserRecommendation.cs">
       <DependentUpon>ZestorkModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Users.cs">
