@@ -48,7 +48,10 @@ namespace zestork.Controllers
             detailsEditUserPage.ImageUrl = user.ImageUrl;
             detailsEditUserPage.gender = user.gender;
             detailsEditUserPage.Locked = Convert.ToBoolean(user.Locked);
-
+            if(pageSetting == null)
+            {
+                pageSetting = new UserPageSetting();
+            }
             if (pageSetting.PageThemeColor != null)
                 detailsEditUserPage.PageThemeColor = "theme-"+pageSetting.PageThemeColor;
             else
