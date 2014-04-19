@@ -43,6 +43,12 @@ namespace zestork
 
                 );
 
+            routes.MapRoute("Client",
+                "Client/{action}/{id}",
+                new { controller = "Client", action = "Index", id = UrlParameter.Optional }
+
+                );
+
             routes.MapRoute("UserDetails",
                 "{id}/{controller}/{action}",
                 new { controller = "User", action = "index" }
