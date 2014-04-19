@@ -233,6 +233,20 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
     };
 
     $http({
+        url: '/Auth/isUserClient',
+        method: "GET",
+        headers: headers
+    }).success(function (data, status, headers, config) {
+        //$scope.persons = data; // assign  $scope.persons here as promise is resolved here
+
+        if (data == "true")
+            window.location.href = "/Client";
+        
+    }).error(function (data, status, headers, config) {
+        //alert('Internal Server Error Occured !!');
+    });
+
+    $http({
         url: '/Auth/details',
         method: "GET",
         //headers: { 'Content-Type': 'application/json' }
@@ -275,7 +289,7 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
             else {
                   $('#set_sidebar_default_id').click();
             }
-
+           
             //$rootScope..navigationTopBarClass navbar-fixed-top container-fluid nav-fixed
             //container-fluid  && data.pageTopbar == ""
             var imageUrlSplitted = data.ImageUrl.split(".");
