@@ -18,14 +18,14 @@ ZestorkApp.controller('homeTemplate', function ($scope) {
     $scope.gridIconDataList = [          
           {
               ImageLink: "#/signup/client",
-              ImageIconUrl: "../../Resource/templates/beforeLogin/web/images/ClientPresentation.gif",
+              ImageIconUrl: "../../Resource/templates/beforeLogin/web/images/ClientPresentation2.gif",
               Headline: "I need it done",
               Content: "Want to hire? Post a job!",
               BottomButtonUrl: "#/signup/client",
               BottomButtonText: "Read More"
           },
           { ImageLink: "#/signup/user",
-          ImageIconUrl: "../../Resource/templates/beforeLogin/web/images/UserPresentation.gif",
+          ImageIconUrl: "../../Resource/templates/beforeLogin/web/images/UserPresentation2.gif",
               Headline: "I will do it",
               Content: "Want to work? Sign up!",
               BottomButtonUrl: "#/signup/user",
