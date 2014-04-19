@@ -1498,6 +1498,7 @@
     <Content Include="Resource\templates\beforeLogin\web\css\style.css" />
     <Content Include="Resource\templates\beforeLogin\web\images\about_img.jpg" />
     <Content Include="Resource\templates\beforeLogin\web\images\ClientPresentation.png" />
+    <Content Include="Resource\templates\beforeLogin\web\images\ClientPresentation2.gif" />
     <Content Include="Resource\templates\beforeLogin\web\images\g1.png" />
     <Content Include="Resource\templates\beforeLogin\web\images\g2.png" />
     <Content Include="Resource\templates\beforeLogin\web\images\g3.png" />
@@ -1522,6 +1523,7 @@
     <Content Include="Resource\templates\beforeLogin\web\images\slider3.jpg" />
     <Content Include="Resource\templates\beforeLogin\web\images\slider4.jpg" />
     <Content Include="Resource\templates\beforeLogin\web\images\UserPresentation.png" />
+    <Content Include="Resource\templates\beforeLogin\web\images\UserPresentation2.gif" />
     <Content Include="Resource\templates\beforeLogin\web\index.html" />
     <Content Include="Resource\templates\beforeLogin\web\js\jquery.min.js" />
     <Content Include="Resource\templates\beforeLogin\web\js\responsiveslides.min.js" />
