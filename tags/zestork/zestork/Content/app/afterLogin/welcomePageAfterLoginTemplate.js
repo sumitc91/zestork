@@ -41,7 +41,7 @@ ZestorkAppAfterLogin.controller('welcomeAfterLoginController', function ($scope,
             else
                 window.location.href = "/userpage";
         }).error(function (data, status, headers, config) {
-            alert('Internal Server Error Occured !!');
+            //alert('Internal Server Error Occured !!');
         });
     }
     else {
