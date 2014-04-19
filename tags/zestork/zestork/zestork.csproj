@@ -179,6 +179,7 @@
     <Compile Include="CommonMethods\sendEmail.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\LockedController.cs" />
@@ -290,9 +291,12 @@
     <Content Include="Content\app\beforeLogin\homeTemplate.js" />
     <Content Include="Content\app\beforeLogin\beforeLoginApp.js" />
     <Content Include="Content\app\beforeLogin\forgetPasswordTemplate.js" />
+    <Content Include="Content\app\clientView\ClientViewApp.js" />
+    <Content Include="Content\app\common\CookieServiceClientView.js" />
     <Content Include="Content\app\common\CookieService.js" />
     <Content Include="Content\app\common\CookieServiceAfterLogin.js" />
     <Content Include="Content\app\services\afterLoginServices.js" />
+    <Content Include="Content\app\services\clientViewServices.js" />
     <Content Include="Content\css\nprogress.css" />
     <Content Include="Content\css\SocialButtons\images\layer_1.jpg" />
     <Content Include="Content\css\SocialButtons\images\layer_11.png" />
@@ -1519,6 +1523,7 @@
     <Content Include="Resource\templates\beforeLogin\web\js\responsiveslides.min.js" />
     <Content Include="Resource\templates\beforeLogin\web\services.html" />
     <Content Include="Resource\templates\beforeLogin\web\w3layouts-license.txt" />
+    <Content Include="Resource\templates\clientView\home.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1677,6 +1682,7 @@
     <None Include="Resource\templates\beforeLogin\web\fonts\Amble-Regular-webfont.ttf" />
     <None Include="Resource\templates\beforeLogin\web\images\Thumbs.db" />
     <None Include="Views\Account\welcome.cshtml" />
+    <Content Include="Views\Client\Index.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Locked\Index.cshtml" />
     <None Include="Views\User\Index.cshtml" />
