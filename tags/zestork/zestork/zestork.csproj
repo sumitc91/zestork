@@ -173,6 +173,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonMethods\AccountControllerMethods.cs" />
     <Compile Include="CommonMethods\dbContextException.cs" />
     <Compile Include="CommonMethods\forgetPasswordValidationEmail.cs" />
     <Compile Include="CommonMethods\sendAccountCreationValidationEmail.cs" />

@@ -10,6 +10,10 @@ ZestorkAppAfterLogin.controller('welcomeAfterLoginController', function ($scope,
         alert('authentication cookie is null');
         //window.location.href = "/?mssg=your session expired";
     }
-    window.location.href = "/secure";
+    var type = getParameterByName('type');
+    if (type == "client")
+        window.location.href = "/Client";
+    else
+        window.location.href = "/secure";
 
 });
