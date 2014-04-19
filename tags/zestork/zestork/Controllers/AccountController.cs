@@ -269,7 +269,7 @@ namespace zestork.Controllers
                 if(type=="client")
                     return Json(new { isValid = true, url = "http://" + Request.Url.Authority + "/Client" }, JsonRequestBehavior.AllowGet);
                 else
-                    return Json(new { isValid = true, url = "http://" + Request.Url.Authority + "/secure" }, JsonRequestBehavior.AllowGet);
+                    return Json(new { isValid = true, url = "http://" + Request.Url.Authority + "/secure"+type+"Clientcompare"+type=="client" }, JsonRequestBehavior.AllowGet);
             }
             else
             {
@@ -287,11 +287,8 @@ namespace zestork.Controllers
                             session.addAttribute("type", AccountControllerMethods.getUserType(user.Username));
                             bool isPersistent = false; // as of now we have only 1 type of login
                             session.setID(id);
-                            TokenManager.CreateSession(session, isPersistent);
-                            if(session.getAttributeValue("type")=="client")
-                                return Json(new { isValid = true, url = "http://" + Request.Url.Authority + "/Client" }, JsonRequestBehavior.AllowGet);
-                            else
-                                return Json(new { isValid = true, url = "http://" + Request.Url.Authority + "/secure" }, JsonRequestBehavior.AllowGet);
+                            TokenManager.CreateSession(session, isPersistent);                            
+                            return Json(new { isValid = true, url = "http://" + Request.Url.Authority + "/secure" }, JsonRequestBehavior.AllowGet);
                         }
 
                         return Json(new { isValid = false, url = "http://" + Request.Url.Authority + "/secure" }, JsonRequestBehavior.AllowGet);

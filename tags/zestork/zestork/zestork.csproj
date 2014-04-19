@@ -184,6 +184,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\LockedController.cs" />
+    <Compile Include="Controllers\secureController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Encryption\AES.cs" />
     <Compile Include="Encryption\Encryption.cs" />
@@ -1686,6 +1687,7 @@
     <Content Include="Views\Client\Index.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Locked\Index.cshtml" />
+    <Content Include="Views\secure\Index.cshtml" />
     <None Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
