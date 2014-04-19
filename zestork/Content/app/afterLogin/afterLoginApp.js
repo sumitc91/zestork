@@ -233,20 +233,6 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
     };
 
     $http({
-        url: '/Auth/isUserClient',
-        method: "GET",
-        headers: headers
-    }).success(function (data, status, headers, config) {
-        //$scope.persons = data; // assign  $scope.persons here as promise is resolved here
-
-        if (data == "true")
-            window.location.href = "/Client";
-        
-    }).error(function (data, status, headers, config) {
-        //alert('Internal Server Error Occured !!');
-    });
-
-    $http({
         url: '/Auth/details',
         method: "GET",
         //headers: { 'Content-Type': 'application/json' }
