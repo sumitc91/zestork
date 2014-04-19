@@ -186,7 +186,7 @@ img{max-width:100%;}
 	-o-box-shadow: 0px 0px 10px rgba(119, 119, 119, 0.25);
 	display: inline-block;
 	padding: 15px;
-	background:#40BF40;
+	background:#F7F7F7;
 	cursor:pointer;
 	transition: 0.5s ease;
 	-moz-transition: 0.5s ease;
@@ -194,7 +194,7 @@ img{max-width:100%;}
 	-webkit-transition: 0.5s ease;
 }
 .grid_icon_work:hover{
-   background:#FA5072;
+   background:#EEEDED;
 }
 
 .grid_icon_hire{
@@ -209,7 +209,7 @@ img{max-width:100%;}
 	-o-box-shadow: 0px 0px 10px rgba(119, 119, 119, 0.25);
 	display: inline-block;
 	padding: 15px;
-	background:#368EE0;
+	background:#F7F7F7;
 	cursor:pointer;
 	transition: 0.5s ease;
 	-moz-transition: 0.5s ease;
@@ -217,7 +217,7 @@ img{max-width:100%;}
 	-webkit-transition: 0.5s ease;
 }
 .grid_icon_hire:hover{
-   background:#FA5072;
+   background:#EEEDED;
 }
 .images_1_of_3  h3{
 	font-family: 'ambleregular';
