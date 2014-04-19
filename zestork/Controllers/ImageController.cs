@@ -47,8 +47,8 @@ namespace zestork.Controllers
                 try
                 {
                     _db.SaveChanges();
-                    Response.Redirect("/secure#/edit");
-                    return Json(500, JsonRequestBehavior.AllowGet);
+                    //Response.Redirect("/secure#/edit");
+                    return Json(200, JsonRequestBehavior.AllowGet);
                 }
                 catch (DbEntityValidationException e)
                 {

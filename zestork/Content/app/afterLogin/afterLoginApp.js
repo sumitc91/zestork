@@ -180,12 +180,13 @@ ZestorkAppAfterLogin.controller('submitUserPasswordDetailController', function (
                 headers: headers,
                 data: changePasswordRequestData
             }).success(function (data, status, headers, config) {
-                //$scope.persons = data; // assign  $scope.persons here as promise is resolved here           
+                //$scope.persons = data; // assign  $scope.persons here as promise is resolved here  
+                
                 if (data == "200") {
                     //alert("password successfully changed !!!");
                     $.unblockUI();
                     $('#firstTimeUserLoginViaSocialLinkChangePasswordPopUpClose').click();
-                    window.location.href = "/";
+                    window.location.href = "/secure";
                 }
                 else {
                     //alert("some error occured while submitting your data.");

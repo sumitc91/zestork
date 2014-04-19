@@ -207,9 +207,9 @@ namespace zestork.Controllers
             {
                 dbContextException dbContextException = new CommonMethods.dbContextException();
                 dbContextException.logDbContextException(e);
-                return Json("500");
+                return Json(500);
             }
-            return Json("200");
+            return Json(200);
         }
 
         public JsonResult getUserPageThemeData()
@@ -224,6 +224,23 @@ namespace zestork.Controllers
             var UserPageTheme = _db.UserPageSettings.SingleOrDefault(x => x.Username == userName);
             
             return Json(UserPageTheme, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult isUserClient()
+        {
+            IEnumerable<string> headerValues = Request.Headers.GetValues("Authorization");
+            String guid = headerValues.FirstOrDefault();
+            guid = guid.Replace("/", "");
+            CPSession retVal = TokenManager.getSessionInfo(guid);
+            string userName = retVal.getAttributeValue("userName");
+
+            var _db = new ZestorkContainer();
+            var user = _db.Users.SingleOrDefault(x => x.Username == userName);
+            bool isUserClient = false;
+            if(user.Type == "client")
+                isUserClient = true;            
+            
+            return Json(isUserClient, JsonRequestBehavior.AllowGet);            
         }
 
         public JsonResult submitUserPageThemeColor(string id)
