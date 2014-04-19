@@ -95,6 +95,7 @@ namespace zestork.Controllers
                     #region Session                    
                     CPSession session = new CPSession();
                     session.addAttribute("userName", userData.User.Username);
+                    session.addAttribute("type", AccountControllerMethods.getUserType(userData.User.Username));
                     bool isPersistent = false; // as of now we have only 1 type of login
                     TokenManager.CreateSession(session, isPersistent);
                     userData.User.guid = session.getID();                    
@@ -102,7 +103,7 @@ namespace zestork.Controllers
                     
                     if (userData.User.ImageUrl == "NA")
                         userData.User.ImageUrl = "../../Resource/templates/afterLogin/web/img/demo/user-avatar.jpg";
-                    Response.Redirect("/Account/welcome?guid=" + userData.User.guid + "&username=" + userData.User.Username + "&keepMeSignedIn="+userData.User.keepMeSignedIn+"&pass=true/#/");
+                    Response.Redirect("/Account/welcome?guid=" + userData.User.guid + "&username=" + userData.User.Username + "&keepMeSignedIn=" + userData.User.keepMeSignedIn + "&type=" + session.getAttributeValue("type") + "&pass=true/#/");
                     //return View("Index", "User" , userData);
                     //HttpContext.Response.AppendHeader("Authorization", userData.User.guid);                    
                 }
@@ -259,11 +260,16 @@ namespace zestork.Controllers
             key = key.Replace(' ', '+');
             if (TokenManager.isValidSession(id))
             {
-                return Json(new { isValid = true, url = "http://" + Request.Url.Authority + "/secure" }, JsonRequestBehavior.AllowGet);
+                CPSession retVal = TokenManager.getSessionInfo(id);
+                string type = retVal.getAttributeValue("type");
+                if(type=="client")
+                    return Json(new { isValid = true, url = "http://" + Request.Url.Authority + "/Client" }, JsonRequestBehavior.AllowGet);
+                else
+                    return Json(new { isValid = true, url = "http://" + Request.Url.Authority + "/secure" }, JsonRequestBehavior.AllowGet);
             }
             else
             {
-                Users user = _db.Users.SingleOrDefault(x => x.Username == username);
+                Users user = _db.Users.SingleOrDefault(x => x.Username == username);                
                 if (user != null && user.KeepMeSignedIn != null)
                 {
                     if (user.KeepMeSignedIn == "true")
@@ -274,11 +280,17 @@ namespace zestork.Controllers
                         {
                             CPSession session = new CPSession();
                             session.addAttribute("userName", user.Username);
+                            session.addAttribute("type", AccountControllerMethods.getUserType(user.Username));
                             bool isPersistent = false; // as of now we have only 1 type of login
                             session.setID(id);
                             TokenManager.CreateSession(session, isPersistent);
+                            if(session.getAttributeValue("type")=="client")
+                                return Json(new { isValid = true, url = "http://" + Request.Url.Authority + "/Client" }, JsonRequestBehavior.AllowGet);
+                            else
+                                return Json(new { isValid = true, url = "http://" + Request.Url.Authority + "/secure" }, JsonRequestBehavior.AllowGet);
                         }
-                        return Json(new { isValid = true, url = "http://" + Request.Url.Authority + "/secure" }, JsonRequestBehavior.AllowGet);
+
+                        return Json(new { isValid = false, url = "http://" + Request.Url.Authority + "/secure" }, JsonRequestBehavior.AllowGet);
                     }
                 }
                 
