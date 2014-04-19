@@ -190,13 +190,13 @@ ZestorkAppAfterLogin.controller('submitUserPasswordDetailController', function (
                 else {
                     //alert("some error occured while submitting your data.");
                     $('#firstTimeUserLoginViaSocialLinkChangePasswordPopUpClose').click();
-                    window.location.href = "/";
+                    alert("error occured while resetting your password, try again.");
                     $.unblockUI();
                 }
                 //console.log(data);
             }).error(function (data, status, headers, config) {
                 alert('Internal Server Error Occured !!');
-                window.location.href = "/";
+                //window.location.href = "/";
                 $('#firstTimeUserLoginViaSocialLinkChangePasswordPopUpClose').click();
             });
         }

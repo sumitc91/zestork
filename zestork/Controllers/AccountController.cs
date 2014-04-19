@@ -224,15 +224,19 @@ namespace zestork.Controllers
                 CPSession retVal = TokenManager.getSessionInfo(id);
                 string userName = retVal.getAttributeValue("userName");
                 Users user = _db.Users.SingleOrDefault(x => x.Username == userName);
-                try
-                {                    
-                    user.KeepMeSignedIn = "false";
-                    _db.SaveChanges();
-                }
-                catch (DbEntityValidationException e)
+                if (user != null)
                 {
-                    dbContextException dbContextException = new CommonMethods.dbContextException();
-                    dbContextException.logDbContextException(e);
+                    try
+                    {
+                        user.KeepMeSignedIn = "false";
+                        _db.SaveChanges();
+                    }
+                    catch (DbEntityValidationException e)
+                    {
+                        dbContextException dbContextException = new CommonMethods.dbContextException();
+                        dbContextException.logDbContextException(e);
+                    }
+                    
                 }
                 TokenManager.removeSession(id);
                 
