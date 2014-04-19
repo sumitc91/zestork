@@ -16,6 +16,19 @@ ZestorkAppAfterLogin.controller('searchJobDetailsController', function ($scope, 
             $('#firstTimeUserLoginViaSocialLinkChangePasswordPopUp').click(); 
         }
         else {
+            $http({
+                url: '/Auth/isUserClient',
+                method: "GET",
+                headers: headers
+            }).success(function (data, status, headers, config) {
+                //$scope.persons = data; // assign  $scope.persons here as promise is resolved here
+
+                if (data == "true")
+                    window.location.href = "/Client";
+
+            }).error(function (data, status, headers, config) {
+                //alert('Internal Server Error Occured !!');
+            });
             //do nothing is new password is already set
         }
         //console.log(data);
