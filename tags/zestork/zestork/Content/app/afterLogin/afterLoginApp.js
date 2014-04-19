@@ -185,15 +185,18 @@ ZestorkAppAfterLogin.controller('submitUserPasswordDetailController', function (
                     //alert("password successfully changed !!!");
                     $.unblockUI();
                     $('#firstTimeUserLoginViaSocialLinkChangePasswordPopUpClose').click();
+                    window.location.href = "/";
                 }
                 else {
                     //alert("some error occured while submitting your data.");
                     $('#firstTimeUserLoginViaSocialLinkChangePasswordPopUpClose').click();
+                    window.location.href = "/";
                     $.unblockUI();
                 }
                 //console.log(data);
             }).error(function (data, status, headers, config) {
                 alert('Internal Server Error Occured !!');
+                window.location.href = "/";
                 $('#firstTimeUserLoginViaSocialLinkChangePasswordPopUpClose').click();
             });
         }
