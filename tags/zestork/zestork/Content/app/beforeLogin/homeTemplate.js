@@ -18,14 +18,14 @@ ZestorkApp.controller('homeTemplate', function ($scope) {
     $scope.gridIconDataList = [          
           {
               ImageLink: "#/signup/client",
-              ImageIconUrl: "../../Resource/templates/beforeLogin/web/images/g2.png",
+              ImageIconUrl: "../../Resource/templates/beforeLogin/web/images/ClientPresentation.gif",
               Headline: "I need it done",
               Content: "Want to hire? Post a job!",
               BottomButtonUrl: "#/signup/client",
               BottomButtonText: "Read More"
           },
           { ImageLink: "#/signup/user",
-              ImageIconUrl: "../../Resource/templates/beforeLogin/web/images/g1.png",
+          ImageIconUrl: "../../Resource/templates/beforeLogin/web/images/UserPresentation.gif",
               Headline: "I will do it",
               Content: "Want to work? Sign up!",
               BottomButtonUrl: "#/signup/user",
@@ -59,7 +59,7 @@ ZestorkApp.controller('homeTemplate', function ($scope) {
               { Content: "Translation", Url:"#" },
               { Content: "Drawing", Url: "#" }
         ],
-        rightColumnHeading: "Our Stafff",
+        rightColumnHeading: "heading",
         rightColumnImageList: [
               { imgUrl: "../../Resource/templates/beforeLogin/web/images/management-1.jpg" },
               { imgUrl: "../../Resource/templates/beforeLogin/web/images/management-2.jpg" },
@@ -68,7 +68,7 @@ ZestorkApp.controller('homeTemplate', function ($scope) {
               { imgUrl: "../../Resource/templates/beforeLogin/web/images/management-5.jpg" },
               { imgUrl: "../../Resource/templates/beforeLogin/web/images/management-6.jpg" },
         ],
-        rightColumnLink: "viewall.html"
+        rightColumnLink: "view all link"
 
         //copyRightInfo: "<p>Company Name © All Rights Reseverd | Design by  <a href=\"http://zestork.com\">W3Layouts</a></p>"        
     };
