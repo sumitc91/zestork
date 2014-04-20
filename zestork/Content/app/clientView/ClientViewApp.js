@@ -89,7 +89,7 @@ ZestorkAppClientView.controller('masterPageController', function ($scope, $rootS
     };
 
     $http({
-        url: '/Auth/userTypeInfoAvailable',
+        url: '/Client/userTypeInfoAvailable',
         method: "GET",
         headers: headers
     }).success(function (data, status, headers, config) {
@@ -135,7 +135,7 @@ ZestorkAppClientView.controller('submitUserTypeDetailController', function ($sco
         };
 
         $http({
-            url: '/Auth/submitUserTypeInfo/' + $scope.userType,
+            url: '/Client/submitUserTypeInfo/' + $scope.userType,
             method: "GET",
             //headers: { 'Content-Type': 'application/json' }
             headers: headers
@@ -174,7 +174,7 @@ ZestorkAppClientView.controller('submitUserPasswordDetailController', function (
             }
 
             $http({
-                url: '/Auth/changeUserPassword',
+                url: '/Client/changeUserPassword',
                 method: "POST",
                 //headers: { 'Content-Type': 'application/json' }
                 headers: headers,
@@ -229,13 +229,16 @@ ZestorkAppClientView.controller('getUserInfoController', function ($scope, $http
     };
 
     $http({
-        url: '/Auth/details',
+        url: '/Client/details',
         method: "GET",
         //headers: { 'Content-Type': 'application/json' }
         headers: headers
-    }).success(function (data, status, headers, config) {
+    }).success(function (ResponseData, status, headers, config) {
         //$scope.persons = data; // assign  $scope.persons here as promise is resolved here
         $.unblockUI();
+        var data = ResponseData.details;
+        if (ResponseData.Autherized == false)
+            window.location.href = "/userpage";
         if (data != null) {
             $rootScope.Username = data.Username;
             if (data.Locked == true) {

@@ -12,7 +12,7 @@ ZestorkAppClientView.factory('afterLoginServices', function ($http, $rootScope, 
             };
 
             $http({
-                url: '/Auth/submitUserPageThemeColor/' + color,
+                url: '/Client/submitUserPageThemeColor/' + color,
                 method: "GET",
                 headers: headers
             }).success(function (data, status, headers, config) {
@@ -34,7 +34,7 @@ ZestorkAppClientView.factory('afterLoginServices', function ($http, $rootScope, 
             };
 
             $http({
-                url: '/Auth/submitUserPageLayoutWidth/' + Layout,
+                url: '/Client/submitUserPageLayoutWidth/' + Layout,
                 method: "GET",
                 headers: headers
             }).success(function (data, status, headers, config) {
@@ -56,7 +56,7 @@ ZestorkAppClientView.factory('afterLoginServices', function ($http, $rootScope, 
             };
 
             $http({
-                url: '/Auth/submitUserPageTopbar/' + TopbarType,
+                url: '/Client/submitUserPageTopbar/' + TopbarType,
                 method: "GET",
                 headers: headers
             }).success(function (data, status, headers, config) {
@@ -100,7 +100,7 @@ ZestorkAppClientView.factory('afterLoginServices', function ($http, $rootScope, 
             };
 
             $http({
-                url: '/Auth/getKeyVal',
+                url: '/Client/getKeyVal',
                 method: "GET",
                 headers: headers
             }).success(function (data, status, headers, config) {
