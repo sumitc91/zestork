@@ -244,9 +244,12 @@ namespace zestork.Controllers
             var _db = new ZestorkContainer();
             var user = _db.Users.SingleOrDefault(x => x.Username == userName);
             bool isUserClient = false;
-            if(user.Type == "client")
-                isUserClient = true;            
-            
+            if (user.Type != null)
+            {
+                if (user.Type == "client")
+                    isUserClient = true;    
+            }
+                    
             return Json(isUserClient, JsonRequestBehavior.AllowGet);            
         }
 
