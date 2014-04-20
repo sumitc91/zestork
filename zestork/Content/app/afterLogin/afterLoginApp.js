@@ -186,7 +186,6 @@ ZestorkAppAfterLogin.controller('submitUserPasswordDetailController', function (
                     //alert("password successfully changed !!!");
                     $.unblockUI();
                     $('#firstTimeUserLoginViaSocialLinkChangePasswordPopUpClose').click();
-                    window.location.href = "/secure";
                 }
                 else {
                     //alert("some error occured while submitting your data.");
