@@ -20,7 +20,7 @@ ZestorkAppAfterLogin.controller('editUserDetailsController', function ($scope, $
         method: "GET",
         //headers: { 'Content-Type': 'application/json' }
         headers: headers
-    }).success(function (data, status, headers, config) {
+    }).success(function (ResponseData, status, headers, config) {
         //$scope.persons = data; // assign  $scope.persons here as promise is resolved here
         $.unblockUI();
         var data = ResponseData.details;
