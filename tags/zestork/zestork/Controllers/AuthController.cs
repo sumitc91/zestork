@@ -33,11 +33,18 @@ namespace zestork.Controllers
             detailsEditUserPage detailsEditUserPage = new detailsEditUserPage();
             Users user = _db.Users.SingleOrDefault(x => x.Username == userName && x.isActive == "true");
 
-            UserPageSetting pageSetting = _db.UserPageSettings.SingleOrDefault(x=>x.Username == userName);
+            bool Autherized = true;
+            UserPageSetting pageSetting = _db.UserPageSettings.SingleOrDefault(x => x.Username == userName);
             if (user.Locked == "true")
             {
                 //Response.Redirect("/Locked/index/"+guid);
             }
+
+            if (user.Type == "client")
+            {
+                Autherized = false;
+            }
+            
             detailsEditUserPage.Username = user.Username;
             detailsEditUserPage.isActive = user.isActive;
             detailsEditUserPage.Type = user.Type;
@@ -75,7 +82,7 @@ namespace zestork.Controllers
             detailsEditUserPage.skillTags = _db.UserSkills.Where(x => x.Username == userName).Select(x => x.Skill).ToList();
             if (detailsEditUserPage.ImageUrl == "NA" || detailsEditUserPage.ImageUrl == null)
                 detailsEditUserPage.ImageUrl = "../../Resource/templates/afterLogin/web/img/demo/user-avatar.jpg";
-            return Json(detailsEditUserPage, JsonRequestBehavior.AllowGet);
+            return Json(new { details = detailsEditUserPage, Autherized = Autherized }, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult userTypeInfoAvailable()
