@@ -38,6 +38,8 @@ ZestorkAppAfterLogin.run(function ($rootScope, $location) { //Insert in the func
 ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootScope, $http, $location, CookieUtil, afterLoginServices) {
 
     $scope.firstTimeUserLoginViaSocialLinkPopUpTemplate = '../../Resource/templates/afterLogin/contentView/index/firstTimeLoginViaSocialLinkePopUpModal.html';
+    $rootScope.Username = CookieUtil.getUsername();
+    $rootScope.Key = CookieUtil.getKey();
     //alert(CookieUtil.getUsername());
     $http({
         url: '/Account/isValidToken/' + CookieUtil.getGuid() + '?username=' + CookieUtil.getUsername() + '&key=' + CookieUtil.getKey(),

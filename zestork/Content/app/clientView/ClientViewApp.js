@@ -38,6 +38,8 @@ ZestorkAppClientView.run(function ($rootScope, $location) { //Insert in the func
 ZestorkAppClientView.controller('masterPageController', function ($scope, $rootScope, $http, $location, CookieUtil, afterLoginServices) {
    
     $scope.firstTimeUserLoginViaSocialLinkPopUpTemplate = '../../Resource/templates/afterLogin/contentView/index/firstTimeLoginViaSocialLinkePopUpModal.html';
+    $rootScope.Username = CookieUtil.getUsername();
+    $rootScope.Key = CookieUtil.getKey();
     //alert(CookieUtil.getUsername());
     $http({
         url: '/Account/isValidToken/' + CookieUtil.getGuid() + '?username=' + CookieUtil.getUsername() + '&key=' + CookieUtil.getKey(),
@@ -221,6 +223,8 @@ ZestorkAppClientView.controller('getUserInfoController', function ($scope, $http
     }
     $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Profile Loading...</h1>' });
     $rootScope.Authentication = CookieUtil.CookieValue();
+    $rootScope.Username = CookieUtil.getUsername();
+    $rootScope.Key = CookieUtil.getKey();
     $scope.masterPageUserDetailImageLink = "#/edit";
 
     var headers = {
