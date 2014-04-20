@@ -81,7 +81,8 @@ namespace zestork.Common.Infrastructure
             }
             else
             {
-                throw new ArgumentException("Invalid TokenID [" + tokenID + "]");
+                //throw new ArgumentException("Invalid TokenID [" + tokenID + "]");
+                return null;
             }
 
         }
