@@ -47,7 +47,10 @@ namespace zestork.Controllers
                 try
                 {
                     _db.SaveChanges();
-                    //Response.Redirect("/secure#/edit");
+                    if (user.Type == "client")
+                        Response.Redirect("/Client#/edit");
+                    else
+                        Response.Redirect("/secure#/edit");
                     return Json(200, JsonRequestBehavior.AllowGet);
                 }
                 catch (DbEntityValidationException e)
