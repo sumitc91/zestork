@@ -222,24 +222,48 @@ namespace zestork.Controllers
                 var _db = new ZestorkContainer();
 
                 CPSession retVal = TokenManager.getSessionInfo(id);
-                string userName = retVal.getAttributeValue("userName");
-                Users user = _db.Users.SingleOrDefault(x => x.Username == userName);
-                if (user != null)
+                if (retVal != null)
                 {
-                    try
+                    string userName = retVal.getAttributeValue("userName");
+                    Users user = _db.Users.SingleOrDefault(x => x.Username == userName);
+                    if (user != null)
                     {
-                        user.KeepMeSignedIn = "false";
-                        _db.SaveChanges();
+                        try
+                        {
+                            user.KeepMeSignedIn = "false";
+                            _db.SaveChanges();
+                        }
+                        catch (DbEntityValidationException e)
+                        {
+                            dbContextException dbContextException = new CommonMethods.dbContextException();
+                            dbContextException.logDbContextException(e);
+                        }
+
                     }
-                    catch (DbEntityValidationException e)
-                    {
-                        dbContextException dbContextException = new CommonMethods.dbContextException();
-                        dbContextException.logDbContextException(e);
-                    }
-                    
+                    TokenManager.removeSession(id);
                 }
-                TokenManager.removeSession(id);
-                
+                else
+                {
+                    string username = Request.QueryString["username"].ToString();
+                    username = username.Split('/')[0];
+                    Users user = _db.Users.SingleOrDefault(x => x.Username == username);                    
+                    if (user != null && user.KeepMeSignedIn != null)
+                    {
+                        if (user.KeepMeSignedIn == "true")
+                        {
+                            try
+                            {
+                                user.KeepMeSignedIn = "false";
+                                _db.SaveChanges();
+                            }
+                            catch (DbEntityValidationException e)
+                            {
+                                dbContextException dbContextException = new CommonMethods.dbContextException();
+                                dbContextException.logDbContextException(e);
+                            }
+                        }                                                
+                    }
+                }
                 Response.Redirect("/");
                 return Json(200, JsonRequestBehavior.AllowGet); // unreachable code
             }
