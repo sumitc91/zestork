@@ -245,24 +245,27 @@ namespace zestork.Controllers
                 else
                 {
                     string username = Request.QueryString["username"].ToString();
-                    username = username.Split('/')[0];
-                    Users user = _db.Users.SingleOrDefault(x => x.Username == username);                    
-                    if (user != null && user.KeepMeSignedIn != null)
+                    if (username != null || username != "")
                     {
-                        if (user.KeepMeSignedIn == "true")
+                        username = username.Split('/')[0];
+                        Users user = _db.Users.SingleOrDefault(x => x.Username == username);
+                        if (user != null && user.KeepMeSignedIn != null)
                         {
-                            try
+                            if (user.KeepMeSignedIn == "true")
                             {
-                                user.KeepMeSignedIn = "false";
-                                _db.SaveChanges();
+                                try
+                                {
+                                    user.KeepMeSignedIn = "false";
+                                    _db.SaveChanges();
+                                }
+                                catch (DbEntityValidationException e)
+                                {
+                                    dbContextException dbContextException = new CommonMethods.dbContextException();
+                                    dbContextException.logDbContextException(e);
+                                }
                             }
-                            catch (DbEntityValidationException e)
-                            {
-                                dbContextException dbContextException = new CommonMethods.dbContextException();
-                                dbContextException.logDbContextException(e);
-                            }
-                        }                                                
-                    }
+                        }
+                    }                    
                 }
                 Response.Redirect("/");
                 return Json(200, JsonRequestBehavior.AllowGet); // unreachable code
