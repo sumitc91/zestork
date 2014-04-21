@@ -11,7 +11,7 @@ ZestorkAppAfterLogin.controller('welcomeAfterLoginController', function ($scope,
         //window.location.href = "/?mssg=your session expired";
     }
     var type = getParameterByName('type');
-    alert("wecome page after login template js  type " + type);
+    //alert("wecome page after login template js  type " + type);
     if (type == "client")
         window.location.href = "/Client";
     else
