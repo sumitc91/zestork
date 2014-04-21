@@ -297,7 +297,7 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
     }).error(function (data, status, headers, config) {
         $.unblockUI();
         //alert('Internal Server Error Occured !!');
-        window.location.href = "/";
+        //window.location.href = "/";
 
     });
 });
