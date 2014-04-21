@@ -115,6 +115,8 @@ namespace zestork.Service
                         userData.User.ImageUrl = "NA";
                         
                     }
+                    if (userData.User.Gender == null)
+                        userData.User.Gender = "NA";
                     logger.Info(JsonConvert.SerializeObject(userData));
                     var user = new Users
                     {

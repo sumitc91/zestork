@@ -294,6 +294,7 @@
     <Content Include="Content\app\beforeLogin\beforeLoginApp.js" />
     <Content Include="Content\app\beforeLogin\forgetPasswordTemplate.js" />
     <Content Include="Content\app\clientView\ClientViewApp.js" />
+    <Content Include="Content\app\clientView\homeTemplate.js" />
     <Content Include="Content\app\common\CookieServiceClientView.js" />
     <Content Include="Content\app\common\CookieService.js" />
     <Content Include="Content\app\common\CookieServiceAfterLogin.js" />
