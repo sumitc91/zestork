@@ -145,7 +145,7 @@ ZestorkAppAfterLogin.controller('submitUserTypeDetailController', function ($sco
             //$scope.persons = data; // assign  $scope.persons here as promise is resolved here            
             if (data == "200") {
                 //$route.reload();
-                location.reload();
+                window.location.href = "/secure";
             }
             else {
                 alert("some error occured while submitting your data.");
