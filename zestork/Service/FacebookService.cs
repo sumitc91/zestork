@@ -19,7 +19,7 @@ namespace zestork.Service
     {
         private ILogger logger = new Logger(Convert.ToString(MethodBase.GetCurrentMethod().DeclaringType));
 
-        public LogOnModel Login(string returnUrl,string code)
+        public LogOnModel Login(string returnUrl, string code, string referral)
         {
             var userData = new LogOnModel();
             userData = checkFacebookAuthorization(returnUrl, code);

@@ -12,7 +12,7 @@ ZestorkApp.controller('facebookLoginController', function ($scope,$http) {
     $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Loggin in via Facebook..</h1>' });
     $('.closeModalBox').click();
     $http({
-        url: '/Account/Login/facebook',
+        url: '/Account/Login/facebook?ref=' + CookieUtil.getReferralKey(),
         method: "GET",
         headers: { 'Content-Type': 'application/json' }
     }).success(function (data, status, headers, config) {
@@ -35,7 +35,7 @@ ZestorkApp.controller('googleLoginController', function ($scope, $http) {
     $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Loggin in via google..</h1>' });
     $('.closeModalBox').click();
     $http({
-        url: '/Account/Login/google',
+        url: '/Account/Login/google?ref=' + CookieUtil.getReferralKey(),
         method: "GET",
         headers: { 'Content-Type': 'application/json' }
     }).success(function (data, status, headers, config) {
@@ -58,7 +58,7 @@ ZestorkApp.controller('linkedinLoginController', function ($scope, $http) {
     $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Loggin in via linkedin..</h1>' });
     $('.closeModalBox').click();
     $http({
-        url: '/Account/Login/linkedin',
+        url: '/Account/Login/linkedin?ref=' + CookieUtil.getReferralKey(),
         method: "GET",
         headers: { 'Content-Type': 'application/json' }
     }).success(function (data, status, headers, config) {
