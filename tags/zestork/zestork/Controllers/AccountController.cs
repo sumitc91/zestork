@@ -35,12 +35,13 @@ namespace zestork.Controllers
             //{ return true; };
             
             String returnUrl = "";
+            String referral = Request.Form["ref"];
             var userData = new LogOnModel();
             LoginService LoginService = new LoginService();
             if (id == "facebook")
             {
                 String code = Request.QueryString["code"];
-                userData = LoginService.facebookLogin("http://" + Request.Url.Authority + "/Account/Login/facebook/", code);
+                userData = LoginService.facebookLogin("http://" + Request.Url.Authority + "/Account/Login/facebook/", code, referral);
             }
             else if (id == "web")
             {
@@ -60,7 +61,7 @@ namespace zestork.Controllers
                     string access_token = Request.QueryString["access_token"];
                 }
                 String code = Request.QueryString["code"];
-                userData = LoginService.googleLogin("http://" + Request.Url.Authority + "/Account/Login/google", code);
+                userData = LoginService.googleLogin("http://" + Request.Url.Authority + "/Account/Login/google", code, referral);
             }
             else if (id == "linkedin")
             {
@@ -69,7 +70,7 @@ namespace zestork.Controllers
                 string oauth_token = Request.QueryString["oauth_token"];
                 string oauth_verifier = Request.QueryString["oauth_verifier"];
 
-                userData = LoginService.linkedinLogin("http://" + Request.Url.Authority + "/Account/Login/linkedin", AbsoluteUri, oauth_token, oauth_verifier);
+                userData = LoginService.linkedinLogin("http://" + Request.Url.Authority + "/Account/Login/linkedin", AbsoluteUri, oauth_token, oauth_verifier, referral);
                 
             }
             else if (id == "twitter")

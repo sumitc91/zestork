@@ -20,11 +20,11 @@ namespace zestork.Service
                     
             return model;
         }
-        public LogOnModel linkedinLogin(string returnUrl, string AbsoluteUri, string oauth_token, string oauth_verifier)
+        public LogOnModel linkedinLogin(string returnUrl, string AbsoluteUri, string oauth_token, string oauth_verifier, string referral)
         {
             var model = new LogOnModel();
             linkedinService linkedinService = new linkedinService();
-            model = linkedinService.Login(returnUrl, AbsoluteUri, oauth_token, oauth_verifier);
+            model = linkedinService.Login(returnUrl, AbsoluteUri, oauth_token, oauth_verifier, referral);
             return model;
         }
         public LogOnModel twitterinLogin(string returnUrl, string AbsoluteUri, string oauth_token, string oauth_verifier)
@@ -34,11 +34,11 @@ namespace zestork.Service
             model = twitterService.Login(returnUrl, AbsoluteUri, oauth_token, oauth_verifier);
             return model;
         }
-        public LogOnModel googleLogin(string returnUrl,string code)
+        public LogOnModel googleLogin(string returnUrl, string code, string referral)
         {
             var model = new LogOnModel();
-            googleService googleService = new googleService();            
-            model = googleService.Login(returnUrl, code);
+            googleService googleService = new googleService();
+            model = googleService.Login(returnUrl, code, referral);
             return model;
         }
         public LogOnModel webLogin(string userName, string passwrod, string returnUrl, string keepMeSignedIn)
@@ -48,12 +48,12 @@ namespace zestork.Service
             model = webLoginService.Login(userName, passwrod, returnUrl, keepMeSignedIn);
             return model;
         }
-        public LogOnModel facebookLogin(string returnUrl, string code)
+        public LogOnModel facebookLogin(string returnUrl, string code, string referral)
         {
             var model = new LogOnModel();
             
             FacebookService FacebookService = new FacebookService();
-            model = FacebookService.Login(returnUrl, code);
+            model = FacebookService.Login(returnUrl, code, referral);
            
             return model;
         }

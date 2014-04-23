@@ -23,7 +23,7 @@ namespace zestork.Service
         private ILogger logger = new Logger(Convert.ToString(MethodBase.GetCurrentMethod().DeclaringType));
         private oAuthLinkedIn _oauth = new oAuthLinkedIn();
 
-        public LogOnModel Login(string returnUrl, string AbsoluteUri, string oauth_token, string oauth_verifier)
+        public LogOnModel Login(string returnUrl, string AbsoluteUri, string oauth_token, string oauth_verifier, string referral)
         {
             var userData = new LogOnModel();
             var _db = new ZestorkContainer();
