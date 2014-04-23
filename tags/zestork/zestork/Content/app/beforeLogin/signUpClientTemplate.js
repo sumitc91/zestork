@@ -1,5 +1,5 @@
 
-ZestorkApp.controller('signUpClientController', function ($scope, $http) {
+ZestorkApp.controller('signUpClientController', function ($scope, $http, $routeParams) {
 
     NProgress.start();
 
@@ -16,7 +16,7 @@ ZestorkApp.controller('signUpClientController', function ($scope, $http) {
     $scope.$watch('[companyCheckbox]', function () {
         //alert($scope.tncModel);
     }, true);
-    
+
     $scope.companyNameText = false;
 
     $scope.checkEmailAvailableOnFocusOut = function () {
@@ -89,7 +89,7 @@ ZestorkApp.controller('signUpClientController', function ($scope, $http) {
                 $scope.status = status;
             });
         }
-        
+
     }
 
     $scope.submitCreateAccountData = function () {
@@ -100,10 +100,12 @@ ZestorkApp.controller('signUpClientController', function ($scope, $http) {
             lastName: $scope.lastName,
             password: $scope.confirmPassword,
             source: $scope.source,
-            CompanyName:$scope.CompanyName,
-            type: $scope.type
+            CompanyName: $scope.CompanyName,
+            type: $scope.type,
+            referral: $routeParams.ref
         }
-        
+
+        alert($routeParams.ref);
         if ($scope.confirmPassword == $scope.password && isValidEmailAddress($scope.userName)) {
             if ($scope.tncModel) {
                 $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Creating your account...</h1>' });
@@ -134,7 +136,7 @@ ZestorkApp.controller('signUpClientController', function ($scope, $http) {
             else {
                 alert("Agree with terms and conditions to continue");
             }
-            
+
         }
         else {
             alert("some field have invalid entries.");
