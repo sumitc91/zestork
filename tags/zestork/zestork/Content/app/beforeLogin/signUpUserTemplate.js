@@ -11,7 +11,9 @@ ZestorkApp.controller('signUpUserController', function ($scope, $http) {
     $scope.confirmPassword = "";
     $scope.source = "web";
     $scope.type = "user";
-    $scope.showEmailMessage = false;  
+    $scope.showEmailMessage = false;
+
+    CookieUtil.setReferralKey();
 
     $scope.checkEmailAvailableOnFocusOut = function () {
         var checkUserExistsRequestData = {
@@ -94,7 +96,8 @@ ZestorkApp.controller('signUpUserController', function ($scope, $http) {
             lastName: $scope.lastName,
             password: $scope.confirmPassword,
             source: $scope.source,
-            type: $scope.type
+            type: $scope.type,
+            referral: CookieUtil.getReferralKey()
         }
         
         if ($scope.confirmPassword == $scope.password && isValidEmailAddress($scope.userName)) {
