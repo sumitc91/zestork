@@ -139,6 +139,15 @@ namespace zestork.Controllers
 
             _db.Users.Add(user);
 
+            if (req.referral != null || req.referral != "")
+            {
+                var referral = new RecommendedBy
+                {
+                    RecommendedFrom = req.referral,
+                    RecommendedTo = req.userName
+                };
+                _db.RecommendedBies.Add(referral);
+            }
             if (req.type == "client")
             {
                 var clientDetails = new ClientDetails
