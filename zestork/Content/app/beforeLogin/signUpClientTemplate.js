@@ -1,5 +1,5 @@
 
-ZestorkApp.controller('signUpClientController', function ($scope, $http, $routeParams) {
+ZestorkApp.controller('signUpClientController', function ($scope, $http, $routeParams, CookieUtil) {
 
     NProgress.start();
 
@@ -16,6 +16,8 @@ ZestorkApp.controller('signUpClientController', function ($scope, $http, $routeP
     $scope.$watch('[companyCheckbox]', function () {
         //alert($scope.tncModel);
     }, true);
+
+    CookieUtil.setReferralKey();
 
     $scope.companyNameText = false;
 
@@ -93,7 +95,7 @@ ZestorkApp.controller('signUpClientController', function ($scope, $http, $routeP
     }
 
     $scope.submitCreateAccountData = function () {
-
+        
         var CreateAccountRequest = {
             userName: $scope.userName,
             firstName: $scope.firstName,
@@ -102,10 +104,9 @@ ZestorkApp.controller('signUpClientController', function ($scope, $http, $routeP
             source: $scope.source,
             CompanyName: $scope.CompanyName,
             type: $scope.type,
-            referral: $routeParams.ref
+            referral: CookieUtil.getReferralKey()
         }
-
-        alert($routeParams.ref);
+       
         if ($scope.confirmPassword == $scope.password && isValidEmailAddress($scope.userName)) {
             if ($scope.tncModel) {
                 $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Creating your account...</h1>' });
