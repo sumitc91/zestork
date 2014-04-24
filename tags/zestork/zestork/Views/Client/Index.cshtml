@@ -546,12 +546,16 @@
 					<a href="#" class='toggle-subnav'><i class="icon-angle-down"></i><span>{{category.MainCategory}}</span></a>
 				</div>
 				<ul class="subnav-menu">
-					<li ng-repeat="subCategory in category.subCategoryList">
-						<a href="#">{{subCategory.value}}</a>						
+					<li class={{subCategory.dropDownSubMenuArrow}} ng-repeat="subCategory in category.subCategoryList">
+						<a href="#" data-toggle="dropdown">{{subCategory.value}}</a>
+						<ul class={{subCategory.dropDownMenuClass}} ng-show="subCategory.dropDownMenuShow">
+									<li ng-repeat="dropDownCategory in subCategory.dropDownMenuList">
+										<a href="#">{{dropDownCategory.value}}</a>
+									</li>									
+								</ul>					
 					</li>										
 				</ul>
-			</div>
-			
+			</div>			
 		</div>
 		<div id="main">
 			<div class="container-fluid" ng-view>				
