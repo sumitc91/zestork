@@ -36,20 +36,72 @@ ZestorkAppClientView.run(function ($rootScope, $location) { //Insert in the func
 });
 
 ZestorkAppClientView.controller('masterPageController', function ($scope, $rootScope, $http, $location, CookieUtil, afterLoginServices) {
-   
+
     $scope.firstTimeUserLoginViaSocialLinkPopUpTemplate = '../../Resource/templates/afterLogin/contentView/index/firstTimeLoginViaSocialLinkePopUpModal.html';
     $rootScope.Username = CookieUtil.getUsername();
     $rootScope.Key = CookieUtil.getKey();
-    //alert(CookieUtil.getUsername());
+
+    $scope.ClientCategoryList = [
+   { MainCategory: "Data entry", subCategoryList: [
+       { value: "Verification & duplication" },
+       { value: "Data entry" },
+       { value: "Search the Web for something" },
+       { value: "Do some Excel work" },
+       { value: "Find information from websites" },
+       { value: "Post some advertisements" },
+       { value: "transcription" }
+       ]
+   },
+   { MainCategory: "Writing & Content", subCategoryList: [
+       { value: "Article Writing" },
+       { value: "Blog Writing" },
+       { value: "Copy Typing" },
+       { value: "Powerpoint" },
+       { value: "Short stories" },
+       { value: "Travel Writing" },
+       { value: "Reviews" },
+       { value: "Product descriptions" }
+       ]
+   },
+   { MainCategory: "Survey & Feedback", subCategoryList: [
+       { value: "Product Survey" },
+       { value: "User feedback survey" },
+       { value: "Polls" }       
+       ]
+   },
+   { MainCategory: "Content Moderation", subCategoryList: [
+       { value: "Moderating ads" },
+       { value: "Moderating photos" },
+       { value: "Moderating music" }       
+       ]
+   },
+   { MainCategory: "Advertisement", subCategoryList: [
+       { value: "Facebook views" },
+       { value: "Video reviewing" },
+       { value: "Comments on blogs/social media" }
+       ]     
+   },
+   { MainCategory: "Data entry6", subCategoryList: [
+       { value: "subcat1" },
+       { value: "subcat2" },
+       { value: "subcat3" },
+       { value: "subcat4" },
+       { value: "subcat5" },
+       { value: "subcat6" },
+       { value: "subcat7" }
+       ]
+   },
+    ];
+
     $http({
         url: '/Account/isValidToken/' + CookieUtil.getGuid() + '?username=' + CookieUtil.getUsername() + '&key=' + CookieUtil.getKey(),
         method: "GET"
         //headers: { 'Content-Type': 'application/json' }            
     }).success(function (data, status, headers, config) {
         //$scope.persons = data; // assign  $scope.persons here as promise is resolved here                        
-        
+
         //console.log(data);
-    }).error(function (data, status, headers, config) {       
+    }).error(function (data, status, headers, config) {
         alert('Internal Server Error Occured !!');
     });
 
