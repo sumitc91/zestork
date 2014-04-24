@@ -42,55 +42,67 @@ ZestorkAppClientView.controller('masterPageController', function ($scope, $rootS
     $rootScope.Key = CookieUtil.getKey();
 
     $scope.ClientCategoryList = [
-   { MainCategory: "Data entry", subCategoryList: [
-       { value: "Verification & duplication" },
-       { value: "Data entry" },
-       { value: "Search the Web for something" },
-       { value: "Do some Excel work" },
-       { value: "Find information from websites" },
-       { value: "Post some advertisements" },
-       { value: "transcription" }
+   { MainCategory: "Data entry",
+       subCategoryList: [
+       { value: "Verification & duplication", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown-submenu dropdown", dropDownMenuList: [
+       {value:"dropdown1"},
+       {value: "dropdown2"},
+       { value: "dropdown3"}
+       ]
+       },
+       { value: "Verification & duplication", dropDownMenuShow: false, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown-submenu dropdown", dropDownMenuList: [
+       { value: "dropdown1" },
+       { value: "dropdown2" },
+       { value: "dropdown3" }
+       ]
+       },
+       { value: "Verification & duplication", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown-submenu dropdown", dropDownMenuList: [
+       { value: "dropdown1" },
+       { value: "dropdown2" },
+       { value: "dropdown3" }
+       ]
+       },
+       { value: "Verification & duplication", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown-submenu dropdown", dropDownMenuList: [
+       { value: "dropdown1" },
+       { value: "dropdown2" },
+       { value: "dropdown3" }
+       ]
+       },
+       { value: "Verification & duplication", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown-submenu dropdown", dropDownMenuList: [
+       { value: "dropdown1" },
+       { value: "dropdown2" },
+       { value: "dropdown3" }
+       ]
+       },
+       { value: "Verification & duplication", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown-submenu dropdown", dropDownMenuList: [
+       { value: "dropdown1" },
+       { value: "dropdown2" },
+       { value: "dropdown3" }
+       ]
+       },
+       { value: "Verification & duplication", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown-submenu dropdown", dropDownMenuList: [
+       { value: "dropdown1" },
+       { value: "dropdown2" },
+       { value: "dropdown3" }
+       ]
+       },
        ]
    },
-   { MainCategory: "Writing & Content", subCategoryList: [
-       { value: "Article Writing" },
-       { value: "Blog Writing" },
-       { value: "Copy Typing" },
-       { value: "Powerpoint" },
-       { value: "Short stories" },
-       { value: "Travel Writing" },
-       { value: "Reviews" },
-       { value: "Product descriptions" }
+   { MainCategory: "Settings",
+       subCategoryList: [
+       { value: "Verification & duplication", dropDownMenuShow: false, dropDownMenuClass: "", dropDownSubMenuArrow: "", dropDownMenuList: [
+       { value: "dropdown1" },
+       { value: "dropdown2" },
+       { value: "dropdown3" }
        ]
-   },
-   { MainCategory: "Survey & Feedback", subCategoryList: [
-       { value: "Product Survey" },
-       { value: "User feedback survey" },
-       { value: "Polls" }       
+       },
+       { value: "Verification & duplication", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown-submenu dropdown", dropDownMenuList: [
+       { value: "dropdown1" },
+       { value: "dropdown2" },
+       { value: "dropdown3" }
        ]
-   },
-   { MainCategory: "Content Moderation", subCategoryList: [
-       { value: "Moderating ads" },
-       { value: "Moderating photos" },
-       { value: "Moderating music" }       
-       ]
-   },
-   { MainCategory: "Advertisement", subCategoryList: [
-       { value: "Facebook views" },
-       { value: "Video reviewing" },
-       { value: "Comments on blogs/social media" }
-       ]     
-   },
-   { MainCategory: "Data entry6", subCategoryList: [
-       { value: "subcat1" },
-       { value: "subcat2" },
-       { value: "subcat3" },
-       { value: "subcat4" },
-       { value: "subcat5" },
-       { value: "subcat6" },
-       { value: "subcat7" }
-       ]
-   },
+       }       
+       ]}
     ];
 
     $http({
