@@ -1,4 +1,4 @@
-ZestorkAppAfterLogin.factory('CookieUtil', function ($rootScope, $location, $cookieStore) {
+ZestorkAppAfterLogin.factory('CookieUtil', function ($rootScope, $location, $cookieStore, $routeParams) {
 
     return {
         CookieValue: function () {
@@ -48,6 +48,15 @@ ZestorkAppAfterLogin.factory('CookieUtil', function ($rootScope, $location, $coo
         removeKey: function () {
            $.removeCookie('key', { path: '/' });
             return "removed";
+        },
+        setReferralKey: function () {
+            var ReferralKey = $routeParams.ref;
+            if (ReferralKey != null || ReferralKey != "")
+                $.cookie('ReferralKey', ReferralKey, { expires: 365, path: '/' });
+            return "added";
+        },
+        getReferralKey: function () {
+            return $.cookie('ReferralKey');
         },
     };
 
