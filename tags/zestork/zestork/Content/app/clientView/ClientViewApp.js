@@ -42,50 +42,49 @@ ZestorkAppClientView.controller('masterPageController', function ($scope, $rootS
     $rootScope.Key = CookieUtil.getKey();
 
     $scope.ClientCategoryList = [
-   { MainCategory: "Data entry",
+   { MainCategory: "Category",
        subCategoryList: [
-       { value: "Verification & duplication", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown-submenu dropdown", dropDownMenuList: [
-       {value:"dropdown1"},
-       {value: "dropdown2"},
-       { value: "dropdown3"}
+       { value: "Data entry", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+           { value:"Verification & Duplication",link:""},
+           { value: "Data Entry", link: "" },
+           { value: "Search the web for something", link: "" },
+           { value: "Do some Excel work", link: "" },
+           { value: "Find information from websites", link: "" },           
+           { value: "Post some advertisements", link: "" },
+           { value: "Transcription", link: "" }           
+           ]
+       },
+       { value: "Writing & Content", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+           { value: "Article writing", link: "" },
+           { value: "Blog writing", link: "" },
+           { value: "Copy typing", link: "" },
+           { value: "Powerpoint", link: "" },
+           { value: "Short stories", link: "" },
+           { value: "Travel writing", link: "" },
+           { value: "Reviews", link: "" },
+           { value: "Product descriptions", link: "" }
+           ]
+       },
+       { value: "Survey & feedback", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+           { value: "Product survey", link: "" },
+           { value: "User feedback survey", link: "" },
+           { value: "Pools", link: "" }
+           ]
+       },
+       { value: "Content Moderation", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+       { value: "Moderating Ads" },
+       { value: "Moderating Photos" },
+       { value: "Moderating Music" },
+       { value: "Moderating Video" }
        ]
        },
-       { value: "Verification & duplication", dropDownMenuShow: false, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown-submenu dropdown", dropDownMenuList: [
-       { value: "dropdown1" },
-       { value: "dropdown2" },
-       { value: "dropdown3" }
+       { value: "Advertisement", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+       { value: "Facebook Views" },
+       { value: "Facebook likes" },
+       { value: "Video reviewing" },
+       { value: "Comments on blogs/social media" }
        ]
-       },
-       { value: "Verification & duplication", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown-submenu dropdown", dropDownMenuList: [
-       { value: "dropdown1" },
-       { value: "dropdown2" },
-       { value: "dropdown3" }
-       ]
-       },
-       { value: "Verification & duplication", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown-submenu dropdown", dropDownMenuList: [
-       { value: "dropdown1" },
-       { value: "dropdown2" },
-       { value: "dropdown3" }
-       ]
-       },
-       { value: "Verification & duplication", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown-submenu dropdown", dropDownMenuList: [
-       { value: "dropdown1" },
-       { value: "dropdown2" },
-       { value: "dropdown3" }
-       ]
-       },
-       { value: "Verification & duplication", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown-submenu dropdown", dropDownMenuList: [
-       { value: "dropdown1" },
-       { value: "dropdown2" },
-       { value: "dropdown3" }
-       ]
-       },
-       { value: "Verification & duplication", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown-submenu dropdown", dropDownMenuList: [
-       { value: "dropdown1" },
-       { value: "dropdown2" },
-       { value: "dropdown3" }
-       ]
-       },
+       }       
        ]
    },
    { MainCategory: "Settings",
@@ -96,7 +95,7 @@ ZestorkAppClientView.controller('masterPageController', function ($scope, $rootS
        { value: "dropdown3" }
        ]
        },
-       { value: "Verification & duplication", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown-submenu dropdown", dropDownMenuList: [
+       { value: "Verification & duplication", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
        { value: "dropdown1" },
        { value: "dropdown2" },
        { value: "dropdown3" }
