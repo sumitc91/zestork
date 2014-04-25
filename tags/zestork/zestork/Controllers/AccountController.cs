@@ -140,7 +140,7 @@ namespace zestork.Controllers
 
             _db.Users.Add(user);
 
-            if (req.referral != null || req.referral != "")
+            if (req.referral != null && req.referral != "")
             {
                 var referral = new RecommendedBy
                 {
