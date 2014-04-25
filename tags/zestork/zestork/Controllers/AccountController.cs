@@ -35,7 +35,7 @@ namespace zestork.Controllers
             //{ return true; };
             
             String returnUrl = "";
-            String referral = Request.Form["ref"];
+            String referral = Request.QueryString["ref"];
             var userData = new LogOnModel();
             LoginService LoginService = new LoginService();
             if (id == "facebook")
