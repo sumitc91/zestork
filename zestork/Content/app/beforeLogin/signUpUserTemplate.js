@@ -1,5 +1,5 @@
 
-ZestorkApp.controller('signUpUserController', function ($scope, $http) {
+ZestorkApp.controller('signUpUserController', function ($scope, $http, CookieUtil) {
 
     NProgress.start();
 

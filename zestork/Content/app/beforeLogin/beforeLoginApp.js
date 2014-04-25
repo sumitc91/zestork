@@ -77,16 +77,17 @@ ZestorkApp.controller('loginControllerPlaceHolders', function ($scope) {
 });
 
 ZestorkApp.controller('beforeLoginHeaderController', function ($scope, $route, $routeParams,$http, $location,CookieUtil) {    
-    
-    $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Loading...</h1>' });
-    $http({
-            url: '/Account/isValidToken/' + CookieUtil.getGuid()+'?username='+CookieUtil.getUsername()+'&key='+CookieUtil.getKey(),
+       
+    if (CookieUtil.getGuid() != null && CookieUtil.getGuid() != "") {
+        $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Loading...</h1>' });
+        $http({
+            url: '/Account/isValidToken/' + CookieUtil.getGuid() + '?username=' + CookieUtil.getUsername() + '&key=' + CookieUtil.getKey(),
             method: "GET"
             //headers: { 'Content-Type': 'application/json' }            
         }).success(function (data, status, headers, config) {
             //$scope.persons = data; // assign  $scope.persons here as promise is resolved here                        
             if (data.isValid == true) {
-                window.location.href = data.url;                             
+                window.location.href = data.url;
             }
             else {
                 CookieUtil.removeGuid();
@@ -99,6 +100,8 @@ ZestorkApp.controller('beforeLoginHeaderController', function ($scope, $route, $
             $.unblockUI();
             alert('Internal Server Error Occured !!');
         });
+    }
+    
 
     $scope.signInTemplate = '../../Resource/templates/beforeLogin/contentView/ajax/signInTemplate.html';
    
