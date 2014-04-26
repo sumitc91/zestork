@@ -44,7 +44,8 @@ ZestorkAppClientView.controller('masterPageController', function ($scope, $rootS
     $scope.ClientCategoryList = [
    { MainCategory: "Category",
        subCategoryList: [
-       { value: "Data entry", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+       {
+           value: "Data entry", dropDownMenuShow: true, dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
            { value:"Verification & Duplication",link:""},
            { value: "Data Entry", link: "" },
            { value: "Search the web for something", link: "" },
@@ -54,7 +55,7 @@ ZestorkAppClientView.controller('masterPageController', function ($scope, $rootS
            { value: "Transcription", link: "" }           
            ]
        },
-       { value: "Writing & Content", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+       { value: "Writing & Content", dropDownMenuShow: true,dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
            { value: "Article writing", link: "" },
            { value: "Blog writing", link: "" },
            { value: "Copy typing", link: "" },
@@ -65,20 +66,20 @@ ZestorkAppClientView.controller('masterPageController', function ($scope, $rootS
            { value: "Product descriptions", link: "" }
            ]
        },
-       { value: "Survey & feedback", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+       { value: "Survey & feedback", dropDownMenuShow: true,dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
            { value: "Product survey", link: "" },
            { value: "User feedback survey", link: "" },
            { value: "Pools", link: "" }
            ]
        },
-       { value: "Content Moderation", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+       { value: "Content Moderation", dropDownMenuShow: true,dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
        { value: "Moderating Ads" },
        { value: "Moderating Photos" },
        { value: "Moderating Music" },
        { value: "Moderating Video" }
        ]
        },
-       { value: "Advertisement", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+       { value: "Advertisement", dropDownMenuShow: true,dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
        { value: "Facebook Views" },
        { value: "Facebook likes" },
        { value: "Video reviewing" },
@@ -89,13 +90,13 @@ ZestorkAppClientView.controller('masterPageController', function ($scope, $rootS
    },
    { MainCategory: "Settings",
        subCategoryList: [
-       { value: "Verification & duplication", dropDownMenuShow: false, dropDownMenuClass: "", dropDownSubMenuArrow: "", dropDownMenuList: [
+       { value: "Verification & duplication", dropDownMenuShow: false,dropDownSubMenuClass: "", dropDownMenuClass: "", dropDownSubMenuArrow: "", dropDownMenuList: [
        { value: "dropdown1" },
        { value: "dropdown2" },
        { value: "dropdown3" }
        ]
        },
-       { value: "Verification & duplication", dropDownMenuShow: true, dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+       { value: "Verification & duplication", dropDownMenuShow: true,dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
        { value: "dropdown1" },
        { value: "dropdown2" },
        { value: "dropdown3" }
