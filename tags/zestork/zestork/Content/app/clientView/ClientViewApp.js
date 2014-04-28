@@ -87,22 +87,7 @@ ZestorkAppClientView.controller('masterPageController', function ($scope, $rootS
        ]
        }       
        ]
-   },
-   { MainCategory: "Settings",
-       subCategoryList: [
-       { value: "Verification & duplication", dropDownMenuShow: false,dropDownSubMenuClass: "", dropDownMenuClass: "", dropDownSubMenuArrow: "", dropDownMenuList: [
-       { value: "dropdown1" },
-       { value: "dropdown2" },
-       { value: "dropdown3" }
-       ]
-       },
-       { value: "Verification & duplication", dropDownMenuShow: true,dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
-       { value: "dropdown1" },
-       { value: "dropdown2" },
-       { value: "dropdown3" }
-       ]
-       }       
-       ]}
+   }   
     ];
 
     $http({
