@@ -1,37 +1,8 @@
-﻿<link href="../../Resource/templates/beforeLogin/web/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+﻿<link href="../../Resource/templates/beforeLogin/web/css/jumbotron.css" rel="stylesheet" type="text/css" media="all"/>
 
-<script type="text/javascript">
-    // You can also use "$(window).load(function() {"
-    $(function () {
-        // Slideshow 1
-        
-        $("#slider1").responsiveSlides({
-            maxwidth: 2500,
-            speed: 600
-        });
-    });
-		  </script>
+    <div class="jumbotron" ng-controller="homeTemplate" ng-cloak>
+      <div class="container">
 
-<!--start-image-slider---->
-					<div  class="image-slider" ng-controller="homeTemplate" ng-cloak ng-show="showImageSlider">
-					    <ul class="rslides" id="slider1">
-                          
-                           <li><img src={{sliderImageList[0].ImageUrl}} alt=""><p class="figcaption"><input class="btn btn-primary" type="submit" value="Hire"> <input class="btn btn-success" type="submit" value="Work"></p></li>
-					      <li><img src={{sliderImageList[1].ImageUrl}} alt=""><p class="figcaption"><input class="btn btn-primary" type="submit" value="Hire"> <input class="btn btn-success" type="submit" value="Work"></p></li>
-					      <li><img src={{sliderImageList[2].ImageUrl}} alt=""><p class="figcaption"><input class="btn btn-primary" type="submit" value="Hire"> <input class="btn btn-success" type="submit" value="Work"></p></li>
-					       <li><img src={{sliderImageList[3].ImageUrl}} alt=""><p class="figcaption"><input class="btn btn-primary" type="submit" value="Hire"> <input class="btn btn-success" type="submit" value="Work"></p></li>                           
-
-                        </ul>
-					      <!--<div class="alignCenter" ng-show=true>
-                            <img width="20px" height="20px" src="../../Resource/templates/afterLogin/web/web/css/plugins/dynatree/loading.gif">
-                          </div>-->
-					</div>
-			<!--End-image-slider---->
-
-<div class="main" ng-controller="homeTemplate" ng-cloak>
-      	 <div class="icon_grids">
-	 	   <div class="wrap">	 		
-	 		 	<div class="section group">
 				 <div class="grid_1_of_3 images_1_of_2">
 					<div class="grid_icon_hire"><a href={{gridIconDataList[0].ImageLink}}><img src={{gridIconDataList[0].ImageIconUrl}} width="100%" height="100%"></a></div>
 					          <h3>{{gridIconDataList[0].Headline}}</h3>					          
@@ -42,49 +13,31 @@
 					          <h3>{{gridIconDataList[1].Headline}}</h3>					          
 				             <a href={{gridIconDataList[1].BottomButtonUrl}}><button class="btn btn-success">{{gridIconDataList[1].Content}}</button></a>
 				</div>
-				<!--<div class="grid_1_of_3 images_1_of_3">
-					  <div class="grid_icon"><a href={{gridIconDataList[2].ImageLink}}><img src={{gridIconDataList[2].ImageIconUrl}}></a></div>
-					          <h3>{{gridIconDataList[2].Headline}}</h3>
-					          <p>{{gridIconDataList[2].Content}}</p>
-				             <div class="button"><span><a href={{gridIconDataList[2].BottomButtonUrl}}>{{gridIconDataList[2].BottomButtonText}}</a></span></div>
-				</div>-->
+
 			</div>
-	    </div>
-        
-	 <div class="content_bottom">
-	    <div class="wrap">
-	 		<div class="section group">						
-					<div class="col_1_of_3 span_1_of_3">
-						<h3>{{bottomContent.leftColumnHeading}}</h3>
-						<p>{{bottomContent.leftColumnContent}}</p>
-                        <div class="read_more"><a href={{bottomContent.leftColumnLink}}>More Info</a></div>
-					 </div>
-					   <div class="col_1_of_3 span_1_of_3">
-							<h3>{{bottomContent.middleColumnHeading}}</h3>
-							   <ul>
-                               <li ng-repeat="List in bottomContent.middleColumnContentList">
-                                    <a href={{List.Url}}>{{List.Content}}</a>
-                               </li>		  						
-		  			        </ul>
-						</div>
-						<div class="col_1_of_3 span_1_of_3">
-						  <div class="new-products">
-							<h3>{{bottomContent.rightColumnHeading}}</h3>
-                                <p ng-repeat="imageList in bottomContent.rightColumnImageList">
-                                    <a href="#"><img src={{imageList.imgUrl}} alt=""></a>
-                                </p>								
-								<div class="read_more"><a href={{bottomContent.rightColumnLink}}>View all</a></div>
-					      </div>
-				    </div>
-			     </div>
-	 	    </div>
-          </div>
-       </div>
+
     </div>
 
-<!--<div class="footer">
-			<div class="wrap">
-			  <p class="address"><img src={{beforeLoginFooterInfo.locationIconImage}} alt={{beforeLoginFooterInfo.locationIconAltImage}} /> {{beforeLoginFooterInfo.locationAddress}}</p> <p class="phone"><img src={{beforeLoginFooterInfo.phoneIconImage}} alt={{beforeLoginFooterInfo.phoneIconAltImage}} /> {{beforeLoginFooterInfo.phoneIconTex}} <span>{{beforeLoginFooterInfo.phoneIconNumber}}</span></p>
-		      <div class="clear"></div>
-		</div>	-->
-	  </div>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+    </div>
+     
+ <!-- /container -->
+

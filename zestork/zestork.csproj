@@ -301,6 +301,7 @@
     <Content Include="Content\app\services\afterLoginServices.js" />
     <Content Include="Content\app\services\clientViewServices.js" />
     <Content Include="Content\css\nprogress.css" />
+    <Content Include="Content\css\sign.css" />
     <Content Include="Content\css\SocialButtons\images\layer_1.jpg" />
     <Content Include="Content\css\SocialButtons\images\layer_11.png" />
     <Content Include="Content\css\SocialButtons\images\layer_15.png" />
@@ -409,6 +410,9 @@
     <Content Include="dll\log4net.dll" />
     <Content Include="Global.asax" />
     <Content Include="Models\Zestork.edmx.sql" />
+    <Content Include="obj\Debug\zestork.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\zestork.dll" />
+    <Content Include="obj\Debug\zestork.pdb" />
     <Content Include="Resource\templates\afterLogin\contentView\edit.html" />
     <Content Include="Resource\templates\afterLogin\contentView\index\firstTimeLoginViaSocialLinkePopUpModalChangePassword.html" />
     <Content Include="Resource\templates\afterLogin\contentView\initializing.html" />
@@ -1487,6 +1491,7 @@
     <Content Include="Resource\templates\beforeLogin\contentView\ajax\signInTemplate.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\googleLogin.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\facebookLogin.html" />
+    <Content Include="Resource\templates\beforeLogin\contentView\signupTesting.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\signupclient.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\termsAndConditions.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\validateAccount.html" />
@@ -1496,6 +1501,11 @@
     <Content Include="Resource\templates\beforeLogin\web\404.html" />
     <Content Include="Resource\templates\beforeLogin\web\about.html" />
     <Content Include="Resource\templates\beforeLogin\web\contact.html" />
+    <Content Include="Resource\templates\beforeLogin\web\css\bootstrap-theme.css" />
+    <Content Include="Resource\templates\beforeLogin\web\css\bootstrap-theme.min.css" />
+    <Content Include="Resource\templates\beforeLogin\web\css\bootstrap.css" />
+    <Content Include="Resource\templates\beforeLogin\web\css\bootstrap.min.css" />
+    <Content Include="Resource\templates\beforeLogin\web\css\jumbotron.css" />
     <Content Include="Resource\templates\beforeLogin\web\css\style.css" />
     <Content Include="Resource\templates\beforeLogin\web\images\about_img.jpg" />
     <Content Include="Resource\templates\beforeLogin\web\images\ClientPresentation.png" />
@@ -1526,12 +1536,12 @@
     <Content Include="Resource\templates\beforeLogin\web\images\UserPresentation.png" />
     <Content Include="Resource\templates\beforeLogin\web\images\UserPresentation2.gif" />
     <Content Include="Resource\templates\beforeLogin\web\index.html" />
+    <Content Include="Resource\templates\beforeLogin\web\js\bootstrap.min.js" />
     <Content Include="Resource\templates\beforeLogin\web\js\jquery.min.js" />
     <Content Include="Resource\templates\beforeLogin\web\js\responsiveslides.min.js" />
     <Content Include="Resource\templates\beforeLogin\web\services.html" />
     <Content Include="Resource\templates\beforeLogin\web\w3layouts-license.txt" />
     <Content Include="Resource\templates\clientView\home.html" />
-    <Content Include="Resource\templates\clientView\dashboard.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1547,6 +1557,7 @@
     <Folder Include="App_Code\" />
     <Folder Include="DAO\" />
     <Folder Include="logs\" />
+    <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Resource\templates\afterLogin\afterLoginShrinked\js\" />
     <Folder Include="Resource\templates\afterLogin\web\js\plugins\elfinder\files\.quarantine\" />
   </ItemGroup>
@@ -1688,6 +1699,12 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ZestorkModel.cs</LastGenOutput>
     </None>
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\Zestork.csdl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\Zestork.msl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\Zestork.ssdl" />
+    <Content Include="obj\Debug\zestork.csproj.App.config" />
+    <Content Include="obj\Debug\zestork.csprojResolveAssemblyReference.cache" />
     <None Include="Resource\templates\beforeLogin\web\fonts\Amble-Regular-webfont.ttf" />
     <None Include="Resource\templates\beforeLogin\web\images\Thumbs.db" />
     <None Include="Views\Account\welcome.cshtml" />
