@@ -1,7 +1,6 @@
 ZestorkApp.controller('homeTemplate', function ($scope) {
 
     NProgress.start();
-    
     $scope.dataLoaded = {
         status: true
     }
@@ -40,38 +39,6 @@ ZestorkApp.controller('homeTemplate', function ($scope) {
 //              BottomButtonText: "Read More"
 //          }
         ];
-
-    $scope.bottomContent = {
-
-        leftColumnHeading: "Our Vision",
-        leftColumnContent: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." +
-						"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        leftColumnLink: "moreinfo.html",
-
-        middleColumnHeading: "What we do",
-        middleColumnContentList: [
-              { Content: "Contact", Url:"#/contact" },
-              { Content: "Copy typing" , Url:"#"},
-              { Content: "Slogan wrting" , Url:"#"},
-              { Content: "Commenting on websites" ,Url:"#" },
-              { Content: "Finding good pics for a website" , Url:"#" },
-              { Content: "Voting" , Url:"#"},
-              { Content: "Translation", Url:"#" },
-              { Content: "Drawing", Url: "#" }
-        ],
-        rightColumnHeading: "heading",
-        rightColumnImageList: [
-              { imgUrl: "../../Resource/templates/beforeLogin/web/images/management-1.jpg" },
-              { imgUrl: "../../Resource/templates/beforeLogin/web/images/management-2.jpg" },
-              { imgUrl: "../../Resource/templates/beforeLogin/web/images/management-3.jpg" },
-              { imgUrl: "../../Resource/templates/beforeLogin/web/images/management-4.jpg" },
-              { imgUrl: "../../Resource/templates/beforeLogin/web/images/management-5.jpg" },
-              { imgUrl: "../../Resource/templates/beforeLogin/web/images/management-6.jpg" },
-        ],
-        rightColumnLink: "view all link"
-
-        //copyRightInfo: "<p>Company Name © All Rights Reseverd | Design by  <a href=\"http://zestork.com\">W3Layouts</a></p>"        
-    };
 
     NProgress.done();
 });
