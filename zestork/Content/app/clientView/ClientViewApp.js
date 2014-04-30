@@ -4,7 +4,7 @@ var ZestorkAppClientView = angular.module('ZestorkAppClientView', ['ngCookies'])
 ZestorkAppClientView.config(function ($routeProvider) {
 
     $routeProvider.when("/", { templateUrl: "../../Resource/templates/clientView/home.html" }).
-                   when("/search", { templateUrl: "../../Resource/templates/afterLogin/contentView/searchJob.html" }).
+                   when("/dashboard", { templateUrl: "../../Resource/templates/clientView/dashboard.html" }).
                    when("/initialize", { templateUrl: "../../Resource/templates/afterLogin/contentView/initializing.html" }).
                    when("/edit", { templateUrl: "../../Resource/templates/afterLogin/contentView/edit.html" }).
                    when("/404", { templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" }).
@@ -55,7 +55,7 @@ ZestorkAppClientView.controller('masterPageController', function ($scope, $rootS
            { value: "Transcription", link: "" }           
            ]
        },
-       { value: "Writing & Content", dropDownMenuShow: true,dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+       { value: "Content Writing", dropDownMenuShow: true,dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
            { value: "Article writing", link: "" },
            { value: "Blog writing", link: "" },
            { value: "Copy typing", link: "" },
@@ -72,7 +72,7 @@ ZestorkAppClientView.controller('masterPageController', function ($scope, $rootS
            { value: "Pools", link: "" }
            ]
        },
-       { value: "Content Moderation", dropDownMenuShow: true,dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+       { value: "Moderation", dropDownMenuShow: true,dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
        { value: "Moderating Ads" },
        { value: "Moderating Photos" },
        { value: "Moderating Music" },
