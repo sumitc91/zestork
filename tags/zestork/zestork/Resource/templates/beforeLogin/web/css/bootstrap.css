@@ -4252,7 +4252,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   position: relative;
   z-index: 1000;
   min-height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   border: 1px solid transparent;
 }
 
@@ -7004,6 +7004,10 @@ td.visible-print {
 }
 
 
+/* Sticky footer styles
+-------------------------------------------------- */
+
+
 /* Set the fixed height of the footer here */
 #footer {
   height: 60px;
@@ -7025,4 +7029,8 @@ td.visible-print {
 #footer > .container {
   padding-left: 15px;
   padding-right: 15px;
+}
+
+code {
+  font-size: 80%;
 }

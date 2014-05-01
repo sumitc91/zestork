@@ -3,8 +3,7 @@ var ZestorkApp = angular.module('ZestorkApp', ['ngCookies']);
 
 ZestorkApp.config(function ($routeProvider) {
 
-    $routeProvider.when("/:ref", { templateUrl: "../../Resource/templates/beforeLogin/contentView/home.html" }).
-                   when("/", { templateUrl: "../../Resource/templates/beforeLogin/contentView/home.html" }).
+    $routeProvider.when("/", { templateUrl: "../../Resource/templates/beforeLogin/contentView/home.html" }).                   
                    when("/signup/user/:ref", { templateUrl: "../../Resource/templates/beforeLogin/contentView/signupuser.html" }).
                    when("/signup/client/:ref", { templateUrl: "../../Resource/templates/beforeLogin/contentView/signupclient.html" }).
                    when("/signup/user", { templateUrl: "../../Resource/templates/beforeLogin/contentView/signupuser.html" }).
