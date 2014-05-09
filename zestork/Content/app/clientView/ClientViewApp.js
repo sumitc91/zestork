@@ -4,9 +4,8 @@ var ZestorkAppClientView = angular.module('ZestorkAppClientView', ['ngCookies'])
 ZestorkAppClientView.config(function ($routeProvider) {
 
     $routeProvider.when("/", { templateUrl: "../../Resource/templates/clientView/home.html" }).
-                   when("/dashboard", { templateUrl: "../../Resource/templates/clientView/dashboard.html" }).
-                   when("/initialize", { templateUrl: "../../Resource/templates/afterLogin/contentView/initializing.html" }).
-                   when("/edit", { templateUrl: "../../Resource/templates/afterLogin/contentView/edit.html" }).
+                   when("/dashboard", { templateUrl: "../../Resource/templates/clientView/dashboard.html" }).                  
+                   when("/edit", { templateUrl: "../../Resource/templates/ClientView/edit.html" }).
                    when("/404", { templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" }).
                    when("/signup", { templateUrl: "../../Resource/templates/beforeLogin/contentView/signup.html" }).
                    otherwise({ templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" });
