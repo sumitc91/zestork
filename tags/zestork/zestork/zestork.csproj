@@ -294,6 +294,7 @@
     <Content Include="Content\app\beforeLogin\beforeLoginApp.js" />
     <Content Include="Content\app\beforeLogin\forgetPasswordTemplate.js" />
     <Content Include="Content\app\clientView\ClientViewApp.js" />
+    <Content Include="Content\app\clientView\editClientTemplate.js" />
     <Content Include="Content\app\clientView\homeTemplate.js" />
     <Content Include="Content\app\common\CookieServiceClientView.js" />
     <Content Include="Content\app\common\CookieService.js" />
@@ -1542,6 +1543,7 @@
     <Content Include="Resource\templates\beforeLogin\web\services.html" />
     <Content Include="Resource\templates\beforeLogin\web\w3layouts-license.txt" />
     <Content Include="Resource\templates\clientView\dashboard.html" />
+    <Content Include="Resource\templates\clientView\edit.html" />
     <Content Include="Resource\templates\clientView\home.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
