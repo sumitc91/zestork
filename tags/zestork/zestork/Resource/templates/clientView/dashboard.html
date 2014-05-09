@@ -1,71 +1,24 @@
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="clientDashboardController">
     <div class="row-fluid">
         <div class="span12">
             <div class="box box-color box-bordered lightgrey">
                 <div class="box-title">
                     <h3>
                         <i class="icon-ok"></i>Tasks</h3>
-                    <div class="actions">
-                        <a href="../../Resource/templates/afterLogin/web/#new-task" data-toggle="modal" class='btn'>
+                    <div class="actions">                        
+                        <a href="#modal-ClientDashboard" role="button" class="btn" data-toggle="modal">
                             <i class="icon-plus-sign"></i>Add Task</a>
                     </div>
                 </div>
                 <div class="box-content nopadding">
                     <ul class="tasklist">
-                        <li class='bookmarked'>
-                            <div class="check">
-                                <input type="checkbox" class='icheck-me' data-skin="square" data-color="blue">
-                            </div>
-                            <span class="task"><i class="icon-ok"></i><span>Approve new users</span></span>
-                            <span class="task-actions"><a href="../../Resource/templates/afterLogin/web/#" class='task-delete'
-                                rel="tooltip" title="Delete that task"><i class="icon-remove"></i></a><a href="../../Resource/templates/afterLogin/web/#"
-                                    class='task-bookmark' rel="tooltip" title="Mark as important"><i class="icon-bookmark-empty">
-                                    </i></a></span></li>
+                        <li class="{{task.liClass}}" ng-repeat="task in clientTaskList"><span class="task"><i
+                            class="{{task.taskIconClass}}"></i><span>{{task.taskIconText}}</span></span> <span
+                                class="task-actions"><a href="" ng-click="toggleSelection('delete')" class='task-delete'
+                                    rel="tooltip" title="Delete that task"><i class="icon-remove"></i></a><a href=""
+                                        ng-click="toggleSelection('bookmark')" class='task-bookmark' rel="tooltip" title="Mark as important">
+                                        <i class="icon-bookmark-empty"></i></a></span></li>
                         <li>
-                            <div class="check">
-                                <input type="checkbox" class='icheck-me' data-skin="square" data-color="blue">
-                            </div>
-                            <span class="task"><i class="icon-bar-chart"></i><span>Check statistics</span></span>
-                            <span class="task-actions"><a href="../../Resource/templates/afterLogin/web/#" class='task-delete'
-                                rel="tooltip" title="Delete that task"><i class="icon-remove"></i></a><a href="../../Resource/templates/afterLogin/web/#"
-                                    class='task-bookmark' rel="tooltip" title="Mark as important"><i class="icon-bookmark-empty">
-                                    </i></a></span></li>
-                        <li class='done'>
-                            <div class="check">
-                                <input type="checkbox" class='icheck-me' data-skin="square" data-color="blue" checked>
-                            </div>
-                            <span class="task"><i class="icon-envelope"></i><span>Check for new mails</span></span>
-                            <span class="task-actions"><a href="../../Resource/templates/afterLogin/web/#" class='task-delete'
-                                rel="tooltip" title="Delete that task"><i class="icon-remove"></i></a><a href="../../Resource/templates/afterLogin/web/#"
-                                    class='task-bookmark' rel="tooltip" title="Mark as important"><i class="icon-bookmark-empty">
-                                    </i></a></span></li>
-                        <li>
-                            <div class="check">
-                                <input type="checkbox" class='icheck-me' data-skin="square" data-color="blue">
-                            </div>
-                            <span class="task"><i class="icon-comment"></i><span>Chat with John Doe</span></span>
-                            <span class="task-actions"><a href="../../Resource/templates/afterLogin/web/#" class='task-delete'
-                                rel="tooltip" title="Delete that task"><i class="icon-remove"></i></a><a href="../../Resource/templates/afterLogin/web/#"
-                                    class='task-bookmark' rel="tooltip" title="Mark as important"><i class="icon-bookmark-empty">
-                                    </i></a></span></li>
-                        <li>
-                            <div class="check">
-                                <input type="checkbox" class='icheck-me' data-skin="square" data-color="blue">
-                            </div>
-                            <span class="task"><i class="icon-retweet"></i><span>Go and tweet some stuff</span></span>
-                            <span class="task-actions"><a href="../../Resource/templates/afterLogin/web/#" class='task-delete'
-                                rel="tooltip" title="Delete that task"><i class="icon-remove"></i></a><a href="../../Resource/templates/afterLogin/web/#"
-                                    class='task-bookmark' rel="tooltip" title="Mark as important"><i class="icon-bookmark-empty">
-                                    </i></a></span></li>
-                        <li>
-                            <div class="check">
-                                <input type="checkbox" class='icheck-me' data-skin="square" data-color="blue">
-                            </div>
-                            <span class="task"><i class="icon-edit"></i><span>Write an article</span></span>
-                            <span class="task-actions"><a href="../../Resource/templates/afterLogin/web/#" class='task-delete'
-                                rel="tooltip" title="Delete that task"><i class="icon-remove"></i></a><a href="../../Resource/templates/afterLogin/web/#"
-                                    class='task-bookmark' rel="tooltip" title="Mark as important"><i class="icon-bookmark-empty">
-                                    </i></a></span></li>
                     </ul>
                 </div>
             </div>
@@ -163,6 +116,41 @@
                                 <li><span class="name">Idle Usage % </span><span class="value">12% </span></li>
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal-ClientDashboard" class="modal hide fade"
+    tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button aria-hidden="true" id="ClientDashboard"
+            data-dismiss="modal" class="close" type="button" style="display: none;">
+            ×</button>
+        <h3 id="myModalLabel">
+            Please Enter a password for your account.</h3>
+    </div>
+    <div class="modal-body">
+        <div class="alert alert-success">
+            <button data-dismiss="alert" class="close" type="button">
+                ×</button>
+            Your Username is : <strong>{{Username}} </strong>
+        </div>
+        <div class="controls">
+            <div class="control-group">
+                <label class="control-label right" for="pw">
+                    Enter New Password:</label>
+                <div class="controls">
+                    <input type="password" value="********" id="firstTimeLoginChangePassword" ng-model="password"
+                        class="input-xlarge" name="pw"><div class="form-button">
+                            Confirm Password
+                            <br />
+                            <input type="password" ng-model="confirmPassword" id="firstTimeLoginChangePasswordConfirm"
+                                value="********" class="input-xlarge" name="pw"></div>
+                    <div class="form-button">
+                        <a class="btn btn-satgreen" id="SubmitfirstTimeLoginChangePasswordJquery" ng-click="submitUserPasswordDetails()"
+                            href="">Update</a>
                     </div>
                 </div>
             </div>

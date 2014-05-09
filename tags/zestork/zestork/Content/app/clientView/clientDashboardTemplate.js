@@ -44,14 +44,17 @@ ZestorkAppClientView.controller('clientDashboardController', function ($scope, $
 
 
     $scope.clientTaskList = [
-    { liClass: "bookmarked", taskIconClass: "icon-ok", taskIconText: "Approve new users", taskDeleteLink: "../../Resource/templates/afterLogin/web/#/delete", taskMarkImportantLink: "../../Resource/templates/afterLogin/web/#/important" },
-    { liClass: "bookmarked", taskIconClass: "icon-ok", taskIconText: "Approve new users", taskDeleteLink: "../../Resource/templates/afterLogin/web/#/delete", taskMarkImportantLink: "../../Resource/templates/afterLogin/web/#/important" },
-    { liClass: "bookmarked", taskIconClass: "icon-ok", taskIconText: "Approve new users", taskDeleteLink: "../../Resource/templates/afterLogin/web/#/delete", taskMarkImportantLink: "../../Resource/templates/afterLogin/web/#/important" },
-    { liClass: "bookmarked", taskIconClass: "icon-ok", taskIconText: "Approve new users", taskDeleteLink: "../../Resource/templates/afterLogin/web/#/delete", taskMarkImportantLink: "../../Resource/templates/afterLogin/web/#/important" },
-    { liClass: "bookmarked", taskIconClass: "icon-ok", taskIconText: "Approve new users", taskDeleteLink: "../../Resource/templates/afterLogin/web/#/delete", taskMarkImportantLink: "../../Resource/templates/afterLogin/web/#/important" },
-    { liClass: "bookmarked", taskIconClass: "icon-ok", taskIconText: "Approve new users", taskDeleteLink: "../../Resource/templates/afterLogin/web/#/delete", taskMarkImportantLink: "../../Resource/templates/afterLogin/web/#/important" }
+    { liClass: "bookmarked", taskIconClass: "icon-ok", taskIconText: "Survey for new product", taskDeleteLink: "../../Resource/templates/afterLogin/web/#/delete", taskMarkImportantLink: "../../Resource/templates/afterLogin/web/#/important" },
+    { liClass: "", taskIconClass: "icon-envelope", taskIconText: "Transcribe the bill", taskDeleteLink: "../../Resource/templates/afterLogin/web/#/delete", taskMarkImportantLink: "../../Resource/templates/afterLogin/web/#/important" },
+    { liClass: "", taskIconClass: "icon-comment", taskIconText: "Photo Moderation", taskDeleteLink: "../../Resource/templates/afterLogin/web/#/delete", taskMarkImportantLink: "../../Resource/templates/afterLogin/web/#/important" },
+    { liClass: "bookmarked", taskIconClass: "icon-retweet", taskIconText: "Write an Article on Politics", taskDeleteLink: "../../Resource/templates/afterLogin/web/#/delete", taskMarkImportantLink: "../../Resource/templates/afterLogin/web/#/important" },
+    { liClass: "", taskIconClass: "icon-edit", taskIconText: "Need 10K facebook Likes", taskDeleteLink: "../../Resource/templates/afterLogin/web/#/delete", taskMarkImportantLink: "../../Resource/templates/afterLogin/web/#/important" },
+    { liClass: "bookmarked", taskIconClass: "icon-ok", taskIconText: "Need Personal Website", taskDeleteLink: "../../Resource/templates/afterLogin/web/#/delete", taskMarkImportantLink: "../../Resource/templates/afterLogin/web/#/important" }
     ];
 
+    $scope.toggleSelection = function toggleSelection(fruitName) {
+        alert("toggle" + fruitName);
+    };
 
     $scope.RemoveTagInputButtonClick = function (index) {
 
