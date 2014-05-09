@@ -53,6 +53,10 @@ namespace zestork.Controllers
             detailsEditUserPage.ImageUrl = user.ImageUrl;
             detailsEditUserPage.gender = user.gender;
             detailsEditUserPage.Locked = Convert.ToBoolean(user.Locked);
+            if (user.KeepMeSignedIn != null && user.KeepMeSignedIn == "true")
+                detailsEditUserPage.keepMeSignedIn = true;
+            else
+                detailsEditUserPage.keepMeSignedIn = false;
             if (pageSetting == null)
             {
                 pageSetting = new UserPageSetting();

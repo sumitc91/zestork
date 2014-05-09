@@ -58,6 +58,13 @@ ZestorkAppAfterLogin.factory('CookieUtil', function ($rootScope, $location, $coo
         getReferralKey: function () {
             return $.cookie('ReferralKey');
         },
+        setKeepMeSignedInKey: function () {                       
+            $.cookie('KeepMeSignedInKey', ReferralKey, { expires: 365, path: '/' });
+            return "added";
+        },
+        getKeepMeSignedInKey: function () {
+            return $.cookie('KeepMeSignedInKey');
+        },
     };
 
 });

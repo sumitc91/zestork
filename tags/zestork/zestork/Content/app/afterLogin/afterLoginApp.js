@@ -35,7 +35,7 @@ ZestorkAppAfterLogin.run(function ($rootScope, $location) { //Insert in the func
     });
 });
 
-ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootScope, $http,$routeParams, $location, CookieUtil, afterLoginServices) {
+ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootScope, $http, $routeParams, $location, CookieUtil, afterLoginServices) {
 
     $scope.firstTimeUserLoginViaSocialLinkPopUpTemplate = '../../Resource/templates/afterLogin/contentView/index/firstTimeLoginViaSocialLinkePopUpModal.html';
     $rootScope.Username = CookieUtil.getUsername();
@@ -48,10 +48,11 @@ ZestorkAppAfterLogin.controller('masterPageController', function ($scope, $rootS
         //headers: { 'Content-Type': 'application/json' }            
     }).success(function (data, status, headers, config) {
         //$scope.persons = data; // assign  $scope.persons here as promise is resolved here                        
-        
+
         //console.log(data);
-    }).error(function (data, status, headers, config) {       
-        alert('Internal Server Error Occured !!');
+    }).error(function (data, status, headers, config) {
+        //alert('Internal Server Error Occured !!');
+        CookieUtil.removeGuid();
     });
 
     afterLoginServices.setUserPrivateKeyValue(); // set user private key value;

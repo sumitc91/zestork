@@ -97,7 +97,7 @@ ZestorkApp.controller('beforeLoginHeaderController', function ($scope, $route, $
             //console.log(data);
         }).error(function (data, status, headers, config) {
             $.unblockUI();
-            alert('Internal Server Error Occured !!');
+            //alert('Internal Server Error Occured !!');
         });
     }
     
