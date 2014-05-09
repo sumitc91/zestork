@@ -256,6 +256,7 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
             $rootScope.pageThemeColor = data.PageThemeColor;
             $rootScope.pageLayoutWidth = data.pageLayoutWidth;
             $rootScope.pageTopbar = data.pageTopbar;
+            setKeepMeSignedInKey(data.keepMeSignedIn);
             if (data.pageLayoutWidth == "container") {
                 $rootScope.pageLayoutWidthFixedActive = "active set-fixed";
                 $rootScope.pageLayoutWidthFluidActive = "set-fluid";
@@ -277,12 +278,12 @@ ZestorkAppAfterLogin.controller('getUserInfoController', function ($scope, $http
             }
 
             if (data.pageSidebar == "Fixed") {
-                  $('#set_sidebar_fixed_id').click();
+                $('#set_sidebar_fixed_id').click();
             }
             else {
-                  $('#set_sidebar_default_id').click();
+                $('#set_sidebar_default_id').click();
             }
-           
+
             //$rootScope..navigationTopBarClass navbar-fixed-top container-fluid nav-fixed
             //container-fluid  && data.pageTopbar == ""
             var imageUrlSplitted = data.ImageUrl.split(".");
@@ -309,4 +310,12 @@ function getParameterByName(name) {
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
     return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function setKeepMeSignedInKey(KeepMeSignedInKey) {
+    $.cookie('KeepMeSignedInKey', KeepMeSignedInKey, { expires: 365, path: '/' });
+    return "set";
+}
+function getKeepMeSignedInKey() {
+    return $.cookie('KeepMeSignedInKey');
 }
