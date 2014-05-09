@@ -82,7 +82,6 @@ ZestorkApp.controller('webLoginController', function ($scope) {
    
     $scope.submitLogintDataRequest = function () {
 
-     
         alert("HI.........................");
         
     }

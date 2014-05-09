@@ -23,6 +23,7 @@ namespace zestork.Models.DataContract
         public string pageLayoutWidth { get; set; }
         public string pageTopbar { get; set; }
         public string pageSidebar { get; set; }
+        public bool keepMeSignedIn { get; set; }
         public List<string> skillTags { get; set; }
     }
 }
