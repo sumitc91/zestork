@@ -78,27 +78,32 @@ ZestorkApp.controller('loginControllerPlaceHolders', function ($scope) {
 ZestorkApp.controller('beforeLoginHeaderController', function ($scope, $route, $routeParams,$http, $location,CookieUtil) {    
        
     if (CookieUtil.getGuid() != null && CookieUtil.getGuid() != "") {
-        $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Loading...</h1>' });
-        $http({
-            url: '/Account/isValidToken/' + CookieUtil.getGuid() + '?username=' + CookieUtil.getUsername() + '&key=' + CookieUtil.getKey(),
-            method: "GET"
-            //headers: { 'Content-Type': 'application/json' }            
-        }).success(function (data, status, headers, config) {
-            //$scope.persons = data; // assign  $scope.persons here as promise is resolved here                        
-            if (data.isValid == true) {
-                window.location.href = data.url;
-            }
-            else {
-                CookieUtil.removeGuid();
-                CookieUtil.removeUsername();
-                CookieUtil.removeKey();
+        
+        if(CookieUtil.getKeepMeSignedInKey() !=null || CookieUtil.getKeepMeSignedInKey() == "true")
+        {        
+            $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Loading...</h1>' });
+            $http({
+                url: '/Account/isValidToken/' + CookieUtil.getGuid() + '?username=' + CookieUtil.getUsername() + '&key=' + CookieUtil.getKey(),
+                method: "GET"
+                //headers: { 'Content-Type': 'application/json' }            
+            }).success(function (data, status, headers, config) {
+                //$scope.persons = data; // assign  $scope.persons here as promise is resolved here                        
+                if (data.isValid == true) {
+                    window.location.href = data.url;
+                }
+                else {
+                    CookieUtil.removeGuid();
+                    CookieUtil.removeUsername();
+                    CookieUtil.removeKey();
+                    $.unblockUI();
+                }
+                //console.log(data);
+            }).error(function (data, status, headers, config) {
                 $.unblockUI();
-            }
-            //console.log(data);
-        }).error(function (data, status, headers, config) {
-            $.unblockUI();
-            //alert('Internal Server Error Occured !!');
-        });
+                //alert('Internal Server Error Occured !!');
+            });
+        }
+        
     }
     
 
