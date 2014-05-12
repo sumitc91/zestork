@@ -1,90 +1,127 @@
-﻿  <div class="container-fluid" ng-controller="signUpClientController">
+﻿    <div class="container" ng-controller="signUpClientController">
+
+      <form class="form-signin" ng-submit="submitCreateAccountData()" id="bb">
+        <h2 class="form-signin-heading">Create a Free JillBill Client Account</h2>
+
+          
+        <div class="control-group">
+          	<div class="form-actions">
+                  <h1> Sign up with: </h1>
+				  <input type="submit" class="btn btn-primary" value="Facebook">
+                  <input type="submit" class="btn btn-primary" value="Google ">
+                  <input type="submit" class="btn btn-primary" value="Linkedin ">
 				
-				<div class="row-fluid">
-					<div class="span12">
-						<div class="box">
-							<div class="box-title">
-								<h3>
-									<i class="icon-ok"></i>
-									Create a Free Freelancer Client Account
-								</h3>
-							</div>
-							<div class="box-content">
-								<form ng-submit="submitCreateAccountData()" class='form-horizontal form-validate' id="bb">
-                                    <div class="control-group">
-										<label for="emailfield" class="control-label">Email</label>
-										<div class="controls">
-											<input type="text" ng-model="userName" ng-blur="checkEmailAvailableOnFocusOut()" name="emailfield" id="emailfield" class="input-xlarge" data-rule-email="true" data-rule-required="true">
-                                            <a class="btn add-on username-check-force" href="" ng-click="checkUserExists()"><i class="icon-refresh"></i></a>
-                                            <div ng-show="showEmailMessage" ng-cloak>
-                                                <span ng-hide="emailAlreadyExists" style='color:green'>Username Available</span>
-                                                <span ng-show="emailAlreadyExists" style="color:red">Username already taken</span>
-                                            </div>                                            
-										</div>
-									</div>
-
-
-                                    <div class="control-group">
-										<label for="company" class="control-label"></label>
-										<div class="controls">
-											<label class="checkbox">
-												<input type="checkbox" name="companyCheckbox" ng-model="companyNameText" value="agree"> Sign up as a company
-											</label>
-										</div>
-									</div>
-
-                                    <div class="control-group" ng-hide="!companyNameText" ng-cloak>
-										<label for="textfield" class="control-label">Company Name</label>
-										<div class="controls">
-											<input type="text" ng-model="CompanyName" name="textfield" id="text2" class="input-xlarge" data-rule-required="true" data-rule-minlength="3">
-                                            <!--<div ng-cloak>{{firstName}}</div>-->
-										</div>
-									</div>
-
-                                    <div class="control-group">
-										<label for="pwfield" class="control-label">Password</label>
-										<div class="controls">
-											<input type="password" ng-model="password" name="pwfield" id="pwfield" class="input-xlarge" data-rule-required="true" data-rule-minlength="6" data-rule-maxlength="15">
-                                            <!--<div ng-cloak>{{password}}</div>-->
-										</div>
-									</div>
-									<div class="control-group">
-										<label for="confirmfield" class="control-label">Confirm password</label>
-										<div class="controls">
-											<input type="password" ng-model="confirmPassword" name="confirmfield" id="confirmfield" class="input-xlarge" data-rule-equalTo="#pwfield" data-rule-required="true">
-                                            <!--<div ng-cloak>{{confirmPassword}}</div>-->
-										</div>
-									</div>
-									<div class="control-group">
-										<label for="textfield" class="control-label">First Name</label>
-										<div class="controls">
-											<input type="text" ng-model="firstName" name="textfield" id="textfield" class="input-xlarge" data-rule-required="true" data-rule-minlength="2">
-                                            <!--<div ng-cloak>{{firstName}}</div>-->
-										</div>
-									</div>
-                                    <div class="control-group">
-										<label for="textfield" class="control-label">Last Name</label>
-										<div class="controls">
-											<input type="text" ng-model="lastName" name="textfield" id="text1" class="input-xlarge" data-rule-required="true" data-rule-minlength="2">
-                                            <!--<div ng-cloak>{{lastName}}</div>-->
-										</div>
-									</div>                                    
-									
-									<div class="control-group">
-										<label for="policy" class="control-label">Agree our policy</label>
-										<div class="controls">
-											<label class="checkbox">
-												<input type="checkbox" name="policy" ng-model="tncModel" data-rule-required="true"> I agree the <a href="#/tnc">policy.</a>
-											</label>
-										</div>
-									</div>
-									<div class="form-actions">
-										<input type="submit" class="btn btn-primary" value="Submit">
-										<button type="button" class="btn">Cancel</button>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>				
 			</div>
+        </div>
+
+        <div class="control-group">
+          <input type="text" class="form-control" placeholder="Email address" required autofocus ng-model="userName" ng-blur="checkEmailAvailableOnFocusOut()" name="emailfield" id="emailfield" data-rule-email="true" data-rule-required="true">
+            <div ng-show="showEmailMessage" ng-cloak>
+                <span ng-hide="emailAlreadyExists" style='color:green'>Username Available</span>
+                <span ng-show="emailAlreadyExists" style="color:red">Username has already taken</span>
+            </div>  
+        </div>
+
+
+        <div class="control-group">
+	        <label class="checkbox">
+              <input type="checkbox" name="companyCheckbox" ng-model="companyNameText" value="agree"> Sign up as a company
+            </label>
+	    </div>
+
+
+        <div class="control-group" ng-hide="!companyNameText" ng-cloak>
+	        <div class="controls">
+		        <input type="text" ng-model="CompanyName" name="textfield" id="text2" class="form-control" placeholder="Company name" data-rule-required="true" data-rule-minlength="3">
+                <!--<div ng-cloak>{{firstName}}</div>-->
+	        </div>
+        </div>
+
+
+            <div class="control-group">
+		        <div class="controls">
+			        <input type="password" placeholder="Password" type="password" ng-model="password" name="pwfield" id="pwfield" class="form-control" data-rule-required="true" data-rule-minlength="6" data-rule-maxlength="15" required>
+		        </div>
+	        </div>
+	        <div class="control-group">
+		        <div class="controls">
+			        <input type="password" placeholder="Confirm password" ng-model="confirmPassword" name="confirmfield" id="confirmfield" class="form-control" data-rule-equalTo="#pwfield" data-rule-required="true" required>
+		        </div>
+	        </div>
+
+
+	        <div class="control-group">
+		        <div class="controls">
+			        <input type="text" placeholder="First name" ng-model="firstName" name="textfield" id="textfield" class="form-control" data-rule-required="true" data-rule-minlength="2" required>
+		        </div>
+	        </div>
+
+
+            <div class="control-group">
+		        <div class="controls">
+			        <input type="text" placeholder="Last name" ng-model="lastName" name="textfield" id="text1" class="form-control" data-rule-required="true" data-rule-minlength="2" required>
+		        </div>
+	        </div>                                    
+									
+		    <div class="control-group">
+                        <label class="checkbox">
+                                <input type="checkbox" name="policy" ng-model="tncModel" data-rule-required="true"> I agree the <a href="#/tnc">policy.</a>
+                        </label>
+		    </div>
+
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+      </form>
+
+    </div>
+
+<style>
+    body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: #eee;
+    }
+
+    .form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    }
+    .form-signin .form-signin-heading,
+    .form-signin .checkbox {
+    margin-bottom: 10px;
+    }
+    .form-signin .checkbox {
+    font-weight: normal;
+    }
+    .form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+    .form-signin .form-control:focus {
+    z-index: 2;
+    }
+    .form-signin input[type="text"] {
+    margin-bottom: 11px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    }
+    .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    }
+    </style>
+
+
+
+
+
+
+
+
