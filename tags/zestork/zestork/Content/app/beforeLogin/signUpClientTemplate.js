@@ -107,7 +107,7 @@ ZestorkApp.controller('signUpClientController', function ($scope, $http, $routeP
             referral: CookieUtil.getReferralKey()
         }
        
-        if ($scope.confirmPassword == $scope.password && isValidEmailAddress($scope.userName)) {
+        if ($scope.confirmPassword == $scope.password && $scope.password != "" && isValidEmailAddress($scope.userName)) {
             if ($scope.tncModel) {
                 $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Creating your account...</h1>' });
 
