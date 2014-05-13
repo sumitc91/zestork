@@ -8,7 +8,7 @@ ZestorkApp.controller('signInController', function ($scope,$http) {
     };
 });
 
-ZestorkApp.controller('facebookLoginController', function ($scope,$http) {
+ZestorkApp.controller('facebookLoginController', function ($scope, $http, CookieUtil) {
     $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Loggin in via Facebook..</h1>' });
     $('.closeModalBox').click();
     $http({
@@ -31,7 +31,7 @@ ZestorkApp.controller('facebookLoginController', function ($scope,$http) {
     });
 });
 
-ZestorkApp.controller('googleLoginController', function ($scope, $http) {
+ZestorkApp.controller('googleLoginController', function ($scope, $http, CookieUtil) {
     $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Loggin in via google..</h1>' });
     $('.closeModalBox').click();
     $http({
@@ -54,7 +54,7 @@ ZestorkApp.controller('googleLoginController', function ($scope, $http) {
     });
 });
 
-ZestorkApp.controller('linkedinLoginController', function ($scope, $http) {
+ZestorkApp.controller('linkedinLoginController', function ($scope, $http, CookieUtil) {
     $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Loggin in via linkedin..</h1>' });
     $('.closeModalBox').click();
     $http({
