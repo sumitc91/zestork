@@ -61,6 +61,18 @@ ZestorkAppClientView.controller('clientDashboardController', function ($scope, $
     { liClass: "", taskIconClass: "icon-ok", taskIconText: "Need Personal Website", taskDeleteLink: "../../Resource/templates/afterLogin/web/#/delete", taskMarkImportantLink: "../../Resource/templates/afterLogin/web/#/important" }
     ];
 
+    $scope.engineer = {
+        name: "Dani",
+        currentActivityId: 3
+    };
+
+    $scope.activities =
+[
+    { id: 1, type: "Work", name: "Writing code" },
+    { id: 2, type: "Work", name: "Testing code" },
+    { id: 3, type: "Work", name: "Fixing bugs" },
+    { id: 4, type: "Play", name: "Dancing" }
+];
 
     $scope.toggleSelection = function toggleSelection(fruitName) {
         alert("toggle" + fruitName);
