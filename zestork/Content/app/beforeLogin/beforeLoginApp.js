@@ -9,8 +9,11 @@ ZestorkApp.config(function ($routeProvider) {
                    when("/signup/user", { templateUrl: "../../Resource/templates/beforeLogin/contentView/signupuser.html" }).
                    when("/signup/client", { templateUrl: "../../Resource/templates/beforeLogin/contentView/signupclient.html" }).
                    when("/login/:code", { templateUrl: "../../Resource/templates/beforeLogin/contentView/ajax/signInTemplate.html" }).
+                   when("/facebookLogin/:userType", { templateUrl: "../../Resource/templates/beforeLogin/contentView/facebookLogin.html" }).
                    when("/facebookLogin", { templateUrl: "../../Resource/templates/beforeLogin/contentView/facebookLogin.html" }).
+                   when("/googleLogin/:userType", { templateUrl: "../../Resource/templates/beforeLogin/contentView/googleLogin.html" }).
                    when("/googleLogin", { templateUrl: "../../Resource/templates/beforeLogin/contentView/googleLogin.html" }).
+                   when("/linkedinLogin/:userType", { templateUrl: "../../Resource/templates/beforeLogin/contentView/linkedinLogin.html" }).
                    when("/linkedinLogin", { templateUrl: "../../Resource/templates/beforeLogin/contentView/linkedinLogin.html" }).
                    when("/validate/:userName/:guid", { templateUrl: "../../Resource/templates/beforeLogin/contentView/validateAccount.html" }).
                    when("/tnc", { templateUrl: "../../Resource/templates/beforeLogin/contentView/termsAndConditions.html" }).

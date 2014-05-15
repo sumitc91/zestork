@@ -40,9 +40,17 @@ namespace zestork.Controllers
             LoginService LoginService = new LoginService();
             if (id == "facebook")
             {
+                String userType = string.Empty;
                 String code = Request.QueryString["code"];
-                userData = LoginService.facebookLogin("http://" + Request.Url.Authority + "/Account/Login/facebook/", code, referral);
-            }
+                if (code == null)
+                    Session["userType"] = Request.QueryString["userType"];
+                else
+                {
+                    userType = Session["userType"].ToString();
+                    Session.Remove("userType");
+                }
+                userData = LoginService.facebookLogin("http://" + Request.Url.Authority + "/Account/Login/facebook/", code, referral, userType);
+            }            
             else if (id == "web")
             {
                 String userName = Request.Form["userName"];

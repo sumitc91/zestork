@@ -48,12 +48,12 @@ namespace zestork.Service
             model = webLoginService.Login(userName, passwrod, returnUrl, keepMeSignedIn);
             return model;
         }
-        public LogOnModel facebookLogin(string returnUrl, string code, string referral)
+        public LogOnModel facebookLogin(string returnUrl, string code, string referral,string userType)
         {
             var model = new LogOnModel();
             
             FacebookService FacebookService = new FacebookService();
-            model = FacebookService.Login(returnUrl, code, referral);
+            model = FacebookService.Login(returnUrl, code, referral, userType);
            
             return model;
         }
