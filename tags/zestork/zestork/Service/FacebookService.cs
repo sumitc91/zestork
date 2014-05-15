@@ -19,14 +19,14 @@ namespace zestork.Service
     {
         private ILogger logger = new Logger(Convert.ToString(MethodBase.GetCurrentMethod().DeclaringType));
 
-        public LogOnModel Login(string returnUrl, string code, string referral)
+        public LogOnModel Login(string returnUrl, string code, string referral,string userType)
         {
             var userData = new LogOnModel();
-            userData = checkFacebookAuthorization(returnUrl, code);
+            userData = checkFacebookAuthorization(returnUrl, code, userType);
             return userData;
         }
 
-        private LogOnModel checkFacebookAuthorization(string returnUrl, string code)
+        private LogOnModel checkFacebookAuthorization(string returnUrl, string code, string userType)
         {
             var userData = new LogOnModel();
             try
@@ -38,18 +38,7 @@ namespace zestork.Service
 
                 app_id = ConfigurationManager.AppSettings["FacebookAppID"].ToString();
                 app_secret = ConfigurationManager.AppSettings["FacebookAppSecret"].ToString();
-                
-                //if (returnUrl.Contains("zestork.pcongo"))
-                //{
-                //    app_id = ConfigurationManager.AppSettings["FacebookAppIDZestork"].ToString();
-                //    app_secret = ConfigurationManager.AppSettings["FacebookAppSecretZestork"].ToString();
-                //}
-                //else
-                //{
-                //    app_id = ConfigurationManager.AppSettings["FacebookAppID"].ToString();
-                //    app_secret = ConfigurationManager.AppSettings["FacebookAppSecret"].ToString();
-                //}
-               
+                                              
                 string scope = "";
                 if (code == null)
                 {
@@ -94,7 +83,7 @@ namespace zestork.Service
                             Password = Guid.NewGuid().ToString(),
                             Source = "facebook",
                             isActive = "true",
-                            Type = "NA",
+                            Type = userType!=null?userType:"NA",
                             guid = Guid.NewGuid().ToString(),
                             FirstName = me.first_name,
                             LastName = me.last_name,

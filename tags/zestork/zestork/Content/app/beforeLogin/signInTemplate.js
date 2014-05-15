@@ -8,11 +8,10 @@ ZestorkApp.controller('signInController', function ($scope,$http) {
     };
 });
 
-ZestorkApp.controller('facebookLoginController', function ($scope, $http, CookieUtil) {
-    $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Loggin in via Facebook..</h1>' });
-    $('.closeModalBox').click();
+ZestorkApp.controller('facebookLoginController', function ($scope, $http, CookieUtil, $routeParams) {
+    $.blockUI({ message: '<h1><img src="../../Content/third-party/bootstrap-modal-master/img/ajax-loader.gif" /> Loggin in via Facebook..</h1>' });    
     $http({
-        url: '/Account/Login/facebook?ref=' + CookieUtil.getReferralKey(),
+        url: '/Account/Login/facebook?ref=' + CookieUtil.getReferralKey() + '&userType=' + $routeParams.userType,
         method: "GET",
         headers: { 'Content-Type': 'application/json' }
     }).success(function (data, status, headers, config) {
