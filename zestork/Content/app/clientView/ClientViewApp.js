@@ -65,7 +65,7 @@ ZestorkAppClientView.controller('masterPageController', function ($scope, $rootS
            { value: "Product descriptions", link: "" }
            ]
        },
-       { value: "Survey & feedback", dropDownMenuShow: true,dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+       { value: "Survey", dropDownMenuShow: true,dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
            { value: "Product survey", link: "" },
            { value: "User feedback survey", link: "" },
            { value: "Pools", link: "" }
@@ -78,7 +78,7 @@ ZestorkAppClientView.controller('masterPageController', function ($scope, $rootS
        { value: "Moderating Video" }
        ]
        },
-       { value: "Advertisement", dropDownMenuShow: true,dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+       { value: "Ads", dropDownMenuShow: true,dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
        { value: "Facebook Views" },
        { value: "Facebook likes" },
        { value: "Video reviewing" },
