@@ -35,12 +35,12 @@ namespace zestork.Controllers
             //{ return true; };
             
             String returnUrl = "";
+            String userType = string.Empty;
             String referral = Request.QueryString["ref"];
             var userData = new LogOnModel();
             LoginService LoginService = new LoginService();
             if (id == "facebook")
-            {
-                String userType = string.Empty;
+            {                
                 String code = Request.QueryString["code"];
                 if (code == null)
                     Session["userType"] = Request.QueryString["userType"];
@@ -69,7 +69,14 @@ namespace zestork.Controllers
                     string access_token = Request.QueryString["access_token"];
                 }
                 String code = Request.QueryString["code"];
-                userData = LoginService.googleLogin("http://" + Request.Url.Authority + "/Account/Login/google", code, referral);
+                if (code == null)
+                    Session["userType"] = Request.QueryString["userType"];
+                else
+                {
+                    userType = Session["userType"].ToString();
+                    Session.Remove("userType");
+                }
+                userData = LoginService.googleLogin("http://" + Request.Url.Authority + "/Account/Login/google", code, referral,userType);
             }
             else if (id == "linkedin")
             {
@@ -77,8 +84,16 @@ namespace zestork.Controllers
 
                 string oauth_token = Request.QueryString["oauth_token"];
                 string oauth_verifier = Request.QueryString["oauth_verifier"];
-
-                userData = LoginService.linkedinLogin("http://" + Request.Url.Authority + "/Account/Login/linkedin", AbsoluteUri, oauth_token, oauth_verifier, referral);
+                if (oauth_token != null && oauth_verifier != null)
+                {
+                    Session["userType"] = Request.QueryString["userType"];
+                }
+                else
+                {
+                    userType = Session["userType"].ToString();
+                    Session.Remove("userType");
+                }
+                userData = LoginService.linkedinLogin("http://" + Request.Url.Authority + "/Account/Login/linkedin", AbsoluteUri, oauth_token, oauth_verifier, referral, userType);
                 
             }
             else if (id == "twitter")

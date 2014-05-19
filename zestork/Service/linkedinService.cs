@@ -23,7 +23,7 @@ namespace zestork.Service
         private ILogger logger = new Logger(Convert.ToString(MethodBase.GetCurrentMethod().DeclaringType));
         private oAuthLinkedIn _oauth = new oAuthLinkedIn();
 
-        public LogOnModel Login(string returnUrl, string AbsoluteUri, string oauth_token, string oauth_verifier, string referral)
+        public LogOnModel Login(string returnUrl, string AbsoluteUri, string oauth_token, string oauth_verifier, string referral,string userType)
         {
             var userData = new LogOnModel();
             var _db = new ZestorkContainer();
@@ -79,7 +79,7 @@ namespace zestork.Service
                             Password = Guid.NewGuid().ToString(),
                             Source = "linkedin",
                             isActive = "true",
-                            Type = "NA",
+                            Type = userType != null ? userType : "NA",
                             guid = Guid.NewGuid().ToString(),
                             FirstName = UserDetails.firstName,
                             LastName = UserDetails.lastName,

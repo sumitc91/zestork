@@ -22,7 +22,7 @@ namespace zestork.Service
     {
         private ILogger logger = new Logger(Convert.ToString(MethodBase.GetCurrentMethod().DeclaringType));
 
-        public LogOnModel Login(string returnUrl, string code, string referral)
+        public LogOnModel Login(string returnUrl, string code, string referral,string userType)
         {
 
             var _db = new ZestorkContainer();
@@ -124,7 +124,7 @@ namespace zestork.Service
                         Password = Guid.NewGuid().ToString(),
                         Source = "google",
                         isActive = "true",
-                        Type = "NA",
+                        Type = userType != null ? userType : "NA",
                         guid = Guid.NewGuid().ToString(),
                         FirstName = userData.User.FirstName,
                         LastName = userData.User.LastName,

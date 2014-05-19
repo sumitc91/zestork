@@ -1737,7 +1737,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53106</DevelopmentServerPort>
+          <DevelopmentServerPort>54491</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost/zestork</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
