@@ -20,11 +20,11 @@ namespace zestork.Service
                     
             return model;
         }
-        public LogOnModel linkedinLogin(string returnUrl, string AbsoluteUri, string oauth_token, string oauth_verifier, string referral)
+        public LogOnModel linkedinLogin(string returnUrl, string AbsoluteUri, string oauth_token, string oauth_verifier, string referral, string userType)
         {
             var model = new LogOnModel();
             linkedinService linkedinService = new linkedinService();
-            model = linkedinService.Login(returnUrl, AbsoluteUri, oauth_token, oauth_verifier, referral);
+            model = linkedinService.Login(returnUrl, AbsoluteUri, oauth_token, oauth_verifier, referral, userType);
             return model;
         }
         public LogOnModel twitterinLogin(string returnUrl, string AbsoluteUri, string oauth_token, string oauth_verifier)
@@ -34,11 +34,11 @@ namespace zestork.Service
             model = twitterService.Login(returnUrl, AbsoluteUri, oauth_token, oauth_verifier);
             return model;
         }
-        public LogOnModel googleLogin(string returnUrl, string code, string referral)
+        public LogOnModel googleLogin(string returnUrl, string code, string referral,string userType)
         {
             var model = new LogOnModel();
             googleService googleService = new googleService();
-            model = googleService.Login(returnUrl, code, referral);
+            model = googleService.Login(returnUrl, code, referral, userType);
             return model;
         }
         public LogOnModel webLogin(string userName, string passwrod, string returnUrl, string keepMeSignedIn)
