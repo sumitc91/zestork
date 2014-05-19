@@ -13,53 +13,121 @@
                             Instructions</label>
                         <div class="controls">
                             <ul>
-                            <li>instructions</li>
-                            <li>instructions</li>
-                            <li>instructions</li>                           
+                                <li>instructions</li>
+                                <li>instructions</li>
+                                <li>instructions</li>
                             </ul>
                         </div>
                     </div>
                     <div class="control-group">
                         <label for="textfield" class="control-label">
-                            Text input</label>
+                            Single Answer</label>
                         <div class="controls">
-                            <input type="text" name="textfield" id="textfield" placeholder="Text input" class="input-xlarge">
+                            <fieldset>
+                                <label>
+                                    1. What is your gender?
+                                </label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" value="Male" name="Gender">Male
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" value="Female" name="Gender">Female
+                                    </label>
+                                </div>
+                            </fieldset>
                         </div>
                     </div>
                     <div class="control-group">
                         <label for="password" class="control-label">
-                            Password</label>
+                            Multiple Answer</label>
                         <div class="controls">
-                            <input type="password" name="password" id="password" placeholder="Password input"
-                                class="input-xlarge">
+                            <fieldset>
+                                <label>
+                                    1. What is your favorite type of food? (Choose all that apply:)
+                                </label>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="Chinese" name="FavoriteFoods">Chinese
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="French" name="FavoriteFoods">French
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="Indian" name="FavoriteFoods">Indian
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="Italian" name="FavoriteFoods">Italian
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="Mexican" name="FavoriteFoods">Mexican
+                                    </label>
+                                </div>
+                            </fieldset>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label">
-                            Checkboxes<small>More information here</small></label>
+                            Input Fields<small>(TextBox)</small></label>
                         <div class="controls">
-                            <label class='checkbox'>
-                                <input type="checkbox" name="checkbox">
-                                Lorem ipsum eiusmod
-                            </label>
-                            <label class='checkbox'>
-                                <input type="checkbox" name="checkbox">
-                                ipsum eiusmod
-                            </label>
+                            <fieldset>
+                                <div class="input-group">
+                                    <label>
+                                        1. What is your age?</label>
+                                    <input type="text" size="120" name="Age" class="form-control"></div>
+                            </fieldset>
                         </div>
                     </div>
                     <div class="control-group">
-                        <label for="textarea" class="control-label">
-                            Textarea</label>
+                        <label class="control-label">
+                            Input Fields<small>(ListBox)</small></label>
                         <div class="controls">
-                            <textarea name="textarea" id="textarea" rows="5" class="input-block-level">Lorem ipsum mollit minim fugiat tempor dolore sit officia ut dolore. </textarea>
+                            <fieldset>
+                                <label>
+                                    1. Which of the following best describes your highest achieved education level?
+                                </label>
+                                <select name="Education" class="form-control">
+                                    <option value="select one" selected="selected">- select one -</option>
+                                    <option value="Some High School">Some High School</option>
+                                    <option value="Some college, no degree">Some college, no degree</option>
+                                    <option value="Associates degree">Associates degree</option>
+                                    <option value="Bachelors degree">Bachelors degree</option>
+                                    <option value="Graduate degree (Masters, Doctorate, etc.)">Graduate degree (Masters,
+                                        Doctorate, etc.)</option>
+                                </select></fieldset>
+                            <fieldset>
+                                <label>
+                                    2. What is the total income of your household?
+                                </label>
+                                <select size="5" name="HouseHoldIncome" class="form-control">
+                                    <option>Less than $12,500</option>
+                                    <option>$12,500 - $24,999</option>
+                                    <option>$25,000 - $37,499</option>
+                                    <option>$37,500 - $49,999</option>
+                                    <option>$50,000 - $62,499</option>
+                                    <option>$62,500 - $74,999</option>
+                                    <option>$75,000 - $87,499</option>
+                                    <option>$87,500 - $99,999</option>
+                                    <option>$100,000 or more</option>
+                                </select></fieldset>
                         </div>
                     </div>
+                    
                     <div class="form-actions">
                         <button type="submit" class="btn btn-primary">
-                            Save changes</button>
+                            Proceed</button>
                         <button type="button" class="btn">
-                            Cancel</button>
+                            Need More Info</button>
                     </div>
                     </form>
                 </div>

@@ -5,7 +5,7 @@ ZestorkAppClientView.config(function ($routeProvider) {
 
     $routeProvider.when("/", { templateUrl: "../../Resource/templates/clientView/home.html" }).
                    when("/dashboard", { templateUrl: "../../Resource/templates/clientView/dashboard.html" }).
-                    when("/productSurvey", { templateUrl: "../../Resource/templates/clientView/productSurvey.html" }).                      
+                    when("/productSurvey", { templateUrl: "../../Resource/templates/clientView/productSurvey.html" }).
                    when("/edit", { templateUrl: "../../Resource/templates/ClientView/edit.html" }).
                    when("/404", { templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" }).
                    when("/signup", { templateUrl: "../../Resource/templates/beforeLogin/contentView/signup.html" }).
@@ -19,7 +19,8 @@ ZestorkAppClientView.run(function ($rootScope, $location) { //Insert in the func
 
     $rootScope.$on("$locationChangeStart", function (event, next, current) {
 
-
+        //alert("testing");
+        $('clickOutsideToCloseMenuId').click();
         //getParameterByName('guid')
         //alert(getParameterByName('uid'));
         //getParameterByName('uid'); //global variable
@@ -46,48 +47,48 @@ ZestorkAppClientView.controller('masterPageController', function ($scope, $rootS
        subCategoryList: [
        {
            value: "Data entry", dropDownMenuShow: true, dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
-           { value:"Verification & Duplication",link:""},
-           { value: "Data Entry", link: "" },
-           { value: "Search the web for something", link: "" },
-           { value: "Do some Excel work", link: "" },
-           { value: "Find information from websites", link: "" },           
-           { value: "Post some advertisements", link: "" },
-           { value: "Transcription", link: "" }           
+           { value: "Verification & Duplication", link: "#" },
+           { value: "Data Entry", link: "#" },
+           { value: "Search the web for something", link: "#" },
+           { value: "Do some Excel work", link: "#" },
+           { value: "Find information from websites", link: "#" },
+           { value: "Post some advertisements", link: "#" },
+           { value: "Transcription", link: "#" }
            ]
        },
-       { value: "Content Writing", dropDownMenuShow: true,dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
-           { value: "Article writing", link: "" },
-           { value: "Blog writing", link: "" },
-           { value: "Copy typing", link: "" },
-           { value: "Powerpoint", link: "" },
-           { value: "Short stories", link: "" },
-           { value: "Travel writing", link: "" },
-           { value: "Reviews", link: "" },
-           { value: "Product descriptions", link: "" }
+       { value: "Content Writing", dropDownMenuShow: true, dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+           { value: "Article writing", link: "#" },
+           { value: "Blog writing", link: "#" },
+           { value: "Copy typing", link: "#" },
+           { value: "Powerpoint", link: "#" },
+           { value: "Short stories", link: "#" },
+           { value: "Travel writing", link: "#" },
+           { value: "Reviews", link: "#" },
+           { value: "Product descriptions", link: "#" }
            ]
        },
-       { value: "Survey", dropDownMenuShow: true,dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
-           { value: "Product survey", link: "" },
-           { value: "User feedback survey", link: "" },
-           { value: "Pools", link: "" }
+       { value: "Survey", dropDownMenuShow: true, dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+           { value: "Product survey", link: "#/productSurvey" },
+           { value: "User feedback survey", link: "#" },
+           { value: "Pools", link: "#" }
            ]
        },
-       { value: "Moderation", dropDownMenuShow: true,dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
-       { value: "Moderating Ads" },
-       { value: "Moderating Photos" },
-       { value: "Moderating Music" },
-       { value: "Moderating Video" }
-       ]
+       { value: "Moderation", dropDownMenuShow: true, dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+           { value: "Moderating Ads", link: "#" },
+           { value: "Moderating Photos", link: "#" },
+           { value: "Moderating Music", link: "#" },
+           { value: "Moderating Video", link: "#" }
+           ]
        },
-       { value: "Ads", dropDownMenuShow: true,dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
-       { value: "Facebook Views" },
-       { value: "Facebook likes" },
-       { value: "Video reviewing" },
-       { value: "Comments on blogs/social media" }
+       { value: "Ads", dropDownMenuShow: true, dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
+           { value: "Facebook Views", link: "#" },
+           { value: "Facebook likes", link: "#" },
+           { value: "Video reviewing", link: "#" },
+           { value: "Comments on blogs/social media", link: "#" }
+           ]
+       }
        ]
-       }       
-       ]
-   }   
+   }
     ];
 
     $http({
@@ -323,10 +324,10 @@ ZestorkAppClientView.controller('getUserInfoController', function ($scope, $http
             }
 
             if (data.pageSidebar == "Fixed") {
-                  $('#set_sidebar_fixed_id').click();
+                $('#set_sidebar_fixed_id').click();
             }
             else {
-                  $('#set_sidebar_default_id').click();
+                $('#set_sidebar_default_id').click();
             }
 
             //$('#sideBarButton').click();
