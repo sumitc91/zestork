@@ -195,7 +195,7 @@
 					</a>
 					<ul class="dropdown-menu">						
 						<li ng-repeat="subCategory in category.dropDownMenuList">
-							<a href="#" class='dropdown-toggle'>{{subCategory.value}}</a>
+							<a href={{subCategory.link}} class='dropdown-toggle'>{{subCategory.value}}</a>
 							
 						</li>
 						
@@ -362,12 +362,12 @@
 						<a href="#" data-toggle="dropdown">{{subCategory.value}}</a>
 						<ul class={{subCategory.dropDownMenuClass}} ng-show="subCategory.dropDownMenuShow">
 									<li ng-repeat="dropDownCategory in subCategory.dropDownMenuList">
-										<a href="#">{{dropDownCategory.value}}</a>
+										<a href={{dropDownCategory.link}}>{{dropDownCategory.value}}</a>
 									</li>									
 								</ul>					
 					</li>										
 				</ul>
-							
+					
 			<div class="subnav">
 				<div class="subnav-title">
 					<a href="#" class='toggle-subnav'><i class="icon-angle-down"></i><span>Progressbars</span></a>
@@ -414,6 +414,9 @@
 						<li>
 							<span class="value">62</span>
 							<span class="name">Clicks</span>
+						</li>
+						<li>
+							<span class="value" id="clickOutsideToCloseMenuId">62</span>							
 						</li>
 					</ul>
 				</div>
