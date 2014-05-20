@@ -5,7 +5,8 @@ ZestorkAppClientView.config(function ($routeProvider) {
 
     $routeProvider.when("/", { templateUrl: "../../Resource/templates/clientView/home.html" }).
                    when("/dashboard", { templateUrl: "../../Resource/templates/clientView/dashboard.html" }).
-                    when("/productSurvey", { templateUrl: "../../Resource/templates/clientView/productSurvey.html" }).
+                   when("/productSurvey", { templateUrl: "../../Resource/templates/clientView/productSurvey.html" }).
+                   when("/VerificationAndDuplicationSample", { templateUrl: "../../Resource/templates/clientView/VerificationAndDuplicationSample.html" }).
                    when("/edit", { templateUrl: "../../Resource/templates/ClientView/edit.html" }).
                    when("/404", { templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" }).
                    when("/signup", { templateUrl: "../../Resource/templates/beforeLogin/contentView/signup.html" }).
@@ -47,7 +48,7 @@ ZestorkAppClientView.controller('masterPageController', function ($scope, $rootS
        subCategoryList: [
        {
            value: "Data entry", dropDownMenuShow: true, dropDownSubMenuClass: "dropdown-submenu", dropDownMenuClass: "dropdown-menu", dropDownSubMenuArrow: "dropdown", dropDownMenuList: [
-           { value: "Verification & Duplication", link: "#" },
+           { value: "Verification & Duplication", link: "#/VerificationAndDuplicationSample" },
            { value: "Data Entry", link: "#" },
            { value: "Search the web for something", link: "#" },
            { value: "Do some Excel work", link: "#" },
