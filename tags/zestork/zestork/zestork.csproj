@@ -1545,7 +1545,9 @@
     <Content Include="Resource\templates\beforeLogin\web\w3layouts-license.txt" />
     <Content Include="Resource\templates\clientView\dashboard.html" />
     <Content Include="Resource\templates\clientView\edit.html" />
+    <Content Include="Resource\templates\clientView\productSurvey.html" />
     <Content Include="Resource\templates\clientView\home.html" />
+    <Content Include="Resource\templates\clientView\VerificationAndDuplicationSample.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
