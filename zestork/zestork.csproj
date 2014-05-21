@@ -1543,6 +1543,7 @@
     <Content Include="Resource\templates\beforeLogin\web\js\responsiveslides.min.js" />
     <Content Include="Resource\templates\beforeLogin\web\services.html" />
     <Content Include="Resource\templates\beforeLogin\web\w3layouts-license.txt" />
+    <Content Include="Resource\templates\clientView\createProductSurvey.html" />
     <Content Include="Resource\templates\clientView\dashboard.html" />
     <Content Include="Resource\templates\clientView\edit.html" />
     <Content Include="Resource\templates\clientView\productSurvey.html" />
