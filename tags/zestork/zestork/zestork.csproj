@@ -294,6 +294,7 @@
     <Content Include="Content\app\beforeLogin\beforeLoginApp.js" />
     <Content Include="Content\app\beforeLogin\forgetPasswordTemplate.js" />
     <Content Include="Content\app\clientView\ClientViewApp.js" />
+    <Content Include="Content\app\clientView\createProductSurveyTemplate.js" />
     <Content Include="Content\app\clientView\editClientTemplate.js" />
     <Content Include="Content\app\clientView\clientDashboardTemplate.js" />
     <Content Include="Content\app\clientView\homeTemplate.js" />
@@ -346,6 +347,9 @@
     <Content Include="Content\lib\angular.min.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\styles\bootstrap.css" />
+    <Content Include="Content\third-party\angular-xeditable\css\xeditable.css" />
+    <Content Include="Content\third-party\angular-xeditable\js\xeditable.js" />
+    <Content Include="Content\third-party\angular-xeditable\js\xeditable.min.js" />
     <Content Include="Content\third-party\bootstrap-modal-master\bs3.html" />
     <Content Include="Content\third-party\bootstrap-modal-master\css\bootstrap-modal-bs3patch.css" />
     <Content Include="Content\third-party\bootstrap-modal-master\css\bootstrap-modal.css" />
