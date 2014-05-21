@@ -10,21 +10,12 @@
 
     $(document).ready(function () {
         //editables 
-        $('#Instruction1').editable({
+        $('.editableInstruction').editable({
             validate: function (value) {
                 if ($.trim(value) == '') return 'This field is required';
             }
         });
-        $('#Instruction2').editable({
-            validate: function (value) {
-                if ($.trim(value) == '') return 'This field is required';
-            }
-        });
-        $('#Instruction3').editable({
-            validate: function (value) {
-                if ($.trim(value) == '') return 'This field is required';
-            }
-        });
+        
     });
 
 </script>
@@ -45,13 +36,13 @@
                         <div class="controls">
                             <ul>
                                 <li>
-                                <a data-original-title="Enter Instruction #1" data-placeholder="Required" data-placement="right" data-pk="1" data-type="text" id="Instruction1" href="#" class="editable editable-click editable-empty">Instruction 1</a>
+                                <a data-original-title="Enter Instruction #1" data-placeholder="Required" data-placement="right" data-pk="1" data-type="text"  href="#" class="editable editable-click editable-empty editableInstruction">Instruction 1</a>
                                 </li>
                                 <li>
-                                <a data-original-title="Enter Instruction #2" data-placeholder="Required" data-placement="right" data-pk="1" data-type="text" id="Instruction2" href="#" class="editable editable-click editable-empty">Instructions 2</a>
+                                <a data-original-title="Enter Instruction #2" data-placeholder="Required" data-placement="right" data-pk="1" data-type="text"  href="#" class="editable editable-click editable-empty editableInstruction">Instructions 2</a>
                                 </li>
                                 <li>
-                                <a data-original-title="Enter Instruction #3" data-placeholder="Required" data-placement="right" data-pk="1" data-type="text" id="Instruction3" href="#" class="editable editable-click editable-empty">Instructions 3</a>
+                                <a data-original-title="Enter Instruction #3" data-placeholder="Required" data-placement="right" data-pk="1" data-type="text"  href="#" class="editable editable-click editable-empty editableInstruction">Instructions 3</a>
                                 </li>
                             </ul>
                         </div>
