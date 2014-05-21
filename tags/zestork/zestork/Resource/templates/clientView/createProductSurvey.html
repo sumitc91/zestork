@@ -7,19 +7,6 @@
 <!--<script src="../../Resource/templates/afterLogin/web/js/plugins/xeditable/demo.js"></script>-->
 <script src="../../Resource/templates/afterLogin/web/js/plugins/xeditable/address.js"></script>
 
-<script type="text/javascript">
-
-    $(document).ready(function () {
-        //editables 
-        $('.editableInstruction').editable({
-            validate: function (value) {
-                if ($.trim(value) == '') return 'This field is required';
-            }
-        });
-        
-    });
-
-</script>
 <div class="container-fluid" ng-controller="createProductSurveyController">
     <div class="row-fluid">
         <div class="span12">
@@ -35,16 +22,8 @@
                             
                                 Add Instructions <small>(Compulsory)</small></label>
                         <div class="controls">
-                            <ul>
-                                <li>
-                                <a data-original-title="Enter Instruction #1" data-placeholder="Required" data-placement="right" data-pk="1" data-type="text"  href="#" class="editable editable-click editable-empty editableInstruction">Instruction 1</a>
-                                </li>
-                                <li>
-                                <a data-original-title="Enter Instruction #2" data-placeholder="Required" data-placement="right" data-pk="1" data-type="text"  href="#" class="editable editable-click editable-empty editableInstruction">Instructions 2</a>
-                                </li>
-                                <li>
-                                <a data-original-title="Enter Instruction #3" data-placeholder="Required" data-placement="right" data-pk="1" data-type="text"  href="#" class="editable editable-click editable-empty editableInstruction">Instructions 3</a>
-                                </li>
+                            <ul id="editableInstructionsListID">
+                               
 
                             </ul>
                         </div>
