@@ -18,7 +18,7 @@ ZestorkAppClientView.config(function ($routeProvider) {
 
 ZestorkAppClientView.run(function ($rootScope, $location) { //Insert in the function definition the dependencies you need.
     //Do your $on in here, like this:  
-
+    
     $rootScope.$on("$locationChangeStart", function (event, next, current) {
 
         //alert("testing");
