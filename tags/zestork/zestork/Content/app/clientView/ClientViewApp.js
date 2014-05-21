@@ -6,6 +6,7 @@ ZestorkAppClientView.config(function ($routeProvider) {
     $routeProvider.when("/", { templateUrl: "../../Resource/templates/clientView/home.html" }).
                    when("/dashboard", { templateUrl: "../../Resource/templates/clientView/dashboard.html" }).
                    when("/productSurvey", { templateUrl: "../../Resource/templates/clientView/productSurvey.html" }).
+                   when("/createProductSurvey", { templateUrl: "../../Resource/templates/clientView/createProductSurvey.html" }).
                    when("/VerificationAndDuplicationSample", { templateUrl: "../../Resource/templates/clientView/VerificationAndDuplicationSample.html" }).
                    when("/edit", { templateUrl: "../../Resource/templates/ClientView/edit.html" }).
                    when("/404", { templateUrl: "../../Resource/templates/beforeLogin/contentView/404.html" }).
