@@ -92,6 +92,7 @@ ZestorkApp.controller('signUpClientController', function ($scope, $http, $routeP
             });
         }
 
+
     }
 
     $scope.checkUserExists = function () {

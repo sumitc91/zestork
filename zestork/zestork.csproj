@@ -1497,7 +1497,6 @@
     <Content Include="Resource\templates\beforeLogin\contentView\ajax\signInTemplate.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\googleLogin.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\facebookLogin.html" />
-    <Content Include="Resource\templates\beforeLogin\contentView\signupTesting.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\signupclient.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\termsAndConditions.html" />
     <Content Include="Resource\templates\beforeLogin\contentView\validateAccount.html" />
