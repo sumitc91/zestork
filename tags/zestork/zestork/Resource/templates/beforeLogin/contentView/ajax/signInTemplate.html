@@ -1,110 +1,149 @@
-﻿<div class="wrapper" ng-controller="LoginViewController">
-    <div class="alert alert-error" ng-show="showMssg">
-        <button data-dismiss="alert" class="close" type="button">
-            ×</button>
-        <strong>{{mssg}}</strong> {{content}}
-    </div>
-    <div class="login-body">
-        <br />
-        <b>Sign in:</b>
-        <br />
-        <br />
-        <form method="post" action="/Account/Login/web">
-        <div>
-            <span>
-                <input id="userNameBeforeLogin" name="userName" type="text" placeholder="Username"
-                    class="textbox"></span>
-        </div>
-        <div>
-            <span>
-                <input id="passwordBeforeLogin" name="password" type="password" placeholder="Password"
-                    class="textbox"></span>
-        </div>
-        <div class="socialButtonRightAlign">
-            <span class="twitterRightAlign">
-                <div class="twitter clearfix ">
-                    <img class="layer_3" src="../../Content/css/SocialButtons/images/layer_3.png" alt=""
-                        width="16" height="12" />
-                    <div class="sap">
-                    </div>
-                    <div class="sap_2">
-                    </div>
-                    <a href="#">
-                        <p class="sign_in_with_twitter">
-                            Sign in with Twitter</p>
-                    </a>
-                </div>
-            </span><span class="facebookRightAlign" ng-controller="signInController">
-                <div class="facebook clearfix">
-                    <img class="layer_7" src="../../Content/css/SocialButtons/images/layer_7.png" alt=""
-                        width="8" height="17" />
-                    <div class="sap_3">
-                    </div>
-                    <div class="sap_4">
-                    </div>
-                    <a href="#/facebookLogin" id="signInUsingFacebook">
-                        <p class="sign_in_with_facebook">
-                            Sign in with Facebook</p>
-                    </a>
-                </div>
-            </span><span class="linkedinRightAlign">
-                <div class="linkedin clearfix">
-                    <img class="layer_11" src="../../Content/css/SocialButtons/images/layer_11.png" alt=""
-                        width="14" height="14" />
-                    <div class="sep">
-                    </div>
-                    <div class="sep_2">
-                    </div>
-                    <a href="#/linkedinLogin">
-                        <p class="sign_in_with_linkedin">
-                            Sign in with Linkedin</p>
-                    </a>
-                </div>
-            </span><span class="yahooRightAlign">
-                <div class="yahoo clearfix">
-                    <img class="layer_15" src="../../Content/css/SocialButtons/images/layer_15.png" alt=""
-                        width="20" height="11" />
-                    <div class="sep_3">
-                    </div>
-                    <div class="sep_4">
-                    </div>
-                    <a href="#">
-                        <p class="sign_in_with_yahoo">
-                            Sign in with Yahoo</p>
-                    </a>
-                </div>
-            </span><span class="googleRightAlign">
-                <div class="google clearfix">
-                    <img class="layer_19" src="../../Content/css/SocialButtons/images/layer_19.png" alt=""
-                        width="11" height="17" />
-                    <div class="sep_7">
-                    </div>
-                    <div class="sep_8">
-                    </div>
-                    <a href="#/googleLogin">
-                        <p class="sign_in_with_google">
-                            Sign in with Google</p>
-                    </a>
-                </div>
-            </span>
-        </div>
-        <div>
-        <div class="control-group">
-            <div class="controls">
-                <label class="checkbox">
-                    <input type="checkbox" data-rule-required="true"
-                        name="keepMeSignedInCheckBox" class="ng-pristine ng-valid">
-                    Keep me signed in
-                </label>
-            </div>
-        </div>
-            <span>
-                <input type="submit" class="mybutton" value="Submit"></span>
-        </div>
-        </form>
+﻿  <div class="container" ng-controller="LoginViewController">
+
+    <form method="post" action="/Account/Login/web" class="form-signin" id="bb">
         
-        <div class="forget">
-            <a href="#/forgetpassword"><span>Forgot password? </span></a>
+        <h2 class="form-signin-heading"> Incorrect Email or Password Entry </h2>
+
+        <div class="control-group">
+          	<div class="form-actions">
+                  &nbsp&nbsp&nbsp&nbsp
+				  <a href="#/facebookLogin"><input type="button" class="btn btn-primary" value="Facebook"></a>
+                  <a href="#/googleLogin"><input type="button" class="btn btn-primary" value="Google "></a>
+                  <a href="#/linkedinLogin"><input type="button" class="btn btn-primary" value="Linkedin "></a>
+				
+			</div>
+        </div>
+
+        <div class="control-group">
+          <input id="userNameBeforeLogin" name="userName" type="text" placeholder="Username" class="form-control" required>  
+        </div>
+
+            <div class="control-group">
+		        <div class="controls">
+			        <input id="passwordBeforeLogin" name="password" type="password" placeholder="Password" class="form-control" required>
+		        </div>
+	        </div>
+
+    <div class="control-group">
+        <div class="controls">
+            <label class="checkbox">
+                <input type="checkbox" data-rule-required="true"
+                    name="keepMeSignedInCheckBox" class="ng-pristine ng-valid">
+                Keep me signed in
+            </label>
         </div>
     </div>
+
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+
+         <div class="control-group">
+		   <div class="controls">
+                <a href="#/forgetpassword"><span>Forgot password?</span></a>
+           </div>  
+        </div>
+
+</form>
+
 </div>
+
+
+
+
+<style>
+    body {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        background-color: #eee;
+    }
+
+    .form-signin {
+        max-width: 330px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+        .form-signin .form-signin-heading,
+        .form-signin .checkbox {
+            margin-bottom: 10px;
+        }
+
+        .form-signin .checkbox {
+            font-weight: normal;
+        }
+
+        .form-signin .form-control {
+            position: relative;
+            font-size: 16px;
+            height: auto;
+            padding: 10px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+            .form-signin .form-control:focus {
+                z-index: 2;
+            }
+
+        .form-signin input[type="text"] {
+            margin-bottom: 11px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
