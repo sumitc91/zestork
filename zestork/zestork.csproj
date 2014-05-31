@@ -1540,6 +1540,8 @@
     <Content Include="Resource\templates\beforeLogin\web\images\slider4.jpg" />
     <Content Include="Resource\templates\beforeLogin\web\images\UserPresentation.png" />
     <Content Include="Resource\templates\beforeLogin\web\images\UserPresentation2.gif" />
+    <Content Include="Resource\templates\beforeLogin\web\images\zestorkLogo.gif" />
+    <Content Include="Resource\templates\beforeLogin\web\images\zestorkLogo.jpg" />
     <Content Include="Resource\templates\beforeLogin\web\index.html" />
     <Content Include="Resource\templates\beforeLogin\web\js\bootstrap.min.js" />
     <Content Include="Resource\templates\beforeLogin\web\js\jquery.min.js" />
