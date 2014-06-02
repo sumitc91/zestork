@@ -7,7 +7,7 @@ ZestorkAppClientView.controller('createProductSurveyController', function ($scop
 
     $.each($scope.editableInstructionsList, function () {
         editableInstructions += "<li>";
-        editableInstructions += "<a data-original-title='Enter Instruction #" + this.Number + "' data-placeholder='Required' data-placement='right' data-pk='1' data-type='text'  href='#' id='clientEditableInstruction" + this.Number + "' class='editable editable-click editable-empty editableInstruction'>" + this.Text + "</a>";
+        editableInstructions += "<a data-original-title='Enter Instruction #" + this.Number + "' data-placeholder='Required' data-placement='right' data-pk='1' data-type='text'  href='#' id='clientEditableInstruction" + this.Number + "' class='editable editable-click editable-empty editableInstruction'>" + this.Text + "</a>&nbsp;&nbsp<a style='cursor:pointer' onClick='alert(\"hi\")'><i class='icon-remove'></i></a>";
         editableInstructions += "</li>";
     });
 
@@ -16,7 +16,7 @@ ZestorkAppClientView.controller('createProductSurveyController', function ($scop
     //editables 
     $('.editableInstruction').editable({
         validate: function (value) {
-            if ($.trim(value) == '') return 'This field is required';
+            if ($.trim(value) == '') return 'This field is required';            
         }
     });
 
@@ -27,7 +27,7 @@ ZestorkAppClientView.controller('createProductSurveyController', function ($scop
         editableInstructions = "";
         $.each($scope.editableInstructionsList, function () {
             editableInstructions += "<li>";
-            editableInstructions += "<a data-original-title='Enter Instruction #" + this.Number + "' data-placeholder='Required' data-placement='right' data-pk='1' data-type='text'  href='#' id='clientEditableInstruction" + this.Number + "' class='editable editable-click editable-empty editableInstruction'>" + this.Text + "</a>";
+            editableInstructions += "<a data-original-title='Enter Instruction #" + this.Number + "' data-placeholder='Required' data-placement='right' data-pk='1' data-type='text'  href='#' id='clientEditableInstruction" + this.Number + "' class='editable editable-click editable-empty editableInstruction'>" + this.Text + "</a>&nbsp;&nbsp<a style='cursor:pointer' onClick='alert(\"hi2\")'><i class='icon-remove'></i></a>";
             editableInstructions += "</li>";
         });
         $('#editableInstructionsListID').html(editableInstructions);
@@ -38,6 +38,10 @@ ZestorkAppClientView.controller('createProductSurveyController', function ($scop
                 if ($.trim(value) == '') return 'This field is required';
             }
         });
+    }
+
+    $.deleteEditableInstructions = function(index) {
+        alert('delte editable instructions');
     }
 });
 
