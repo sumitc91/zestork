@@ -20,7 +20,7 @@ ZestorkAppClientView.controller('homeController', function ($scope, $http, $root
         }
         //console.log(data);
     }).error(function (data, status, headers, config) {       
-        alert('Internal Server Error Occured !!');
+        //alert('Internal Server Error Occured !!');
     });
     
     $scope.ClientfirstTimeUserLoginViaSocialLinkChangePasswordPopUpTemplate = '../../Resource/templates/afterLogin/contentView/index/firstTimeLoginViaSocialLinkePopUpModalChangePassword.html';

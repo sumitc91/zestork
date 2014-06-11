@@ -39,7 +39,8 @@ ZestorkAppClientView.controller('editClientDetailsController', function ($scope,
         //console.log(data);
     }).error(function (data, status, headers, config) {
         $.unblockUI();
-        alert('Internal Server Error Occured !!');
+        window.location.href = "/";
+        //alert('Internal Server Error Occured !!');
     });
 
 
