@@ -12,13 +12,16 @@
     ga('require', 'linkid', 'linkid.js');
 })();
 
-$('.googleAnalytics').click(function () {
-    var event = this.getAttribute("ga-event");
-    var category = this.getAttribute("ga-category");
-    var label = this.getAttribute("ga-label");
-    gaWeb(category, event, label);
-});
+window.onload = function () {
+    $('.googleAnalytics').click(function () {        
+        var event = this.getAttribute("ga-event");
+        var category = this.getAttribute("ga-category");
+        var label = this.getAttribute("ga-label");
+        gaWeb(category, event, label);
+    });
+};
 
-function gaWeb(category, event, label) {
+
+function gaWeb(category, event, label) {    
     ga('send', 'event', category, event, label);
 }
