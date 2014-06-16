@@ -4,14 +4,14 @@
       <div class="container">
 
 				 <div class="grid_1_of_3 images_1_of_2">
-					<div class="grid_icon_hire"><a href={{gridIconDataList[0].ImageLink}} onclick="googleAnalytics('BeforeLogin','{{gridIconDataList[0].ImageLink}}','ImageClick')"><img src={{gridIconDataList[0].ImageIconUrl}} width="100%" height="100%"></a></div>
+					<div class="grid_icon_hire"><a href={{gridIconDataList[0].ImageLink}} class="googleAnalytics" ga-category="BeforeLogin" ga-event="Client-SignUp" ga-label="ImageLink"><img src={{gridIconDataList[0].ImageIconUrl}} width="100%" height="100%"></a></div>
 					          <h3>{{gridIconDataList[0].Headline}}</h3>					          
-				             <a href={{gridIconDataList[0].BottomButtonUrl}} onclick="googleAnalytics('BeforeLogin','{{gridIconDataList[0].ImageLink}}','ButtonClick')"><button class="btn btn-primary">{{gridIconDataList[0].Content}}</button></a>
+				             <a href={{gridIconDataList[0].BottomButtonUrl}} class="googleAnalytics" ga-category="BeforeLogin" ga-event="Client-SignUp" ga-label="ButtonLink"><button class="btn btn-primary">{{gridIconDataList[0].Content}}</button></a>
 				</div>
 				<div class="grid_1_of_3 images_1_of_2">
-					  <div class="grid_icon_work"><a href={{gridIconDataList[1].ImageLink}} onclick="googleAnalytics('BeforeLogin','{{gridIconDataList[1].ImageLink}}','ImageClick')"><img src={{gridIconDataList[1].ImageIconUrl}} width="100%" height="100%"></a></div>
+					  <div class="grid_icon_work"><a href={{gridIconDataList[1].ImageLink}} class="googleAnalytics" ga-category="BeforeLogin" ga-event="User-SignUp" ga-label="ImageLink"><img src={{gridIconDataList[1].ImageIconUrl}} width="100%" height="100%"></a></div>
 					          <h3>{{gridIconDataList[1].Headline}}</h3>					          
-				             <a href={{gridIconDataList[1].BottomButtonUrl}} onclick="googleAnalytics('BeforeLogin','{{gridIconDataList[0].ImageLink}}','ButtonClick')"><button class="btn btn-success">{{gridIconDataList[1].Content}}</button></a>
+				             <a href={{gridIconDataList[1].BottomButtonUrl}} class="googleAnalytics" ga-category="BeforeLogin" ga-event="User-SignUp" ga-label="ButtonLink"><button class="btn btn-success">{{gridIconDataList[1].Content}}</button></a>
 				</div>
 
 			</div>

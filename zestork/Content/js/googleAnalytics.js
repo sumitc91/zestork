@@ -8,13 +8,16 @@
         a.src = g;
         m.parentNode.insertBefore(a, m);
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-51810596-1', 'auto', { 'cookieDomain': 'none' });
+    ga('create', 'UA-51967607-1', 'auto', { 'cookieDomain': 'none' });
     ga('require', 'linkid', 'linkid.js');
 })();
 
-function googleAnalytics(category, event,label) {
+$('.googleAnalytics').click(function () {
+    var event = this.getAttribute("ga-event");
+    var category = this.getAttribute("ga-category");
+    var label = this.getAttribute("ga-label");
     gaWeb(category, event, label);
-}
+});
 
 function gaWeb(category, event, label) {
     ga('send', 'event', category, event, label);

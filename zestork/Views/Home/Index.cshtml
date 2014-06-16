@@ -78,10 +78,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#" onclick="googleAnalytics('BeforeLogin','CompanyLogo','Click')"><img src="../../Resource/templates/beforeLogin/web/images/zestorkLogo.gif" alt="Logo" width="125" height="39" /></a>
+                <a class="navbar-brand googleAnalytics" href="#" ga-category="BeforeLogin" ga-event="CompanyLogo" ga-label="Click"><img src="../../Resource/templates/beforeLogin/web/images/zestorkLogo.gif" alt="Logo" width="125" height="39" /></a>
             </div>
             <div class="navbar-collapse collapse">
-                <form class="navbar-form navbar-right" onclick="googleAnalytics('BeforeLogin','Login','web')" method="post" action="/Account/Login/web">
+                <form class="navbar-form navbar-right googleAnalytics" ga-category="BeforeLogin" ga-event="Login" ga-label="web" method="post" action="/Account/Login/web">
                     <div class="form-group">
                         <input type="text" placeholder="Email" name="userName" class="form-control">
                     </div>
@@ -97,7 +97,7 @@
                                 <input type="checkbox" data-rule-required="true"
                                     name="keepMeSignedInCheckBox" class="ng-pristine ng-valid">
                                 <span style="color: white">Keep me signed in</span>
-                                <a href="#/forgetpassword" onclick="googleAnalytics('BeforeLogin','ForgetPassword','LinkClick')"><span style="color: white">Forgot password?</span></a>
+                                <a class="googleAnalytics" href="#/forgetpassword" ga-category="BeforeLogin" ga-event="ForgetPassword" ga-label="LinkClick"><span style="color: white">Forgot password?</span></a>
                             </label>
                         </div>
 
@@ -118,7 +118,7 @@
     <hr>
     <div id="footer">
         <div class="container">
-            <p class="text-muted credit">{{beforeLoginFooterCopyRightInfo.companyName}}  © All Rights Reserved | Design by  <a href="{{beforeLoginFooterCopyRightInfo.designedByUrl}}" onclick="googleAnalytics('BeforeLogin','DesignedByBottonLink','Click')">{{beforeLoginFooterCopyRightInfo.designedByText}}</a>.</p>
+            <p class="text-muted credit">{{beforeLoginFooterCopyRightInfo.companyName}}  © All Rights Reserved | Design by  <a href="{{beforeLoginFooterCopyRightInfo.designedByUrl}}" class="googleAnalytics" ga-category="BeforeLogin" ga-event="DesignedByBottonLink" ga-label="Click">{{beforeLoginFooterCopyRightInfo.designedByText}}</a>.</p>
         </div>
     </div>
 
