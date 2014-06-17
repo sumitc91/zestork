@@ -7,37 +7,24 @@ ZestorkAppClientView.controller('createProductSurveyController', function ($scop
 
     $.each($scope.editableInstructionsList, function () {
         editableInstructions += "<li>";
-        editableInstructions += "<a data-original-title='Enter Instruction #" + this.Number + "' data-placeholder='Required' data-placement='right' data-pk='1' data-type='text'  href='#' id='clientEditableInstruction" + this.Number + "' class='editable editable-click editable-empty editableInstruction'>" + this.Text + "</a>&nbsp;&nbsp<a style='cursor:pointer' onClick='alert(\"hi\")'><i class='icon-remove'></i></a>";
+        editableInstructions += this.Text + "&nbsp;&nbsp<a style='cursor:pointer' onClick='alert(" + this.Number + ")'><i class='icon-remove'></i></a>";
         editableInstructions += "</li>";
     });
 
     $('#editableInstructionsListID').html(editableInstructions);
 
-    //editables 
-    $('.editableInstruction').editable({
-        validate: function (value) {
-            if ($.trim(value) == '') return 'This field is required';            
-        }
-    });
-
-    $scope.addEditableInstructions = function (index) {
+    $scope.addEditableInstructions = function () {        
         totalEditableInstruction = totalEditableInstruction + 1;
-        var editableInstructionDataToBeAdded = { Number: totalEditableInstruction, Text: "Instruction " + totalEditableInstruction };
+        var editableInstructionDataToBeAdded = { Number: totalEditableInstruction, Text: $('#AddInstructionsTextArea').val() };
         $scope.editableInstructionsList.push(editableInstructionDataToBeAdded);
         editableInstructions = "";
         $.each($scope.editableInstructionsList, function () {
             editableInstructions += "<li>";
-            editableInstructions += "<a data-original-title='Enter Instruction #" + this.Number + "' data-placeholder='Required' data-placement='right' data-pk='1' data-type='text'  href='#' id='clientEditableInstruction" + this.Number + "' class='editable editable-click editable-empty editableInstruction'>" + this.Text + "</a>&nbsp;&nbsp<a style='cursor:pointer' onClick='alert(\"hi2\")'><i class='icon-remove'></i></a>";
+            editableInstructions += this.Text + "&nbsp;&nbsp<a style='cursor:pointer' onClick='alert(" + this.Number + ")'><i class='icon-remove'></i></a>";
             editableInstructions += "</li>";
         });
         $('#editableInstructionsListID').html(editableInstructions);
-
-        //editables 
-        $('.editableInstruction').editable({
-            validate: function (value) {
-                if ($.trim(value) == '') return 'This field is required';
-            }
-        });
+        $('#addInstructionCloseButton').click();
     }
 
     $.deleteEditableInstructions = function(index) {
