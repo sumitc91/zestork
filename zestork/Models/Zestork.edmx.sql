@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 04/21/2014 19:17:29
+-- Date Created: 06/18/2014 17:32:12
 -- Generated from EDMX file: F:\pcongo\tags\zestork\zestork\Models\Zestork.edmx
 -- --------------------------------------------------
 
@@ -167,6 +167,19 @@ CREATE TABLE [dbo].[RecommendedBies] (
 );
 GO
 
+-- Creating table 'JobDatas'
+CREATE TABLE [dbo].[JobDatas] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Category] nvarchar(max)  NOT NULL,
+    [Type] nvarchar(max)  NOT NULL,
+    [Data] nvarchar(max)  NULL,
+    [PostedBy] nvarchar(max)  NOT NULL,
+    [StartDate] nvarchar(max)  NOT NULL,
+    [Status] nvarchar(max)  NOT NULL,
+    [EndDate] nvarchar(max)  NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -234,6 +247,12 @@ GO
 -- Creating primary key on [Id] in table 'RecommendedBies'
 ALTER TABLE [dbo].[RecommendedBies]
 ADD CONSTRAINT [PK_RecommendedBies]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'JobDatas'
+ALTER TABLE [dbo].[JobDatas]
+ADD CONSTRAINT [PK_JobDatas]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 

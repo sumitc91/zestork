@@ -36,5 +36,6 @@ namespace zestork.Models
         public DbSet<ForgetPassword> ForgetPasswords { get; set; }
         public DbSet<UserRecommendation> UserRecommendations { get; set; }
         public DbSet<RecommendedBy> RecommendedBies { get; set; }
+        public DbSet<JobData> JobDatas { get; set; }
     }
 }

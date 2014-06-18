@@ -17,6 +17,7 @@
     <EntitySet Name="ForgetPasswords" EntityType="Zestork.Store.ForgetPasswords" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserRecommendations" EntityType="Zestork.Store.UserRecommendations" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RecommendedBies" EntityType="Zestork.Store.RecommendedBies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JobDatas" EntityType="Zestork.Store.JobDatas" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="Users">
     <Key>
@@ -125,6 +126,19 @@
     <Property Name="RecommendedTo" Type="nvarchar(max)" Nullable="false" />
     <Property Name="RecommendedFrom" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="JobDatas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Data" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PostedBy" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StartDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EndDate" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -141,6 +155,7 @@
           <EntitySet Name="ForgetPasswords" EntityType="Zestork.ForgetPassword" />
           <EntitySet Name="UserRecommendations" EntityType="Zestork.UserRecommendation" />
           <EntitySet Name="RecommendedBies" EntityType="Zestork.RecommendedBy" />
+          <EntitySet Name="JobDatas" EntityType="Zestork.JobData" />
         </EntityContainer>
         <EntityType Name="Users">
           <Key>
@@ -248,6 +263,19 @@
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="RecommendedTo" Nullable="false" />
           <Property Type="String" Name="RecommendedFrom" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JobData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Category" Nullable="false" />
+          <Property Type="String" Name="Type" Nullable="false" />
+          <Property Type="String" Name="Data" Nullable="true" />
+          <Property Type="String" Name="PostedBy" Nullable="false" />
+          <Property Type="String" Name="StartDate" Nullable="false" />
+          <Property Type="String" Name="Status" Nullable="false" />
+          <Property Type="String" Name="EndDate" Nullable="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -373,6 +401,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="JobDatas">
+      <EntityTypeMapping TypeName="IsTypeOf(Zestork.JobData)">
+        <MappingFragment StoreEntitySet="JobDatas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="PostedBy" ColumnName="PostedBy" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
@@ -404,6 +446,7 @@
         <EntityTypeShape EntityType="Zestork.ForgetPassword" Width="1.5" PointX="6.5" PointY="0.5" Height="1.59568359375" />
         <EntityTypeShape EntityType="Zestork.UserRecommendation" Width="1.5" PointX="4.875" PointY="2.875" />
         <EntityTypeShape EntityType="Zestork.RecommendedBy" Width="1.5" PointX="6.5" PointY="2.25" />
+        <EntityTypeShape EntityType="Zestork.JobData" Width="1.5" PointX="4.875" PointY="4.875" Height="2.5571907552083326" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
