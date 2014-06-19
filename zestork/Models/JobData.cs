@@ -16,7 +16,7 @@ namespace zestork.Models
     {
         public int Id { get; set; }
         public string Category { get; set; }
-        public string Type { get; set; }
+        public string SubCategory { get; set; }
         public string Data { get; set; }
         public string PostedBy { get; set; }
         public string StartDate { get; set; }

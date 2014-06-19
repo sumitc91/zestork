@@ -132,7 +132,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Category" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SubCategory" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Data" Type="nvarchar(max)" Nullable="true" />
     <Property Name="PostedBy" Type="nvarchar(max)" Nullable="false" />
     <Property Name="StartDate" Type="nvarchar(max)" Nullable="false" />
@@ -270,7 +270,7 @@
           </Key>
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Category" Nullable="false" />
-          <Property Type="String" Name="Type" Nullable="false" />
+          <Property Type="String" Name="SubCategory" Nullable="false" />
           <Property Type="String" Name="Data" Nullable="true" />
           <Property Type="String" Name="PostedBy" Nullable="false" />
           <Property Type="String" Name="StartDate" Nullable="false" />
@@ -406,7 +406,7 @@
         <MappingFragment StoreEntitySet="JobDatas">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Category" ColumnName="Category" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="SubCategory" ColumnName="SubCategory" />
           <ScalarProperty Name="Data" ColumnName="Data" />
           <ScalarProperty Name="PostedBy" ColumnName="PostedBy" />
           <ScalarProperty Name="StartDate" ColumnName="StartDate" />
