@@ -3,50 +3,57 @@ ZestorkAppClientView.controller('createTemplateController', function ($scope, $h
     //alert("create product controller");    
     var editableInstructions = "";
     var totalEditableInstruction = 0;
-    $scope.TemplateDataList = [];    
-    $scope.TemplateDataList.push({ CategoryType: "Instructions", editableInstructionsList: [{ Number: totalEditableInstruction, Text: "Instruction 1"}] });
-    $.each($scope.TemplateDataList.editableInstructionsList, function () {
+    $scope.editableInstructionsList = [{ Number: totalEditableInstruction, Text: "Instruction 1"}];
+
+    $.each($scope.editableInstructionsList, function () {
         editableInstructions += "<li>";
-        editableInstructions += this.Text + "&nbsp;&nbsp<a style='cursor:pointer' class='addInstructionClass' id='"+this.Number+"'><i class='icon-remove'></i></a>";
+        editableInstructions += this.Text + "&nbsp;&nbsp<a style='cursor:pointer' class='addInstructionClass' id='" + this.Number + "'><i class='icon-remove'></i></a>";
         editableInstructions += "</li>";
     });
 
     $('#editableInstructionsListID').html(editableInstructions);
     initAddInstructionClass();
 
+    $scope.addEditableInstructions = function () {
+        totalEditableInstruction = totalEditableInstruction + 1;
+        var editableInstructionDataToBeAdded = { Number: totalEditableInstruction, Text: $('#AddInstructionsTextArea').val() };
+        $scope.editableInstructionsList.push(editableInstructionDataToBeAdded);
+        refreshInstructionList();
+    }
+
     $scope.addSingleAnswer = function () {
-        alert("singleAnsewr");
-//        totalEditableInstruction = totalEditableInstruction + 1;
-//        var editableInstructionDataToBeAdded = { Number: totalEditableInstruction, Text: $('#AddInstructionsTextArea').val() };
-//        $scope.editableInstructionsList.push(editableInstructionDataToBeAdded);
-//        refreshInstructionList();
+        alert("addSingleAnswer");
+    }
+
+    $scope.addInstructionsRow = function () {
+        alert("addInstructionsRow");
     }
 
     function initAddInstructionClass() {
-        $('.addInstructionClass').click(function () {            
+        $('.addInstructionClass').click(function () {
             var i;
-            for (i = 0; i < $scope.TemplateDataList.editableInstructionsList.length; i++) {
-                if ($scope.TemplateDataList.editableInstructionsList[i].Number == this.id) {                    
+            for (i = 0; i < $scope.editableInstructionsList.length; i++) {
+                if ($scope.editableInstructionsList[i].Number == this.id) {
                     break;
                 }
             }
-            $scope.TemplateDataList.editableInstructionsList.splice(i, 1);
+            $scope.editableInstructionsList.splice(i, 1);
             refreshInstructionList();
         });
     }
 
     function refreshInstructionList() {
         editableInstructions = "";
-        $.each($scope.TemplateDataList.editableInstructionsList, function () {
+        $.each($scope.editableInstructionsList, function () {
             editableInstructions += "<li>";
             editableInstructions += this.Text + "&nbsp;&nbsp<a style='cursor:pointer' class='addInstructionClass' id='" + this.Number + "'><i class='icon-remove'></i></a>";
             editableInstructions += "</li>";
         });
         $('#editableInstructionsListID').html(editableInstructions);
         initAddInstructionClass();
-        $('#addInstructionCloseButton').click();        
+        $('#addInstructionCloseButton').click();
     }
-    
+
 });
 
 
