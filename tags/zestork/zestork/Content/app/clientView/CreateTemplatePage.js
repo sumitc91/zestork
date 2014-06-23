@@ -3,7 +3,7 @@ ZestorkAppClientView.controller('createTemplateController', function ($scope, $h
     //alert("create product controller");    
     var editableInstructions = "";
     var totalEditableInstruction = 0;
-    $scope.jobTemplate = [{ type: "AddInstructions", editableInstructionsList: { Number: totalEditableInstruction, Text: "Instruction 1" } }];
+    $scope.jobTemplate = [{ type: "AddInstructions",visible:false,buttonText:"Add Instructions", editableInstructionsList: { Number: totalEditableInstruction, Text: "Instruction 1" } }];
     
     $.each($scope.jobTemplate[0].editableInstructionsList, function () {
         editableInstructions += "<li>";
@@ -19,6 +19,7 @@ ZestorkAppClientView.controller('createTemplateController', function ($scope, $h
         var editableInstructionDataToBeAdded = { Number: totalEditableInstruction, Text: $('#AddInstructionsTextArea').val() };
         $scope.jobTemplate[0].editableInstructionsList.push(editableInstructionDataToBeAdded);
         refreshInstructionList();
+        $('#AddInstructionsTextArea').val('');
     }
 
     $scope.addSingleAnswer = function () {
@@ -26,7 +27,13 @@ ZestorkAppClientView.controller('createTemplateController', function ($scope, $h
     }
 
     $scope.addInstructionsRow = function () {
-        alert("addInstructionsRow");
+        if ($scope.jobTemplate[0].visible == true) {
+            $scope.jobTemplate[0].buttonText = "Add Instructions";            
+            $scope.jobTemplate[0].visible = false;
+        } else {
+            $scope.jobTemplate[0].visible = true;
+            $scope.jobTemplate[0].buttonText = "Remove Instructions";
+        }
     }
 
     function initAddInstructionClass() {

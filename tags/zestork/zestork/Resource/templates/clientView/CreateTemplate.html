@@ -11,7 +11,7 @@
                         <div class="control-group">
                                                         
                             <a ng-click="addInstructionsRow()" role="button" class="btn"><i
-                                                                                          class="icon-plus-sign"></i>Add Instructions</a>
+                                                                                          class="icon-plus-sign"></i>{{jobTemplate[0].buttonText}}</a>
 
                             <a ng-click="addSingleAnswer()" role="button" class="btn"><i
                                                                                           class="icon-plus-sign"></i>Single Answer</a>
@@ -26,7 +26,7 @@
                                                                                                                class="icon-plus-sign"></i>Images</a>
                         </div>
                         
-                        <div class="control-group">
+                        <div class="control-group" ng-show="jobTemplate[0].visible">
                             <label for="textfield" class="control-label">
                             
                                 <a href="#modal-AddInstructions" role="button" class="btn" data-toggle="modal"><i
@@ -171,7 +171,7 @@
         <div>
             <h6>
                 Add Instruction</h6>
-            <textarea class="input-block-level" id="AddInstructionsTextArea" name="textarea">Lorem ipsum mollit minim fugiat tempor dolore sit officia ut dolore. </textarea>            
+            <textarea class="input-block-level" id="AddInstructionsTextArea" name="textarea" placeholder="Add Instruction"></textarea>            
             <button class="btn btn-primary" ng-click="addEditableInstructions()">
                 Submit</button>      
         </div>
