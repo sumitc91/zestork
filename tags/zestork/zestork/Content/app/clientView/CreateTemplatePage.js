@@ -2,16 +2,42 @@
 ZestorkAppClientView.controller('createTemplateController', function ($scope, $http, $rootScope, $routeParams, CookieUtil) {
     //alert("create product controller");    
     var editableInstructions = "";
+    var totalQuestionHtmlData = "";
     var totalEditableInstruction = 0;
+    var totalSingleQuestionList = 0;
     $scope.jobTemplate = [{ type: "AddInstructions",visible:false,buttonText:"Add Instructions", editableInstructionsList: [{ Number: totalEditableInstruction, Text: "Instruction 1" }] }];
-    
+
+    $scope.singleQuestionsList = [{Number: totalSingleQuestionList, Question:"What is your gender ?" , Options : "Male1;Female2" }];
+
     $.each($scope.jobTemplate[0].editableInstructionsList, function () {
         editableInstructions += "<li>";
         editableInstructions += this.Text + "&nbsp;&nbsp<a style='cursor:pointer' class='addInstructionClass' id='" + this.Number + "'><i class='icon-remove'></i></a>";
         editableInstructions += "</li>";
     });
 
+    $.each($scope.singleQuestionsList, function () {       
+        
+        totalQuestionHtmlData += "<fieldset>";
+
+        totalQuestionHtmlData += "<label>";
+        totalQuestionHtmlData += this.Number + ". "+ this.Question;
+        totalQuestionHtmlData += "</label>";
+
+        var singleQuestionsOptionList = this.Options.split(';');
+        for (var j = 0; j < singleQuestionsOptionList.length;j++)
+        {
+            totalQuestionHtmlData += "<div class='radio'>";
+            totalQuestionHtmlData += "<label>";
+            totalQuestionHtmlData += "<input type='radio' value='" + singleQuestionsOptionList[j] + "' name='" + singleQuestionsOptionList[j] + "'>" + singleQuestionsOptionList[j] + "";
+            totalQuestionHtmlData += "</label>";
+            totalQuestionHtmlData += "</div>";
+        }
+
+        totalQuestionHtmlData += "</fieldset>";
+    });
+
     $('#editableInstructionsListID').html(editableInstructions);
+    $('#addSingleAnswerQuestionID').html(totalQuestionHtmlData);    
     initAddInstructionClass();
 
     $scope.addEditableInstructions = function () {
@@ -19,7 +45,7 @@ ZestorkAppClientView.controller('createTemplateController', function ($scope, $h
         var editableInstructionDataToBeAdded = { Number: totalEditableInstruction, Text: $('#AddInstructionsTextArea').val() };
         $scope.jobTemplate[0].editableInstructionsList.push(editableInstructionDataToBeAdded);
         refreshInstructionList();
-        $('#AddInstructionsTextArea').val('');
+        //$('#AddInstructionsTextArea').val(''); // TODO: clearing the text area not working
     }
 
     $scope.addSingleAnswer = function () {
