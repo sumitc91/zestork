@@ -40,8 +40,8 @@
                         </div>          
                         <div class="control-group">
                             <label for="textfield" class="control-label">
-                                <button type="submit" class="btn btn-primary">
-                                    Add Questions</button><small>(Single Answer)</small></label>
+                                 <a href="#modal-AddSingleQuestions" role="button" class="btn" data-toggle="modal"><i
+                            class="icon-plus-sign"></i>Add Questions</a><small>(Single Answer)</small>    </label>
                             <div class="controls">
                                 <fieldset>
                                     <label>
@@ -159,7 +159,7 @@
 </div>
 
 <div id="modal-AddInstructions" class="modal hide fade" tabindex="-1" role="dialog"
-     aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="createProductSurveyController">
+     aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="createTemplateController">
     <div class="modal-header">
         <button aria-hidden="true" id="addInstructionCloseButton" data-dismiss="modal" class="close"
                 type="button" style="display: block;">
@@ -173,6 +173,27 @@
                 Add Instruction</h6>
             <textarea class="input-block-level" id="AddInstructionsTextArea" name="textarea" placeholder="Add Instruction"></textarea>            
             <button class="btn btn-primary" ng-click="addEditableInstructions()">
+                Submit</button>      
+        </div>
+    </div>
+</div>
+
+<div id="modal-AddSingleQuestions" class="modal hide fade" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="createTemplateController">
+    <div class="modal-header">
+        <button aria-hidden="true" id="Button1" data-dismiss="modal" class="close"
+            type="button" style="display: block;">
+            ×</button>
+        <h3 id="H1">
+            Add New Questions (Single Answer)</h3>
+    </div>
+    <div class="row-fluid">
+        <div>
+            <h6>
+                Add Question</h6>
+            Question <textarea class="input-block-level" id="Textarea1" name="textarea" placeholder="Question (Single Answer)"></textarea>
+            Options - Separated by semi-color(i.e ;) <textarea class="input-block-level" id="Textarea2" name="textarea" placeholder="Options must be separated by seme-color (ie. ;)"></textarea>           
+            <button class="btn btn-primary" ng-click="InsertSingleQuestionRow()">
                 Submit</button>      
         </div>
     </div>
