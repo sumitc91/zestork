@@ -3,7 +3,7 @@ ZestorkAppClientView.controller('createTemplateController', function ($scope, $h
     //alert("create product controller");    
     var editableInstructions = "";
     var totalEditableInstruction = 0;
-    $scope.jobTemplate = [{ type: "AddInstructions",visible:false,buttonText:"Add Instructions", editableInstructionsList: { Number: totalEditableInstruction, Text: "Instruction 1" } }];
+    $scope.jobTemplate = [{ type: "AddInstructions",visible:false,buttonText:"Add Instructions", editableInstructionsList: [{ Number: totalEditableInstruction, Text: "Instruction 1" }] }];
     
     $.each($scope.jobTemplate[0].editableInstructionsList, function () {
         editableInstructions += "<li>";
@@ -59,6 +59,11 @@ ZestorkAppClientView.controller('createTemplateController', function ($scope, $h
         $('#editableInstructionsListID').html(editableInstructions);
         initAddInstructionClass();
         $('#addInstructionCloseButton').click();
+    }
+
+    // single questions..
+    $scope.InsertSingleQuestionRow = function () {
+        alert("InsertSingleQuestionRow");
     }
 
 });
