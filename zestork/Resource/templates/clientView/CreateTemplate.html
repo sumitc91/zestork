@@ -14,7 +14,7 @@
                                                                                           class="icon-plus-sign"></i>{{jobTemplate[0].buttonText}}</a>
 
                             <a ng-click="addSingleAnswer()" role="button" class="btn"><i
-                                                                                          class="icon-plus-sign"></i>Single Answer</a>
+                                                                                          class="icon-plus-sign"></i>{{jobTemplate[1].buttonText}}</a>
                             <a href="#" role="button" class="btn"><i
                                                                       class="icon-plus-sign"></i>Multiple Answer</a>
                             <a href="#" role="button" class="btn"><i
@@ -38,7 +38,7 @@
                                 </ul>
                             </div>
                         </div>          
-                        <div class="control-group">
+                        <div class="control-group" ng-show="jobTemplate[1].visible">
                             <label for="textfield" class="control-label">
                                  <a href="#modal-AddSingleQuestions" role="button" class="btn" data-toggle="modal"><i
                             class="icon-plus-sign"></i>Add Questions</a><small>(Single Answer)</small>    </label>
@@ -167,7 +167,7 @@
 <div id="modal-AddSingleQuestions" class="modal hide fade" tabindex="-1" role="dialog"
     aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="createTemplateController">
     <div class="modal-header">
-        <button aria-hidden="true" id="Button1" data-dismiss="modal" class="close"
+        <button aria-hidden="true" id="addQuestionSingleAnswerCloseButton" data-dismiss="modal" class="close"
             type="button" style="display: block;">
             ×</button>
         <h3 id="H1">
@@ -177,8 +177,8 @@
         <div>
             <h6>
                 Add Question</h6>
-            Question <textarea class="input-block-level" id="Textarea1" name="textarea" placeholder="Question (Single Answer)"></textarea>
-            Options - Separated by semi-color(i.e ;) <textarea class="input-block-level" id="Textarea2" name="textarea" placeholder="Options must be separated by seme-color (ie. ;)"></textarea>           
+            Question <textarea class="input-block-level" id="SingleQuestionTextBoxQuestionData" name="textarea" placeholder="Question (Single Answer)"></textarea>
+            Options - Separated by semi-color(i.e ;) <textarea class="input-block-level" id="SingleQuestionTextBoxAnswerData" name="textarea" placeholder="Options must be separated by seme-color (ie. ;)"></textarea>           
             <button class="btn btn-primary" ng-click="InsertSingleQuestionRow()">
                 Submit</button>      
         </div>
