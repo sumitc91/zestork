@@ -21,7 +21,7 @@ ZestorkAppClientView.controller('createTemplateController', function ($scope, $h
         totalQuestionSingleAnswerHtmlData += "<fieldset>";
 
         totalQuestionSingleAnswerHtmlData += "<label>";
-        totalQuestionSingleAnswerHtmlData += quesCount + ". " + this.Question;
+        totalQuestionSingleAnswerHtmlData += "<b>" + quesCount + ". " + this.Question + "</b>";
         totalQuestionSingleAnswerHtmlData += "</label>";
 
         var singleQuestionsOptionList = this.Options.split(';');
@@ -29,7 +29,7 @@ ZestorkAppClientView.controller('createTemplateController', function ($scope, $h
         {
             totalQuestionSingleAnswerHtmlData += "<div class='radio'>";
             totalQuestionSingleAnswerHtmlData += "<label>";
-            totalQuestionSingleAnswerHtmlData += "<input type='radio' value='" + singleQuestionsOptionList[j] + "' name='" + singleQuestionsOptionList[j] + "'>" + singleQuestionsOptionList[j] + "";
+            totalQuestionSingleAnswerHtmlData += "<input type='radio' value='" + quesCount + "' name='" + quesCount + "'>" + singleQuestionsOptionList[j] + "";
             totalQuestionSingleAnswerHtmlData += "</label>";
             totalQuestionSingleAnswerHtmlData += "</div>";
         }
@@ -110,14 +110,14 @@ ZestorkAppClientView.controller('createTemplateController', function ($scope, $h
             totalQuestionSingleAnswerHtmlData += "<fieldset>";
 
             totalQuestionSingleAnswerHtmlData += "<label>";
-            totalQuestionSingleAnswerHtmlData += innerQuesCount + ". " + this.Question;
+            totalQuestionSingleAnswerHtmlData += "<b>" + innerQuesCount + ". " + this.Question + "</b>";
             totalQuestionSingleAnswerHtmlData += "</label>";
 
             var singleQuestionsOptionList = this.Options.split(';');
             for (var j = 0; j < singleQuestionsOptionList.length; j++) {
                 totalQuestionSingleAnswerHtmlData += "<div class='radio'>";
                 totalQuestionSingleAnswerHtmlData += "<label>";
-                totalQuestionSingleAnswerHtmlData += "<input type='radio' value='" + singleQuestionsOptionList[j] + "' name='" + singleQuestionsOptionList[j] + "'>" + singleQuestionsOptionList[j] + "";
+                totalQuestionSingleAnswerHtmlData += "<input type='radio' value='" + innerQuesCount + "' name='" + innerQuesCount + "'>" + singleQuestionsOptionList[j] + "";
                 totalQuestionSingleAnswerHtmlData += "</label>";
                 totalQuestionSingleAnswerHtmlData += "</div>";
             }
