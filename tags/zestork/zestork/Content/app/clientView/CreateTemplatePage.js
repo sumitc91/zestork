@@ -2,12 +2,12 @@
 ZestorkAppClientView.controller('createTemplateController', function ($scope, $http, $rootScope, $routeParams, CookieUtil) {
     //alert("create product controller");    
     var editableInstructions = "";
-    var totalQuestionHtmlData = "";
+    var totalQuestionSingleAnswerHtmlData = "";
     var totalEditableInstruction = 0;
     var totalSingleQuestionList = 0;
-    $scope.jobTemplate = [{ type: "AddInstructions",visible:false,buttonText:"Add Instructions", editableInstructionsList: [{ Number: totalEditableInstruction, Text: "Instruction 1" }] }];
-
-    $scope.singleQuestionsList = [{Number: totalSingleQuestionList, Question:"What is your gender ?" , Options : "Male1;Female2" }];
+    $scope.jobTemplate = [{ type: "AddInstructions", visible: false, buttonText: "Add Instructions", editableInstructionsList: [{ Number: totalEditableInstruction, Text: "Instruction 1"}] },
+        { type: "AddSingleQuestionsList", visible: false, buttonText: "Add Questions (single Answer)", singleQuestionsList: [{ Number: totalSingleQuestionList, Question: "What is your gender ?", Options: "Male1;Female2"}] }
+    ];
 
     $.each($scope.jobTemplate[0].editableInstructionsList, function () {
         editableInstructions += "<li>";
@@ -15,29 +15,31 @@ ZestorkAppClientView.controller('createTemplateController', function ($scope, $h
         editableInstructions += "</li>";
     });
 
-    $.each($scope.singleQuestionsList, function () {       
+    var quesCount = 1;
+    $.each($scope.jobTemplate[1].singleQuestionsList, function () {       
         
-        totalQuestionHtmlData += "<fieldset>";
+        totalQuestionSingleAnswerHtmlData += "<fieldset>";
 
-        totalQuestionHtmlData += "<label>";
-        totalQuestionHtmlData += this.Number + ". "+ this.Question;
-        totalQuestionHtmlData += "</label>";
+        totalQuestionSingleAnswerHtmlData += "<label>";
+        totalQuestionSingleAnswerHtmlData += quesCount + ". " + this.Question;
+        totalQuestionSingleAnswerHtmlData += "</label>";
 
         var singleQuestionsOptionList = this.Options.split(';');
         for (var j = 0; j < singleQuestionsOptionList.length;j++)
         {
-            totalQuestionHtmlData += "<div class='radio'>";
-            totalQuestionHtmlData += "<label>";
-            totalQuestionHtmlData += "<input type='radio' value='" + singleQuestionsOptionList[j] + "' name='" + singleQuestionsOptionList[j] + "'>" + singleQuestionsOptionList[j] + "";
-            totalQuestionHtmlData += "</label>";
-            totalQuestionHtmlData += "</div>";
+            totalQuestionSingleAnswerHtmlData += "<div class='radio'>";
+            totalQuestionSingleAnswerHtmlData += "<label>";
+            totalQuestionSingleAnswerHtmlData += "<input type='radio' value='" + singleQuestionsOptionList[j] + "' name='" + singleQuestionsOptionList[j] + "'>" + singleQuestionsOptionList[j] + "";
+            totalQuestionSingleAnswerHtmlData += "</label>";
+            totalQuestionSingleAnswerHtmlData += "</div>";
         }
 
-        totalQuestionHtmlData += "</fieldset>";
+        totalQuestionSingleAnswerHtmlData += "</fieldset>";
+        quesCount++;
     });
 
     $('#editableInstructionsListID').html(editableInstructions);
-    $('#addSingleAnswerQuestionID').html(totalQuestionHtmlData);    
+    $('#addSingleAnswerQuestionID').html(totalQuestionSingleAnswerHtmlData);    
     initAddInstructionClass();
 
     $scope.addEditableInstructions = function () {
@@ -48,8 +50,22 @@ ZestorkAppClientView.controller('createTemplateController', function ($scope, $h
         //$('#AddInstructionsTextArea').val(''); // TODO: clearing the text area not working
     }
 
+    // single questions..
+    $scope.InsertSingleQuestionRow = function () {
+        totalSingleQuestionList = totalSingleQuestionList + 1;        
+        var singleQuestionsList = { Number: totalSingleQuestionList, Question: $('#SingleQuestionTextBoxQuestionData').val(), Options: $('#SingleQuestionTextBoxAnswerData').val()};
+        $scope.jobTemplate[1].singleQuestionsList.push(singleQuestionsList);
+        refreshSingleQuestionsList();
+    }
+
     $scope.addSingleAnswer = function () {
-        alert("addSingleAnswer");
+        if ($scope.jobTemplate[1].visible == true) {
+            $scope.jobTemplate[1].buttonText = "Add Questions (single Answer)";
+            $scope.jobTemplate[1].visible = false;
+        } else {
+            $scope.jobTemplate[1].visible = true;
+            $scope.jobTemplate[1].buttonText = "Remove Questions (single Answer)";
+        }
     }
 
     $scope.addInstructionsRow = function () {
@@ -87,10 +103,32 @@ ZestorkAppClientView.controller('createTemplateController', function ($scope, $h
         $('#addInstructionCloseButton').click();
     }
 
-    // single questions..
-    $scope.InsertSingleQuestionRow = function () {
-        alert("InsertSingleQuestionRow");
+    function refreshSingleQuestionsList() {
+        totalQuestionSingleAnswerHtmlData = "";
+        var innerQuesCount = 1;
+        $.each($scope.jobTemplate[1].singleQuestionsList, function () {            
+            totalQuestionSingleAnswerHtmlData += "<fieldset>";
+
+            totalQuestionSingleAnswerHtmlData += "<label>";
+            totalQuestionSingleAnswerHtmlData += innerQuesCount + ". " + this.Question;
+            totalQuestionSingleAnswerHtmlData += "</label>";
+
+            var singleQuestionsOptionList = this.Options.split(';');
+            for (var j = 0; j < singleQuestionsOptionList.length; j++) {
+                totalQuestionSingleAnswerHtmlData += "<div class='radio'>";
+                totalQuestionSingleAnswerHtmlData += "<label>";
+                totalQuestionSingleAnswerHtmlData += "<input type='radio' value='" + singleQuestionsOptionList[j] + "' name='" + singleQuestionsOptionList[j] + "'>" + singleQuestionsOptionList[j] + "";
+                totalQuestionSingleAnswerHtmlData += "</label>";
+                totalQuestionSingleAnswerHtmlData += "</div>";
+            }
+
+            totalQuestionSingleAnswerHtmlData += "</fieldset>";
+            innerQuesCount++;
+        });
+        $('#addSingleAnswerQuestionID').html(totalQuestionSingleAnswerHtmlData);
+        $('#addQuestionSingleAnswerCloseButton').click();
     }
+    
 
 });
 
