@@ -22,6 +22,13 @@ window.onload = function () {
 };
 
 
-function gaWeb(category, event, label) {    
-    ga('send', 'event', category, event, label);
+function gaWeb(category, event, label) {
+    ga('send', 'pageview', category, event, label);
+}
+
+function gaPageView(page, title) {
+    ga('send', 'pageview', {
+        'page': page,
+        'title': title
+    });
 }
