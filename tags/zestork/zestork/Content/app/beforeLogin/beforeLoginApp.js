@@ -33,7 +33,8 @@ ZestorkApp.run(function ($rootScope, $location) { //Insert in the function defin
         //Do your things        
         //var path = $location.path();        
         var path = next.split('#');
-        var contextPath = path[1]; 
+        var contextPath = path[1];
+        gaPageView(path,'title');
         if(contextPath=="/signup" || contextPath == "/signup/user")
         {
             $rootScope.showSignUpButton = false;

@@ -110,7 +110,7 @@ ZestorkAppClientView.controller('createTemplateController', function ($scope, $h
             totalQuestionSingleAnswerHtmlData += "<fieldset>";
 
             totalQuestionSingleAnswerHtmlData += "<label>";
-            totalQuestionSingleAnswerHtmlData += "<b>" + innerQuesCount + ". " + this.Question + "</b>";
+            totalQuestionSingleAnswerHtmlData += "<b>" + innerQuesCount + ". " + this.Question + "</b> <a style='cursor:pointer' class='addInstructionClass' id='" + this.Number + "'><i class='icon-remove'></i></a>";
             totalQuestionSingleAnswerHtmlData += "</label>";
 
             var singleQuestionsOptionList = this.Options.split(';');
