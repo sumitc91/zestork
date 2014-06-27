@@ -8,8 +8,8 @@ ZestorkAppClientView.controller('createTemplateController', function ($scope, $h
     var totalSingleQuestionList = 0;
     var totalMultipleQuestionList = 0;
     $scope.jobTemplate = [{ type: "AddInstructions", visible: false, buttonText: "Add Instructions", editableInstructionsList: [{ Number: totalEditableInstruction, Text: "Instruction 1"}] },
-        { type: "AddSingleQuestionsList", visible: false, buttonText: "Add Questions (single Answer)", singleQuestionsList: [{ Number: totalSingleQuestionList, Question: "What is your gender ?", Options: "Male1;Female2"}] },
-        { type: "AddMultipleQuestionsList", visible: false, buttonText: "Add Questions (Multiple Answer)", multipleQuestionsList: [{ Number: totalMultipleQuestionList, Question: "What is your multiple gender ?", Options: "Malem1;Femalem2"}] }
+        { type: "AddSingleQuestionsList", visible: false, buttonText: "Add Ques. (single Ans.)", singleQuestionsList: [{ Number: totalSingleQuestionList, Question: "What is your gender ?", Options: "Male1;Female2"}] },
+        { type: "AddMultipleQuestionsList", visible: false, buttonText: "Add Ques. (Multiple Ans.)", multipleQuestionsList: [{ Number: totalMultipleQuestionList, Question: "What is your multiple gender ?", Options: "Malem1;Femalem2"}] }
     ];
 
     $.each($scope.jobTemplate[0].editableInstructionsList, function () {
@@ -94,21 +94,21 @@ ZestorkAppClientView.controller('createTemplateController', function ($scope, $h
     }
     $scope.addSingleAnswer = function () {
         if ($scope.jobTemplate[1].visible == true) {
-            $scope.jobTemplate[1].buttonText = "Add Questions (single Answer)";
+            $scope.jobTemplate[1].buttonText = "Add Ques. (single Ans.)";
             $scope.jobTemplate[1].visible = false;
         } else {
             $scope.jobTemplate[1].visible = true;
-            $scope.jobTemplate[1].buttonText = "Remove Questions (single Answer)";
+            $scope.jobTemplate[1].buttonText = "Remove Ques. (single Ans.)";
         }
     }
 
     $scope.addMultipleAnswer = function () {
         if ($scope.jobTemplate[2].visible == true) {
-            $scope.jobTemplate[2].buttonText = "Add Questions (Multiple Answer)";
+            $scope.jobTemplate[2].buttonText = "Add Ques. (Multiple Ans.)";
             $scope.jobTemplate[2].visible = false;
         } else {
             $scope.jobTemplate[2].visible = true;
-            $scope.jobTemplate[2].buttonText = "Remove Questions (Multiple Answer)";
+            $scope.jobTemplate[2].buttonText = "Remove Ques. (Multiple Ans.)";
         }
     }
 
