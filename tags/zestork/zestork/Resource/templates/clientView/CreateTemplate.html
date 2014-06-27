@@ -15,8 +15,8 @@
 
                             <a ng-click="addSingleAnswer()" role="button" class="btn"><i
                                                                                           class="icon-plus-sign"></i>{{jobTemplate[1].buttonText}}</a>
-                            <a href="#" role="button" class="btn"><i
-                                                                      class="icon-plus-sign"></i>Multiple Answer</a>
+                            <a ng-click="addMultipleAnswer()" role="button" class="btn"><i
+                                                                      class="icon-plus-sign"></i>{{jobTemplate[2].buttonText}}</a>
                             <a href="#" role="button" class="btn"><i
                                                                       class="icon-plus-sign"></i>Text Box</a>
                             <a href="#" role="button" class="btn"><i
@@ -46,41 +46,12 @@
                                 
                             </div>
                         </div>
-                        <div class="control-group">
-                            <label for="password" class="control-label">
-                                <button type="submit" class="btn btn-primary">
-                                    Add Questions</button><small>(Multiple Answer)</small></label>
-                            <div class="controls">
-                                <fieldset>
-                                    <label>
-                                        1. What is your favorite type of food? (Choose all that apply:)
-                                    </label>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="Chinese" name="FavoriteFoods">Chinese
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="French" name="FavoriteFoods">French
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="Indian" name="FavoriteFoods">Indian
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="Italian" name="FavoriteFoods">Italian
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="Mexican" name="FavoriteFoods">Mexican
-                                        </label>
-                                    </div>
-                                </fieldset>
+                        <div class="control-group" ng-show="jobTemplate[2].visible">
+                            <label for="textfield" class="control-label">
+                                 <a href="#modal-AddMultipleQuestions" role="button" class="btn" data-toggle="modal"><i
+                            class="icon-plus-sign"></i>Add Questions</a><small>(Multiple Answer)</small>    </label>
+                            <div class="controls" id="addMultipleAnswerQuestionID">
+                                
                             </div>
                         </div>
                         <div class="control-group">
@@ -180,6 +151,27 @@
             Question <textarea class="input-block-level" id="SingleQuestionTextBoxQuestionData" name="textarea" placeholder="Question (Single Answer)"></textarea>
             Options - Separated by semi-color(i.e ;) <textarea class="input-block-level" id="SingleQuestionTextBoxAnswerData" name="textarea" placeholder="Options must be separated by seme-color (ie. ;)"></textarea>           
             <button class="btn btn-primary" ng-click="InsertSingleQuestionRow()">
+                Submit</button>      
+        </div>
+    </div>
+</div>
+
+<div id="modal-AddMultipleQuestions" class="modal hide fade" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="createTemplateController">
+    <div class="modal-header">
+        <button aria-hidden="true" id="addQuestionMultipleAnswerCloseButton" data-dismiss="modal" class="close"
+            type="button" style="display: block;">
+            ×</button>
+        <h3 id="H2">
+            Add New Questions (Multiple Answer)</h3>
+    </div>
+    <div class="row-fluid">
+        <div>
+            <h6>
+                Add Question</h6>
+            Question <textarea class="input-block-level" id="MultipleQuestionTextBoxQuestionData" name="textarea" placeholder="Question (Multiple Answer)"></textarea>
+            Options - Separated by semi-color(i.e ;) <textarea class="input-block-level" id="MultipleQuestionTextBoxAnswerData" name="textarea" placeholder="Options must be separated by seme-color (ie. ;)"></textarea>           
+            <button class="btn btn-primary" ng-click="InsertMultipleQuestionRow()">
                 Submit</button>      
         </div>
     </div>
